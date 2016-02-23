@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rx-RotationsExchanger</title>
+  <link href='https://fonts.googleapis.com/css?family=Crafty+Girls' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</head>
+<body>
+
+  <%= yield %>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkvo70VjbvPwrQSrw2wvswILw0NqBVE5A">
+  </script>
+
+  <script>
+    // $( document ).ready(function() {
+    //   $(function() {
+    //     $( "#slider-range" ).slider({
+    //       from: 5,
+    //       to: 50,
+    //       step: 2.5,
+    //       round: 1,
+    //       format: { format: '##.0', locale: 'de' },
+    //       dimension: '&nbsp;€'
+    //     })
+    //   })
+    // });
+  </script>
+
+</body>
+</html>
