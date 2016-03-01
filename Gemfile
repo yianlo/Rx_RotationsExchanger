@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# heroku
+gem 'newrelic_rpm'
+gem 'rails_12factor'
+
 gem 'faker'
 gem 'annotate'
 gem 'figaro'
