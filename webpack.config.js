@@ -1,8 +1,14 @@
 var path = require("path");
+var RewirePlugin = require("rewire-webpack");
+var webpackConfig = {
+    plugins: [
+      new RewirePlugin()
+    ]
+};
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/bench_bnb.jsx",
+  entry: "./frontend/rx.jsx",
   output: {
     path: path.join(__dirname, 'app', 'assets', 'javascripts'),
     filename: "bundle.js",

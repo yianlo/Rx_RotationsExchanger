@@ -11,19 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222231154) do
+ActiveRecord::Schema.define(version: 20160225215414) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "images", force: :cascade do |t|
+    t.string   "url"
+    t.integer  "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "medical_schools", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.float    "lat",        null: false
+    t.float    "lng",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "rooms", force: :cascade do |t|
-    t.text     "title"
-    t.float    "lat"
-    t.float    "lng"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "title",       null: false
+    t.text     "description"
+    t.integer  "host_id"
+    t.float    "lat",         null: false
+    t.float    "lng",         null: false
     t.string   "img_url"
-    t.integer  "price"
-    t.integer  "seating"
-    t.string   "location_type"
-    t.string   "bench_type"
+    t.integer  "price",       null: false
+    t.datetime "from_date"
+    t.datetime "to_date"
+    t.string   "home_type"
+    t.string   "room_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "session_token"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "medical_school_id"
   end
 
 end

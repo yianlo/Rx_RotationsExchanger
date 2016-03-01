@@ -1,5 +1,12 @@
 # Schema Information
 
+## images
+## users
+## rooms
+## medical_schools
+## bookings
+
+
 ## rooms
 column name | data type | details
 ------------|-----------|-----------------------
@@ -11,8 +18,8 @@ lat         | integer   | not null
 lng         | integer   | not null
 image_url   | string    | not null
 price       | integer   | not null
-date_from   | date      | not null
-date_to     | date      | not null
+date_from   | datetime  | not null
+date_to     | datetime  | not null
 home_type   | string    | not null
 room_type   | string    | not null
 

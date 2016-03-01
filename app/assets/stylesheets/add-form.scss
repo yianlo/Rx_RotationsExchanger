@@ -1,0 +1,198 @@
+$border-color: #ccc;
+$choice-hover-color: #CCE4E7;
+$choice-selected-color: #32959F;
+$top-push: 61px;
+$text-color: #676b6d;
+$input-height: 52px;
+
+$theme-color: #F88379;
+$min-width: 1052px;
+$form-items-width: 800px;
+
+.add-form-page{
+  min-height: 895px;
+  position: relative;
+  top: $top-push;
+
+  flex-direction: column;
+  width: 100%;
+}
+
+.add-form-header{
+  width: 100%;
+  height: 150px;
+  justify-content: center;
+  align-content: center;
+
+  min-width: $min-width;
+}
+
+.add-form-header h1{
+  font-size: 30px;
+  align-self: center;
+}
+
+.add-form-container{
+  flex-direction: column;
+  flex: none;
+
+  justify-content: center;
+  align-items: center;
+  min-width: $min-width;
+
+  background: #F5F5F5;
+}
+
+.add-form{
+  flex-direction: column;
+  align-content: center;
+
+  min-height: 750px;
+  padding: 30px 100px;
+}
+
+.add-form-items-container{
+  width: $form-items-width;
+  justify-content: space-between;
+}
+
+.add-form-item-container{
+  align-items: center;
+  padding: 30px 0 10px 0;
+}
+
+.add-form-label{
+  width: 90px;
+  font-weight: bold;
+  font-color: #222;
+
+  line-height: $input-height;
+}
+
+.add-form-choices{
+  display: inline-flex;
+  border-left: 1px solid $border-color;
+}
+
+.add-form-choice, .add-form-input, .upload-image-button, .add-form-button{
+  align-items: center;
+  color: $text-color;
+
+  padding: 0 25px;
+  border: 1px solid $border-color;
+
+  justify-content: center;
+
+  line-height: $input-height;
+  box-sizing: border-box;
+}
+
+.add-form-textarea{
+  padding: 24px;
+  line-height: 20px;
+}
+
+.upload-image-button{
+  border: 1px solid $border-color;
+  background: #eee;
+  color: $text-color;
+}
+
+.unclicked-button:hover{
+  background: $theme-color;
+  color: white;
+}
+
+.add-form-choice, .add-form-input, .add-form-date{
+  background: white;
+}
+
+
+.add-form-choice{
+  margin: 0;
+  border-left:0px;
+  flex-wrap: nowrap;
+  white-space:nowrap;
+}
+
+.unselected-choice:hover{
+  background: $choice-hover-color;
+  cursor: pointer;
+}
+
+
+
+
+.selected-choice{
+  background: $choice-selected-color;
+  color: white;
+}
+
+.add-form-input{
+  width: 500px;
+  overflow: hidden;
+}
+
+.short-input{
+  width: 150px;
+}
+
+.price-label{
+  justify-content: space-between;
+}
+
+.dollar-sign{
+  margin: 0;
+  background: #black;
+}
+
+.long-input{
+  width: 711px;
+  flex-wrap: wrap;
+}
+
+.box-input{
+  width: 650px;
+  height: 100px;
+}
+
+.add-form-date{
+  height: $input-height;
+  width: 471px;
+  justify-content: flex-start;
+  background: none;
+
+  position: relative;
+  left: -7px;
+}
+
+.add-form-button-container{
+  width: 100%;
+  justify-content: center;
+}
+
+.add-form-button{
+  color: white;
+}
+
+.clicked-button{
+  background: $choice-selected-color;
+  color: white;
+}
+
+.add-form-errors-container{
+  flex: none;
+
+  width: $form-items-width;
+
+  padding: 30px 30px;
+  align-items: center;
+  background: #FFD1C4;
+  border-radius: 2px;
+  margin-top: 45px;
+}
+
+.errors-title{
+  font-weight: bold;
+  font-size: 14.5px;
+}

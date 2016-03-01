@@ -1,3 +1,168 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$theme-color: #F88379;
+$theme-color-buttons: rgba(248, 131, 121, 0.7);
+
+$default-font: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+$default-font-weight: 200;
+$default-font-size: 13px;
+
+$button-border-radius: 3.5px;
+$button-transition: all 0.18s ease;
+$page-emerge-animation: 'show-page-emerge 0.34s linear';
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@include keyframes(show-page-emerge) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+html, body, p, form, input, h1, h2, h5, h6, section, div, button, textarea{
+  margin: 0;
+  padding: 0;
+
+  display: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+html, body, .app-container, #content, #main, .landing-container{
+  width:100%;
+  height:100%;
+  position: relative;
+}
+
+.search-results-container, .add-form-page, .show-page-container, .images-container{
+  @include animation($page-emerge-animation);
+}
+
+body {
+  font-family: $default-font;
+  font-size: $default-font-size;
+  font-weight: $default-font-weight;
+  color: #676b6d;
+  letter-spacing: 0.4px;
+
+  display: flex;
+}
+
+button {
+  border: none;
+  background: none;
+  border-radius: $button-border-radius;
+  justify-content: center;
+  background: $theme-color;
+  color: white;
+
+  margin-right: 20px;
+  padding: 10px 10px;
+  border: 2px solid #ccc;
+  text-align: center;
+  align-self: center;
+
+  @include transition($button-transition);
+}
+
+textarea {
+  border: 1px solid #ccc;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover, button:hover{
+  cursor: pointer;
+}
+
+input {
+  border: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+select {
+  -webkit-appearance: none;
+  border-radius: 0px;
+  background: white;
+}
+
+.app-container{
+  flex-direction: column;
+}
+
+#main{
+  flex-direction: column;
+}
+
+.map-container  {
+  z-index: 10;
+  width: 40%;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

@@ -1,0 +1,84 @@
+/* line 7, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/price-slider.scss */
+.price-search-field {
+  width: 98%;
+  display: flex;
+}
+
+/* line 12, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container {
+  width: 73%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  position: relative;
+  top: 12px;
+  box-shadow: none;
+}
+/* line 22, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .slider {
+  width: 100%;
+  height: 10px;
+  position: relative;
+}
+/* line 28, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .price-display {
+  font-size: 15px;
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+/* line 38, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .handle-0 {
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 1px;
+}
+/* line 45, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .handle-1 {
+  position: absolute;
+  z-index: 2;
+  left: 96%;
+  top: 1px;
+}
+/* line 52, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .my-handle {
+  position: absolute;
+  top: -11px;
+  left: -11px;
+  background: white;
+  height: 23.5px;
+  width: 23.5px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  box-shadow: 0 3px 5px rgba(230, 230, 230, 0.3);
+}
+/* line 67, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .my-handle:hover {
+  cursor: pointer;
+}
+/* line 71, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .my-handle.active {
+  background-color: gray;
+}
+/* line 75, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .bar {
+  height: 2px;
+  position: relative;
+  background: #ddd;
+}
+/* line 81, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .bar.bar-1 {
+  height: 4.5px;
+  background: #F88379;
+}
+
+@media all and (min-width: 1090px) {
+  /* line 90, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/price-slider.scss */
+  .price-slider-container {
+    position: relative;
+    right: 6%;
+  }
+}

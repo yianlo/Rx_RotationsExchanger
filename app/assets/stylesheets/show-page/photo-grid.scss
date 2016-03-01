@@ -1,0 +1,46 @@
+// .photo-grids-container:after {
+//   content: "";
+//   flex: auto;
+// }
+
+.photo-grids-container{
+  width: 85%;
+  display: flex;
+
+  flex-flow: row wrap;
+
+  padding:2px;
+
+  justify-content: center;;
+  margin: 1em auto;
+
+  img{
+    flex-grow: 1;
+
+    border-left: none;
+    box-sizing: border-box;
+    max-width: 30%;
+
+    height: 312px;
+    overflow: hidden;
+
+    margin:2px;
+  }
+  //
+  // .photo-detail-grids{
+  //   flex-direction: row;
+  //   width: 602px;
+  //   height: 268px;
+  //   flex-grow: 1;
+
+  //   .img-grid{
+  //     width: 400px;
+  //     height: 266px;
+  //     overflow: hidden;
+
+    // .content-grid{
+    //   background: white;
+    //   width: 180px;
+    // }
+  // }
+}

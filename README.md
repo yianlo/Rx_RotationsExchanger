@@ -42,29 +42,42 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Rooms can be viewed in index
 
-- [ ] create new project
-- [ ] create `Room` model
-- [ ] seed the database with a small amount of test data
-- [ ] jBuilder views for notes
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [x] create new project
+- [x] create `Room` model
+- [x] seed the database with a small amount of test data
+- [ ] jBuilder views for rooms
+- [x] setup Webpack & Flux scaffold
+- [x] setup `APIUtil` to interact with the API
+- [x] test out API interaction in the console
+- [x] setup the flux loop with skeleton files
+- [x] setup React Router
 - implement each room component, building out the flux loop as needed.
-  - [ ] `RoomsIndex`
-    - [ ] `RoomsIndexItem`
+  - [x] `RoomsIndex`
+    - [x] `RoomsIndexItem`
 
 ### Phase 2: Search Filter (1.5 days)
 
 **Objective:** Rooms index views can be filtered with search
 - implement the `FilterParams` component, building out the flux loop as needed.
-  - [ ] filter by map bounds
+  - [x] filter by map bounds
   - [ ] filter by miles
-  - [ ] filter by price
-  - [ ] filter by dates
-  - [ ] filter by home type
-  - [ ] filter by room type
+  - [x] filter by price
+  - [x] filter by dates
+  - [x] filter by home type
+  - [x] filter by room type
+
+  ### Phase 6: Backend setup and User Authentication (1.5 day)
+
+  **Objective:** Functioning rails project with Authentication
+
+  - [x] create `User` model
+  - [x] authentication
+  - [x] user signup/signin pages
+  - [x] Lands on rooms index page after signin
+  - [ ] Added 'User Profile' link on Nav Bar
+  - [ ] update contact host link to require log in
+  - [ ] update new room form to require log in
+  - [x] add styling to sign in page
 
 ### Phase 3: Show Room Page (1.5 days)
 
@@ -99,28 +112,15 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Rooms can be created and updated into database
 
-- [ ] 'Create' API for room (`RoomsController`)
-- [ ] setup `APIUtil` to interact with the API
-- [ ] setup cloudinary for posting pictures
-- [ ] Confirm database updated
+- [x] 'Create' API for room (`RoomsController`)
+- [x] setup `APIUtil` to interact with the API
+- [x] setup cloudinary for posting pictures
+- [x] Confirm database updated
 - [ ] lands on room show page after creation
-- [ ] add styling to new form
+- [ ] handles and renders appropriate errors if failed
+- [x] add styling to new form
 
-### Phase 6: Backend setup and User Authentication (1.5 day)
-
-**Objective:** Functioning rails project with Authentication
-
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] Lands on rooms index page after signin
-- [ ] Added 'User Profile' link on Nav Bar
-- [ ] Added 'Messages' Link on Nav Bar
-- [ ] update contact host link to require log in
-- [ ] update new room form to require log in
-- [ ] add styling to sign in page
-
-### Phase 7: User profile page (1 day)
+### Phase 6: User profile page (1 day)
 
 **Objective:** User can browse profile after log in
 
@@ -132,17 +132,30 @@ progress. Put an x between the brackets for a checkmark: [x] -->
     - [ ] `Your Listings`
 - [ ] add styling to profile page
 
-### Phase 8: Styling Cleanup and Seeding (0.5 day)
+### Phase 7: Styling Cleanup and Seeding (0.5 day)
 
 **objective:** Make the site feel more cohesive and awesome.
 
+- [ ] Remove all warnings
 - [ ] Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
 - [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
 
+- [ ] show photos right after adding
+- [ ] refactor store from array to objects
+- [ ] make images model
+- [ ] change date objects
+- [ ] nice loading pages
+- [ ] handle empty fields in new form nicely
+- [ ] improve add photo api
+- [ ] customize 404 page
+- [ ] add pretty symbols to every button
+- [ ] make authform not get values by index
+- [ ] Refactor auth component and store for session https://github.com/reactjs/react-router/blob/master/examples/auth-flow/auth.js
 - [ ] Autofill medical school name
+- [ ] Messaging
 - [ ] User can add favorites/ likes
 - [ ] Add average price for area to guide user
 - [ ] Add `Map` component to Room Show page at bottom, rectangle around neighborhood

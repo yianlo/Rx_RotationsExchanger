@@ -1,0 +1,217 @@
+$theme-color: #F88379;
+$button-transition: all 0.2s ease;
+$top-push: 61px;
+
+$theme-color-buttons: rgba(248, 131, 121, 0.7);
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@include keyframes(show-submenu) {
+  0% { height: 0; }
+  100% { height: 60px; }
+}
+
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  background: white;
+  z-index: 500;
+
+  display: flex;
+  justify-content: space-between;
+  height: $top-push;
+
+  border: 1px solid #ddd;
+  width:100%;
+}
+
+.submenu-top{
+  position: absolute;
+  @include transition(all 1s ease);
+}
+
+.nav-items{
+  flex-direction: column;
+  z-index: 1020;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+
+
+}
+
+.nav-submenu{
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  top: $top-push;
+  flex: 0 0 auto;
+  left: -21px;
+
+  // @include animation('show-submenu 1s ease');
+  .nav-items{
+    @include animation('show-submenu 0.8s ease');
+  }
+
+  .nav-items:hover{
+    background-color: $theme-color-buttons;
+    color: white;
+  }
+}
+// background: none;
+
+.nav-bar{
+  .nav-submenu{
+    background: white;
+  }
+}
+
+.logo-search-container{
+  width: 70%;
+  min-width: 610px;
+}
+
+.logo{
+  border-right: 1px solid #ddd;
+  display: flex;
+
+  line-height: 60px;
+  color: $theme-color;
+}
+
+.logo:hover{
+  cursor: pointer;
+}
+
+.logo-design{
+  height: 50px;
+  width: 48px;
+  opacity: 0.45;
+}
+
+.logo-container{
+  height: 40px;
+  width: 60px;
+  overflow: hidden;
+  position: relative;
+  top: 8px;
+}
+
+.logo-design {
+  margin: 0;
+  font-size: 35px;
+  font-weight: lighter;
+  font-family: 'Crafty Girls', cursive;
+  padding-left: 20px;
+}
+
+.logo-text {
+  font-size: 20px;
+
+  font-family: 'Poiret One', cursive;
+  font-weight: 800;
+  padding: 0 17px 0 10px;
+}
+
+.search-bar-container{
+  width: 100%;
+}
+
+.search-symbol {
+  height: auto;
+  width: auto;
+  max-width: 20.5px;
+  max-height: 20.5px;
+
+  opacity: 0.2;
+  align-self: center;
+
+  padding-left: 17px;
+}
+
+.search-bar {
+  padding-left: 17px;
+  font-size: 13.5px;
+  font-weight: 300;
+  width: 95%;
+}
+
+.host-room-button {
+  margin-right: 20px;
+  padding: 10px 10px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  align-self: center;
+  text-align: center;
+
+  @include transition($button-transition);
+}
+
+.host-room-button:hover {
+  background-color: $theme-color-buttons;
+  color: white;
+  cursor: pointer;
+}
+
+.host-room-button a{
+  min-width: 86px;
+  overflow: hidden;
+}
+
+.nav-items {
+  min-width: 70px;
+  text-align: center;
+  border-left: 1px solid #ddd;
+
+  flex: none;
+}
+
+.nav-items, .search {
+  line-height: 60px;
+  padding: 0 20px;
+}
+
+.nav-items:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.nav-items a {
+  overflow: hidden;
+}

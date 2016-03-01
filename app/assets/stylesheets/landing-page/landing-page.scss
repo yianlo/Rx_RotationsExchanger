@@ -1,0 +1,144 @@
+$theme-color: #F88379;
+$top-push: 61px;
+
+@keyframes hide-bg {
+  0% {
+    background: url("../images/start.png");
+    background: cover;
+    opacity: 0;
+  }
+
+  // 30% {
+  //   background: url("../images/start.png");
+  //   background: cover;
+  //   opacity: 1;
+  // }
+  99% {
+    // background: url("http://res.cloudinary.com/dcnac6iuq/image/upload/c_scale,w_1323/v1456600166/Screen_Shot_2016-02-25_at_10.39.06_PM_xhfpyq.png");
+    background: url("../images/start.png");
+    background: cover;
+    opacity: 1;
+  }
+  100% {background: none}
+}
+
+@keyframes emerge {
+  0%   {opacity: 0}
+  80%   {opacity: 0}
+  100%  {opacity: 1}
+}
+
+.landing-container{
+  overflow: hidden;
+  animation: hide-bg 1s ease;
+  -webkit-animation: hide-bg 1s ease;
+}
+
+.nav-on-landing{
+  z-index:800;
+  background: none;
+  height: $top-push;
+  width: 100%;
+  color: white;
+  justify-content: space-between;
+
+  .search-bar-container{
+    display: none;
+  }
+
+  .nav-items, .host-room-button{
+    transition: .3s background;
+  }
+
+  .nav-items:hover, .host-room-button:hover{
+    background: rgba(0,0,0,0.5);
+  }
+
+  .logo{
+    border: none;
+  }
+}
+
+.polina{
+  flex-direction: column;
+  font-weight: 100;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 3rem;
+
+  margin: 2rem;
+  font-size: 1.2rem;
+  position: relative;
+  border-radius: 3px;
+  min-width: 530px;
+  width: 38%;
+
+  max-height: 230px;
+  justify-content: space-between;;
+}
+
+.landing-content-container{
+  min-width: 580px;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+.landing-content-container{
+  width: 100%;
+  display: flex;
+  /* align-content: center; */
+  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  transform: translateX(-5%);
+}
+
+.landing-buttons-container{
+  margin-top: 30px;
+}
+
+
+#more-link{
+  font-size: 14px;
+  font-stretch: condensed;
+}
+
+.more-link-container{
+  flex-direction: column;
+  width:auto;
+  padding-bottom: 2px;
+  border-bottom: 0.5px solid white;
+}
+
+.more-link-container:hover {
+  border-bottom: 0.5px solid $theme-color;
+}
+
+.search-on-landing{
+  display: block;
+  width: 100%;
+  padding: 1.2rem;
+  border: none;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  background: rgba(5, 5, 5 ,0.7);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s background;
+  color: white;
+  box-shadow: 0 0 5px $theme-color;
+}
+
+.search-on-landing:hover{
+  background: rgba(0,0,0,0.5);
+  cursor: text;
+}

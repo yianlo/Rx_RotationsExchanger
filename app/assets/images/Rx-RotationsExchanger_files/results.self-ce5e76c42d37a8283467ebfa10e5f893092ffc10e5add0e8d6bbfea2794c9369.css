@@ -1,0 +1,124 @@
+/* line 3, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+.search-results-container {
+  position: relative;
+  top: 61px;
+  width: 70.6%;
+}
+
+/* line 10, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+.search-results {
+  display: absolute;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  height: 1300px;
+  width: 100.5%;
+  box-sizing: content-box;
+  background: #eee;
+  flex: none;
+}
+
+/* line 24, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+.result-item {
+  width: 49.5%;
+  max-height: 30%;
+  height: 30%;
+  flex-flow: column;
+  padding: 12.5px 12.5px 0 12.5px;
+  margin: 0 1px;
+  margin-bottom: 3px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+
+/* line 38, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+.result-item:hover {
+  cursor: pointer;
+  /*border: 1px solid #f76565;*/
+  box-shadow: 0 0 10px #999;
+}
+
+/* line 44, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+.img-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 3px;
+  background: #ddd;
+  width: 100%;
+  max-height: 82%;
+  overflow: hidden;
+}
+
+/* line 61, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+.wrapper {
+  overflow: hidden;
+}
+
+/* line 65, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+.room-img {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 71, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+.dollar-sign {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-stretch: expanded;
+  padding-top: 2.3px;
+}
+
+/* line 78, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+.price {
+  z-index: 50px;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  color: #fff;
+  font-size: 23.5px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 7px 13px;
+  padding-right: 18px;
+  background-color: rgba(45, 49, 51, 0.75);
+  border-radius: 1px;
+}
+
+/* line 96, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+.room-detail {
+  flex-flow: column;
+  padding: 10px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* line 106, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+.room-detail h5 {
+  font-size: 14.5px;
+  font-weight: 400;
+  min-height: 25px;
+  white-space: nowrap;
+}
+
+/* line 114, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+.room-detail h6 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #888;
+  font-weight: 300;
+  white-space: nowrap;
+  min-height: 15px;
+}
+
+@media all and (max-width: 790px) {
+  /* line 125, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/index-page/results.scss */
+  .result-item {
+    width: 100%;
+    max-height: 60%;
+  }
+}

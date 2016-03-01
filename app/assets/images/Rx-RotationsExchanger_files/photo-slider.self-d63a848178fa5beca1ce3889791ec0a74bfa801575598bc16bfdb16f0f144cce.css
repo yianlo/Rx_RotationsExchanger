@@ -1,0 +1,82 @@
+/* line 17, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider {
+  top: 0 !important;
+  align-self: center;
+  padding-bottom: 40px;
+}
+/* line 22, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-slide {
+  margin: 0 auto;
+  width: 80%;
+}
+/* line 26, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-slide img {
+  position: relative;
+  left: 5px;
+  width: 101%;
+  max-height: 585px !important;
+  max-width: 910px !important;
+}
+/* line 36, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-decorator-0 button, .show-page-container .slider .slider-decorator-1 button {
+  font-weight: lighter;
+  opacity: 0 !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0 !important;
+  text-align: center;
+  position: relative !important;
+}
+/* line 50, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-decorator-0 {
+  left: 25px !important;
+}
+/* line 54, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-decorator-1 {
+  right: 25px !important;
+}
+/* line 59, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-decorator-2[style] button {
+  font-size: 28px !important;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+/* line 64, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-decorator-2[style] button:hover {
+  font-size: 45px !important;
+}
+/* line 70, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider:hover {
+  box-shadow: 0 0 10px #999;
+  cursor: grab !important;
+  cursor: -webkit-grab !important;
+  -webkit-transition: all, 0;
+  -moz-transition: all, 0;
+  -ms-transition: all, 0;
+  -o-transition: all, 0;
+  transition: all, 0;
+}
+/* line 77, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider:hover .slider-decorator-0, .show-page-container .slider:hover .slider-decorator-1 {
+  padding: 25px;
+}
+/* line 80, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider:hover .slider-decorator-0 button, .show-page-container .slider:hover .slider-decorator-1 button {
+  opacity: 0.7 !important;
+}
+/* line 83, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider:hover .slider-decorator-0 button:hover, .show-page-container .slider:hover .slider-decorator-1 button:hover {
+  border-radius: 30%;
+  opacity: 1 !important;
+  background: rgba(248, 131, 121, 0.7) !important;
+  box-shadow: 0 0 4px #999 !important;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -ms-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
