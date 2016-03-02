@@ -9,13 +9,10 @@ var FilterParams = React.createClass({
   },
 
   _onChange: function(){
-    // debugger
-
     var params = FilterParamsStore.getParams();
-    // if (params.bounds && this.state.params !== params){
-      apiUtil.fetchRoomsWithinParams(params);
-      this.setState( { params: params } );
-    // }
+
+    apiUtil.fetchRoomsWithinParams(params);
+    this.setState( { params: params } );
   },
 
   componentDidMount: function(){

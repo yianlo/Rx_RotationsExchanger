@@ -14,13 +14,11 @@ var Listings = React.createClass({
   },
 
   _onRoomChange: function(){
-    // debugger
     this.currentUser = SessionStore.getUser();
     if (this.currentUser) {
       var userRooms = RoomStore.findByHostId(this.currentUser.id)
       this.setState( {rooms: userRooms} );
     }
-    // debugger
   },
 
   componentDidMount: function(){
@@ -41,7 +39,7 @@ var Listings = React.createClass({
     var a = array.concat();
     for( var i = 0; i < a.length; i++) {
       for( var j = (i+1); j < a.length; j++) {
-        if(a[i] === a[j]){ a.splice(j--, 1);}
+        if(a[i].id === a[j].id){ a.splice(j--, 1);}
       }
     }
 

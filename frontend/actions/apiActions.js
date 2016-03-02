@@ -9,7 +9,6 @@ ApiActions = {
   },
 
   receivedUser: function(user){
-    // debugger
     AppDispatcher.dispatch({
       actionType: "LOG_IN_USER",
       user: user

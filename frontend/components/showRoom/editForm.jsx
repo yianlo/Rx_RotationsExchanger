@@ -29,25 +29,39 @@ var EditForm = React.createClass({
       to_date: "",
       from_date: "",
       price: ""
-    }
+    };
   },
 
   getImgUrls: function(imgs){
     var img_urls = imgs.map( function(img){
-      return img.url
+      return img.url;
     })
 
-    this.setState( {img_urls: img_urls} )
+    this.setState( {img_urls: img_urls} );
+  },
+
+  getAddress: function(lat, lng){
+    var geocoder = new google.maps.Geocoder();
+    var latlng = {lat, lng};
+
+    geocoder.geocode({'location': latlng}, function(result, status){
+      if (status === google.maps.GeocoderStatus.OK) {
+        this.setState({address: result[0].formatted_address})
+      }
+    }.bind(this));
   },
 
   _onChange: function(){
-    this.room = RoomStore.find(this.roomId)
+    this.room = RoomStore.find(this.roomId);
+    this.getAddress(this.room.lat, this.room.lng);
 
     this.setState({
       title: this.room.title,
       room_type: this.room.room_type,
       home_type: this.room.home_type,
       description: this.room.description,
+      lat: this.room.lat,
+      lng: this.room.lng,
       to_date: this.room.to_date,
       from_date: this.room.from_date,
       price: this.room.price
@@ -72,7 +86,6 @@ var EditForm = React.createClass({
 
   componentWillReceiveProps: function(newProp){
     apiUtil.fetchSingleRoom(this.roomId);
-
     this.roomId = parseInt(newProp.params.roomId);
   },
 
@@ -93,7 +106,7 @@ var EditForm = React.createClass({
       return "_"+$1.toLowerCase();
     });
 
-    if (newStr[0] === "_") { return newStr.slice(1).replace(/\s+/g, '') }
+    if (newStr[0] === "_") { return newStr.slice(1).replace(/\s+/g, ''); }
     return newStr.replace(/\s+/g, '');
   },
 
@@ -106,11 +119,11 @@ var EditForm = React.createClass({
   },
 
   handleConfirm: function(){
-    apiUtil.updateRoom(this.state, this.roomId, this.redirectOnSuccess)
+    apiUtil.updateRoom(this.state, this.roomId, this.redirectOnSuccess);
   },
 
   redirectOnSuccess: function(){
-    this.context.router.replace('/main/' + this.roomId)
+    this.context.router.replace('/main/' + this.roomId);
   },
 
   render: function(){
@@ -142,7 +155,8 @@ var EditForm = React.createClass({
         <section className="edit-details">
           <h3>About this listing</h3>
 
-          <AddressField linkValState={this.linkValState}/>
+          <AddressField address={this.state.address}
+            linkValState={this.linkValState}/>
           <div className="items-container">
             <EditDateFields
               startDate={this.state.from_date}

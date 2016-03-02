@@ -2,7 +2,6 @@ var AppDispatcher = require('../dispatcher');
 
 FilterActions = {
   sendParamsToFilter: function(params){
-    // debugger
     AppDispatcher.dispatch({
       actionType: "FILTER_PARAMS",
       params: params

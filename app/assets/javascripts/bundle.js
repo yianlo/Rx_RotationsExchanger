@@ -31611,18 +31611,13 @@
 	  },
 	
 	  componentWillMount: function () {
-	    // debugger
 	    window.addEventListener("keydown", this._listenForEsc, true);
 	  },
 	
 	  componentDidMount: function () {
-	    // apiUtil.checkSessionStatus();
+	    apiUtil.checkSessionStatus();
 	    this.setState({ loggedIn: SessionStore.getLoggedInStatus() });
 	    this.listenerToker = SessionStore.addListener(this._onChange);
-	  },
-	  //
-	  componentWillReceiveProps: function () {
-	    // debugger
 	  },
 	
 	  componentWillUnmount: function () {
@@ -31669,7 +31664,6 @@
 	        }
 	        this.setState({ bounds: bounds });
 	      }
-	      // apiUtil.fetchRoomsInBounds(bounds);
 	    }.bind(this));
 	  },
 	
@@ -31965,13 +31959,11 @@
 	  },
 	
 	  _onRoomChange: function () {
-	    // debugger
 	    this.currentUser = SessionStore.getUser();
 	    if (this.currentUser) {
 	      var userRooms = RoomStore.findByHostId(this.currentUser.id);
 	      this.setState({ rooms: userRooms });
 	    }
-	    // debugger
 	  },
 	
 	  componentDidMount: function () {
@@ -31992,7 +31984,7 @@
 	    var a = array.concat();
 	    for (var i = 0; i < a.length; i++) {
 	      for (var j = i + 1; j < a.length; j++) {
-	        if (a[i] === a[j]) {
+	        if (a[i].id === a[j].id) {
 	          a.splice(j--, 1);
 	        }
 	      }
@@ -32060,7 +32052,6 @@
 	
 	RoomStore.findByHostId = function (hostId) {
 	  var _userRooms = [];
-	  // debugger
 	
 	  Object.keys(_rooms).map(function (roomId) {
 	    if (_rooms[roomId].host_id === hostId) {
@@ -32068,7 +32059,6 @@
 	    }
 	  });
 	
-	  // debugger
 	  return _userRooms;
 	};
 	
@@ -32333,7 +32323,6 @@
 	
 	  fetchNewSession: function (userParams, togglePgCb) {
 	    $.post("/api/session", { user: userParams }, function (fetchedUser) {
-	      debugger;
 	      ApiActions.receivedUser(fetchedUser);
 	      togglePgCb();
 	    }).fail(function () {
@@ -32343,7 +32332,6 @@
 	
 	  checkSessionStatus: function () {
 	    $.get("/api/session/check", function (fetchedUser) {
-	      debugger;
 	      if (Object.getOwnPropertyNames(fetchedUser).length > 0) {
 	        ApiActions.receivedUser(fetchedUser);
 	      }
@@ -32449,7 +32437,6 @@
 	  },
 	
 	  receivedUser: function (user) {
-	    // debugger
 	    AppDispatcher.dispatch({
 	      actionType: "LOG_IN_USER",
 	      user: user
@@ -32515,6 +32502,7 @@
 	    apiUtil = __webpack_require__(246),
 	    ErrorStore = __webpack_require__(249),
 	    ErrorMessage = __webpack_require__(250),
+	    LinkedStateMixin = __webpack_require__(395),
 	    AuthInput = __webpack_require__(251);
 	
 	// var rewire = require("rewire-webpack");
@@ -32530,13 +32518,18 @@
 	var AuthPage = React.createClass({
 	  displayName: 'AuthPage',
 	
+	  mixins: [LinkedStateMixin],
 	
 	  contextTypes: {
 	    handleSignUp: React.PropTypes.func
 	  },
 	
 	  getInitialState: function () {
-	    return { errors: "" };
+	    return {
+	      errors: "",
+	      email: "",
+	      password: ""
+	    };
 	  },
 	
 	  _onChange: function () {
@@ -32552,16 +32545,13 @@
 	  },
 	
 	  handleSubmit: function (e) {
-	    var userParams = {
-	      email: e.target[0].value,
-	      password: e.target[1].value
-	    };
+	    e.preventDefault();
 	
 	    if (this.props.action === "logIn") {
-	      // apiUtil.fetchNewSession(userParams, this.props.toggleAuthPage);
+	      apiUtil.fetchNewSession(this.state, this.props.toggleAuthPage);
 	    } else if (this.props.action === "signUp") {
-	        apiUtil.createNewUser(userParams, this.context.handleSignUp);
-	      }
+	      apiUtil.createNewUser(userParams, this.context.handleSignUp);
+	    }
 	  },
 	
 	  renderError: function () {
@@ -32614,14 +32604,20 @@
 	      React.createElement('div', { className: 'modal', onClick: this.props.toggleAuthPage }),
 	      React.createElement(
 	        'form',
-	        { className: "auth-form " + (this.className || ""), onSubmit: this.handleSubmit },
+	        { className: "auth-form " + (this.className || "") },
 	        React.createElement('img', { className: 'auth-img',
 	          src: 'http://res.cloudinary.com/dcnac6iuq/image/fetch/http://cdn.photoaffections.com/images/icon-profile.png' }),
-	        React.createElement(AuthInput, { label: 'Email Address' }),
-	        React.createElement(AuthInput, { label: 'Password' }),
+	        React.createElement('input', { className: 'search-item',
+	          valueLink: this.linkState('email'),
+	          type: 'text',
+	          placeholder: 'Email address' }),
+	        React.createElement('input', { className: 'search-item',
+	          valueLink: this.linkState('password'),
+	          type: 'password',
+	          placeholder: 'Password' }),
 	        React.createElement(
 	          'button',
-	          { type: 'submit', className: 'auth-button' },
+	          { type: 'submit', className: 'auth-button', onClick: this.handleSubmit },
 	          this.buttonText
 	        ),
 	        React.createElement('hr', null),
@@ -32776,7 +32772,6 @@
 	      { className: "auth-input" },
 	      React.createElement("label", { "for": this.props.label }),
 	      React.createElement("input", { className: "search-item",
-	        ref: this.props.label === "Password" ? "pass" : "email",
 	        type: this.props.label,
 	        placeholder: this.props.label })
 	    );
@@ -32980,7 +32975,6 @@
 	
 	FilterActions = {
 	  sendParamsToFilter: function (params) {
-	    // debugger
 	    AppDispatcher.dispatch({
 	      actionType: "FILTER_PARAMS",
 	      params: params
@@ -47663,13 +47657,10 @@
 	  },
 	
 	  _onChange: function () {
-	    // debugger
-	
 	    var params = FilterParamsStore.getParams();
-	    // if (params.bounds && this.state.params !== params){
+	
 	    apiUtil.fetchRoomsWithinParams(params);
 	    this.setState({ params: params });
-	    // }
 	  },
 	
 	  componentDidMount: function () {
@@ -48212,7 +48203,6 @@
 	  },
 	
 	  render: function () {
-	
 	    return React.createElement(
 	      'div',
 	      { className: 'add-form-item-container' },
@@ -48221,8 +48211,9 @@
 	        { className: 'add-form-label' },
 	        'Address'
 	      ),
-	      React.createElement('input', { id: "autocomplete-add",
-	        placeholder: 'Enter your address',
+	      React.createElement('input', { id: 'autocomplete-add',
+	        value: this.props.address,
+	        placeholder: this.props.address || "Enter your address",
 	        type: 'text',
 	        className: 'add-form-input long-input',
 	        onChange: this.handleOnChange,
@@ -49623,14 +49614,28 @@
 	    this.setState({ img_urls: img_urls });
 	  },
 	
+	  getAddress: function (lat, lng) {
+	    var geocoder = new google.maps.Geocoder();
+	    var latlng = { lat, lng };
+	
+	    geocoder.geocode({ 'location': latlng }, function (result, status) {
+	      if (status === google.maps.GeocoderStatus.OK) {
+	        this.setState({ address: result[0].formatted_address });
+	      }
+	    }.bind(this));
+	  },
+	
 	  _onChange: function () {
 	    this.room = RoomStore.find(this.roomId);
+	    this.getAddress(this.room.lat, this.room.lng);
 	
 	    this.setState({
 	      title: this.room.title,
 	      room_type: this.room.room_type,
 	      home_type: this.room.home_type,
 	      description: this.room.description,
+	      lat: this.room.lat,
+	      lng: this.room.lng,
 	      to_date: this.room.to_date,
 	      from_date: this.room.from_date,
 	      price: this.room.price
@@ -49655,7 +49660,6 @@
 	
 	  componentWillReceiveProps: function (newProp) {
 	    apiUtil.fetchSingleRoom(this.roomId);
-	
 	    this.roomId = parseInt(newProp.params.roomId);
 	  },
 	
@@ -49751,7 +49755,8 @@
 	          null,
 	          'About this listing'
 	        ),
-	        React.createElement(AddressField, { linkValState: this.linkValState }),
+	        React.createElement(AddressField, { address: this.state.address,
+	          linkValState: this.linkValState }),
 	        React.createElement(
 	          'div',
 	          { className: 'items-container' },
@@ -50067,14 +50072,9 @@
 	  },
 	
 	  makeDateRange: function (endDate) {
-	    var dateRange = {
-	      from_date: [this.state.startDate.year(), this.state.startDate.month() + 1, this.state.startDate.date()],
-	      to_date: [endDate.year(), endDate.month() + 1, endDate.date()]
-	    };
-	
 	    if (this.props.linkValState) {
-	      this.props.linkValState("fromDate", JSON.stringify(dateRange.from_date));
-	      this.props.linkValState("toDate", JSON.stringify(dateRange.to_date));
+	      this.props.linkValState("fromDate", Math.floor(this.state.startDate.getTime() / 1000));
+	      this.props.linkValState("toDate", Math.floor(this.state.endDate.getTime() / 1000));
 	    }
 	
 	    return dateRange;

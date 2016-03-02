@@ -35,7 +35,6 @@ RoomStore.find = function(roomId){
 
 RoomStore.findByHostId = function(hostId){
   var _userRooms = [];
-  // debugger
 
   Object.keys(_rooms).map( function(roomId){
     if (_rooms[roomId].host_id === hostId) {
@@ -43,7 +42,6 @@ RoomStore.findByHostId = function(hostId){
     }
   })
 
-  // debugger
   return _userRooms;
 };
 

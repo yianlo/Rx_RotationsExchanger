@@ -9,7 +9,6 @@ ApiUtil = {
 
   fetchNewSession: function(userParams, togglePgCb){
     $.post("/api/session", {user: userParams}, function(fetchedUser){
-      debugger
       ApiActions.receivedUser(fetchedUser);
       togglePgCb();
     }).fail(function() {
@@ -19,7 +18,6 @@ ApiUtil = {
 
   checkSessionStatus: function(){
     $.get("/api/session/check", function(fetchedUser){
-      debugger
       if(Object.getOwnPropertyNames(fetchedUser).length > 0){
         ApiActions.receivedUser(fetchedUser);
       }

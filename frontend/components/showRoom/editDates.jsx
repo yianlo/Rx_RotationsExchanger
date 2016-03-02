@@ -30,20 +30,9 @@ var EditDateFields = React.createClass({
   },
 
   makeDateRange: function(endDate){
-    var dateRange = {
-      from_date: [
-        this.state.startDate.year(),
-        this.state.startDate.month() + 1,
-        this.state.startDate.date()],
-      to_date: [
-        endDate.year(),
-        endDate.month() + 1,
-        endDate.date()],
-    };
-
     if (this.props.linkValState) {
-      this.props.linkValState("fromDate", JSON.stringify(dateRange.from_date) );
-      this.props.linkValState("toDate", JSON.stringify(dateRange.to_date) );
+      this.props.linkValState("fromDate", Math.floor(this.state.startDate.getTime()/1000));
+      this.props.linkValState("toDate", Math.floor(this.state.endDate.getTime()/1000));
     }
 
     return dateRange;

@@ -58,6 +58,10 @@ $theme-color: #F88379;
   align-items: center;
   min-width: 285px;
   min-height: 321px;
+
+  .search-item{
+    width: 80%;
+  }
 }
 
 .auth-input{

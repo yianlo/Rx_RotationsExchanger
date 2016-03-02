@@ -36,12 +36,12 @@ var AutoAddressField = React.createClass({
   },
 
   render: function(){
-
     return (
       <div className="add-form-item-container">
         <label className="add-form-label">Address</label>
-        <input id={"autocomplete-add"}
-          placeholder="Enter your address"
+        <input id="autocomplete-add"
+          value = {this.props.address}
+          placeholder={this.props.address || "Enter your address"}
           type="text"
           className="add-form-input long-input"
           onChange={this.handleOnChange}

@@ -62,18 +62,13 @@ var App = React.createClass({
   },
 
   componentWillMount:function(){
-    // debugger
     window.addEventListener("keydown", this._listenForEsc, true);
   },
 
   componentDidMount: function(){
-    // apiUtil.checkSessionStatus();
+    apiUtil.checkSessionStatus();
     this.setState({loggedIn: SessionStore.getLoggedInStatus()})
     this.listenerToker = SessionStore.addListener( this._onChange );
-  },
-  //
-  componentWillReceiveProps: function(){
-    // debugger
   },
 
   componentWillUnmount: function(){
@@ -122,7 +117,6 @@ var App = React.createClass({
         }
         this.setState({bounds: bounds})
       }
-      // apiUtil.fetchRoomsInBounds(bounds);
     }.bind(this));
   },
 

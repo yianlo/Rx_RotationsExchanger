@@ -2,6 +2,7 @@ var React = require('react'),
     apiUtil = require('../../util/apiUtil'),
     ErrorStore = require('../../stores/error'),
     ErrorMessage = require('./errorMessage'),
+    LinkedStateMixin = require('react-addons-linked-state-mixin'),
     AuthInput = require('./authInput');
 
 // var rewire = require("rewire-webpack");
@@ -16,13 +17,18 @@ var React = require('react'),
 
 // var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var AuthPage = React.createClass({
+  mixins: [LinkedStateMixin],
 
   contextTypes: {
     handleSignUp: React.PropTypes.func
   },
 
   getInitialState: function(){
-    return { errors: "" }
+    return {
+      errors: "",
+      email: "",
+      password: ""
+    }
   },
 
   _onChange: function(){
@@ -38,13 +44,10 @@ var AuthPage = React.createClass({
   },
 
   handleSubmit: function(e){
-    var userParams = {
-      email: e.target[0].value,
-      password: e.target[1].value
-    };
+    e.preventDefault();
 
     if (this.props.action === "logIn"){
-      // apiUtil.fetchNewSession(userParams, this.props.toggleAuthPage);
+      apiUtil.fetchNewSession(this.state, this.props.toggleAuthPage);
     } else if (this.props.action === "signUp") {
       apiUtil.createNewUser(userParams, this.context.handleSignUp);
     }
@@ -88,13 +91,21 @@ var AuthPage = React.createClass({
         { this.renderError() }
         <div className="modal" onClick={this.props.toggleAuthPage}></div>
 
-        <form className={"auth-form " + (this.className || "")} onSubmit={this.handleSubmit}>
+        <form className={"auth-form " + (this.className || "")} >
           <img className="auth-img"
             src="http://res.cloudinary.com/dcnac6iuq/image/fetch/http://cdn.photoaffections.com/images/icon-profile.png"></img>
 
-          <AuthInput label="Email Address"/>
-          <AuthInput label="Password"/>
-          <button type="submit" className="auth-button">{this.buttonText}</button>
+          <input className="search-item"
+            valueLink={this.linkState('email')}
+            type="text"
+            placeholder="Email address"/>
+
+          <input className="search-item"
+            valueLink={this.linkState('password')}
+            type="password"
+            placeholder="Password"/>
+
+          <button type="submit" className="auth-button" onClick={this.handleSubmit}>{this.buttonText}</button>
 
           <hr></hr>
           { this.toggleText }

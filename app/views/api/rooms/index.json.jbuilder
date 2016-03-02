@@ -7,8 +7,8 @@ if @rooms
     json.price room.price
     json.description room.description
     json.home_type room.home_type
-    json.room_type room.room_type
-    json.from_date room.from_date
+    json.from_date room.from_date.to_i
+    json.to_date room.to_date.to_i
     json.to_date room.to_date
 
     if !room.images.empty?
