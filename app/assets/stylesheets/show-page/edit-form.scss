@@ -115,31 +115,3 @@ $form-items-width: 800px;
     }
   }
 }
-
-
-
-
-.upload-image-button{
-  align-items: center;
-  color: $text-color;
-
-  padding: 0 25px;
-  border: 1px solid $border-color;
-
-  justify-content: center;
-
-  line-height: $input-height;
-  box-sizing: border-box;
-}
-
-
-.upload-image-button{
-  border: 1px solid $border-color;
-  background: #eee;
-  color: $text-color;
-}
-
-.unclicked-button:hover{
-  background: $theme-color;
-  color: white;
-}

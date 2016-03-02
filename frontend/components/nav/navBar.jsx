@@ -1,5 +1,6 @@
 var React = require('react'),
     NavBarItem = require('./navBarItem'),
+    Listings = require('./listings'),
     AutocompleteSearch = require('../apis/autocomplete'),
     Logo = require('./logo'),
     apiUtil = require('../../util/apiUtil'),
@@ -20,22 +21,11 @@ var NavBar = React.createClass({
     return <NavBarItem text={item.text} url={item.url} submenu={item.submenu} />
   },
 
-  getListings: function(){
-    var currentUser = SessionStore.getUser();
-
-    if (currentUser.rooms){
-      return currentUser.rooms.map( function(room){
-        return <NavBarItem className="submenu-items" text={room.title}
-          onClickFun={this.context.router.replace.bind(null, 'main/' + room.id)}/>
-      }.bind(this))
-    }
-  },
-
   renderAuthLinks: function(){
     if (this.context.loggedIn) {
       return (
         <div>
-          <NavBarItem text="My Listings" submenu={this.getListings()}/>
+          <Listings />
           <NavBarItem text="Requests"/>
           <NavBarItem text="Log out"
             onClickFun={apiUtil.deleteSession.bind(null, this.context.handleLogOut)}/>

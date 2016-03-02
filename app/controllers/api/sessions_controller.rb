@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
   end
 
   def check
-    # debugger
+    debugger
     if signed_in?
       @user = current_user
     end
@@ -16,7 +16,7 @@ class Api::SessionsController < ApplicationController
       params[:user][:email],
       params[:user][:password]
     )
-
+    debugger
     if @user
       sign_in(@user)
     end

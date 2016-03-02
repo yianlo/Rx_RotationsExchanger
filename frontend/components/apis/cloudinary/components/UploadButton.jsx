@@ -4,7 +4,7 @@ var UploadButton = React.createClass({
   getInitialState: function(){
     return {
       classname: "unclicked-button upload-image-button",
-      text: null
+      text: "Add Photos"
     }
   },
 
@@ -23,7 +23,7 @@ var UploadButton = React.createClass({
   render: function () {
     return (
       <div className="upload-form add-form-item-container">
-        <button className={this.state.classname} onClick={this.upload}>{this.state.text || this.props.text}</button>
+        <button className={this.state.classname} onClick={this.upload}>{this.state.text}</button>
       </div>
     );
   }

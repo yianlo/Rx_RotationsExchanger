@@ -9,7 +9,7 @@ ApiUtil = {
 
   fetchNewSession: function(userParams, togglePgCb){
     $.post("/api/session", {user: userParams}, function(fetchedUser){
-      // debugger
+      debugger
       ApiActions.receivedUser(fetchedUser);
       togglePgCb();
     }).fail(function() {
@@ -19,6 +19,7 @@ ApiUtil = {
 
   checkSessionStatus: function(){
     $.get("/api/session/check", function(fetchedUser){
+      debugger
       if(Object.getOwnPropertyNames(fetchedUser).length > 0){
         ApiActions.receivedUser(fetchedUser);
       }
@@ -65,13 +66,11 @@ ApiUtil = {
   updateRoom: function(params, roomId, redirectCb){
     params["id"] = roomId;
 
-    debugger
     $.ajax({
       url: '/api/rooms/' + roomId,
       type: 'PATCH',
       data: {room: params},
       success: function(fetchedNewRoom){
-        debugger
         redirectCb(fetchedNewRoom.id);
         ApiActions.receivedRoom(fetchedNewRoom)
       }

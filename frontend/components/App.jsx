@@ -67,17 +67,14 @@ var App = React.createClass({
   },
 
   componentDidMount: function(){
-    // debugger
-    apiUtil.checkSessionStatus();
+    // apiUtil.checkSessionStatus();
     this.setState({loggedIn: SessionStore.getLoggedInStatus()})
     this.listenerToker = SessionStore.addListener( this._onChange );
   },
   //
   componentWillReceiveProps: function(){
-    debugger
+    // debugger
   },
-
-
 
   componentWillUnmount: function(){
     this.listenerToker.remove();

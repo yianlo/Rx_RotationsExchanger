@@ -15,10 +15,10 @@ class ApplicationController < ActionController::Base
   end
 
   def sign_in(user)
-    # debugger
 
     @current_user = user
     session[:session_token] = user.reset_token!
+    debugger
   end
 
   def sign_out

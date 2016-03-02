@@ -97,7 +97,7 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
         opacity: 1 !important;
         background: $theme-color-buttons !important;
         box-shadow: $button-shadow !important;
-        @include transition(all 0.6s ease);
+        @include transition(all 0.2s ease);
       }
     }
   }

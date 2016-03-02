@@ -2,7 +2,6 @@ var React = require('react'),
     Link = require('react-router').Link;
 
 
-
 var NavBarItem = React.createClass({
   getInitialState: function(){
     return {

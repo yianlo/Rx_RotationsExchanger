@@ -44,8 +44,7 @@ var AuthPage = React.createClass({
     };
 
     if (this.props.action === "logIn"){
-      // debugger
-      apiUtil.fetchNewSession(userParams, this.props.toggleAuthPage);
+      // apiUtil.fetchNewSession(userParams, this.props.toggleAuthPage);
     } else if (this.props.action === "signUp") {
       apiUtil.createNewUser(userParams, this.context.handleSignUp);
     }

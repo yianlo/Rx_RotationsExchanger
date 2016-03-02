@@ -38,10 +38,10 @@ var RoomDetails = React.createClass({
 
   handleDelete: function(){
     var redirectCb = function(){
-      this.context.router.replace('/')
+      this.context.router.replace('/main/search')
     }.bind(this)
 
-    apiUtil.deleteRoom(this.props.room.id, redirectCb)
+    apiUtil.deleteRoom(this.roomId, redirectCb)
   },
 
   renderButton: function(){

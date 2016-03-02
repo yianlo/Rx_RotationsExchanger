@@ -3,7 +3,7 @@ $top-push: 61px;
 
 @keyframes hide-bg {
   0% {
-    background: url("../images/start.png");
+    background: "/assets/start.png";
     background: cover;
     opacity: 0;
   }
@@ -14,8 +14,7 @@ $top-push: 61px;
   //   opacity: 1;
   // }
   99% {
-    // background: url("http://res.cloudinary.com/dcnac6iuq/image/upload/c_scale,w_1323/v1456600166/Screen_Shot_2016-02-25_at_10.39.06_PM_xhfpyq.png");
-    background: url("../images/start.png");
+    background: "/assets/start.png";
     background: cover;
     opacity: 1;
   }

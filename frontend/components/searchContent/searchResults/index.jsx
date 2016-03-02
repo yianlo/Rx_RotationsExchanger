@@ -14,14 +14,14 @@ var Index = React.createClass({
     };
   },
 
+  _onFilterChange: function(){
+    this.setState({ filterParams: FilterParamsStore.getParams()});
+  },
+
   _onRoomChange: function(){
     this.setState({
       rooms: RoomStore.all()
     });
-  },
-
-  _onFilterChange: function(){
-    this.setState({ filterParams: FilterParamsStore.getParams()});
   },
 
   componentDidMount: function(){
@@ -33,9 +33,6 @@ var Index = React.createClass({
       filterParams: filterParams
     });
     this.listenerToker = RoomStore.addListener( this._onRoomChange );
-  },
-
-  componentWillReceiveProps: function(newProp){
   },
 
   componentWillUnmount: function(){

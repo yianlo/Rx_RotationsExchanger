@@ -26,9 +26,7 @@ class Api::RoomsController < ApplicationController
 
   def update
     @room = Room.find_by(id: room_params[:id])
-
-    debugger
-
+    
     params = room_params
     params[:to_date] = Time.zone.local(*(JSON.parse room_params[:to_date])) if !(JSON.parse room_params[:to_date]).empty?
     params[:from_date] = Time.zone.local(*(JSON.parse room_params[:from_date])) if !(JSON.parse room_params[:to_date]).empty?
