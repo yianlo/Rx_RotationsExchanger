@@ -33,14 +33,35 @@ class Room < ActiveRecord::Base
 
 
   def self.filter_by_params(params)
+    #
+    # return if params[:bounds].nil? || params[:bounds].empty?
+    #
+    # rooms_in_bounds = in_bounds(params[:bounds])
+    #
+    # if params[:home_types].empty? && params[:room_types].empty? && params[:date_range][:from_date].empty? && params[:date_range][:to_date].empty?
+    #   return rooms_in_bounds.where(price: params[:price_range][0]..params[:price_range][1])
+    # end
+    #
+    # room_in_bounds = room_in_bounds.
+    #
+    # booking_from = Time.zone.local(*(params[:date_range][:from_date]))
+    # booking_to = Time.zone.local(*(params[:date_range][:to_date]))
+    #
+    # rooms_in_bounds.where(
+    #   lat: Float(params[:bounds]["southWest"]["lat"])...Float(params[:bounds]["northEast"]["lat"]),
+    #   lng: Float(params[:bounds]["southWest"]["lng"])...Float(params[:bounds]["northEast"]["lng"]),
+    #   price: params[:price_range][0]..params[:price_range][1],
+    #   home_type: params[:home_types],
+    #   room_type: params[:room_types]
+    # ).where(
+    #   "from_date <= ? AND to_date >= ?", booking_from, booking_to
+    # )
 
-    result = in_bounds(params[:bounds]) &
+    in_bounds(params[:bounds]) &
     in_price_range(params[:price_range]) &
     checked_home_type(params[:home_types]) &
     checked_room_type(params[:room_types]) &
     in_date_range(params[:date_range])
-
-    return result
   end
 
   def self.in_bounds(bounds)

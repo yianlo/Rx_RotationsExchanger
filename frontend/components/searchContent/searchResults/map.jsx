@@ -69,14 +69,17 @@ var Map = React.createClass({
     this.props.initMap(this.refs.map);
   },
 
+  componentWillReceiveProps: function(){
+
+  },
+
   componentWillUnmount: function(){
-    alert("map unmounting!");
     this.roomListenerToken.remove();
     this.markerListenerToken.remove();
   },
 
   roundNum: function(num){
-    return Math.ceil(num * 10000000) / 10000000;
+    return (Math.ceil(num * 10000000) / 10000000).toFixed(6);
   },
 
   selectMarker: function(markerToSelect){
@@ -86,6 +89,7 @@ var Map = React.createClass({
 
         this.markers.splice(i, 1);
         marker.setMap(null);
+
 
         var newMarker = this.makeSingleMarker("5facb5", markerToSelect.lat, markerToSelect.lng)
         this.markers.push(newMarker);

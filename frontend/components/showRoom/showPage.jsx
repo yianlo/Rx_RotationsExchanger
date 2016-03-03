@@ -3,6 +3,7 @@ var React = require('react'),
     RoomStore = require('../../stores/room'),
     BookingForm = require('../bookForm/bookingForm'),
     PhotoView = require('./photoView'),
+    EditPhotos = require('./editPhotos')
 
     IMAGE_URLS = require('../../constants/imageUrls');
 
@@ -14,11 +15,17 @@ var ShowRoom = React.createClass({
 
   childContextTypes: {
     imgUrls: React.PropTypes.array,
+    imageUrls: React.PropTypes.array,
+    roomId: React.PropTypes.number,
+    hostId: React.PropTypes.number,
   },
 
   getChildContext: function() {
     return {
-      imgUrls: this.getImgUrlsList()
+      imgUrls: this.getImgUrlsList(),
+      imageUrls: this.getImageUrls(),
+      roomId: this.roomId,
+      hostId: this.getHostId()
     };
   },
 
@@ -48,6 +55,18 @@ var ShowRoom = React.createClass({
     apiUtil.fetchSingleRoom(this.roomId);
   },
 
+  getHostId: function(){
+    if (this.state.room) {
+      return this.state.room.host_id
+    }
+  },
+
+  getImageUrls: function(){
+    if (this.state.room && this.state.room.images) {
+      return this.state.room.images
+    }
+  },
+
   getImgUrlsList: function(){
     if (this.state.room) {
       if (this.state.room.images){
@@ -70,10 +89,19 @@ var ShowRoom = React.createClass({
     if (this.state.room) {
       return (
         <div className="show-page">
-          <PhotoView/>
           {this.props.children}
         </div>
       )
+    }
+  },
+
+  getPhotoView: function(){
+    var path = this.props.location.pathname.match(/\d+\/([a-z]+)/);
+    if (path && path[1] === "edit"){
+      return <EditPhotos imageUrls={this.getImageUrls()}
+                room={this.state.room}/>
+    } else {
+      return <PhotoView imageUrls={this.getImageUrls()}/>
     }
   },
 
@@ -82,6 +110,7 @@ var ShowRoom = React.createClass({
 
     return (
       <div className="show-page-container">
+        {this.getPhotoView()}
         {this.getDetails()}
       </div>
     )

@@ -2,17 +2,19 @@ var ApiActions = require('../actions/apiActions');
 
 ApiUtil = {
   fetchRoomsWithinParams: function(params){
-    $.get("/api/rooms", {filter: JSON.stringify(params)}, function(fetchedRooms){
+    $.get("/api/rooms/filter", {filter: JSON.stringify(params)}, function(fetchedRooms){
       ApiActions.receiveAll(fetchedRooms);
     })
   },
 
   fetchNewSession: function(userParams, togglePgCb){
     $.post("/api/session", {user: userParams}, function(fetchedUser){
-      ApiActions.receivedUser(fetchedUser);
-      togglePgCb();
-    }).fail(function() {
-      ApiActions.receivedAuthError("Invalid email/ password.")
+      if (Object.getOwnPropertyNames(fetchedUser).length > 0) {
+        ApiActions.receivedUser(fetchedUser);
+        togglePgCb();
+      } else {
+        ApiActions.receivedAuthError("Invalid email/ password.");
+      }
     })
   },
 
@@ -57,8 +59,16 @@ ApiUtil = {
 
   },
 
-  deleteImages: function(){
-
+  deleteImage: function(imageId, redirectCb){
+    $.ajax({
+      url: '/api/images/' + imageId,
+      type: 'DELETE',
+      data: {image: {id: imageId}},
+      success: function(originalRoom){
+        redirectCb();
+        ApiActions.receivedRoom(originalRoom)
+      }
+    })
   },
 
   updateRoom: function(params, roomId, redirectCb){
@@ -88,6 +98,15 @@ ApiUtil = {
         ApiActions.receivedRoomError(fetchedNewRoom.errors)
       }
     })
+  },
+
+  fetchRoomsByUser: function(userId){
+    $.get("/api/users/" + userId + "/rooms", function(fetchedRooms){
+      if (Object.getOwnPropertyNames(fetchedRooms).length > 0) {
+        ApiActions.receiveUserRooms(fetchedRooms);
+      }
+    })
+
   },
 
   fetchSingleRoom: function(roomId){

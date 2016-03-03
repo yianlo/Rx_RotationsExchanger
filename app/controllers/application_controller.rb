@@ -27,4 +27,13 @@ class ApplicationController < ActionController::Base
   def require_signed_in!
     redirect_to new_session_url unless signed_in?
   end
+
+  def bounds
+    @bounds ||= {}
+  end
+
+  def register(bounds)
+    @bounds = bounds
+  end
+  
 end

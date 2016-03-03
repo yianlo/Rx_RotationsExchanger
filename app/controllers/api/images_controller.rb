@@ -5,7 +5,13 @@ class Api::ImagesController < ApplicationController
     end
   end
 
-  def update
+  def destroy
+    image = Image.find_by(id: image_params[:id])
+
+    if image
+      image.destroy
+      @room = image.room
+    end
   end
 
 
@@ -17,6 +23,10 @@ class Api::ImagesController < ApplicationController
 
     new_params.require(:images)
     # new_params.require(:images).permit(:img_urls, :room_id)
+  end
+
+  def image_params
+    params.require(:image).permit(:id)
   end
 
 end

@@ -43,7 +43,7 @@ $theme-color: #F88379;
 }
 
 .auth-img{
-  padding-bottom: 4px;
+  padding-bottom: 10px;
   width: 74px;
   height: 74px;
   opacity: 0.6;
@@ -60,7 +60,10 @@ $theme-color: #F88379;
   min-height: 321px;
 
   .search-item{
-    width: 80%;
+    width: 97%;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    height: 46px;
   }
 }
 

@@ -8,6 +8,14 @@ ApiActions = {
     });
   },
 
+
+  receiveUserRooms: function(rooms){
+    AppDispatcher.dispatch({
+      actionType: "USER_ROOMS_RECEIVED",
+      rooms: rooms
+    });
+  },
+
   receivedUser: function(user){
     AppDispatcher.dispatch({
       actionType: "LOG_IN_USER",

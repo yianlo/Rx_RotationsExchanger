@@ -20,12 +20,6 @@ var BookingDates = React.createClass({
 
   handleCheckOut: function(date) {
     this.setState( {endDate: date} );
-
-    // if (this.state.startDate instanceof moment && date instanceof moment){
-    //   var dateRange = this.makeDateRange(date);
-    //   debugger
-    //   FilterActions.sendParamsToFilter({date_range: dateRange})
-    // }
   },
 
   render: function() {

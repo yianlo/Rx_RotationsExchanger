@@ -1,6 +1,11 @@
 class Api::RoomsController < ApplicationController
-  def index
+  def filter
     @rooms = Room.filter_by_params(filter_params)
+    render :index
+  end
+
+  def index
+    @rooms = current_user.rooms.includes(:images)
   end
 
   def create
@@ -57,13 +62,15 @@ class Api::RoomsController < ApplicationController
     parsed_filters = JSON.parse( params[:filter], {:symbolize_names => true} )
     new_params = ActionController::Parameters.new({ :filter => parsed_filters})
 
+
+
     new_params.require(:filter)
     # newParams.require(:filter).permit(
-    #   :bounds,
+    #   :bounds => [:northEast, :southWest],
     #   :price_range,
     #   :home_types,
     #   :room_types,
-    #   :date_range
+    #   :date_range => [:northEast, :southWest]
     # )
   end
 end

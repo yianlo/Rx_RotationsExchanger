@@ -1,6 +1,7 @@
 var React = require('react'),
     SessionStore = require('../../stores/session'),
     RoomStore = require('../../stores/room'),
+    apiUtil = require('../../util/apiUtil'),
     NavBarItem = require('./navBarItem');
 
 var Listings = React.createClass({
@@ -14,7 +15,6 @@ var Listings = React.createClass({
   },
 
   _onRoomChange: function(){
-    this.currentUser = SessionStore.getUser();
     if (this.currentUser) {
       var userRooms = RoomStore.findByHostId(this.currentUser.id)
       this.setState( {rooms: userRooms} );
@@ -25,7 +25,9 @@ var Listings = React.createClass({
     this.currentUser = SessionStore.getUser();
 
     if (this.currentUser) {
-      this.setState({rooms: this.currentUser.rooms})
+      apiUtil.fetchRoomsByUser(this.currentUser.id)
+      var userRooms = RoomStore.findByHostId(this.currentUser.id)
+      this.setState( {rooms: userRooms} );
     }
 
     this.listenerToken = RoomStore.addListener( this._onRoomChange );
@@ -48,9 +50,7 @@ var Listings = React.createClass({
 
   renderListings: function(){
     if (this.currentUser) {
-      var updatedListings = this.arrayUnique(this.currentUser.rooms.concat(this.state.rooms));
-
-      return updatedListings.map( function(room){
+      return this.state.rooms.map( function(room){
         return <NavBarItem className="submenu-items" text={room.title}
           onClickFun={this.context.router.replace.bind(null, 'main/' + room.id)}/>
       }.bind(this))

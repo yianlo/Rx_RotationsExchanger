@@ -6,33 +6,39 @@ $bg-color: #EEEEEE;
   position: relative;
   top: $top-push;
   min-width: $min-width-show-page;
+  flex-direction: column;
 
   width: 100%;
   height: 100%;
 
   flex:none;
 
+  .images-container{
+    position: relative;
+    min-height: 380px;
+    flex: none;
+    width: 100%;
+    justify-content: center;
+    background: $bg-color;
+    padding: 30px 80px;
+    box-sizing: border-box;
+
+    .change-view-button{
+      position: absolute;
+      right: 30px;
+      top: 30px;
+    }
+  }
+
+  .edit-images{
+    flex-direction: column;
+    align-items: center;
+  }
+
   .show-page{
     flex-direction: column;
     width: 100%;
     height: 100%;
-
-    .images-container{
-      position: relative;
-      min-height: 380px;
-      flex: none;
-      width: 100%;
-      justify-content: center;
-      background: $bg-color;
-      padding: 30px 80px;
-      box-sizing: border-box;
-
-      .change-view-button{
-        position: absolute;
-        right: 30px;
-        top: 30px;
-      }
-    }
 
     .text-content{
       width: 928px;

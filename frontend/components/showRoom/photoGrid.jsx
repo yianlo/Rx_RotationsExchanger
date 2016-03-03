@@ -1,32 +1,56 @@
-var React = require('react');
-
-var titles = ["Bedroom", "Kitchen", ""];
-var content = ["Spacious bedroom with carpet", "clean kitchen", "private bathroom"];
+var React = require('react'),
+    apiUtil = require('../../util/apiUtil'),
+    SessionStore = require('../../stores/session');
 
 var PhotoGrid = React.createClass({
   contextTypes: {
+    router: React.PropTypes.object.isRequired,
     imgUrls: React.PropTypes.array,
+    imageUrls: React.PropTypes.array,
+    roomId: React.PropTypes.number,
+    hostId: React.PropTypes.number,
+  },
+
+  handleDelete: function(imgId){
+    apiUtil.deleteImage(imgId, this.redirectOnSuccess)
+  },
+
+  redirectOnSuccess: function(){
+    this.context.router.replace('/main/' + this.context.roomId + '/edit')
+  },
+
+  getDeleteButton: function(imageId){
+    var currentUser = SessionStore.getUser();
+
+    if (this.props.edit && currentUser && currentUser.id === this.context.hostId) {
+      return <i className="delete-button fa fa-trash-o"
+        onClick={this.handleDelete.bind(null, imageId)}></i>
+    }
   },
 
   getGrids: function(){
-    // this.context.images
-    return this.context.imgUrls.map( function(imgUrl, index){
-      return (
-        <div className="photo-detail-grids">
-          <div className="img-grid">{imgUrl}</div>
-          <div className="content-grid">
-            <h5>{titles[index]}</h5>
-            <p>{content[index]}</p>
+    if (this.props.imageUrls) {
+      return this.props.imageUrls.map( function(img){
+        return (
+          <div className="img-grid"
+            style={{backgroundImage: 'url('+img.url+')'}}>
+            {this.getDeleteButton(img.id)}
           </div>
+        )
+      }.bind(this))
+    } else {
+      return (
+        <div className="img-grid"
+          style={{backgroundImage: 'url('+IMAGE_URLS.NO_IMG+')'}}>
         </div>
       )
-    })
+    }
   },
 
   render: function() {
     return (
       <div className="photo-grids-container">
-        { this.context.imgUrls }
+        {this.getGrids()}
       </div>
     )
   }

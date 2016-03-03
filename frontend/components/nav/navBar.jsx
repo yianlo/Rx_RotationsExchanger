@@ -26,7 +26,6 @@ var NavBar = React.createClass({
       return (
         <div>
           <Listings />
-          <NavBarItem text="Requests"/>
           <NavBarItem text="Log out"
             onClickFun={apiUtil.deleteSession.bind(null, this.context.handleLogOut)}/>
         </div>

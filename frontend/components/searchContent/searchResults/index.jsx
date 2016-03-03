@@ -35,6 +35,10 @@ var Index = React.createClass({
     this.listenerToker = RoomStore.addListener( this._onRoomChange );
   },
 
+  componentWillReceiveProps: function(){
+    FilterActions.resetParams()
+  },
+
   componentWillUnmount: function(){
     this.listenerToker.remove();
   },

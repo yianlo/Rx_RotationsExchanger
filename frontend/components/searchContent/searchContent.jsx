@@ -9,21 +9,37 @@ var React = require('react'),
 
 var SearchContent = React.createClass({
   contextTypes: {
-    bounds: React.PropTypes.object,
     showMap: React.PropTypes.func,
-    hideMap: React.PropTypes.func
+    hideMap: React.PropTypes.func,
+    map: React.PropTypes.object,
+    bounds:  React.PropTypes.string
   },
 
   getInitialState: function(){
-    return { rooms: RoomStore.all() }
+    return {
+      rooms: RoomStore.all(),
+    }
   },
 
   componentWillMount: function(){
-    this.context.showMap()
+    this.context.showMap();
+    this.reboundMap();
   },
 
   componentWillUnmount: function(){
     this.context.hideMap()
+  },
+
+  componentWillReceiveProps: function(){
+    this.context.showMap();
+    this.reboundMap();
+  },
+
+  reboundMap: function(){
+    if (this.context.map && this.props.location.search) {
+      var bounds = JSON.parse(this.props.location.search.match(/(?:\location=?)(\S+)/)[1]);
+      this.context.map.fitBounds(bounds);
+    }
   },
 
   renderIndex: function(){

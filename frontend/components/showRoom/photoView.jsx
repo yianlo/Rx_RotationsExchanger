@@ -25,7 +25,7 @@ var PhotoView = React.createClass({
     if (this.state.view === "slider") {
       return <PhotoSlider/>
     } else if (this.state.view === "grid") {
-      return <PhotoGrid/>
+      return <PhotoGrid imageUrls={this.props.imageUrls} edit={false}/>
     }
   },
 

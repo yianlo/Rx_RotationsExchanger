@@ -31,7 +31,7 @@ var _updateTypeParam = function(typeParams){
 
 _resetParams = function(){
   _params = {
-    bounds: null,
+    bounds: _params.bounds,
     price_range: [0, 501],
     home_types: [],
     room_types: [],

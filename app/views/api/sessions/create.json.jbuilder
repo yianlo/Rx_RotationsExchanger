@@ -1,3 +1,3 @@
 if @user
-  json.extract! @user, :email, :rooms
+  json.extract! @user, :id, :email, :rooms
 end

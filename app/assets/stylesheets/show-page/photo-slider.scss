@@ -1,8 +1,8 @@
 $theme-color: #F88379;
 $theme-color-selected: #32959F;
 $box-shadow: 0 0 10px #999;
-$button-shadow: 0 0 4px #999;
 
+$button-shadow: 0 0 4px #999;
 $theme-color-buttons: rgba(248, 131, 121, 0.7);
 
 @mixin transition($args...) {

@@ -17,7 +17,7 @@ var App = React.createClass({
     showMap: React.PropTypes.func,
     hideMap: React.PropTypes.func,
     map: React.PropTypes.object,
-    bounds: React.PropTypes.object,
+    bounds: React.PropTypes.string,
     clearSearch: React.PropTypes.bool,
 
     toggleLogInPage: React.PropTypes.func,
@@ -55,7 +55,7 @@ var App = React.createClass({
       LogInClicked: false,
       SignUpClicked: false,
 
-      bounds: null,
+      bounds: "",
       mapVisibility: "hidden",
       clearSearch: false
     }
@@ -98,6 +98,8 @@ var App = React.createClass({
   setMapListener(){
     google.maps.event.addListener(this.map, 'idle', function() {
       if (this.map.getBounds()) {
+        this.setState({bounds: JSON.stringify(this.map.getBounds())})
+
         var northEast = this.map.getBounds().getNorthEast();
         var southWest = this.map.getBounds().getSouthWest();
 
@@ -115,7 +117,6 @@ var App = React.createClass({
         if (this.state.bounds !== bounds){
           FilterActions.sendParamsToFilter({bounds: bounds});
         }
-        this.setState({bounds: bounds})
       }
     }.bind(this));
   },
@@ -213,13 +214,19 @@ var App = React.createClass({
     }
   },
 
+  renderChildren: function(){
+    if (this.map) {
+      return this.props.children
+    }
+  },
+
   render: function() {
     return (
       <section className="app-container">
         <Map mapVisibility={this.state.mapVisibility}
             initMap={this.initMap}/>
         {this.renderAuthPage()}
-        {this.props.children}
+        {this.renderChildren()}
       </section>
     )
   }

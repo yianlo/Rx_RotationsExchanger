@@ -69,14 +69,14 @@ var EditDateFields = React.createClass({
         <div className="edit-calendar">
           <label></label>
           <DatePicker
-            selected={this.state.startDate || moment(this.props.startDate)}
+            selected={this.state.startDate || moment(this.props.startDate*1000)}
             dateFormat="MM/DD/YYYY"
             minDate={moment()}
             onChange={this.handleCheckIn}
             placeholderText="From date" />
           <label></label>
           <DatePicker
-            selected={this.state.endDate || moment(this.props.endDate)}
+            selected={this.state.endDate || moment(this.props.endDate*1000)}
             dateFormat="MM/DD/YYYY"
             minDate={this.state.startDate || moment()}
             onChange={this.handleCheckOut}

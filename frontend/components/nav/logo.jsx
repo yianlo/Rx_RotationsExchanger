@@ -4,11 +4,16 @@ var React = require('react'),
 var Logo = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired,
-    isLanding: React.PropTypes.bool
+    isLanding: React.PropTypes.bool,
+    bounds: React.PropTypes.string
   },
 
   backToIndex: function(){
-    this.context.router.replace('main/search')
+    if (this.context.bounds.length > 0) {
+      this.context.router.replace('main/search?location=' + this.context.bounds)
+    } else {
+      this.context.router.replace('main/search')
+    }
   },
 
   render: function() {

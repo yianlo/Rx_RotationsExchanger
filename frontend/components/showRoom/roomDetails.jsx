@@ -44,7 +44,7 @@ var RoomDetails = React.createClass({
     apiUtil.deleteRoom(this.roomId, redirectCb)
   },
 
-  renderButton: function(){
+  getButtons: function(){
     var currentUser = SessionStore.getUser();
 
     if (currentUser && currentUser.id === this.state.room.host_id) {
@@ -76,7 +76,7 @@ var RoomDetails = React.createClass({
             <h3>About this listing</h3>
             <p>{this.state.room.description}</p>
           </section>
-          {this.renderButton()}
+          {this.getButtons()}
         </section>
       )
     } else {

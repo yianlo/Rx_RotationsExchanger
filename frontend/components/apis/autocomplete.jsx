@@ -10,7 +10,7 @@ var AutoSearchBox = React.createClass({
 
   componentDidMount: function(){
     this.input = document.getElementById(this.props.id);
-    var options = this.props.id === "autocomplete-add" ? ['address'] : ['(cities)']
+    var options = ['(cities)'];
 
     this.searchBox = new google.maps.places.SearchBox(
       this.input, {types: options}
@@ -59,7 +59,7 @@ var AutoSearchBox = React.createClass({
       }
     });
 
-    this.context.router.replace('main/search')
+    this.context.router.replace('main/search?location=' + JSON.stringify(bounds))
     map.fitBounds(bounds);
   },
 
