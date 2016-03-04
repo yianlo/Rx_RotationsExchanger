@@ -2,11 +2,12 @@ var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher');
 
 var _params = {
-  bounds: null,
+  bounds: undefined,
   price_range: [0, 501],
-  home_types: [],
-  room_types: [],
-  date_range: { from_date: [], to_date: [] }
+  home_types: undefined,
+  room_types: undefined,
+  from_date: undefined,
+  to_date: undefined
 };
 
 var filterParamsStore = new Store(AppDispatcher);
@@ -33,9 +34,10 @@ _resetParams = function(){
   _params = {
     bounds: _params.bounds,
     price_range: [0, 501],
-    home_types: [],
-    room_types: [],
-    date_range: { from_date: [], to_date: [] }
+    home_types: undefined,
+    room_types: undefined,
+    from_date: undefined,
+    to_date: undefined
   }
 };
 

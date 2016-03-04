@@ -4,6 +4,7 @@ var React = require('react'),
 
     FilterParams = require('./searchResults/FilterParams'),
     FilterParamsStore = require('../../stores/filterParams'),
+    RoomStore = require('../../stores/room'),
 
     NavBar = require('../nav/navBar');
 
@@ -31,6 +32,8 @@ var SearchContent = React.createClass({
   },
 
   componentWillReceiveProps: function(){
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+
     this.context.showMap();
     this.reboundMap();
   },

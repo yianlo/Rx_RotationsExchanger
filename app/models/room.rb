@@ -30,6 +30,7 @@ class Room < ActiveRecord::Base
     foreign_key: :host_id
 
   has_many :images, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 
 
   def self.filter_by_params(params)
@@ -56,12 +57,11 @@ class Room < ActiveRecord::Base
     # ).where(
     #   "from_date <= ? AND to_date >= ?", booking_from, booking_to
     # )
-
     in_bounds(params[:bounds]) &
     in_price_range(params[:price_range]) &
     checked_home_type(params[:home_types]) &
     checked_room_type(params[:room_types]) &
-    in_date_range(params[:date_range])
+    in_date_range(params[:from_date], params[:to_date])
   end
 
   def self.in_bounds(bounds)
@@ -80,20 +80,20 @@ class Room < ActiveRecord::Base
   end
 
   def self.checked_home_type(home_types)
-    return self.all if home_types.nil? || home_types.empty?
+    return self.all if home_types.nil?
     Room.includes(:images).where(home_type: home_types)
   end
 
   def self.checked_room_type(room_types)
-    return self.all if room_types.nil? || room_types.empty?
+    return self.all if room_types.nil?
     Room.includes(:images).where(room_type: room_types)
   end
 
-  def self.in_date_range(date_range)
-    return self.all if date_range.nil? || (date_range[:from_date].empty? && date_range[:to_date].empty?)
+  def self.in_date_range(from_date, to_date)
+    return self.all if (from_date.nil? && to_date.nil?)
 
-    booking_from = Time.zone.local(*(date_range[:from_date]))
-    booking_to = Time.zone.local(*(date_range[:to_date]))
+    booking_from = Time.at(from_date.to_i)
+    booking_to = Time.at(to_date.to_i)
 
     Room.includes(:images).where("from_date <= ? AND to_date >= ?", booking_from, booking_to)
   end

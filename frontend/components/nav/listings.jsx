@@ -11,30 +11,42 @@ var Listings = React.createClass({
   },
 
   getInitialState: function(){
-    return {room: {}};
+    return {rooms: {}};
   },
 
   _onRoomChange: function(){
+    debugger
+
     if (this.currentUser) {
-      var userRooms = RoomStore.findByHostId(this.currentUser.id)
-      this.setState( {rooms: userRooms} );
+      this.setState( {rooms: RoomStore.getUserRooms()} );
+    }
+  },
+
+  _onSessionChange: function(){
+    this.currentUser = SessionStore.getUser();
+    if (this.currentUser){
+      apiUtil.fetchRoomsByUser(this.currentUser.id);
     }
   },
 
   componentDidMount: function(){
+    debugger
     this.currentUser = SessionStore.getUser();
 
     if (this.currentUser) {
       apiUtil.fetchRoomsByUser(this.currentUser.id)
-      var userRooms = RoomStore.findByHostId(this.currentUser.id)
-      this.setState( {rooms: userRooms} );
+      debugger
+
+      this.setState( {rooms: RoomStore.getUserRooms()} );
     }
 
-    this.listenerToken = RoomStore.addListener( this._onRoomChange );
+    this.roomListener = RoomStore.addListener( this._onRoomChange );
+    this.sessionListener = SessionStore.addListener( this._onSessionChange );
   },
 
   componentWillUnmount: function(){
-    this.listenerToken.remove();
+    this.roomListener.remove();
+    this.sessionListener.remove();
   },
 
   arrayUnique: function(array){

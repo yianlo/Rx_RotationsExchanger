@@ -1,7 +1,7 @@
 var React = require('react'),
     apiUtil = require('../../util/apiUtil'),
     RoomStore = require('../../stores/room'),
-    BookingForm = require('../bookForm/bookingForm'),
+    BookingForm = require('../booking/bookingForm'),
     PhotoView = require('./photoView'),
     EditPhotos = require('./editPhotos')
 
@@ -90,6 +90,7 @@ var ShowRoom = React.createClass({
       return (
         <div className="show-page">
           {this.props.children}
+          <BookingForm room={this.state.room} />
         </div>
       )
     }

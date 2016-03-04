@@ -56,7 +56,14 @@ ApiActions = {
     });
   },
 
-  receivedRoom: function(room){
+  receivedNewRoom: function(room){
+    AppDispatcher.dispatch({
+      actionType: "NEW_ROOM_RECEIVED",
+      room: room
+    });
+  },
+
+  fetchedRoom: function(room){
     AppDispatcher.dispatch({
       actionType: "SINGLE_ROOM_RECEIVED",
       room: room

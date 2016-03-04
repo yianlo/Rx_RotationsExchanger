@@ -2,12 +2,13 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  email           :string
-#  password_digest :string
-#  session_token   :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                :integer          not null, primary key
+#  email             :string
+#  password_digest   :string
+#  session_token     :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  medical_school_id :integer
 #
 
 class User < ActiveRecord::Base
@@ -25,6 +26,8 @@ class User < ActiveRecord::Base
     class_name: "Room",
     foreign_key: :host_id,
     dependent: :destroy
+
+  has_many :bookings
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

@@ -1,6 +1,6 @@
 class Api::RoomsController < ApplicationController
   def filter
-    @rooms = Room.filter_by_params(filter_params)
+    @rooms = Room.filter_by_params(params[:filter])
     render :index
   end
 
@@ -12,11 +12,10 @@ class Api::RoomsController < ApplicationController
     params = room_params
 
     params[:host_id] = current_user.id
-    params[:to_date] = Time.zone.local(room_params[:to_date])
-    params[:from_date] =  Time.zone.local(room_params[:from_date])
+    params[:to_date] = Time.at(room_params[:to_date].to_i)
+    params[:from_date] =  Time.at(room_params[:from_date].to_i)
 
     @room = Room.create(params)
-
     render :show
   end
 
@@ -41,7 +40,7 @@ class Api::RoomsController < ApplicationController
     render :show
   end
 
-  private
+  # private
 
   def room_params
     params.require(:room).permit(
@@ -58,19 +57,19 @@ class Api::RoomsController < ApplicationController
     )
   end
 
-  def filter_params
-    parsed_filters = JSON.parse( params[:filter], {:symbolize_names => true} )
-    new_params = ActionController::Parameters.new({ :filter => parsed_filters})
-
-
-
-    new_params.require(:filter)
-    # newParams.require(:filter).permit(
-    #   :bounds => [:northEast, :southWest],
-    #   :price_range,
-    #   :home_types,
-    #   :room_types,
-    #   :date_range => [:northEast, :southWest]
-    # )
-  end
+  # def filter_params
+  #   parsed_filters = JSON.parse( params[:filter], {:symbolize_names => true} )
+  #   new_params = ActionController::Parameters.new({ :filter => parsed_filters})
+  #
+  #   params.require(:filter)
+  #
+  #   # params.require(:filter).permit(
+  #   #   :bounds => [ {northEast: [:lat, :lng]}, {southWest: [:lat, :lng]} ],
+  #   #   :price_range,
+  #   #   :home_types,
+  #   #   :room_types,
+  #   #   :to_date,
+  #   #   :from_date
+  #   # )
+  # end
 end

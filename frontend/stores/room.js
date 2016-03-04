@@ -2,7 +2,7 @@ var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher');
 
 var _rooms = {};
-var _userRooms = [];
+var _userRooms = {};
 
 var RoomStore = new Store(AppDispatcher);
 
@@ -15,12 +15,25 @@ RoomStore.all = function () {
 
 var _resetRooms = function(rooms){
   _rooms = {};
-  
+
   if (rooms instanceof Array){
     rooms.forEach( function(room){
       _rooms[room.id] = room;
     });
   }
+};
+
+var _resetUserRooms = function(rooms){
+  if (rooms instanceof Array){
+    rooms.forEach( function(room){
+      _userRooms[room.id] = room;
+    });
+  }
+};
+
+var _addNewRoom = function(room){
+  _rooms[room.id] = room;
+  _userRooms[room.id] = room;
 };
 
 var _addRoom = function(room){
@@ -34,6 +47,12 @@ var _deleteRoom = function(roomId){
 
 RoomStore.find = function(roomId){
   return _rooms[roomId];
+};
+
+RoomStore.getUserRooms = function(){
+  return Object.keys(_userRooms).map(function(roomId){
+    return _userRooms[roomId]
+  })
 };
 
 RoomStore.findByHostId = function(hostId){
@@ -55,7 +74,11 @@ RoomStore.__onDispatch = function (payload) {
       RoomStore.__emitChange();
       break;
     case "USER_ROOMS_RECEIVED":
-      _resetRooms(payload.rooms);
+      _resetUserRooms(payload.rooms);
+      RoomStore.__emitChange();
+      break;
+    case "NEW_ROOM_RECEIVED":
+      _addNewRoom(payload.room);
       RoomStore.__emitChange();
       break;
     case "SINGLE_ROOM_RECEIVED":
@@ -70,5 +93,3 @@ RoomStore.__onDispatch = function (payload) {
 }
 
 module.exports = RoomStore;
-
-window.RoomStore = RoomStore;

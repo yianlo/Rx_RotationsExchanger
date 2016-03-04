@@ -18,35 +18,31 @@ var dateFields = React.createClass({
     if (this.state.endDate && this.state.endDate < date){
       this.setState( {endDate: date} );
     }
+
+    if (this.state.endDate instanceof moment && date instanceof moment){
+      this.makeDateRange(date, this.state.endDate);
+    }
   },
 
   handleCheckOut: function(date) {
     this.setState( {endDate: date} );
 
     if (this.state.startDate instanceof moment && date instanceof moment){
-      var dateRange = this.makeDateRange(date);
-      FilterActions.sendParamsToFilter({date_range: dateRange})
+      FilterActions.sendParamsToFilter(this.makeDateRange(this.state.startDate, date))
     }
   },
 
-  makeDateRange: function(endDate){
-    var dateRange = {
-      from_date: [
-        this.state.startDate.year(),
-        this.state.startDate.month() + 1,
-        this.state.startDate.date()],
-      to_date: [
-        endDate.year(),
-        endDate.month() + 1,
-        endDate.date()],
-    };
+  makeDateRange: function(startDate, endDate){
+
+    var fromDate = Math.floor(this.state.startDate.unix());
+    var toDate = Math.floor(endDate.unix());
 
     if (this.props.linkValState) {
-      this.props.linkValState("fromDate", dateRange.from_date);
-      this.props.linkValState("toDate", dateRange.to_date);
+      this.props.linkValState("fromDate", fromDate);
+      this.props.linkValState("toDate", toDate);
     }
 
-    return dateRange;
+    return {from_date: fromDate, to_date: toDate};
   },
 
   makeGuestNumOptions: function(){

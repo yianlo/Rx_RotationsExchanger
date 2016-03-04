@@ -2,7 +2,7 @@ var ApiActions = require('../actions/apiActions');
 
 ApiUtil = {
   fetchRoomsWithinParams: function(params){
-    $.get("/api/rooms/filter", {filter: JSON.stringify(params)}, function(fetchedRooms){
+    $.get("/api/rooms/filter", {filter: params}, function(fetchedRooms){
       ApiActions.receiveAll(fetchedRooms);
     })
   },
@@ -50,7 +50,7 @@ ApiUtil = {
 
   createImages: function(img_urls, room, redirectCb){
     $.post("/api/images", {images: JSON.stringify({img_urls: img_urls, room_id: room.id})}, function(){
-      ApiActions.receivedRoom(room);
+      ApiActions.receivedNewRoom(room);
       redirectCb(room.id);
     })
   },
@@ -66,7 +66,7 @@ ApiUtil = {
       data: {image: {id: imageId}},
       success: function(originalRoom){
         redirectCb();
-        ApiActions.receivedRoom(originalRoom)
+        ApiActions.fetchedRoom(originalRoom)
       }
     })
   },
@@ -80,7 +80,7 @@ ApiUtil = {
       data: {room: params},
       success: function(fetchedNewRoom){
         redirectCb(fetchedNewRoom.id);
-        ApiActions.receivedRoom(fetchedNewRoom)
+        ApiActions.fetchedRoom(fetchedNewRoom)
       }
     })
   },
@@ -91,7 +91,7 @@ ApiUtil = {
         if (params.img_urls) {
           ApiUtil.createImages(params.img_urls, fetchedNewRoom, redirectCb)
         } else {
-          ApiActions.receivedRoom(fetchedNewRoom);
+          ApiActions.receivedNewRoom(fetchedNewRoom);
           redirectCb(fetchedNewRoom.id);
         }
       } else {
@@ -111,7 +111,7 @@ ApiUtil = {
 
   fetchSingleRoom: function(roomId){
     $.get("/api/rooms/" + roomId, {room: {id: roomId}}, function(fetchedRoom){
-      ApiActions.receivedRoom(fetchedRoom);
+      ApiActions.fetchedRoom(fetchedRoom);
     })
   },
 
@@ -124,6 +124,18 @@ ApiUtil = {
         redirectCb();
         ApiActions.deleteRoom(fetchedRoomId.id)
       }
+    })
+  },
+
+  createRequest: function(){
+    $.post("/api/bookings", {message: message}, function(){
+      resetCb();
+    })
+  },
+
+  createMessage: function(message, resetCb){
+    $.post("/api/messages", {message: message}, function(){
+      resetCb();
     })
   }
 }

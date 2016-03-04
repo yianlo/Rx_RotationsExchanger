@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pusher'
 
 gem 'faker'
 gem 'annotate'
@@ -48,7 +49,7 @@ group :development do
 end
 
 
-group :production do 
+group :production do
   # heroku
   gem 'newrelic_rpm'
   gem 'rails_12factor'

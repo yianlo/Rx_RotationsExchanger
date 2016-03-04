@@ -85,7 +85,7 @@ var IndexItem = React.createClass({
 
         <section className="room-detail">
           <h5>{ this.props.room.title }</h5>
-          <h6>{ this.props.room.room_type  }</h6>
+          <h6>{ this.props.room.room_type + " in " + this.props.room.home_type}</h6>
         </section>
 
       </section>

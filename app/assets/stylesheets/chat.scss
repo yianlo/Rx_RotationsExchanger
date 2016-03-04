@@ -1,0 +1,17 @@
+.chat{
+  flex-direction: column;
+  padding: 50px;
+
+  .main-view{
+    flex-direction: column;
+
+    input{
+      margin-left: 35px;
+      padding-left: 10px;
+      border: 1px solid #ccc;
+      height: 30px;
+      border-radius: 5px;
+      width: 50%;
+    }
+  }
+}

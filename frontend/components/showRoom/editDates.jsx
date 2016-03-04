@@ -1,5 +1,4 @@
 var React = require('react'),
-
     DatePicker = require('react-datepicker'),
     moment = require('moment'),
     FilterActions = require('../../actions/filterActions');
@@ -14,6 +13,7 @@ var EditDateFields = React.createClass({
 
   handleCheckIn: function(date) {
     this.setState( {startDate: date} );
+    this.makeDateRange(date, this.state.endDate);
 
     if (this.state.endDate && this.state.endDate < date){
       this.setState( {endDate: date} );
@@ -22,20 +22,15 @@ var EditDateFields = React.createClass({
 
   handleCheckOut: function(date) {
     this.setState( {endDate: date} );
-
-    if (this.state.startDate instanceof moment && date instanceof moment){
-      var dateRange = this.makeDateRange(date);
-      FilterActions.sendParamsToFilter({date_range: dateRange})
-    }
+    this.makeDateRange(this.state.startDate, date);
   },
 
-  makeDateRange: function(endDate){
-    if (this.props.linkValState) {
-      this.props.linkValState("fromDate", Math.floor(this.state.startDate.getTime()/1000));
-      this.props.linkValState("toDate", Math.floor(this.state.endDate.getTime()/1000));
+  makeDateRange: function(startDate, endDate){
+    if (startDate) {
+      this.props.linkValState("from_date", Math.floor(startDate.unix()));
+    } else if (endDate){
+      this.props.linkValState("to_date", Math.floor(endDate.unix()));
     }
-
-    return dateRange;
   },
 
   makeGuestNumOptions: function(){
@@ -50,16 +45,6 @@ var EditDateFields = React.createClass({
 
     guestNumOptions.push(<option value={i}>{"16+ Guests"}</option>)
     return guestNumOptions;
-  },
-
-  renderExtra: function(){
-    if (this.props.inputClass === "search-field") {
-      return <select className="search-item">
-        {
-          // { this.makeGuestNumOptions() }
-        }
-      </select>
-    }
   },
 
   render: function() {
@@ -81,7 +66,6 @@ var EditDateFields = React.createClass({
             minDate={this.state.startDate || moment()}
             onChange={this.handleCheckOut}
             placeholderText="To date" />
-          {this.renderExtra()}
         </div>
       </div>
     )

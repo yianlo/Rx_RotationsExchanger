@@ -12,6 +12,7 @@ var React = require('react'),
 
     LandingPage = require('./components/landing/landingPage'),
     Main = require('./components/main'),
+    Chat = require('./components/chat/chat'),
 
     SearchContent = require('./components/searchContent/searchContent'),
     AddFormPage = require('./components/addForm/addFormPage'),
@@ -26,6 +27,7 @@ var NavBar = require('./components/nav/navBar');
 var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={LandingPage}/>
+    <Route path="message" component={Chat}/>
     <Route path="main" component={Main}>
       <Route path="search" component={SearchContent}/>
       <Route path="new" component={AddFormPage} />
