@@ -1,0 +1,18 @@
+/* line 2, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-grid.scss */
+.photo-grids-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  background-color: white;
+  padding: 2px;
+}
+/* line 22, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/photo-grid.scss */
+.photo-grids-container img {
+  flex-grow: 1;
+  border-left: none;
+  width: 30%;
+  height: 312px;
+  overflow: hidden;
+  margin: 2px;
+}

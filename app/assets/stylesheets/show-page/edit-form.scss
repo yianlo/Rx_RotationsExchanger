@@ -1,0 +1,117 @@
+$border-color: #ccc;
+$choice-hover-color: #CCE4E7;
+$choice-selected-color: #32959F;
+$top-push: 61px;
+$text-color: #676b6d;
+$input-height: 52px;
+
+$theme-color: #F88379;
+$min-width: 1052px;
+$form-items-width: 800px;
+
+.edit-form-container{
+
+  .edit-details{
+    width: 800px;
+  }
+
+  .header{
+    width: 806px;
+
+    .edit-title{
+      font-size: 30px;
+      height: auto;
+      width: 650px;
+      white-space: nowrap;
+      padding: 10px;
+
+      font-weight: lighter;;
+      text-transform: uppercase;
+    }
+
+    .edit-title:focus{
+      border: 1px solid #ccc;
+      padding: 9px;
+      border-radius: 3px;
+    }
+
+    .room-type{
+      width: 170px;
+    }
+
+    .home-type{
+      width: 155px;
+    }
+
+    .select-style:first-of-type{
+      margin-left: 10px;
+    }
+
+    .select-style {
+      position: relative;
+      top: 5px;
+
+      padding: 0;
+      margin: 0;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      overflow: hidden;
+      background-color: #fff;
+      background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%;
+
+      .edit-type{
+        font-weight: 300;
+        font-size: 13.5px;
+        text-transform: uppercase;
+      }
+    }
+
+    .select-style select {
+        padding: 5px 8px;
+        padding-right: 0;
+        width: 130%;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+    }
+
+    .select-style select:focus {
+        outline: none;
+    }
+
+
+    span{
+      font-size: 15px;
+      margin: 0 8px;
+      position: relative;
+      top: 5px;
+    }
+  }
+
+  .edit-details{
+    flex-direction: column;
+    position: relative;
+    left: 9px;
+
+    .items-container{
+      padding-top: 15px;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .edit-calendar{
+      width: 470px;
+      position: relative;
+      left: -5px;
+    }
+
+    .description-box{
+      width: 709px;
+      padding: 15px;
+    }
+  }
+}

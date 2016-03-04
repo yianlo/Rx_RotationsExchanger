@@ -1,0 +1,103 @@
+$theme-color: #F88379;
+$theme-color-selected: #32959F;
+$box-shadow: 0 0 10px #999;
+
+$button-shadow: 0 0 4px #999;
+$theme-color-buttons: rgba(248, 131, 121, 0.7);
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+.show-page-container{
+  .slider{
+    top: 0 !important;
+    align-self: center;
+    padding-bottom: 40px;
+
+    img{
+      display: flex !important;
+      margin: 0 auto;
+    }
+
+    .slider-slide {
+      margin: 0 auto;
+      width: 80%;
+
+      img {
+        position: relative;
+        width: 99%;
+        max-height: 585px !important;
+        max-width: 910px !important;
+      }
+    }
+
+
+    .slider-decorator-0, .slider-decorator-1{
+      button{
+        font-weight: lighter;
+
+        opacity: 0 !important;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding:0 !important;
+        text-align: center;
+
+        position: relative !important;
+      }
+    }
+
+    .slider-decorator-0{
+      left: 25px !important;
+    }
+
+    .slider-decorator-1{
+      right: 5px !important;
+    }
+
+    .slider-decorator-2{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .slider-decorator-2[style]{
+      button{
+        font-size: 28px !important;
+        @include transition(all 0.25s ease);
+      }
+
+      button:hover{
+        font-size: 45px !important;
+      }
+    }
+  }
+
+  .slider:hover {
+    box-shadow: $box-shadow;
+    cursor: grab !important;
+    cursor: -webkit-grab !important;
+
+    @include transition(all, 0);
+
+    .slider-decorator-0, .slider-decorator-1{
+      padding: 25px;
+
+      button{
+        opacity: 0.7 !important;
+      }
+      button:hover{
+        border-radius: 30%;
+        opacity: 1 !important;
+        background: $theme-color-buttons !important;
+        box-shadow: $button-shadow !important;
+        @include transition(all 0.2s ease);
+      }
+    }
+  }
+}

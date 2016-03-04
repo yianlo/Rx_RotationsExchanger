@@ -1,0 +1,146 @@
+@keyframes hide-bg {
+  0% {
+    background: url("../images/start.png");
+    background: cover;
+    opacity: 0;
+  }
+  99% {
+    background: url("../images/start.png");
+    background: cover;
+    opacity: 1;
+  }
+  100% {
+    background: none;
+  }
+}
+@keyframes emerge {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 30, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.landing-container {
+  overflow: hidden;
+  animation: hide-bg 1s ease;
+  -webkit-animation: hide-bg 1s ease;
+}
+
+/* line 36, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.nav-on-landing {
+  z-index: 800;
+  background: none;
+  height: 61px;
+  width: 100%;
+  color: white;
+  justify-content: space-between;
+}
+/* line 44, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.nav-on-landing .search-bar-container {
+  display: none;
+}
+/* line 48, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.nav-on-landing .nav-items, .nav-on-landing .host-room-button {
+  transition: .3s background;
+}
+/* line 52, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.nav-on-landing .nav-items:hover, .nav-on-landing .host-room-button:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 56, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.nav-on-landing .logo {
+  border: none;
+}
+
+/* line 61, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.polina {
+  flex-direction: column;
+  font-weight: 100;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 3rem;
+  margin: 2rem;
+  font-size: 1.2rem;
+  position: relative;
+  border-radius: 3px;
+  min-width: 530px;
+  width: 38%;
+  max-height: 230px;
+  justify-content: space-between;
+}
+
+/* line 79, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.landing-content-container {
+  min-width: 580px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* line 88, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.landing-content-container {
+  width: 100%;
+  display: flex;
+  /* align-content: center; */
+  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  transform: translateX(-5%);
+}
+
+/* line 103, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.landing-buttons-container {
+  margin-top: 30px;
+}
+
+/* line 108, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+#more-link {
+  font-size: 14px;
+  font-stretch: condensed;
+}
+
+/* line 113, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.more-link-container {
+  flex-direction: column;
+  width: auto;
+  padding-bottom: 2px;
+  border-bottom: 0.5px solid white;
+}
+
+/* line 120, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.more-link-container:hover {
+  border-bottom: 0.5px solid #F88379;
+}
+
+/* line 124, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.search-on-landing {
+  display: block;
+  width: 100%;
+  padding: 1.2rem;
+  border: none;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  background: rgba(5, 5, 5, 0.7);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s background;
+  color: white;
+  box-shadow: 0 0 5px #F88379;
+}
+
+/* line 140, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/landing-page.scss */
+.search-on-landing:hover {
+  background: rgba(0, 0, 0, 0.5);
+  cursor: text;
+}

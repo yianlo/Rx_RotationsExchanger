@@ -1,0 +1,63 @@
+/* line 1, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/video.scss */
+video {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 120%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 1s opacity;
+}
+
+/* line 14, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/video.scss */
+.stopfade {
+  opacity: .5;
+}
+
+/* line 18, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/video.scss */
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+
+/* line 24, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/video.scss */
+.polina button {
+  display: block;
+  width: 200px;
+  padding: .6rem;
+  border: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.23);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s background;
+}
+
+/* line 36, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/video.scss */
+.polina button:hover {
+  background: rgba(248, 131, 121, 0.5);
+}
+
+@media screen and (max-width: 500px) {
+  /* line 41, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/video.scss */
+  div {
+    width: 70%;
+  }
+}
+@media screen and (max-device-width: 800px) {
+  /* line 44, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/video.scss */
+  html {
+    background: url(//demosthenes.info/assets/images/polina.jpg) #000 no-repeat center center fixed;
+  }
+
+  /* line 45, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/landing-page/video.scss */
+  #bgvid {
+    display: none;
+  }
+}

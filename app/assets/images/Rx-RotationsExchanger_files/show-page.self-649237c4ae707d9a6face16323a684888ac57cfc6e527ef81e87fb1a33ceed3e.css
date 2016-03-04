@@ -1,0 +1,82 @@
+/* line 5, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container {
+  position: relative;
+  top: 61px;
+  min-width: #32959F;
+  width: 100%;
+  height: 100%;
+  flex: none;
+}
+/* line 15, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+/* line 20, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .images-container {
+  position: relative;
+  min-height: 380px;
+  flex: none;
+  width: 100%;
+  justify-content: center;
+  background: #EEEEEE;
+  padding: 30px 80px;
+  box-sizing: border-box;
+}
+/* line 30, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .images-container .change-view-button {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+/* line 37, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content {
+  width: 61.5%;
+  min-width: #32959F;
+  padding: 20px 10px;
+  margin: 0 auto;
+  flex: none;
+  flex-direction: column;
+}
+/* line 46, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .header {
+  padding-bottom: 20px;
+  position: relative;
+  align-items: center;
+}
+/* line 52, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .header h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+/* line 58, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .header .vert-bar {
+  font-size: 25px;
+  font-weight: lighter;
+  padding: 0 20px;
+  align-items: center;
+}
+/* line 66, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .header p {
+  text-transform: uppercase;
+  font-size: 15px;
+  margin: 0 10px;
+  align-self: flex-end;
+  position: relative;
+  bottom: 5px;
+}
+/* line 76, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .header p:first-of-type {
+  margin-left: 0;
+}
+/* line 81, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .description {
+  flex-direction: column;
+}
+/* line 84, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .description p {
+  padding: 20px 0;
+  font-size: 20px;
+}

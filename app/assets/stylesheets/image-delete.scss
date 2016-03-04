@@ -1,0 +1,43 @@
+.outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.inner {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.inner a {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* Appearance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.inner a {
+  text-decoration: none;
+  -webkit-transition: background .1s linear;
+  -moz-transition: background .1s linear;
+  -ms-transition: background .1s linear;
+  -o-transition: background .1s linear;
+  transition: background .1s linear;
+}
+.inner a:hover,
+.inner a:focus {
+  background: #3b3d36\9;/* IE8 */
+  background: rgba(231,229,212, .5);
+}
+.inner a span {
+  color: #e7e5d4;
+  border: 3px solid;
+  text-transform: uppercase;
+  padding: 15px 25px;
+}
+.inner a:hover span,
+.inner a:focus span {
+  color: #e7e5d4\9;/* IE8 */
+  color: #3b3d36;
+}

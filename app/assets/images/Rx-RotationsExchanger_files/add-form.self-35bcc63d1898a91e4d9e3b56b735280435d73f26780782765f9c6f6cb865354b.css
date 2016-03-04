@@ -1,0 +1,199 @@
+/* line 12, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-page {
+  min-height: 895px;
+  position: relative;
+  top: $top-push;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* line 21, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-header {
+  width: 100%;
+  height: 150px;
+  justify-content: center;
+  align-content: center;
+  min-width: 1052px;
+}
+
+/* line 30, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-header h1 {
+  font-size: 30px;
+  align-self: center;
+}
+
+/* line 35, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-container {
+  flex-direction: column;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  min-width: 1052px;
+  background: #F5F5F5;
+}
+
+/* line 46, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form {
+  flex-direction: column;
+  align-content: center;
+  min-height: 750px;
+  padding: 30px 100px;
+}
+
+/* line 54, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-items-container {
+  width: 800px;
+  justify-content: space-between;
+}
+
+/* line 59, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-item-container {
+  align-items: center;
+  padding: 30px 0 10px 0;
+}
+
+/* line 64, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-label {
+  width: 90px;
+  font-weight: bold;
+  font-color: #222;
+  line-height: 52px;
+}
+
+/* line 72, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-choices {
+  display: inline-flex;
+  border-left: 1px solid #ccc;
+}
+
+/* line 77, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-choice, .add-form-input, .upload-image-button, .add-form-button {
+  align-items: center;
+  color: #676b6d;
+  padding: 0 25px;
+  border: 1px solid #ccc;
+  justify-content: center;
+  line-height: 52px;
+  box-sizing: border-box;
+}
+
+/* line 90, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-textarea {
+  padding: 24px;
+  line-height: 20px;
+}
+
+/* line 95, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.upload-image-button {
+  border: 1px solid #ccc;
+  background: #eee;
+  color: #676b6d;
+}
+
+/* line 101, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.unclicked-button:hover {
+  background: #F88379;
+  color: white;
+}
+
+/* line 106, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-choice, .add-form-input, .add-form-date {
+  background: white;
+}
+
+/* line 111, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-choice {
+  border-left: 0px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+/* line 117, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.unselected-choice:hover {
+  background: #CCE4E7;
+  cursor: pointer;
+}
+
+/* line 125, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.selected-choice {
+  background: #32959F;
+  color: white;
+}
+
+/* line 130, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-input {
+  width: 500px;
+  overflow: hidden;
+}
+
+/* line 135, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.short-input {
+  width: 150px;
+}
+
+/* line 139, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.price-label {
+  justify-content: space-between;
+}
+
+/* line 143, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.dollar-sign {
+  margin: 0;
+  background: #black;
+}
+
+/* line 148, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.long-input {
+  width: 711px;
+  flex-wrap: wrap;
+}
+
+/* line 153, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.box-input {
+  width: 650px;
+  height: 100px;
+}
+
+/* line 158, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-date {
+  height: 52px;
+  width: 471px;
+  justify-content: flex-start;
+  background: none;
+  position: relative;
+  left: -7px;
+}
+
+/* line 168, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-button-container {
+  width: 100%;
+  justify-content: center;
+}
+
+/* line 173, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-button {
+  color: white;
+}
+
+/* line 177, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.clicked-button {
+  background: #32959F;
+  color: white;
+}
+
+/* line 182, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.add-form-errors-container {
+  flex: none;
+  width: 800px;
+  padding: 30px 30px;
+  align-items: center;
+  background: #FFD1C4;
+  border-radius: 2px;
+  margin-top: 45px;
+}
+
+/* line 194, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */
+.errors-title {
+  font-weight: bold;
+  font-size: 14.5px;
+}

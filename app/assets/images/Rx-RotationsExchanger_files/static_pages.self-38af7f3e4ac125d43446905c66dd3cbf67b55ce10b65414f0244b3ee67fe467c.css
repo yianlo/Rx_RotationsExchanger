@@ -1,0 +1,175 @@
+@-webkit-keyframes show-page-emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes show-page-emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-ms-keyframes show-page-emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes show-page-emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes show-page-emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 53, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+html, body, p, form, input, h1, h2, h5, h6, section, div, button, textarea {
+  margin: 0;
+  padding: 0;
+  display: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+/* line 66, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+html, body, .app-container, #content, #main, .landing-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* line 72, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+.search-results-container, .add-form-page, .show-page-container, .images-container {
+  -webkit-animation: show-page-emerge 0.34s linear;
+  -moz-animation: show-page-emerge 0.34s linear;
+  -ms-animation: show-page-emerge 0.34s linear;
+  -o-animation: show-page-emerge 0.34s linear;
+  animation: show-page-emerge 0.34s linear;
+}
+
+/* line 76, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+body {
+  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 200;
+  color: #676b6d;
+  letter-spacing: 0.4px;
+  display: flex;
+}
+
+/* line 86, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+button {
+  border: none;
+  background: none;
+  border-radius: 3px;
+  justify-content: center;
+  background: #F88379;
+  color: white;
+  margin-right: 20px;
+  padding: 10px 10px;
+  border: 2px solid #ccc;
+  text-align: center;
+  align-self: center;
+  -webkit-transition: all 0.18s ease;
+  -moz-transition: all 0.18s ease;
+  -ms-transition: all 0.18s ease;
+  -o-transition: all 0.18s ease;
+  transition: all 0.18s ease;
+}
+
+/* line 103, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+textarea {
+  border: 1px solid #ccc;
+}
+
+/* line 107, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+button:hover {
+  opacity: 0.8;
+}
+
+/* line 111, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+ul, li {
+  list-style-type: none;
+}
+
+/* line 115, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 120, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+a:hover, button:hover {
+  cursor: pointer;
+}
+
+/* line 124, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+input {
+  border: none;
+}
+
+/* line 128, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+*:focus {
+  outline: none;
+}
+
+/* line 132, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+input[type=date]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
+
+/* line 137, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+select {
+  -webkit-appearance: none;
+  border-radius: 0px;
+  background: white;
+}
+
+/* line 143, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+.app-container {
+  flex-direction: column;
+}
+
+/* line 147, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+#main {
+  flex-direction: column;
+}
+
+/* line 151, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+.map-container {
+  z-index: 10;
+  width: 40%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 160, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/static_pages.scss */
+#map {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

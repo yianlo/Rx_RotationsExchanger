@@ -1,0 +1,142 @@
+/* line 14, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: white;
+  z-index: 500;
+  display: flex;
+  justify-content: space-between;
+  height: 61px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+/* line 31, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.logo-search-container {
+  width: 70%;
+  min-width: 610px;
+}
+
+/* line 36, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.logo {
+  border-right: 1px solid #ddd;
+  display: flex;
+  line-height: 60px;
+  color: #F88379;
+}
+
+/* line 44, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.logo:hover {
+  cursor: pointer;
+}
+
+/* line 48, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.logo-design {
+  height: 50px;
+  width: 48px;
+  opacity: 0.45;
+}
+
+/* line 54, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.logo-container {
+  height: 40px;
+  width: 60px;
+  overflow: hidden;
+  position: relative;
+  top: 8px;
+}
+
+/* line 62, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.logo-design {
+  margin: 0;
+  font-size: 35px;
+  font-weight: lighter;
+  font-family: 'Crafty Girls', cursive;
+  padding-left: 20px;
+}
+
+/* line 70, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.logo-text {
+  font-size: 20px;
+  font-family: 'Poiret One', cursive;
+  font-weight: 800;
+  padding: 0 17px 0 10px;
+}
+
+/* line 78, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.search-bar-container {
+  width: 100%;
+}
+
+/* line 82, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.search-symbol {
+  height: auto;
+  width: auto;
+  max-width: 20.5px;
+  max-height: 20.5px;
+  opacity: 0.2;
+  align-self: center;
+  padding-left: 17px;
+}
+
+/* line 94, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.search-bar {
+  padding-left: 17px;
+  font-size: 13.5px;
+  font-weight: 300;
+  width: 95%;
+}
+
+/* line 101, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.host-room-button {
+  margin-right: 20px;
+  padding: 10px 10px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  align-self: center;
+  text-align: center;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+/* line 112, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.host-room-button:hover {
+  background-color: rgba(248, 131, 121, 0.7);
+  color: white;
+  cursor: pointer;
+}
+
+/* line 118, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.host-room-button a {
+  min-width: 86px;
+  overflow: hidden;
+}
+
+/* line 123, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.nav-items {
+  min-width: 70px;
+  text-align: center;
+  border-left: 1px solid #ddd;
+  flex: none;
+}
+
+/* line 131, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.nav-items, .search {
+  line-height: 60px;
+  padding: 0 20px;
+}
+
+/* line 136, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.nav-items:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+/* line 141, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/nav-bar/nav.scss */
+.nav-items a {
+  overflow: hidden;
+}

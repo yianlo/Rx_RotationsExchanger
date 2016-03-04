@@ -1,0 +1,79 @@
+.req-form-container{
+  flex: none;
+  flex-direction: column;
+  margin: 200px;
+  width: 360px;
+  justify-content: center;
+  border-radius: 2px;
+
+  .price-display{
+    height: 45px;
+    background-color: #444;
+    color: white;
+    justify-content: space-between;
+    padding: 5px 15px;
+    align-content: center;
+    align-items: center;
+    font-size: 16px;
+
+    .room-price{
+      font-size: 27px;
+    }
+  }
+
+  .req-form{
+    padding: 25px;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #ccc;
+
+
+    button{
+      width: 101%;
+      position: relative;
+      left: 10px;
+      height: 50px;
+    }
+
+    hr{
+      width: 100%;
+      background: #ddd;
+    }
+
+    textarea{
+      padding: 10px;
+      margin: 20px 0;
+      height: 80px;
+    }
+  }
+
+  .req-form-price{
+    padding: 0 5px;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .edit-calendar-container{
+    width: 325px;
+    position: relative;
+    left: -14px;
+
+    .edit-calendar{
+      width: 100%;
+      justify-content: space-between;
+
+      .datepicker__input-container {
+        width: 140px;
+        margin: 0;
+
+        .datepicker__input{
+          width: 100%;
+          height: 50px;
+        }
+      }
+    }
+  }
+
+
+}
