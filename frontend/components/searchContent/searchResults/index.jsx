@@ -19,7 +19,6 @@ var Index = React.createClass({
   },
 
   _onRoomChange: function(){
-    // debugger
     this.setState({
       rooms: RoomStore.all()
     });
@@ -29,7 +28,7 @@ var Index = React.createClass({
     FilterActions.resetParams();
 
     var filterParams = FilterParamsStore.getParams();
-    filterParams.bounds = this.context.bounds;
+    filterParams.bounds = JSON.parse(this.context.bounds);
 
     apiUtil.fetchRoomsWithinParams(filterParams);
   },

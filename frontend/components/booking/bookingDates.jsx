@@ -1,7 +1,6 @@
 var React = require('react'),
     DatePicker = require('react-datepicker'),
-    moment = require('moment'),
-    FilterActions = require('../../actions/filterActions');
+    moment = require('moment');
 
 var BookingDateFields = React.createClass({
   getInitialState: function() {
@@ -16,10 +15,9 @@ var BookingDateFields = React.createClass({
 
     if (this.state.endDate && this.state.endDate < date){
       this.setState( {endDate: date} );
-    }
-
-    if (this.state.endDate instanceof moment && date instanceof moment){
-      this.makeDateRange(date, this.state.endDate);
+      this.updateDates(date, date);
+    } else {
+      this.updateDates(date, this.state.endDate);
     }
   },
 
@@ -27,15 +25,15 @@ var BookingDateFields = React.createClass({
     this.setState( {endDate: date} );
 
     if (this.state.startDate instanceof moment && date instanceof moment){
-      var dateRange = this.makeDateRange(this.state.startDate, date);
-      FilterActions.sendParamsToFilter({date_range: dateRange})
+      var dateRange = this.updateDates(this.state.startDate, date);
     }
   },
 
-  makeDateRange: function(startDate, endDate){
-    if (this.props.linkValState) {
-      this.props.linkValState("checkin_date", Math.floor(startDate.unix()));
-      this.props.linkValState("checkout_date", Math.floor(endDate.unix()));
+  updateDates: function(startDate, endDate){
+    if (startDate) {
+      this.props.linkValState("from_date", Math.floor(startDate.unix()));
+    } else if (endDate){
+      this.props.linkValState("to_date", Math.floor(endDate.unix()));
     }
   },
 
@@ -48,7 +46,7 @@ var BookingDateFields = React.createClass({
             selected={this.state.startDate}
             dateFormat="MM/DD/YYYY"
             minDate={moment()}
-            maxDate={this.state.endDate || moment(this.props.maxDate*1000)}
+            maxDate={moment(this.props.maxDate*1000)}
             onChange={this.handleCheckIn}
             placeholderText="Check in" />
           <label></label>

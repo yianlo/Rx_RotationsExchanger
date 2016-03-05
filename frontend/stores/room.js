@@ -40,6 +40,10 @@ var _addNewRoom = function(room){
 
 var _addRoom = function(room){
   _rooms[room.id] = room;
+
+  if (_userRooms[room.id]){
+    _userRooms[room.id] = room;
+  }
 };
 
 var _deleteRoom = function(roomId){

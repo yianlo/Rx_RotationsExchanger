@@ -20,6 +20,7 @@ var EditForm = React.createClass({
 
   getInitialState: function(){
     return {
+      address: "",
       title: this.context.room.title,
       room_type: this.context.room.room_type,
       home_type: this.context.room.home_type,
@@ -30,7 +31,11 @@ var EditForm = React.createClass({
       from_date: this.context.room.from_date,
       price: this.context.room.price
     };
+
+    this.getAddress(this.context.room.lat, this.context.room.lng);
   },
+
+
 
   getImgUrls: function(imgs){
     var img_urls = imgs.map( function(img){

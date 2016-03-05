@@ -20,7 +20,7 @@ var dateFields = React.createClass({
     }
 
     if (this.state.endDate instanceof moment && date instanceof moment){
-      this.makeDateRange(date, this.state.endDate);
+      FilterActions.sendParamsToFilter(this.makeDateRange(date, this.state.endDate));
     }
   },
 
@@ -36,11 +36,11 @@ var dateFields = React.createClass({
 
     var fromDate = Math.floor(this.state.startDate.unix());
     var toDate = Math.floor(endDate.unix());
-
-    if (this.props.linkValState) {
-      this.props.linkValState("fromDate", fromDate);
-      this.props.linkValState("toDate", toDate);
-    }
+    //
+    // if (this.props.linkValState) {
+    //   this.props.linkValState("fromDate", fromDate);
+    //   this.props.linkValState("toDate", toDate);
+    // }
 
     return {from_date: fromDate, to_date: toDate};
   },

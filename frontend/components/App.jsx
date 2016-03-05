@@ -105,8 +105,6 @@ var App = React.createClass({
   setMapListener(){
     google.maps.event.addListener(this.map, 'idle', function() {
       if (this.map.getBounds()) {
-        this.setState({bounds: JSON.stringify(this.map.getBounds())})
-
         var northEast = this.map.getBounds().getNorthEast();
         var southWest = this.map.getBounds().getSouthWest();
 
@@ -122,6 +120,7 @@ var App = React.createClass({
         };
 
         // if (this.state.bounds !== bounds){
+        this.setState({bounds: JSON.stringify(bounds)})
         FilterActions.sendParamsToFilter({bounds: bounds});
         // }
       }

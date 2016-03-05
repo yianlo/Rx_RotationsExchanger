@@ -9,11 +9,12 @@ var Logo = React.createClass({
   },
 
   backToIndex: function(){
-    if (this.context.bounds.length > 0) {
-      this.context.router.replace('main/search?location=' + this.context.bounds)
-    } else {
-      this.context.router.replace('main/search')
-    }
+    this.context.router.replace('main/search');
+    // if (this.context.bounds.length > 0) {
+    //   this.context.router.replace('main/search?location=' + this.context.bounds)
+    // } else {
+    //   this.context.router.replace('main/search')
+    // }
   },
 
   render: function() {

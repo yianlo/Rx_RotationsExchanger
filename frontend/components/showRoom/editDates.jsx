@@ -13,19 +13,21 @@ var EditDateFields = React.createClass({
 
   handleCheckIn: function(date) {
     this.setState( {startDate: date} );
-    this.makeDateRange(date, this.state.endDate);
 
     if (this.state.endDate && this.state.endDate < date){
       this.setState( {endDate: date} );
+      this.updateDates(date, date);
+    } else {
+      this.updateDates(date, this.state.endDate);
     }
   },
 
   handleCheckOut: function(date) {
     this.setState( {endDate: date} );
-    this.makeDateRange(this.state.startDate, date);
+    this.updateDates(this.state.startDate, date);
   },
 
-  makeDateRange: function(startDate, endDate){
+  updateDates: function(startDate, endDate){
     if (startDate) {
       this.props.linkValState("from_date", Math.floor(startDate.unix()));
     } else if (endDate){

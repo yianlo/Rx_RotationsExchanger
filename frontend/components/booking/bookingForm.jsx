@@ -56,6 +56,10 @@ var BookingForm = React.createClass({
   },
 
   getNightCount: function(){
+    if (this.state.checkout_date === this.state.checkin_date){
+      return 1
+    }
+
     var millisecondCounts = this.state.checkout_date - this.state.checkin_date;
     return Math.ceil(millisecondCounts/86400);
   },

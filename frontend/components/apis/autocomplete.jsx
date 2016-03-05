@@ -59,7 +59,9 @@ var AutoSearchBox = React.createClass({
       }
     });
 
-    this.context.router.replace('main/search?location=' + JSON.stringify(bounds))
+    this.context.router.replace('main/search')
+
+    // this.context.router.replace('main/search?location=' + JSON.stringify(bounds))
     map.fitBounds(bounds);
   },
 
