@@ -1,0 +1,23 @@
+.nav-items{
+
+  a{
+    justify-content: space-between;
+
+    .requests{
+      margin-left: 20px;
+    }
+
+    .pending{
+      color: #EEB422;
+    }
+
+    .approved{
+      color: #9ACD32;
+    }
+
+    .denied{
+      color: #8A3324;
+    }
+  }
+
+}

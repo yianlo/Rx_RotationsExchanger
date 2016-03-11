@@ -1,0 +1,21 @@
+$top-push: 61px;
+
+
+.profile{
+  position: relative;
+  top: $top-push;
+  flex: none;
+
+  .hostings-index{
+    flex-direction: column;
+
+
+    .hosting-item{
+      flex-direction: column;
+      width: 400px;
+      height: 500px;
+      border: 1px solid gray;
+    }
+
+  }
+}

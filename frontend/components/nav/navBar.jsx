@@ -1,6 +1,7 @@
 var React = require('react'),
     NavBarItem = require('./navBarItem'),
     Listings = require('./listings'),
+    Requests = require('./requests'),
     AutocompleteSearch = require('../apis/autocomplete'),
     Logo = require('./logo'),
     apiUtil = require('../../util/apiUtil'),
@@ -28,6 +29,7 @@ var NavBar = React.createClass({
       return (
         <div>
           <Listings />
+          <Requests />
           <NavBarItem text="Log out"
             onClickFun={apiUtil.deleteSession.bind(null, this.context.handleLogOut)}/>
         </div>

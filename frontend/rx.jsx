@@ -15,6 +15,7 @@ var React = require('react'),
     Chat = require('./components/chat/chat'),
 
     SearchContent = require('./components/searchContent/searchContent'),
+    ProfilePage = require('./components/profile/profilePage'),
     AddFormPage = require('./components/addForm/addFormPage'),
     ShowRoomPage = require('./components/showRoom/showPage'),
 
@@ -30,6 +31,7 @@ var routes = (
     <Route path="message" component={Chat}/>
     <Route path="main" component={Main}>
       <Route path="search" component={SearchContent}/>
+      <Route path=":userId/profile" component={ProfilePage}/>
       <Route path="new" component={AddFormPage} />
       <Route path=":roomId" component={ShowRoomPage}>
         <IndexRoute component={RoomDetails} />

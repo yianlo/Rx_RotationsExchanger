@@ -78,7 +78,6 @@ RoomStore.findByHostId = function(hostId){
 };
 
 RoomStore.__onDispatch = function (payload) {
-  // debugger
   switch(payload.actionType) {
     case "ROOMS_RECEIVED":
       _resetRooms(payload.rooms);

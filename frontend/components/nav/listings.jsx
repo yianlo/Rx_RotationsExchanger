@@ -40,17 +40,6 @@ var Listings = React.createClass({
     this.roomListener.remove();
   },
 
-  arrayUnique: function(array){
-    var a = array.concat();
-    for( var i = 0; i < a.length; i++) {
-      for( var j = (i+1); j < a.length; j++) {
-        if(a[i].id === a[j].id){ a.splice(j--, 1);}
-      }
-    }
-
-    return a;
-  },
-
   renderListings: function(){
     if (this.context.currentUser && this.state.rooms) {
       return this.state.rooms.map( function(room){

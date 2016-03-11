@@ -8,7 +8,6 @@ ApiActions = {
     });
   },
 
-
   receiveUserRooms: function(rooms){
     AppDispatcher.dispatch({
       actionType: "USER_ROOMS_RECEIVED",
@@ -75,8 +74,28 @@ ApiActions = {
       actionType: "DELETE_ROOM",
       roomId: fetchedRoomId
     });
-  }
+  },
 
+  receivedRequest: function(fetchedRequest){
+    AppDispatcher.dispatch({
+      actionType: "REQUEST_RECEIVED",
+      request: fetchedRequest
+    });
+  },
+
+  receiveUserRequests: function(fetchedRequests){
+    AppDispatcher.dispatch({
+      actionType: "USER_REQUESTS_RECEIVED",
+      requests: fetchedRequests
+    });
+  },
+
+  receiveUserHostings: function(fetchedHostings){
+    AppDispatcher.dispatch({
+      actionType: "USER_HOSTINGS_RECEIVED",
+      hostings: fetchedHostings
+    });
+  }
 }
 
 module.exports = ApiActions;

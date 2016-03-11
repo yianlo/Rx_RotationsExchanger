@@ -16,27 +16,26 @@ var BookingForm = React.createClass({
 
   getInitialState: function(){
     return {
-      reqSentMessage: null,
       checkout_date: null,
       checkin_date: null,
       message: ""
     }
   },
+  //
+  // sendRequest: function(){
+  //   this.setState({reqSentMessage:
+  //     "Your booking was successfully sent! " +
+  //     "Check your messages for when the host responds."
+  //   })
+  // },
 
-  sendRequest: function(){
-    this.setState({reqSentMessage:
-      "Your booking was successfully sent! " +
-      "Check your messages for when the host responds."
-    })
-  },
-
-  handleSubmit: function(e){
-    e.preventDefault();
-
-    if (this.context.requireAuth()){
-      this.sendRequest()
-    }
-  },
+  // handleSubmit: function(e){
+  //   e.preventDefault();
+  //
+  //   if (this.context.requireAuth()){
+  //     this.sendRequest()
+  //   }
+  // },
 
   linkValState: function(state, value){
     var stateObj = {};
@@ -72,16 +71,21 @@ var BookingForm = React.createClass({
     }
   },
 
+  redirectOnSuccess: function(){
+    this.context.router.replace('/main/' + this.props.room.id);
+  },
+
   handleRequest: function(e){
     e.preventDefault();
     var request = {};
 
     Object.keys(this.state).forEach(function(key){
       request[key] = this.state[key];
-    })
+    }.bind(this))
 
     request["room_id"] = this.props.room.id;
-    apiUtil.createRequest(this.state)
+
+    apiUtil.createRequest(request, this.redirectOnSuccess)
   },
 
   render: function(){

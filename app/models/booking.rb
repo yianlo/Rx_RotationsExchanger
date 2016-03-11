@@ -14,7 +14,7 @@
 #
 
 class Booking < ActiveRecord::Base
-  validates :room_id, :booker_id, :to_date, :from_date, :status, presence: true
+  validates :room_id, :booker_id, :checkout_date, :checkin_date, presence: true
   validates :status, inclusion: { in: ["pending", "approved", "denied"] }
 
   belongs_to :room

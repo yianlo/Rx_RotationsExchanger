@@ -19,6 +19,8 @@ var EditForm = React.createClass({
   },
 
   getInitialState: function(){
+    this.getAddress(this.context.room.lat, this.context.room.lng);
+
     return {
       address: "",
       title: this.context.room.title,
@@ -31,11 +33,7 @@ var EditForm = React.createClass({
       from_date: this.context.room.from_date,
       price: this.context.room.price
     };
-
-    this.getAddress(this.context.room.lat, this.context.room.lng);
   },
-
-
 
   getImgUrls: function(imgs){
     var img_urls = imgs.map( function(img){

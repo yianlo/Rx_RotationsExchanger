@@ -10,16 +10,12 @@ var RoomDetails = React.createClass({
     roomId: React.PropTypes.number,
   },
 
-  componentDidMount: function(){
-    this.roomId = parseInt(this.props.params.roomId);
-  },
-
-  componentWillReceiveProps: function(newProp){
-    this.roomId = parseInt(newProp.params.roomId);
+  getInitialState: function(){
+    return {address: ""}
   },
 
   handleEdit: function(){
-    this.context.router.replace('/main/' + this.roomId +'/edit')
+    this.context.router.replace('/main/' + this.context.roomId +'/edit')
   },
 
   handleDelete: function(){
@@ -49,6 +45,21 @@ var RoomDetails = React.createClass({
     }
   },
 
+  componentDidMount: function(){
+    this.getAddress(this.context.room.lat, this.context.room.lng)
+  },
+
+  getAddress: function(lat, lng){
+    var geocoder = new google.maps.Geocoder();
+    var latlng = {lat, lng};
+
+    geocoder.geocode({'location': latlng}, function(result, status){
+      if (status === google.maps.GeocoderStatus.OK) {
+        this.setState({address: result[0].formatted_address})
+      }
+    }.bind(this));
+  },
+
   render: function(){
     if (this.context.room) {
       return(
@@ -60,6 +71,7 @@ var RoomDetails = React.createClass({
           </section>
           <section className="description">
             <h3>About this listing</h3>
+            <p className="address">{this.state.address}</p>
             <p>{this.context.room.description}</p>
           </section>
           {this.getButtons()}

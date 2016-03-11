@@ -30,7 +30,9 @@ var EditDateFields = React.createClass({
   updateDates: function(startDate, endDate){
     if (startDate) {
       this.props.linkValState("from_date", Math.floor(startDate.unix()));
-    } else if (endDate){
+    }
+
+    if (endDate){
       this.props.linkValState("to_date", Math.floor(endDate.unix()));
     }
   },

@@ -31,9 +31,11 @@ var BookingDateFields = React.createClass({
 
   updateDates: function(startDate, endDate){
     if (startDate) {
-      this.props.linkValState("from_date", Math.floor(startDate.unix()));
-    } else if (endDate){
-      this.props.linkValState("to_date", Math.floor(endDate.unix()));
+      this.props.linkValState("checkin_date", Math.floor(startDate.unix()));
+    }
+
+    if (endDate){
+      this.props.linkValState("checkout_date", Math.floor(endDate.unix()));
     }
   },
 

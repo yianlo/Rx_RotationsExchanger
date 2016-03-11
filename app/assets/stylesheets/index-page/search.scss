@@ -15,6 +15,11 @@ $cbox-bg-color: #EDEFED;
   flex: none;
 }
 
+.filled-in{
+  min-width: 10px;
+  min-height: 10px;
+}
+
 .search-field-container {
   padding: 18px 30px;
   justify-content: space-between;

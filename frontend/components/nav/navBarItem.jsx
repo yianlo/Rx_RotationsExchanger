@@ -15,7 +15,6 @@ var NavBarItem = React.createClass({
         {this.props.submenu}
       </div>
     )
-    // return <NavBar items={this.props.submenu} />
   },
 
   generateContent: function(){

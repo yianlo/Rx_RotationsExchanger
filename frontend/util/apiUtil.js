@@ -107,7 +107,6 @@ ApiUtil = {
         ApiActions.receiveUserRooms(fetchedRooms);
       }
     })
-
   },
 
   fetchSingleRoom: function(roomId){
@@ -128,18 +127,32 @@ ApiUtil = {
     })
   },
 
-  createRequest: function(){
-    $.post("/api/bookings", {message: message}, function(){
-      resetCb();
+  createRequest: function(bookingDetails, redirectCb){
+    $.post("/api/bookings", {booking: bookingDetails}, function(fetchedRequest){
+      ApiActions.receivedRequest(fetchedRequest)
+      redirectCb();
     })
   },
 
-  createMessage: function(message, resetCb){
-    $.post("/api/messages", {message: message}, function(){
-      resetCb();
+  fetchRequestsByUser: function(userId){
+    $.get("/api/users/" + userId + "/bookings", function(fetchedRequests){
+      if (Object.getOwnPropertyNames(fetchedRequests).length > 0) {
+        ApiActions.receiveUserRequests(fetchedRequests);
+      }
     })
+  },
+
+  fetchHostingRequests: function(userId){
+    $.get("/api/users/" + userId + "/hostings", function(fetchedHostings){
+      if (Object.getOwnPropertyNames(fetchedHostings).length > 0) {
+        ApiActions.receiveUserHostings(fetchedHostings);
+      }
+    })
+  },
+
+  approveBooking: function(){
+    
   }
 }
 
-window.ApiUtil = ApiUtil;
 module.exports = ApiUtil;
