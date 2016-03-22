@@ -76,16 +76,21 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
 
 }
 
-.nav-submenu{
+.submenu-item{
   flex-direction: column;
   display: flex;
-  position: relative;
+  position: absolute;
   top: 60px;
   flex: 0 0 auto;
-  left: -21px;
+  transform: translateX(-21px);
+
+  min-width: 250px;
+  overflow: hidden;
 
   // @include animation('show-submenu 1s ease');
   .nav-items{
+    min-width: 250px;
+    overflow: hidden;
     @include animation('show-submenu 0.8s ease');
   }
 
@@ -97,13 +102,13 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
 // background: none;
 
 .nav-bar{
-  .nav-submenu{
+  .submenu-item{
     background: white;
   }
 }
 
 .logo-search-container{
-  width: 70%;
+  width: 63%;
   min-width: 610px;
 }
 
@@ -216,6 +221,7 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
   overflow: hidden;
 }
 
-.submenu{
+.submenu-title{
+  align-items: center;
   min-width: 120px;
 }

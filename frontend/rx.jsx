@@ -33,8 +33,8 @@ var routes = (
     <Route path="message" component={Chat}/>
     <Route path="main" component={Main}>
       <Route path="search" component={SearchContent}/>
-      <Route path=":userId/profile" component={ProfilePage}/>
       <Route path=":userId/trips" component={TripsPage}/>
+      <Route path=":userId/hostings" component={ProfilePage}/>
       <Route path="new" component={AddFormPage} />
       <Route path=":roomId" component={ShowRoomPage}>
         <IndexRoute component={RoomDetails} />

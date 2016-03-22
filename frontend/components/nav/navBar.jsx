@@ -27,6 +27,10 @@ var NavBar = React.createClass({
     this.context.router.replace('/main/' + this.context.currentUser.id + '/trips');
   },
 
+  redirectToHostings: function(){
+    this.context.router.replace('/main/' + this.context.currentUser.id + '/hostings');
+  },
+
   renderAuthLinks: function(){
     if (this.context.loggedIn && this.context.currentUser) {
       return (
@@ -34,6 +38,8 @@ var NavBar = React.createClass({
           <Listings />
           <NavBarItem text="My Trips"
             onClickFun={this.redirectToTrips}/>
+          <NavBarItem text="Hosting Requests"
+            onClickFun={this.redirectToHostings}/>
           <NavBarItem text="Log out"
             onClickFun={apiUtil.deleteSession.bind(null, this.context.handleLogOut)}/>
         </div>

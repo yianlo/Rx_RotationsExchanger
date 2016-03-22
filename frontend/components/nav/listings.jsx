@@ -54,7 +54,7 @@ var Listings = React.createClass({
   render: function(){
     if (this.state.rooms.length > 0){
       return(
-        <NavBarItem text="My Listings" submenu={this.renderListings()} newClass="submenu nav-items"/>
+        <NavBarItem text="My Listings" submenu={this.renderListings()} newClass="submenu-title nav-items"/>
       )
     } else {
       return <NavBarItem text="No Listings"/>

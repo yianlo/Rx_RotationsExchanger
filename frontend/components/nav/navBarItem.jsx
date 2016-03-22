@@ -4,14 +4,12 @@ var React = require('react'),
 
 var NavBarItem = React.createClass({
   getInitialState: function(){
-    return {
-      submenuDisplay: {display: "none"},
-      submenuPos: {position: "relative"}
-    }
+    return { submenuDisplay: {display: "none"} }
   },
+  
   generateSubmenu: function(){
     return (
-      <div className="nav-submenu" style={this.state.submenuDisplay}>
+      <div className="submenu-item" style={this.state.submenuDisplay}>
         {this.props.submenu}
       </div>
     )
@@ -19,7 +17,7 @@ var NavBarItem = React.createClass({
 
   generateContent: function(){
     if(this.props.submenu){
-      var content = [ <a style={this.state.submenuPos}>{this.props.text}</a> ];
+      var content = [ <a>{this.props.text}</a> ];
       content.push(this.generateSubmenu());
     } else {
       var content = [ <a>{this.props.text}</a> ];
@@ -31,10 +29,8 @@ var NavBarItem = React.createClass({
     if (this.props.submenu) {
       if (this.state.submenuDisplay.display === "none"){
         this.setState({submenuDisplay: {display: "flex"}})
-        this.setState({submenuPos: {position: "absolute"}})
       } else {
         this.setState({submenuDisplay: {display: "none"}})
-        this.setState({submenuPos: {position: "relative"}})
       }
     }
   },
