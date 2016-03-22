@@ -22,7 +22,7 @@ var React = require('react'),
     EditForm = require('./components/showRoom/editForm'),
     RoomDetails = require('./components/showRoom/roomDetails'),
 
-    PastTrips = require('./components/trips/pastTrips');
+    TripsPage = require('./components/trips/tripsPage');
 
 var NavBar = require('./components/nav/navBar');
 // <Route path="booking" component={BookingForm}/>
@@ -34,7 +34,7 @@ var routes = (
     <Route path="main" component={Main}>
       <Route path="search" component={SearchContent}/>
       <Route path=":userId/profile" component={ProfilePage}/>
-      <Route path=":userId/trips" component={PastTrips}/>
+      <Route path=":userId/trips" component={TripsPage}/>
       <Route path="new" component={AddFormPage} />
       <Route path=":roomId" component={ShowRoomPage}>
         <IndexRoute component={RoomDetails} />

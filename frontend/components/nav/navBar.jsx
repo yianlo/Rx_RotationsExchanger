@@ -1,7 +1,7 @@
 var React = require('react'),
     NavBarItem = require('./navBarItem'),
     Listings = require('./listings'),
-    Trips = require('./requests'),
+    // Trips = require('./requests'),
     AutocompleteSearch = require('../apis/autocomplete'),
     Logo = require('./logo'),
     apiUtil = require('../../util/apiUtil'),
@@ -28,13 +28,11 @@ var NavBar = React.createClass({
   },
 
   renderAuthLinks: function(){
-
     if (this.context.loggedIn && this.context.currentUser) {
       return (
         <div>
           <Listings />
-          <Trips />
-          <NavBarItem text="Past Trips"
+          <NavBarItem text="My Trips"
             onClickFun={this.redirectToTrips}/>
           <NavBarItem text="Log out"
             onClickFun={apiUtil.deleteSession.bind(null, this.context.handleLogOut)}/>

@@ -3,28 +3,56 @@ var AppDispatcher = require('../dispatcher');
 
 var RequestStore = new Store(AppDispatcher);
 
-_requests = [];
-_pastTrips = [];
+_requests = {};
+_pastTrips = {};
+_currentTrips = {};
+_upcomingTrips = {};
 
 _addRequest = function(newRequest){
   _requests.push(newRequest)
 };
 
-
 _resetRequests = function(requests){
-  _requests = requests;
+  today = new Date;
+
+  for (var i = 0; i < requests.length; i++) {
+    requests[i].checkin_date = new Date(requests[i].checkin_date)
+    requests[i].checkout_date = new Date(requests[i].checkout_date)
+
+    if (requests[i].checkin_date > today) {
+      _upcomingTrips[requests[i].id] = requests[i];
+    } else if (requests[i].checkout_date < today) {
+      _pastTrips[requests[i].id] = requests[i];
+    } else {
+      _currentTrips[requests[i].id] = requests[i];
+    }
+
+    _requests[requests[i].id] = requests[i];
+  }
 };
 
 _resetPastTrips = function(trips){
   _pastTrips = trips;
 };
 
-RequestStore.getRequests = function(){
-  return _requests.slice();
+_objToArray = function(obj){
+  return Object.keys(obj).map(function(reqId){return obj[reqId]})
+};
+
+RequestStore.getAllRequests = function(){
+  return _requests;
 };
 
 RequestStore.getPastTrips = function(){
-  return _pastTrips.slice();
+  return _objToArray(_pastTrips);
+};
+
+RequestStore.getCurrentTrips = function(){
+  return _objToArray(_currentTrips);
+};
+
+RequestStore.getUpcomingTrips = function(){
+  return _objToArray(_upcomingTrips);
 };
 
 RequestStore.__onDispatch = function (payload) {

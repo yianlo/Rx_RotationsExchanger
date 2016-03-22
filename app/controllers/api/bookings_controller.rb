@@ -10,7 +10,7 @@ class Api::BookingsController < ApplicationController
   end
 
   def index
-    @bookings = current_user.bookings.where("checkout_date >= ?", DateTime.now )
+    @bookings = current_user.bookings
   end
 
   def past_trips

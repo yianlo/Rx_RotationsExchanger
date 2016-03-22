@@ -5,22 +5,35 @@ var TripItem = React.createClass({
     router: React.PropTypes.object.isRequired,
   },
 
-  handleTitleClick: function(){
+  handleClick: function(){
     this.context.router.replace('/main/' + this.props.trip.room.id)
   },
 
+  displayDate: function(checkin, checkout){
+    var monthNames = [
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ];
+
+    checkinStr = monthNames[checkin.getMonth()] + " "
+               + checkin.getDate();
+    checkoutStr = monthNames[checkout.getMonth()] + " "
+                + checkout.getDate() + ", "
+                + checkout.getFullYear();
+
+    return checkinStr + " - " + checkoutStr
+  },
+
   render: function(){
-    debugger
     return(
-      <div className="trip-item">
+      <div onClick={this.handleClick} className="trip-item">
         <div className="wrapper">
           <img className="trip-room-img"
             src= {this.props.trip.images[0].url}></img>
         </div>
 
-        <div onClick={this.handleTitleClick}>{this.props.trip.room.title}</div>
-        <div>{this.props.trip.checkin_date}</div>
-        <div>{this.props.trip.checkout_date}</div>
+        <div>{this.props.trip.room.title}</div>
+        <div>{this.displayDate(this.props.trip.checkin_date, this.props.trip.checkout_date)}</div>
       </div>
     )
   }

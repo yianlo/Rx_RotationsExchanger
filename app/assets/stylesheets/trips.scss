@@ -9,7 +9,6 @@ $top-push: 61px;
   .trips-index{
     .trip-item{
       flex-direction: column;
-
       .wrapper{
         height: 200px;
         width: 280px;
@@ -19,6 +18,10 @@ $top-push: 61px;
           width: 100%;
         }
       }
+    }
+
+    .trip-item:hover{
+      cursor: pointer;
     }
   }
 

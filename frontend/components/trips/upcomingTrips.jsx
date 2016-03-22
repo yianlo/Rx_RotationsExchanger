@@ -18,10 +18,6 @@ var UpcomingTrips = React.createClass({
     this.setState({upcomingTrips: RequestStore.getUpcomingTrips()});
   },
 
-  componentWillReceiveProps: function(newProp){
-    debugger
-  },
-
   componentDidMount: function(){
     this.setState({upcomingTrips: RequestStore.getUpcomingTrips()});
     this.requestsListener = RequestStore.addListener( this._onChange );
