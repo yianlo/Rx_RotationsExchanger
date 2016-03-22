@@ -10,7 +10,12 @@ class Api::BookingsController < ApplicationController
   end
 
   def index
-    @bookings = current_user.bookings
+    @bookings = current_user.bookings.where("checkout_date >= ?", DateTime.now )
+  end
+
+  def past_trips
+    @bookings = current_user.bookings.where("checkout_date < ?", DateTime.now ).includes(room: :images)
+    render :index
   end
 
   def hostings

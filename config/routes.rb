@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resources :rooms, only: [:index]
       resources :bookings, only: [:index]
       get 'hostings', :to => 'bookings#hostings'
+      get 'past_trips', :to => 'bookings#past_trips'
     end
   end
 end

@@ -142,6 +142,14 @@ ApiUtil = {
     })
   },
 
+  fetchPastRequestsByUser: function(userId){
+    $.get("/api/users/" + userId + "/past_trips", function(fetchedTrips){
+      if (Object.getOwnPropertyNames(fetchedTrips).length > 0) {
+        ApiActions.receiveUserPastTrips(fetchedTrips);
+      }
+    })
+  },
+
   fetchHostingRequests: function(userId){
     $.get("/api/users/" + userId + "/hostings", function(fetchedHostings){
       if (Object.getOwnPropertyNames(fetchedHostings).length > 0) {
@@ -151,7 +159,7 @@ ApiUtil = {
   },
 
   approveBooking: function(){
-    
+
   }
 }
 

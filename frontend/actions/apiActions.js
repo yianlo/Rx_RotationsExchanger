@@ -90,6 +90,13 @@ ApiActions = {
     });
   },
 
+  receiveUserPastTrips: function(fetchedTrips){
+    AppDispatcher.dispatch({
+      actionType: "USER_PAST_TRIPS_RECEIVED",
+      trips: fetchedTrips
+    });
+  },
+
   receiveUserHostings: function(fetchedHostings){
     AppDispatcher.dispatch({
       actionType: "USER_HOSTINGS_RECEIVED",

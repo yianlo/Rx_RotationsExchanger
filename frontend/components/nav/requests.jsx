@@ -55,10 +55,10 @@ var Requests = React.createClass({
 
     if (this.state.requests.length > 0){
       return(
-        <NavBarItem text="Requests" submenu={this.renderRequests()} newClass="submenu nav-items"/>
+        <NavBarItem text="Trips" submenu={this.renderRequests()} newClass="submenu nav-items"/>
       )
     } else {
-      return <NavBarItem text="No Requests"/>
+      return <NavBarItem text="No Trips"/>
     }
   }
 })

@@ -1,0 +1,25 @@
+$top-push: 61px;
+
+
+.past-trips{
+  position: relative;
+  top: $top-push;
+  flex-direction: column;
+
+  .trips-index{
+    .trip-item{
+      flex-direction: column;
+
+      .wrapper{
+        height: 200px;
+        width: 280px;
+
+        img{
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}
