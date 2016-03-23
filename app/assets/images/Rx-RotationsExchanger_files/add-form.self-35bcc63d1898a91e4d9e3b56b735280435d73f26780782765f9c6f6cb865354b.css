@@ -29,7 +29,7 @@
   justify-content: center;
   align-items: center;
   min-width: 1052px;
-  background: #F5F5F5;
+  background: $offwhite-bg;
 }
 
 /* line 46, /Users/Yian/Development/App Academy/Class-Projects/Rx_RotationsExchanger/app/assets/stylesheets/add-form.scss */

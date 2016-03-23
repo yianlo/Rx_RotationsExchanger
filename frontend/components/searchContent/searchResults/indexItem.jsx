@@ -75,10 +75,11 @@ var IndexItem = React.createClass({
         style={this.state.height}>
 
         <section className="img-container" style={this.state.imgHeight}>
-          <div className="wrapper">
-            <img className="room-img"
-              src= {this.getImageUrl()}></img>
+
+          <div className="wrapper"
+            style={{backgroundImage: 'url(' + this.getImageUrl() + ')'}}>
           </div>
+
 
           <div className="price"><span className="dollar-sign">$&nbsp;</span>{this.props.room.price}</div>
         </section>

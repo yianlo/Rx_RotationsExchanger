@@ -1,5 +1,6 @@
 $top-push: 61px;
 $box-shadow: 0 0 10px #999;
+$offwhite-bg: #F5F5F5;
 
 $theme-color: #F88379;
 $theme-color-buttons: rgba(248, 131, 121, 0.7);
@@ -18,7 +19,7 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
   .no-trip-message{
     font-size: 20px;
     padding: 30px 50px;
-    background: #F5F5F5;
+    background: $offwhite-bg;
     align-items: center;
     margin-top: 32px;
 
@@ -55,7 +56,7 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
 
   .trips-index{
     padding: 30px 20px;
-    background: #F5F5F5;
+    background: $offwhite-bg;
 
     min-height: 500px;
     margin-top: 32px;

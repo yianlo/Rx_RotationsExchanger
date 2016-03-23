@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $theme-color: #F88379;
-$theme-color-buttons: rgba(248, 131, 121, 0.9);
+$theme-color-buttons: rgba(248, 131, 121, 1);
 $theme-color-buttons-hover: rgba(225, 110, 100, 1);
 
 $default-font: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -93,9 +93,11 @@ button {
   background: $theme-color-buttons;
   color: white;
 
+
   margin-right: 20px;
   padding: 10px 10px;
   // border: 2px solid #ccc;
+  align-items: center;
   text-align: center;
   align-self: center;
 

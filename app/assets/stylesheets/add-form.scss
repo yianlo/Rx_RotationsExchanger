@@ -6,6 +6,7 @@ $text-color: #676b6d;
 $input-height: 52px;
 
 $theme-color: #F88379;
+$offwhite-bg: #F5F5F5;
 $min-width: 1052px;
 $form-items-width: 800px;
 
@@ -45,7 +46,7 @@ $form-items-width: 800px;
   align-items: center;
   min-width: $min-width;
 
-  background: #F5F5F5;
+  background: $offwhite-bg;
 }
 
 .add-form{
@@ -129,6 +130,11 @@ $form-items-width: 800px;
 
 
 .selected-choice{
+  background: $choice-selected-color;
+  color: white;
+}
+
+.selected-choice:hover{
   background: $choice-selected-color;
   color: white;
 }

@@ -1,4 +1,7 @@
 $theme-color: #F88379;
+$auth-box-shadow: 0 0 15px #222;
+$offwhite-bg: #F5F5F5;
+
 
 @keyframes auth-emerge {
   from {opacity: 0}
@@ -9,6 +12,7 @@ $theme-color: #F88379;
   height: 100%;
   width: 100%;
   z-index: 900;
+  font-size: 15px;
 
   position: fixed;
   top: 0;
@@ -40,6 +44,7 @@ $theme-color: #F88379;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  box-shadow: $auth-box-shadow;
 }
 
 .auth-img{
@@ -50,7 +55,7 @@ $theme-color: #F88379;
 }
 
 .auth-form{
-  background: white;
+  background: $offwhite-bg;
   padding: 15px;
   padding-bottom: 25px;
   flex-direction: column;
@@ -81,13 +86,15 @@ $theme-color: #F88379;
 
 .auth-button {
   width: 98%;
-  height: 35px;
+  height: 38px;
   margin: 0 auto;
   margin-top: 11px;
+
+  line-height: 0;
 }
 
 .auth-additional{
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .auth-container hr{
