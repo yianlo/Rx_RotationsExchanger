@@ -23,6 +23,11 @@ class Api::BookingsController < ApplicationController
     render :index
   end
 
+  def destroy
+    @booking = Booking.find_by(id: booking_params[:id])
+    @booking.destroy
+  end
+
   def approve
   end
 
@@ -30,18 +35,9 @@ class Api::BookingsController < ApplicationController
   end
 
 
-
-
-  def destroy
-  end
-
-  def show
-  end
-
-
   private
 
   def booking_params
-    params.require(:booking).permit(:checkout_date, :checkin_date, :room_id, :message)
+    params.require(:booking).permit(:id, :checkout_date, :checkin_date, :room_id, :message)
   end
 end

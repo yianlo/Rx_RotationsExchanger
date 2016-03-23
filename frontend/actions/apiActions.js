@@ -97,6 +97,13 @@ ApiActions = {
     });
   },
 
+  deletedBooking: function(bookingId){
+    AppDispatcher.dispatch({
+      actionType: "DELETE_TRIP",
+      tripId: bookingId
+    });
+  },
+
   receiveUserHostings: function(fetchedHostings){
     AppDispatcher.dispatch({
       actionType: "USER_HOSTINGS_RECEIVED",

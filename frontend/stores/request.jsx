@@ -31,6 +31,14 @@ _resetRequests = function(requests){
   }
 };
 
+_deleteTrip = function(tripId){
+  delete _requests[tripId];
+
+  if(_pastTrips[tripId]){ delete _pastTrips[tripId]; }
+  if(_currentTrips[tripId]){ delete _currentTrips[tripId]; }
+  if(_upcomingTrips[tripId]){ delete _upcomingTrips[tripId]; }
+};
+
 _resetPastTrips = function(trips){
   _pastTrips = trips;
 };
@@ -67,6 +75,10 @@ RequestStore.__onDispatch = function (payload) {
       break;
     case "USER_PAST_TRIPS_RECEIVED":
       _resetPastTrips(payload.trips);
+      RequestStore.__emitChange();
+      break;
+    case "DELETE_TRIP":
+      _deleteTrip(payload.tripId);
       RequestStore.__emitChange();
       break;
   }

@@ -4,7 +4,7 @@
 // }
 $button-transition: all 0.18s ease;
 $button-shadow: 0 0 4px #999;
-$theme-color-buttons: rgba(248, 131, 121, 0.7);
+$theme-color-buttons: rgba(248, 131, 121, 1);
 
 @mixin transition($args...) {
   -webkit-transition: $args;
@@ -51,7 +51,7 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
       border-radius: 45px;
 
       color: #eee;
-      background: rgba(150, 150, 150, 0.4);
+      background: rgba(150, 150, 150, 0.8);
 
       font-size: 28px;
       width: 45px;
@@ -71,7 +71,6 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
       cursor: pointer;
       border-radius: 30%;
       background: $theme-color-buttons;
-      box-shadow: $button-shadow;
     }
   }
   //

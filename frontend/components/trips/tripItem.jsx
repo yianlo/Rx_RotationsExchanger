@@ -70,9 +70,11 @@ var TripItem = React.createClass({
 
   },
 
-  handleDelete: function(){
+  handleDelete: function(e){
+    e.preventDefault();
+    e.stopPropagation();
     debugger
-    apiUtil.deleteBooking(this.props.trip)
+    apiUtil.deleteBooking(this.props.trip.id)
   },
 
   getDeleteButton: function(){

@@ -10,15 +10,24 @@ $min-width: 1052px;
 $form-items-width: 800px;
 
 .edit-form-container{
+  min-width: 930px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 
   .edit-details{
     width: 800px;
   }
 
   .header{
-    width: 806px;
+    width: 810px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
 
     .edit-title{
+      border: 1px solid #ccc;
+      padding: 9px;
+      border-radius: 1.5px;
+
       font-size: 30px;
       height: auto;
       width: 650px;
@@ -29,18 +38,12 @@ $form-items-width: 800px;
       text-transform: uppercase;
     }
 
-    .edit-title:focus{
-      border: 1px solid #ccc;
-      padding: 9px;
-      border-radius: 3px;
-    }
-
     .room-type{
-      width: 170px;
+      width: 195px;
     }
 
     .home-type{
-      width: 155px;
+      width: 130px;
     }
 
     .select-style:first-of-type{
@@ -49,12 +52,13 @@ $form-items-width: 800px;
 
     .select-style {
       position: relative;
-      top: 5px;
+      height: 57.5px;
+      top: -0.5px;
 
       padding: 0;
       margin: 0;
-      border: 1px solid #ddd;
-      border-radius: 3px;
+      border: 1px solid #ccc;
+      border-radius: 1.5px;
       overflow: hidden;
       background-color: #fff;
       background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%;
@@ -63,6 +67,7 @@ $form-items-width: 800px;
         font-weight: 300;
         font-size: 13.5px;
         text-transform: uppercase;
+        padding-left: 17px;
       }
     }
 
@@ -87,8 +92,6 @@ $form-items-width: 800px;
     span{
       font-size: 15px;
       margin: 0 8px;
-      position: relative;
-      top: 5px;
     }
   }
 
