@@ -80,9 +80,12 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
   flex-direction: column;
   display: flex;
   position: absolute;
-  top: 60px;
+  // left: -110px;
   flex: 0 0 auto;
   transform: translateX(-21px);
+
+  border: 1px solid #ccc;
+  border-left: none;
 
   min-width: 250px;
   overflow: hidden;
@@ -224,4 +227,5 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
 .submenu-title{
   align-items: center;
   min-width: 120px;
+  position: relative;
 }

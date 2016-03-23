@@ -2,11 +2,11 @@ var React = require('react');
 
 var HostingItem = React.createClass({
   handleApprove: function(){
-    // apiUtil.approveBooking(this.props.hosting.id)
+    apiUtil.approveBooking(this.props.hosting.id)
   },
 
   handleDeny: function(){
-    // apiUtil.denyBooking(this.props.hosting.id)
+    apiUtil.denyBooking(this.props.hosting.id)
   },
 
   render: function(){

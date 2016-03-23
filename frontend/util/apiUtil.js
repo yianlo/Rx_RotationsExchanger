@@ -150,6 +150,22 @@ ApiUtil = {
     })
   },
 
+  approveBooking: function(bookingId){
+    $.post("/api/bookings/approve", {booking: {id: bookingId}}, function(updatedBooking){
+      if (Object.getOwnPropertyNames(updatedBooking).length > 0) {
+        ApiActions.receiveUserHostings(updatedBooking);
+      }
+    })
+  },
+
+  denyBooking: function(bookingId){
+    $.post("/api/bookings/approve", {booking: {id: bookingId}}, function(updatedBooking){
+      if (Object.getOwnPropertyNames(updatedBooking).length > 0) {
+        ApiActions.receiveUserHostings(updatedBooking);
+      }
+    })
+  }
+
   deleteBooking: function(bookingId){
     $.ajax({
       url: '/api/bookings/' + bookingId,
@@ -167,10 +183,6 @@ ApiUtil = {
         ApiActions.receiveUserHostings(fetchedHostings);
       }
     })
-  },
-
-  approveBooking: function(){
-
   }
 }
 
