@@ -91,7 +91,7 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
   .nav-items{
     min-width: 250px;
     overflow: hidden;
-    @include animation('show-submenu 0.8s ease');
+    @include animation('show-submenu 0.6s ease');
   }
 
   .nav-items:hover{

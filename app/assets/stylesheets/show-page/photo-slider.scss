@@ -1,6 +1,5 @@
 $theme-color: #F88379;
 $theme-color-selected: #32959F;
-$box-shadow: 0 0 10px #999;
 
 $button-shadow: 0 0 4px #999;
 $theme-color-buttons: rgba(248, 131, 121, 0.7);
@@ -41,7 +40,7 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
       button{
         font-weight: lighter;
 
-        opacity: 0 !important;
+        opacity: 0.7 !important;
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -49,6 +48,14 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
         text-align: center;
 
         position: relative !important;
+      }
+
+      button:hover{
+        border-radius: 30%;
+        opacity: 1 !important;
+        background: $theme-color-buttons !important;
+        box-shadow: $button-shadow !important;
+        @include transition(all 0.2s ease);
       }
     }
 
@@ -79,25 +86,7 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
   }
 
   .slider:hover {
-    box-shadow: $box-shadow;
     cursor: grab !important;
     cursor: -webkit-grab !important;
-
-    @include transition(all, 0);
-
-    .slider-decorator-0, .slider-decorator-1{
-      padding: 25px;
-
-      button{
-        opacity: 0.7 !important;
-      }
-      button:hover{
-        border-radius: 30%;
-        opacity: 1 !important;
-        background: $theme-color-buttons !important;
-        box-shadow: $button-shadow !important;
-        @include transition(all 0.2s ease);
-      }
-    }
   }
 }

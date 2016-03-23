@@ -3,6 +3,11 @@ var React = require('react'),
     TripsIndex = require('./tripsIndex');
 
 var TripsPage = React.createClass({
+
+  contextTypes: {
+    router: React.PropTypes.object.isRequired,
+  },
+
   getInitialState: function(){
     return {
       pastTrips: RequestStore.getPastTrips(),
@@ -48,25 +53,32 @@ var TripsPage = React.createClass({
     this.requestsListener.remove();
   },
 
+  handleExplore: function(){
+    this.context.router.replace("/main/search")
+  },
+
   renderTrips: function(trips){
     if (trips.length > 0) {
       return <TripsIndex trips={trips}/>
     } else {
-      return <p>No trips on schedule, start exploring now!</p>
+      return <p className="no-trip-message">
+        No trips scheduled. Start&nbsp;
+        <span className="explore" onClick={this.handleExplore}>exploring</span>&nbsp;now!
+      </p>
     }
   },
 
   render: function(){
     return(
-      <div className="past-trips">
-        <h1>Past Trips</h1>
-        {this.renderTrips(this.state.pastTrips)}
-
+      <div className="trips-page">
         <h1>Current Trips</h1>
         {this.renderTrips(this.state.currentTrips)}
 
         <h1>Upcoming Trips</h1>
         {this.renderTrips(this.state.upcomingTrips)}
+
+        <h1>Past Trips</h1>
+        {this.renderTrips(this.state.pastTrips)}
       </div>
     )
   }

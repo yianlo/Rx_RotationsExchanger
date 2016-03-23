@@ -1,14 +1,66 @@
 $top-push: 61px;
+$box-shadow: 0 0 10px #999;
 
+$theme-color: #F88379;
 
-.past-trips{
+.trips-page{
   position: relative;
   top: $top-push;
   flex-direction: column;
 
+
+  h1{
+    font-size: 28px;
+    padding: 45px 0 15px 40px;
+  }
+
+  .no-trip-message{
+    font-size: 20px;
+    padding: 30px 40px;
+    background: #F5F5F5;
+
+    .explore{
+      position: relative;
+      color:$theme-color;
+    }
+
+    .explore:hover{
+      cursor: pointer;
+    }
+
+    .explore:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1.8px;
+      bottom: -6px;
+      left: 0;
+      background-color: $theme-color;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.2s ease-in-out 0s;
+    }
+
+    .explore:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+  }
+
   .trips-index{
+    padding: 30px 20px;
+    background: #F5F5F5;
+
     .trip-item{
+      background: white;
+      padding: 20px;
+      align-items: center;
       flex-direction: column;
+      margin: 10px 20px;
+
       .wrapper{
         height: 200px;
         width: 280px;
@@ -18,10 +70,23 @@ $top-push: 61px;
           width: 100%;
         }
       }
+
+      h2{
+        padding: 30px 0 8px 0px;
+        font-size: 22px;
+      }
+
+      p{
+        font-size: 17px;
+        padding: 4px;
+      }
     }
 
     .trip-item:hover{
       cursor: pointer;
+
+      cursor: pointer;
+      box-shadow: $box-shadow;
     }
   }
 

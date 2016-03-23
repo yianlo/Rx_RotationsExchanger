@@ -66,8 +66,12 @@ select.search-item{
 }
 
 input[type=checkbox]{
-  transform: scale(1.5);
-  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  align-self: center;
+    position: relative;
+    transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    border-style: none;
+    top: 0.5px;
 }
 
 #priceSlider {
@@ -97,8 +101,16 @@ input[type=checkbox]{
     width: 31%;
   }
 
+
+  .search-field-container{
+    min-width: 535px;
+  }
   .search-fields-container hr{
     display: none;
+  }
+
+  .datepicker__input-container {
+    left: -7.5px;
   }
 
 }

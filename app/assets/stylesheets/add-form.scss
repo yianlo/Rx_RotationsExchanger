@@ -72,6 +72,10 @@ $form-items-width: 800px;
 .add-form-choices{
   display: inline-flex;
   border-left: 1px solid $border-color;
+
+  button{
+    border-radius: 0;
+  }
 }
 
 .add-form-choice, .add-form-input, .upload-image-button, .add-form-button{
