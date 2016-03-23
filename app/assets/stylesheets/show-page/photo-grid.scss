@@ -45,13 +45,13 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
       opacity: 0;
       @include transition($button-transition);
 
-      color: #ddd;
       margin: 7px;
       padding: 0;
       z-index: 1000;
       border-radius: 45px;
-      background: rgba(100, 100, 100, 0.4);
-      border: 1px solid #ddd;
+
+      color: #eee;
+      background: rgba(150, 150, 150, 0.4);
 
       font-size: 28px;
       width: 45px;
@@ -68,7 +68,6 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
     }
 
     .delete-button:hover{
-      border: 1px solid #ccc;
       cursor: pointer;
       border-radius: 30%;
       background: $theme-color-buttons;

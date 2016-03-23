@@ -150,6 +150,29 @@ ApiUtil = {
     })
   },
 
+  deleteRoom: function(roomId, redirectCb){
+    $.ajax({
+      url: '/api/rooms/' + roomId,
+      type: 'DELETE',
+      data: {room: {id: roomId}},
+      success: function(deletedRoom){
+        redirectCb();
+        ApiActions.deleteRoom(deletedRoom.id)
+      }
+    })
+  },
+
+  deleteBooking: function(bookingId){
+    $.ajax({
+      url: '/api/bookings' + bookingId,
+      type: 'DELETE',
+      data: {booking: {id: bookingId}},
+      success: function(deletedBooking){
+        ApiActions.deleteBooking(deletedBooking.id);
+      }
+    })
+  }
+
   fetchHostingRequests: function(userId){
     $.get("/api/users/" + userId + "/hostings", function(fetchedHostings){
       if (Object.getOwnPropertyNames(fetchedHostings).length > 0) {

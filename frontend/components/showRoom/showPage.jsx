@@ -11,6 +11,7 @@ var ShowRoom = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.object.isRequired,
+    currentUser: React.PropTypes.object
   },
 
   childContextTypes: {
@@ -87,12 +88,18 @@ var ShowRoom = React.createClass({
   // },
   //
 
+  getBookingForm: function(){
+    if(this.context.currentUser.id !== this.getHostId()){
+      return <BookingForm room={this.state.room} />
+    }
+  },
+
   getDetails: function(){
     if (this.state.room) {
       return (
         <div className="show-page">
           {this.props.children}
-          <BookingForm room={this.state.room} />
+          {this.getBookingForm()}
         </div>
       )
     }

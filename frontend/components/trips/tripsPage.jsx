@@ -57,9 +57,9 @@ var TripsPage = React.createClass({
     this.context.router.replace("/main/search")
   },
 
-  renderTrips: function(trips){
+  renderTrips: function(trips, group){
     if (trips.length > 0) {
-      return <TripsIndex trips={trips}/>
+      return <TripsIndex group={group} trips={trips}/>
     } else {
       return <p className="no-trip-message">
         No trips scheduled. Start&nbsp;
@@ -72,13 +72,13 @@ var TripsPage = React.createClass({
     return(
       <div className="trips-page">
         <h1>Current Trips</h1>
-        {this.renderTrips(this.state.currentTrips)}
+        {this.renderTrips(this.state.currentTrips, "current")}
 
         <h1>Upcoming Trips</h1>
-        {this.renderTrips(this.state.upcomingTrips)}
+        {this.renderTrips(this.state.upcomingTrips, "upcoming")}
 
         <h1>Past Trips</h1>
-        {this.renderTrips(this.state.pastTrips)}
+        {this.renderTrips(this.state.pastTrips, "past")}
       </div>
     )
   }

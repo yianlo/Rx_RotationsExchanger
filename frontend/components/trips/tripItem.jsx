@@ -43,20 +43,67 @@ var TripItem = React.createClass({
     }.bind(this));
   },
 
+  getStatusColor: function(){
+    switch (this.props.trip.status){
+      case "pending":
+        return "#FDEBCF"
+      case "approved":
+        return "#47B656"
+      case "denied":
+        return "#ddd"
+    };
+  },
+
+  renderStatus: function(){
+    if(this.props.group !== "current"){
+      statusColor = this.getStatusColor()
+      return(
+        <div className="status"
+          style={{backgroundColor: statusColor}}>
+          {this.props.trip.status}
+        </div>
+      )
+    }
+  },
+
+  redirectOnSuccess: function(){
+
+  },
+
+  handleDelete: function(){
+    debugger
+    apiUtil.deleteBooking(this.props.trip)
+  },
+
+  getDeleteButton: function(){
+    // if (this.props.group === "current") {
+      return <i className="delete-button fa fa-trash-o"
+        onClick={this.handleDelete}></i>
+    // }
+  },
+
   render: function(){
     return(
       <div onClick={this.handleClick} className="trip-item">
-        <div className="wrapper">
-          <img className="trip-room-img"
-            src= {this.props.trip.images[0].url}></img>
+        <h2>{this.state.city}</h2>
+        {this.getDeleteButton()}
+
+        <div className="wrapper"
+          style={{backgroundImage: 'url(' + this.props.trip.images[0].url + ')'}}>
+
         </div>
 
-        <h2>{this.state.city}</h2>
+        <hr></hr>
         <p>{this.props.trip.room.title}</p>
         <p>{this.displayDate(this.props.trip.checkin_date, this.props.trip.checkout_date)}</p>
+
+        {this.renderStatus()}
       </div>
     )
   }
 })
+
+// <img className="trip-room-img"
+//   src= {this.props.trip.images[0].url}></img>
 
 module.exports = TripItem;
