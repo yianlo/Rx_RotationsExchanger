@@ -78,10 +78,10 @@ var TripItem = React.createClass({
   },
 
   getDeleteButton: function(){
-    // if (this.props.group === "current") {
+    if (this.props.group === "upcoming") {
       return <i className="delete-button fa fa-trash-o"
         onClick={this.handleDelete}></i>
-    // }
+    }
   },
 
   render: function(){

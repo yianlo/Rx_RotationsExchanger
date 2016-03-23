@@ -164,7 +164,7 @@ ApiUtil = {
         ApiActions.receiveUserHostings(updatedBooking);
       }
     })
-  }
+  },
 
   deleteBooking: function(bookingId){
     $.ajax({

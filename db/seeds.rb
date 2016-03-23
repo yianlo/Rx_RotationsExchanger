@@ -6,12 +6,21 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-COORDS = [[37.7674, -122.4153], [37.7529817,-122.4710821], [37.7890772,-122.43699804], [37.7694515,-122.4597928], [37.7684515,-122.4577928], [37.7634515,-122.4557928]]
+LATLNG = [37.773972, -122.431297];
+
 TITLES = [
   "Central Location Next to UCSF",
   "Comfy Couch in Shabby Chic",
   "The White Bed",
-  "Retro Room near Haight Ashbury"
+  "Retro Room near Haight Ashbury",
+  "San Francisco City Bed",
+  "Playful Room in SF",
+  "Cozy Room in Bay Area",
+  "Spacious Modern Loft",
+  "Modern View Flat",
+  "Beautiful Garden Room",
+  "Cute Room for Two",
+  "Decked out Attic"
 ]
 
 IMG_URLS = [
@@ -20,7 +29,13 @@ IMG_URLS = [
   "http://res.cloudinary.com/dcnac6iuq/image/fetch/http://www.wallcoo.net/photography/home_space_01/images/Interior_Photography_GK032.jpg",
   "http://res.cloudinary.com/dcnac6iuq/image/fetch/http://s3.favim.com/orig/46/bed-bedroom-interior-light-photography-Favim.com-412357.jpg",
   "http://res.cloudinary.com/dcnac6iuq/image/fetch/http://jeffrobertsimaging.com/wp-content/uploads/2013/03/Maine-Kitchen-Photography-Jeff-Roberts-Imaging.jpg",
-  "http://res.cloudinary.com/dcnac6iuq/image/fetch/https://www.asid.org/sites/default/files/kitchen%20design_0.jpg",
+  "http://mazungo.com/wp-content/uploads/2015/11/pinterest-girl-bedroom-ideas-uratech-design-in-bedroom-decorating-ideas-on-pinterest.jpg",
+  "http://www.dimun.co/images/bedroom-ideas-tumblr-tumblr-girl-bedroom-ideas-500-x-333.jpg",
+  "http://www3.pictures.lonny.com/mp/DwqA1QSCnmGx.jpg",
+  "https://33.media.tumblr.com/tumblr_m16nnb4VMr1qkkadg.jpg",
+  "http://www.houseandgarden.pw/wp-content/uploads/2016/03/best-design-vintage-white-bedroom-tumblr-white-christmas-bedroom-beach-decor.jpg",
+  "http://stephniepalma.com/wp-content/uploads/2015/11/tumblr-bedrooms-blue-714x600.jpg",
+  "http://media.tumblr.com/tumblr_mf65u9si7P1qcfl10.jpg"
 ];
 
 MORE_IMGS = [
@@ -50,23 +65,39 @@ MORE_IMGS = [
   "http://s1.favim.com/610/150324/lights-purple-room-tumblr-room-Favim.com-2591010.jpg"
 ];
 
-
 HOME_TYPE = ["House", "Apt/ Condo", "Studio"]
 ROOM_TYPE = ["Private room", "Public room"]
 
-(0...COORDS.length).to_a.each do |i|
+User.create(email: "test1@gmail.com", password: "password1")
+User.create(email: "test@gmail.com", password: "password")
+User.create(email: "test2@gmail.com", password: "password2")
+User.create(email: "test3@gmail.com", password: "password3")
+
+(0...TITLES.length).to_a.each do |i|
   Room.create(
     title: TITLES[i],
     description: Faker::Hipster.paragraph,
-    lat: COORDS[i][0],
-    lng: COORDS[i][1],
-    img_url: IMG_URLS[i],
+    lat: LATLNG[0] + Faker::Number.between(-0.05, 0.03),
+    lng: LATLNG[1] + Faker::Number.between(-0.05, 0.03),
     price: Faker::Number.between(10, 150),
     home_type: HOME_TYPE.sample,
     room_type: ROOM_TYPE.sample,
     from_date: Faker::Date.between(Date.today, 4.days.from_now),
-    to_date: Faker::Date.between(5.days.from_now, 30.days.from_now),
-    host_id: 1
+    to_date: Faker::Date.between(20.days.from_now, 30.days.from_now),
+    host_id: i % 3 + 1
+  )
+
+  past = Faker::Date.between(20.days.ago, 11.days.ago)
+  upcoming = Faker::Date.between(1.days.from_now, 10.days.from_now)
+  checkin = [past, upcoming].sample
+
+  Booking.create(
+    room_id: i + 1,
+    booker_id: i % 3 + 2,
+    checkin_date: checkin,
+    checkout_date: checkin + Faker::Number.between(2, 10),
+    message: Faker::Hipster.paragraph,
+    status: %w(pending approved denied).sample
   )
 end
 
@@ -80,9 +111,6 @@ end
 MORE_IMGS.each do |img|
   Image.create(
     url: img,
-    room_id: Faker::Number.between(1, 4)
+    room_id: Faker::Number.between(1, 12)
   )
 end
-
-User.create(email: "test@gmail.com", password: "helloworld", medical_school_id: 1)
-MedicalSchool.create(name: "University of California, San Francisco (UCSF)", lat: 37.7633 ,lng: 122.4585)
