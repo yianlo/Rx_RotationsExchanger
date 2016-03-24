@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     get 'session/check', :to => 'sessions#check'
     get 'rooms/filter', :to => 'rooms#filter'
-    get 'bookings/approve', :to => 'bookings#approve'
-    get 'bookings/deny', :to => 'bookings#deny'
-
+    post 'bookings/approve', :to => 'bookings#approve'
+    post 'bookings/deny', :to => 'bookings#deny'
 
     resources :rooms, only: [:index, :create, :show, :update, :destroy]
 

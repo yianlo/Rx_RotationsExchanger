@@ -5,7 +5,7 @@ var HostingItem = React.createClass({
     apiUtil.approveBooking(this.props.hosting.id)
   },
 
-  handleDeny: function(){
+  handleDeny: function(e){
     apiUtil.denyBooking(this.props.hosting.id)
   },
 

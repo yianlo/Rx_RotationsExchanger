@@ -225,6 +225,10 @@ var App = React.createClass({
     }
   },
 
+  getDateTime: function(){
+
+  },
+
   renderChildren: function(){
     if (this.map) {
       return this.props.children

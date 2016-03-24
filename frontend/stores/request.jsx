@@ -3,21 +3,21 @@ var AppDispatcher = require('../dispatcher');
 
 var RequestStore = new Store(AppDispatcher);
 
-_requests = {};
+_allTrips = {};
 _pastTrips = {};
 _currentTrips = {};
 _upcomingTrips = {};
 
 _addRequest = function(newRequest){
-  _requests.push(newRequest)
+  _allTrips.push(newRequest)
 };
 
 _resetRequests = function(requests){
   today = new Date;
 
   for (var i = 0; i < requests.length; i++) {
-    requests[i].checkin_date = new Date(requests[i].checkin_date)
-    requests[i].checkout_date = new Date(requests[i].checkout_date)
+    requests[i].checkin_date = new Date(requests[i].checkin_date);
+    requests[i].checkout_date = new Date(requests[i].checkout_date);
 
     if (requests[i].checkin_date > today) {
       _upcomingTrips[requests[i].id] = requests[i];
@@ -27,12 +27,12 @@ _resetRequests = function(requests){
       _currentTrips[requests[i].id] = requests[i];
     }
 
-    _requests[requests[i].id] = requests[i];
+    _allTrips[requests[i].id] = requests[i];
   }
 };
 
 _deleteTrip = function(tripId){
-  delete _requests[tripId];
+  delete _allTrips[tripId];
 
   if(_pastTrips[tripId]){ delete _pastTrips[tripId]; }
   if(_currentTrips[tripId]){ delete _currentTrips[tripId]; }
@@ -48,7 +48,7 @@ _objToArray = function(obj){
 };
 
 RequestStore.getAllRequests = function(){
-  return _requests;
+  return _allTrips;
 };
 
 RequestStore.getPastTrips = function(){

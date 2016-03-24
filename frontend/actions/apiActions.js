@@ -109,6 +109,13 @@ ApiActions = {
       actionType: "USER_HOSTINGS_RECEIVED",
       hostings: fetchedHostings
     });
+  },
+
+  receiveSingleHostingRequest: function(fetchedHostingReq){
+    AppDispatcher.dispatch({
+      actionType: "SINGLE_HOSTING_REQ_RECEIVED",
+      hostingReq: fetchedHostingReq
+    });
   }
 }
 

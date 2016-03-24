@@ -1,9 +1,10 @@
 $top-push: 61px;
 
 
-.profile{
+.hosting-reqs-page{
   position: relative;
   top: $top-push;
+  flex-direction: column;
   flex: none;
 
   .hostings-index{

@@ -87,9 +87,19 @@ $bg-color: #EEEEEE;
       .description{
         flex-direction: column;
 
-        .address{
-          font-size: 14px;
-          padding: 0;
+        h3{
+          font-size: 17px;
+        }
+
+        .address-dates-details{
+          p{
+            font-size: 16px;
+            padding: 0;
+          }
+
+          span{
+            padding: 0 17px;
+          }
         }
 
         p{

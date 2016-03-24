@@ -7,6 +7,7 @@ class Api::BookingsController < ApplicationController
     params[:checkout_date] =  Time.at(booking_params[:checkout_date].to_i)
 
     @booking = Booking.create(params)
+    render :show
   end
 
   def index
@@ -19,7 +20,7 @@ class Api::BookingsController < ApplicationController
   end
 
   def hostings
-    @bookings = User.find_by(id: params[:user_id]).rooms.includes(:bookings).map(&:bookings).flatten!
+    @bookings = User.find_by(id: params[:user_id]).rooms.includes(:bookings, :images).map(&:bookings).flatten!
     render :index
   end
 
@@ -29,9 +30,17 @@ class Api::BookingsController < ApplicationController
   end
 
   def approve
+    @booking = Booking.find_by(id: booking_params[:id])
+    @booking = @booking.approve
+
+    render :show
   end
 
   def deny
+    @booking = Booking.find_by(id: booking_params[:id])
+    @booking = @booking.deny
+
+    render :show
   end
 
 

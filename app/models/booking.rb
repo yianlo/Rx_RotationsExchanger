@@ -22,4 +22,26 @@ class Booking < ActiveRecord::Base
   belongs_to :booker,
     class_name: "User",
     foreign_key: :booker_id
+
+
+  def approve
+    update(status: "approved")
+
+    time_block_1 = checkin_date - room.from_date
+    time_block_2 = room.to_date - checkout_date
+
+    if time_block_1 > time_block_2
+      room.update(to_date: checkin_date)
+    else
+      room.update(from_date: checkout_date)
+    end
+
+    self
+  end
+
+  def deny
+    update(status: "denied")
+
+    self
+  end
 end

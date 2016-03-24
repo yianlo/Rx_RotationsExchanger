@@ -60,6 +60,24 @@ var RoomDetails = React.createClass({
     }.bind(this));
   },
 
+  displayDate: function(fromDate, toDate){
+    fromDate = new Date(fromDate*1000);
+    toDate = new Date(toDate*1000);
+
+    var monthNames = [
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ];
+
+    fromDateStr = monthNames[fromDate.getMonth()] + " "
+               + fromDate.getDate();
+    toDateStr = monthNames[toDate.getMonth()] + " "
+                + toDate.getDate() + ", "
+                + toDate.getFullYear();
+
+    return fromDateStr + " - " + toDateStr
+  },
+
   render: function(){
     if (this.context.room) {
       return(
@@ -71,7 +89,12 @@ var RoomDetails = React.createClass({
           </section>
           <section className="description">
             <h3>About this listing</h3>
-            <p className="address">{this.state.address}</p>
+            <div className="address-dates-details">
+              <p className="address">{this.state.address}</p>
+              <span className="vert-bar">|</span>
+              <p>{"Available: " + this.displayDate(this.context.room.from_date, this.context.room.to_date)}</p>
+            </div>
+
             <p>{this.context.room.description}</p>
           </section>
           {this.getButtons()}

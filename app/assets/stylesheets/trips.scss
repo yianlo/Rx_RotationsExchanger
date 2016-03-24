@@ -5,7 +5,9 @@ $offwhite-bg: #F5F5F5;
 $theme-color: #F88379;
 $theme-color-buttons: rgba(248, 131, 121, 0.7);
 
-.trips-page{
+.trips-page, .hosting-reqs-page{
+  flex: inherit;
+
   position: relative;
   top: $top-push;
   flex-direction: column;
@@ -16,7 +18,7 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
     padding: 60px 0 25px 50px;
   }
 
-  .no-trip-message{
+  .none-message{
     font-size: 20px;
     padding: 30px 50px;
     background: $offwhite-bg;
@@ -54,14 +56,14 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
     }
   }
 
-  .trips-index{
+  .bookings-index{
     padding: 30px 20px;
     background: $offwhite-bg;
 
     min-height: 500px;
     margin-top: 32px;
 
-    .trip-item{
+    .booking-item{
       background: white;
       padding: 20px;
       align-items: center;
@@ -101,9 +103,10 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
         // background: $theme-color-buttons;
       }
 
-      .wrapper{
-        height: 280px;
+      .image-wrapper{
         width: 280px;
+        height: 280px;
+
         background-size: cover;
         background-position-y: center;
 
@@ -126,21 +129,39 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
 
       .status{
         font-size: 15px;
+        font-weight: bold;
+        text-transform: capitalize;
         margin: 18px 0;
         width: 100%;
         padding: 17px;
         margin-bottom: 8px;
         align-items: center;
         justify-content: center;
+        background-color: #eee;
       }
     }
 
-    .trip-item:hover{
+    .booking-item:hover{
       cursor: pointer;
 
       cursor: pointer;
       box-shadow: $box-shadow;
     }
-  }
 
+    .buttons-container{
+      margin: 35px 0 15px 0;
+      justify-content: space-around;
+      width: 100%;
+
+      button{
+        width: 80px;
+        margin-right: 0;
+      }
+
+      hr{
+        width: 200px;
+        height: 1px;
+      }
+    }
+  }
 }

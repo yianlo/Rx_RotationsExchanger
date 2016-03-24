@@ -153,15 +153,16 @@ ApiUtil = {
   approveBooking: function(bookingId){
     $.post("/api/bookings/approve", {booking: {id: bookingId}}, function(updatedBooking){
       if (Object.getOwnPropertyNames(updatedBooking).length > 0) {
-        ApiActions.receiveUserHostings(updatedBooking);
+        ApiActions.receiveSingleHostingRequest(updatedBooking);
       }
     })
   },
 
   denyBooking: function(bookingId){
-    $.post("/api/bookings/approve", {booking: {id: bookingId}}, function(updatedBooking){
+    $.post("/api/bookings/deny", {booking: {id: bookingId}}, function(updatedBooking){
+      debugger
       if (Object.getOwnPropertyNames(updatedBooking).length > 0) {
-        ApiActions.receiveUserHostings(updatedBooking);
+        ApiActions.receiveSingleHostingRequest(updatedBooking);
       }
     })
   },

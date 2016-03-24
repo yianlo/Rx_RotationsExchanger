@@ -1,6 +1,6 @@
 var React = require('react'),
     RequestStore = require('../../stores/request'),
-    TripsIndex = require('./tripsIndex');
+    BookingsIndex = require('./bookingsIndex');
 
 var TripsPage = React.createClass({
 
@@ -59,9 +59,9 @@ var TripsPage = React.createClass({
 
   renderTrips: function(trips, group){
     if (trips.length > 0) {
-      return <TripsIndex group={group} trips={trips}/>
+      return <BookingsIndex group={group} bookings={trips}/>
     } else {
-      return <p className="no-trip-message">
+      return <p className="none-message">
         No trips scheduled. Start&nbsp;
         <span className="explore" onClick={this.handleExplore}>exploring</span>&nbsp;now!
       </p>

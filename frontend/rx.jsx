@@ -15,14 +15,14 @@ var React = require('react'),
     Chat = require('./components/chat/chat'),
 
     SearchContent = require('./components/searchContent/searchContent'),
-    ProfilePage = require('./components/profile/profilePage'),
     AddFormPage = require('./components/addForm/addFormPage'),
     ShowRoomPage = require('./components/showRoom/showPage'),
 
     EditForm = require('./components/showRoom/editForm'),
     RoomDetails = require('./components/showRoom/roomDetails'),
 
-    TripsPage = require('./components/trips/tripsPage');
+    HostingReqsPage = require('./components/bookingReqs/hostingReqPage'),
+    TripsPage = require('./components/bookingReqs/tripsPage');
 
 var NavBar = require('./components/nav/navBar');
 // <Route path="booking" component={BookingForm}/>
@@ -34,7 +34,7 @@ var routes = (
     <Route path="main" component={Main}>
       <Route path="search" component={SearchContent}/>
       <Route path=":userId/trips" component={TripsPage}/>
-      <Route path=":userId/hostings" component={ProfilePage}/>
+      <Route path=":userId/hostings" component={HostingReqsPage}/>
       <Route path="new" component={AddFormPage} />
       <Route path=":roomId" component={ShowRoomPage}>
         <IndexRoute component={RoomDetails} />
