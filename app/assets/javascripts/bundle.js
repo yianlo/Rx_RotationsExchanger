@@ -56,10 +56,10 @@
 	    Main = __webpack_require__(261),
 	    Chat = __webpack_require__(262),
 	    SearchContent = __webpack_require__(266),
-	    AddFormPage = __webpack_require__(383),
-	    ShowRoomPage = __webpack_require__(391),
-	    EditForm = __webpack_require__(405),
-	    RoomDetails = __webpack_require__(407);
+	    AddFormPage = __webpack_require__(384),
+	    ShowRoomPage = __webpack_require__(392),
+	    EditForm = __webpack_require__(406),
+	    RoomDetails = __webpack_require__(408);
 	
 	var NavBar = __webpack_require__(239);
 	// <Route path="booking" component={BookingForm}/>
@@ -21582,7 +21582,7 @@
 			}
 	
 			if (Array.isArray(val)) {
-				return val.sort().map(function (val2) {
+				return val.slice().sort().map(function (val2) {
 					return strictUriEncode(key) + '=' + strictUriEncode(val2);
 				}).join('&');
 			}
@@ -21704,7 +21704,9 @@
 	    _TransitionUtils.runLeaveHooks(leaveRoutes);
 	
 	    // Tear down confirmation hooks for left routes
-	    leaveRoutes.forEach(removeListenBeforeHooksForRoute);
+	    leaveRoutes.filter(function (route) {
+	      return enterRoutes.indexOf(route) === -1;
+	    }).forEach(removeListenBeforeHooksForRoute);
 	
 	    _TransitionUtils.runEnterHooks(enterRoutes, nextState, function (error, redirectInfo) {
 	      if (error) {
@@ -21973,16 +21975,25 @@
 	  var leaveRoutes = undefined,
 	      enterRoutes = undefined;
 	  if (prevRoutes) {
-	    leaveRoutes = prevRoutes.filter(function (route) {
-	      return nextRoutes.indexOf(route) === -1 || routeParamsChanged(route, prevState, nextState);
-	    });
+	    (function () {
+	      var parentIsLeaving = false;
+	      leaveRoutes = prevRoutes.filter(function (route) {
+	        if (parentIsLeaving) {
+	          return true;
+	        } else {
+	          var isLeaving = nextRoutes.indexOf(route) === -1 || routeParamsChanged(route, prevState, nextState);
+	          if (isLeaving) parentIsLeaving = true;
+	          return isLeaving;
+	        }
+	      });
 	
-	    // onLeave hooks start at the leaf route.
-	    leaveRoutes.reverse();
+	      // onLeave hooks start at the leaf route.
+	      leaveRoutes.reverse();
 	
-	    enterRoutes = nextRoutes.filter(function (route) {
-	      return prevRoutes.indexOf(route) === -1 || leaveRoutes.indexOf(route) !== -1;
-	    });
+	      enterRoutes = nextRoutes.filter(function (route) {
+	        return prevRoutes.indexOf(route) === -1 || leaveRoutes.indexOf(route) !== -1;
+	      });
+	    })();
 	  } else {
 	    leaveRoutes = [];
 	    enterRoutes = nextRoutes;
@@ -33696,9 +33707,9 @@
 
 	var React = __webpack_require__(1),
 	    SearchFields = __webpack_require__(267),
-	    Index = __webpack_require__(378),
-	    FilterParams = __webpack_require__(382),
-	    FilterParamsStore = __webpack_require__(381),
+	    Index = __webpack_require__(379),
+	    FilterParams = __webpack_require__(383),
+	    FilterParamsStore = __webpack_require__(382),
 	    RoomStore = __webpack_require__(242),
 	    NavBar = __webpack_require__(239);
 	
@@ -33771,9 +33782,9 @@
 
 	var React = __webpack_require__(1),
 	    DateSearch = __webpack_require__(268),
-	    HomeTypeSearch = __webpack_require__(370),
-	    RoomTypeSearch = __webpack_require__(373),
-	    PriceSearch = __webpack_require__(375);
+	    HomeTypeSearch = __webpack_require__(371),
+	    RoomTypeSearch = __webpack_require__(374),
+	    PriceSearch = __webpack_require__(376);
 	
 	var SearchFields = React.createClass({
 	  displayName: 'SearchFields',
@@ -33924,7 +33935,7 @@
 /* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
-	!function(t,e){ true?module.exports=e(__webpack_require__(270),__webpack_require__(158),__webpack_require__(1),__webpack_require__(369)):"function"==typeof define&&define.amd?define(["moment","react-dom","react","react-onclickoutside"],e):"object"==typeof exports?exports.DatePicker=e(require("moment"),require("react-dom"),require("react"),require("react-onclickoutside")):t.DatePicker=e(t.moment,t.ReactDOM,t.React,t.OnClickOutside)}(this,function(t,e,n,o){return function(t){function e(o){if(n[o])return n[o].exports;var r=n[o]={exports:{},id:o,loaded:!1};return t[o].call(r.exports,r,r.exports,e),r.loaded=!0,r.exports}var n={};return e.m=t,e.c=n,e.p="",e(0)}([function(t,e,n){"use strict";function o(t){return t&&t.__esModule?t:{"default":t}}var r=n(1),i=o(r),a=n(7),s=o(a),l=n(4),d=o(l),p=n(14),u=o(p),f=n(6),h=d["default"].createClass({displayName:"DatePicker",propTypes:{selected:d["default"].PropTypes.object,locale:d["default"].PropTypes.string,dateFormatCalendar:d["default"].PropTypes.string,disabled:d["default"].PropTypes.bool,id:d["default"].PropTypes.string,popoverAttachment:d["default"].PropTypes.string,popoverTargetAttachment:d["default"].PropTypes.string,popoverTargetOffset:d["default"].PropTypes.string,tetherConstraints:d["default"].PropTypes.array,showYearDropdown:d["default"].PropTypes.bool,onChange:d["default"].PropTypes.func.isRequired,onBlur:d["default"].PropTypes.func,onFocus:d["default"].PropTypes.func,tabIndex:d["default"].PropTypes.number,filterDate:d["default"].PropTypes.func,todayButton:d["default"].PropTypes.string},getDefaultProps:function(){return{dateFormatCalendar:"MMMM YYYY",onChange:function(){},disabled:!1,onFocus:function(){},onBlur:function(){},popoverAttachment:"top left",popoverTargetAttachment:"bottom left",popoverTargetOffset:"10px 0",tetherConstraints:[{to:"window",attachment:"together"}]}},getInitialState:function(){return{open:!1}},setOpen:function(t){this.setState({open:t})},handleFocus:function(t){this.props.onFocus(t),this.setOpen(!0)},handleBlur:function(t){this.state.open?this.refs.input.focus():this.props.onBlur(t)},handleCalendarClickOutside:function(t){this.setOpen(!1)},handleSelect:function(t){this.setSelected(t),this.setOpen(!1)},setSelected:function(t){(0,f.isSameDay)(this.props.selected,t)||this.props.onChange(t)},onInputClick:function(){this.setOpen(!0)},handleInputDone:function(){this.setOpen(!1)},onClearClick:function(t){t.preventDefault(),this.props.onChange(null)},renderCalendar:function(){return!this.state.open||this.props.disabled?null:d["default"].createElement(s["default"],{ref:"calendar",locale:this.props.locale,dateFormat:this.props.dateFormatCalendar,selected:this.props.selected,onSelect:this.handleSelect,minDate:this.props.minDate,maxDate:this.props.maxDate,startDate:this.props.startDate,endDate:this.props.endDate,excludeDates:this.props.excludeDates,filterDate:this.props.filterDate,onClickOutside:this.handleCalendarClickOutside,includeDates:this.props.includeDates,showYearDropdown:this.props.showYearDropdown,todayButton:this.props.todayButton})},renderClearButton:function(){return this.props.isClearable&&null!=this.props.selected?d["default"].createElement("a",{className:"close-icon",href:"#",onClick:this.onClearClick}):null},render:function(){return d["default"].createElement(u["default"],{classPrefix:"datepicker__tether",attachment:this.props.popoverAttachment,targetAttachment:this.props.popoverTargetAttachment,targetOffset:this.props.popoverTargetOffset,constraints:this.props.tetherConstraints},d["default"].createElement("div",{className:"datepicker__input-container"},d["default"].createElement(i["default"],{ref:"input",id:this.props.id,name:this.props.name,date:this.props.selected,locale:this.props.locale,minDate:this.props.minDate,maxDate:this.props.maxDate,excludeDates:this.props.excludeDates,includeDates:this.props.includeDates,filterDate:this.props.filterDate,dateFormat:this.props.dateFormat,onFocus:this.handleFocus,onBlur:this.handleBlur,handleClick:this.onInputClick,handleDone:this.handleInputDone,setSelected:this.setSelected,placeholderText:this.props.placeholderText,disabled:this.props.disabled,className:this.props.className,title:this.props.title,readOnly:this.props.readOnly,required:this.props.required,tabIndex:this.props.tabIndex,open:this.state.open}),this.renderClearButton()),this.renderCalendar())}});t.exports=h},function(t,e,n){"use strict";function o(t){return t&&t.__esModule?t:{"default":t}}var r=n(2),i=o(r),a=n(3),s=(o(a),n(4)),l=o(s),d=n(5),p=o(d),u=n(6),f=l["default"].createClass({displayName:"DateInput",propTypes:{date:l["default"].PropTypes.object,locale:l["default"].PropTypes.string,minDate:l["default"].PropTypes.object,maxDate:l["default"].PropTypes.object,excludeDates:l["default"].PropTypes.array,includeDates:l["default"].PropTypes.array,filterDate:l["default"].PropTypes.func,open:l["default"].PropTypes.bool},getDefaultProps:function(){return{dateFormat:"YYYY-MM-DD"}},getInitialState:function(){return{maybeDate:this.safeDateFormat(this.props.date)}},componentWillReceiveProps:function(t){(0,u.isSameDay)(t.date,this.props.date)||this.setState({maybeDate:this.safeDateFormat(t.date)})},handleChange:function(t){var e=t.target.value,n=(0,i["default"])(e,this.props.dateFormat,!0);n.isValid()&&!(0,u.isDayDisabled)(n,this.props)?this.props.setSelected(n):""===e&&this.props.setSelected(null),this.setState({maybeDate:e})},safeDateFormat:function(t){return t&&t.clone().locale(this.props.locale||i["default"].locale()).format(this.props.dateFormat)},handleKeyDown:function(t){"Enter"===t.key||"Escape"===t.key?(t.preventDefault(),this.props.handleDone()):"Tab"===t.key&&this.props.handleDone()},handleClick:function(t){this.props.disabled||this.props.handleClick(t)},handleBlur:function(t){this.setState({maybeDate:this.safeDateFormat(this.props.date)}),this.props.onBlur&&this.props.onBlur(t)},focus:function(){this.refs.input.focus()},getClassNames:function(){return(0,p["default"])("datepicker__input",{"ignore-react-onclickoutside":this.props.open},this.props.className)},render:function(){return l["default"].createElement("input",{ref:"input",type:"text",id:this.props.id,name:this.props.name,value:this.state.maybeDate,onClick:this.handleClick,onKeyDown:this.handleKeyDown,onFocus:this.props.onFocus,onBlur:this.handleBlur,onChange:this.handleChange,className:this.getClassNames(),disabled:this.props.disabled,placeholder:this.props.placeholderText,readOnly:this.props.readOnly,required:this.props.required,tabIndex:this.props.tabIndex})}});t.exports=f},function(e,n){e.exports=t},function(t,n){t.exports=e},function(t,e){t.exports=n},function(t,e,n){var o,r;/*!
+	!function(t,e){ true?module.exports=e(__webpack_require__(270),__webpack_require__(158),__webpack_require__(1),__webpack_require__(370)):"function"==typeof define&&define.amd?define(["moment","react-dom","react","react-onclickoutside"],e):"object"==typeof exports?exports.DatePicker=e(require("moment"),require("react-dom"),require("react"),require("react-onclickoutside")):t.DatePicker=e(t.moment,t.ReactDOM,t.React,t.OnClickOutside)}(this,function(t,e,n,o){return function(t){function e(o){if(n[o])return n[o].exports;var r=n[o]={exports:{},id:o,loaded:!1};return t[o].call(r.exports,r,r.exports,e),r.loaded=!0,r.exports}var n={};return e.m=t,e.c=n,e.p="",e(0)}([function(t,e,n){"use strict";function o(t){return t&&t.__esModule?t:{"default":t}}var r=n(1),i=o(r),a=n(7),s=o(a),l=n(4),d=o(l),p=n(14),u=o(p),f=n(6),h=d["default"].createClass({displayName:"DatePicker",propTypes:{selected:d["default"].PropTypes.object,locale:d["default"].PropTypes.string,dateFormatCalendar:d["default"].PropTypes.string,disabled:d["default"].PropTypes.bool,id:d["default"].PropTypes.string,popoverAttachment:d["default"].PropTypes.string,popoverTargetAttachment:d["default"].PropTypes.string,popoverTargetOffset:d["default"].PropTypes.string,tetherConstraints:d["default"].PropTypes.array,showYearDropdown:d["default"].PropTypes.bool,onChange:d["default"].PropTypes.func.isRequired,onBlur:d["default"].PropTypes.func,onFocus:d["default"].PropTypes.func,tabIndex:d["default"].PropTypes.number,filterDate:d["default"].PropTypes.func,todayButton:d["default"].PropTypes.string},getDefaultProps:function(){return{dateFormatCalendar:"MMMM YYYY",onChange:function(){},disabled:!1,onFocus:function(){},onBlur:function(){},popoverAttachment:"top left",popoverTargetAttachment:"bottom left",popoverTargetOffset:"10px 0",tetherConstraints:[{to:"window",attachment:"together"}]}},getInitialState:function(){return{open:!1}},setOpen:function(t){this.setState({open:t})},handleFocus:function(t){this.props.onFocus(t),this.setOpen(!0)},handleBlur:function(t){this.state.open?this.refs.input.focus():this.props.onBlur(t)},handleCalendarClickOutside:function(t){this.setOpen(!1)},handleSelect:function(t){this.setSelected(t),this.setOpen(!1)},setSelected:function(t){(0,f.isSameDay)(this.props.selected,t)||this.props.onChange(t)},onInputClick:function(){this.setOpen(!0)},handleInputDone:function(){this.setOpen(!1)},onClearClick:function(t){t.preventDefault(),this.props.onChange(null)},renderCalendar:function(){return!this.state.open||this.props.disabled?null:d["default"].createElement(s["default"],{ref:"calendar",locale:this.props.locale,dateFormat:this.props.dateFormatCalendar,selected:this.props.selected,onSelect:this.handleSelect,minDate:this.props.minDate,maxDate:this.props.maxDate,startDate:this.props.startDate,endDate:this.props.endDate,excludeDates:this.props.excludeDates,filterDate:this.props.filterDate,onClickOutside:this.handleCalendarClickOutside,includeDates:this.props.includeDates,showYearDropdown:this.props.showYearDropdown,todayButton:this.props.todayButton})},renderClearButton:function(){return this.props.isClearable&&null!=this.props.selected?d["default"].createElement("a",{className:"close-icon",href:"#",onClick:this.onClearClick}):null},render:function(){return d["default"].createElement(u["default"],{classPrefix:"datepicker__tether",attachment:this.props.popoverAttachment,targetAttachment:this.props.popoverTargetAttachment,targetOffset:this.props.popoverTargetOffset,constraints:this.props.tetherConstraints},d["default"].createElement("div",{className:"datepicker__input-container"},d["default"].createElement(i["default"],{ref:"input",id:this.props.id,name:this.props.name,date:this.props.selected,locale:this.props.locale,minDate:this.props.minDate,maxDate:this.props.maxDate,excludeDates:this.props.excludeDates,includeDates:this.props.includeDates,filterDate:this.props.filterDate,dateFormat:this.props.dateFormat,onFocus:this.handleFocus,onBlur:this.handleBlur,handleClick:this.onInputClick,handleDone:this.handleInputDone,setSelected:this.setSelected,placeholderText:this.props.placeholderText,disabled:this.props.disabled,className:this.props.className,title:this.props.title,readOnly:this.props.readOnly,required:this.props.required,tabIndex:this.props.tabIndex,open:this.state.open}),this.renderClearButton()),this.renderCalendar())}});t.exports=h},function(t,e,n){"use strict";function o(t){return t&&t.__esModule?t:{"default":t}}var r=n(2),i=o(r),a=n(3),s=(o(a),n(4)),l=o(s),d=n(5),p=o(d),u=n(6),f=l["default"].createClass({displayName:"DateInput",propTypes:{date:l["default"].PropTypes.object,locale:l["default"].PropTypes.string,minDate:l["default"].PropTypes.object,maxDate:l["default"].PropTypes.object,excludeDates:l["default"].PropTypes.array,includeDates:l["default"].PropTypes.array,filterDate:l["default"].PropTypes.func,open:l["default"].PropTypes.bool},getDefaultProps:function(){return{dateFormat:"YYYY-MM-DD"}},getInitialState:function(){return{maybeDate:this.safeDateFormat(this.props.date)}},componentWillReceiveProps:function(t){(0,u.isSameDay)(t.date,this.props.date)||this.setState({maybeDate:this.safeDateFormat(t.date)})},handleChange:function(t){var e=t.target.value,n=(0,i["default"])(e,this.props.dateFormat,!0);n.isValid()&&!(0,u.isDayDisabled)(n,this.props)?this.props.setSelected(n):""===e&&this.props.setSelected(null),this.setState({maybeDate:e})},safeDateFormat:function(t){return t&&t.clone().locale(this.props.locale||i["default"].locale()).format(this.props.dateFormat)},handleKeyDown:function(t){"Enter"===t.key||"Escape"===t.key?(t.preventDefault(),this.props.handleDone()):"Tab"===t.key&&this.props.handleDone()},handleClick:function(t){this.props.disabled||this.props.handleClick(t)},handleBlur:function(t){this.setState({maybeDate:this.safeDateFormat(this.props.date)}),this.props.onBlur&&this.props.onBlur(t)},focus:function(){this.refs.input.focus()},getClassNames:function(){return(0,p["default"])("datepicker__input",{"ignore-react-onclickoutside":this.props.open},this.props.className)},render:function(){return l["default"].createElement("input",{ref:"input",type:"text",id:this.props.id,name:this.props.name,value:this.state.maybeDate,onClick:this.handleClick,onKeyDown:this.handleKeyDown,onFocus:this.props.onFocus,onBlur:this.handleBlur,onChange:this.handleChange,className:this.getClassNames(),disabled:this.props.disabled,placeholder:this.props.placeholderText,readOnly:this.props.readOnly,required:this.props.required,tabIndex:this.props.tabIndex})}});t.exports=f},function(e,n){e.exports=t},function(t,n){t.exports=e},function(t,e){t.exports=n},function(t,e,n){var o,r;/*!
 		  Copyright (c) 2016 Jed Watson.
 		  Licensed under the MIT License (MIT), see
 		  http://jedwatson.github.io/classnames
@@ -33937,7 +33948,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {//! moment.js
-	//! version : 2.11.2
+	//! version : 2.12.0
 	//! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 	//! license : MIT
 	//! momentjs.com
@@ -33961,7 +33972,7 @@
 	    }
 	
 	    function isArray(input) {
-	        return Object.prototype.toString.call(input) === '[object Array]';
+	        return input instanceof Array || Object.prototype.toString.call(input) === '[object Array]';
 	    }
 	
 	    function isDate(input) {
@@ -34167,7 +34178,82 @@
 	        return diffs + lengthDiff;
 	    }
 	
-	    function Locale() {
+	    function warn(msg) {
+	        if (utils_hooks__hooks.suppressDeprecationWarnings === false &&
+	                (typeof console !==  'undefined') && console.warn) {
+	            console.warn('Deprecation warning: ' + msg);
+	        }
+	    }
+	
+	    function deprecate(msg, fn) {
+	        var firstTime = true;
+	
+	        return extend(function () {
+	            if (firstTime) {
+	                warn(msg + '\nArguments: ' + Array.prototype.slice.call(arguments).join(', ') + '\n' + (new Error()).stack);
+	                firstTime = false;
+	            }
+	            return fn.apply(this, arguments);
+	        }, fn);
+	    }
+	
+	    var deprecations = {};
+	
+	    function deprecateSimple(name, msg) {
+	        if (!deprecations[name]) {
+	            warn(msg);
+	            deprecations[name] = true;
+	        }
+	    }
+	
+	    utils_hooks__hooks.suppressDeprecationWarnings = false;
+	
+	    function isFunction(input) {
+	        return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
+	    }
+	
+	    function isObject(input) {
+	        return Object.prototype.toString.call(input) === '[object Object]';
+	    }
+	
+	    function locale_set__set (config) {
+	        var prop, i;
+	        for (i in config) {
+	            prop = config[i];
+	            if (isFunction(prop)) {
+	                this[i] = prop;
+	            } else {
+	                this['_' + i] = prop;
+	            }
+	        }
+	        this._config = config;
+	        // Lenient ordinal parsing accepts just a number in addition to
+	        // number + (possibly) stuff coming from _ordinalParseLenient.
+	        this._ordinalParseLenient = new RegExp(this._ordinalParse.source + '|' + (/\d{1,2}/).source);
+	    }
+	
+	    function mergeConfigs(parentConfig, childConfig) {
+	        var res = extend({}, parentConfig), prop;
+	        for (prop in childConfig) {
+	            if (hasOwnProp(childConfig, prop)) {
+	                if (isObject(parentConfig[prop]) && isObject(childConfig[prop])) {
+	                    res[prop] = {};
+	                    extend(res[prop], parentConfig[prop]);
+	                    extend(res[prop], childConfig[prop]);
+	                } else if (childConfig[prop] != null) {
+	                    res[prop] = childConfig[prop];
+	                } else {
+	                    delete res[prop];
+	                }
+	            }
+	        }
+	        return res;
+	    }
+	
+	    function Locale(config) {
+	        if (config != null) {
+	            this.set(config);
+	        }
 	    }
 	
 	    // internal storage for locale config files
@@ -34243,11 +34329,25 @@
 	        return globalLocale._abbr;
 	    }
 	
-	    function defineLocale (name, values) {
-	        if (values !== null) {
-	            values.abbr = name;
-	            locales[name] = locales[name] || new Locale();
-	            locales[name].set(values);
+	    function defineLocale (name, config) {
+	        if (config !== null) {
+	            config.abbr = name;
+	            if (locales[name] != null) {
+	                deprecateSimple('defineLocaleOverride',
+	                        'use moment.updateLocale(localeName, config) to change ' +
+	                        'an existing locale. moment.defineLocale(localeName, ' +
+	                        'config) should only be used for creating a new locale');
+	                config = mergeConfigs(locales[name]._config, config);
+	            } else if (config.parentLocale != null) {
+	                if (locales[config.parentLocale] != null) {
+	                    config = mergeConfigs(locales[config.parentLocale]._config, config);
+	                } else {
+	                    // treat as if there is no base config
+	                    deprecateSimple('parentLocaleUndefined',
+	                            'specified parentLocale is not defined yet');
+	                }
+	            }
+	            locales[name] = new Locale(config);
 	
 	            // backwards compat for now: also set the locale
 	            locale_locales__getSetGlobalLocale(name);
@@ -34258,6 +34358,31 @@
 	            delete locales[name];
 	            return null;
 	        }
+	    }
+	
+	    function updateLocale(name, config) {
+	        if (config != null) {
+	            var locale;
+	            if (locales[name] != null) {
+	                config = mergeConfigs(locales[name]._config, config);
+	            }
+	            locale = new Locale(config);
+	            locale.parentLocale = locales[name];
+	            locales[name] = locale;
+	
+	            // backwards compat for now: also set the locale
+	            locale_locales__getSetGlobalLocale(name);
+	        } else {
+	            // pass null for config to unupdate, useful for tests
+	            if (locales[name] != null) {
+	                if (locales[name].parentLocale != null) {
+	                    locales[name] = locales[name].parentLocale;
+	                } else if (locales[name] != null) {
+	                    delete locales[name];
+	                }
+	            }
+	        }
+	        return locales[name];
 	    }
 	
 	    // returns locale data
@@ -34282,6 +34407,10 @@
 	        }
 	
 	        return chooseLocale(key);
+	    }
+	
+	    function locale_locales__listLocales() {
+	        return Object.keys(locales);
 	    }
 	
 	    var aliases = {};
@@ -34310,10 +34439,6 @@
 	        }
 	
 	        return normalizedInput;
-	    }
-	
-	    function isFunction(input) {
-	        return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
 	    }
 	
 	    function makeGetSet (unit, keepTime) {
@@ -34649,12 +34774,15 @@
 	            return mom;
 	        }
 	
-	        // TODO: Move this out of here!
 	        if (typeof value === 'string') {
-	            value = mom.localeData().monthsParse(value);
-	            // TODO: Another silent failure?
-	            if (typeof value !== 'number') {
-	                return mom;
+	            if (/^\d+$/.test(value)) {
+	                value = toInt(value);
+	            } else {
+	                value = mom.localeData().monthsParse(value);
+	                // TODO: Another silent failure?
+	                if (typeof value !== 'number') {
+	                    return mom;
+	                }
 	            }
 	        }
 	
@@ -34772,36 +34900,6 @@
 	
 	        return m;
 	    }
-	
-	    function warn(msg) {
-	        if (utils_hooks__hooks.suppressDeprecationWarnings === false &&
-	                (typeof console !==  'undefined') && console.warn) {
-	            console.warn('Deprecation warning: ' + msg);
-	        }
-	    }
-	
-	    function deprecate(msg, fn) {
-	        var firstTime = true;
-	
-	        return extend(function () {
-	            if (firstTime) {
-	                warn(msg + '\nArguments: ' + Array.prototype.slice.call(arguments).join(', ') + '\n' + (new Error()).stack);
-	                firstTime = false;
-	            }
-	            return fn.apply(this, arguments);
-	        }, fn);
-	    }
-	
-	    var deprecations = {};
-	
-	    function deprecateSimple(name, msg) {
-	        if (!deprecations[name]) {
-	            warn(msg);
-	            deprecations[name] = true;
-	        }
-	    }
-	
-	    utils_hooks__hooks.suppressDeprecationWarnings = false;
 	
 	    // iso 8601 regex
 	    // 0000-00-00 0000-W00 or 0000-W00-0 + T + 00 or 00:00 or 00:00:00 or 00:00:00.000 + +00:00 or +0000 or +00)
@@ -35448,7 +35546,7 @@
 	    }
 	
 	    var prototypeMin = deprecate(
-	         'moment().min is deprecated, use moment.min instead. https://github.com/moment/moment/issues/1548',
+	         'moment().min is deprecated, use moment.max instead. https://github.com/moment/moment/issues/1548',
 	         function () {
 	             var other = local__createLocal.apply(null, arguments);
 	             if (this.isValid() && other.isValid()) {
@@ -35460,7 +35558,7 @@
 	     );
 	
 	    var prototypeMax = deprecate(
-	        'moment().max is deprecated, use moment.max instead. https://github.com/moment/moment/issues/1548',
+	        'moment().max is deprecated, use moment.min instead. https://github.com/moment/moment/issues/1548',
 	        function () {
 	            var other = local__createLocal.apply(null, arguments);
 	            if (this.isValid() && other.isValid()) {
@@ -35758,7 +35856,8 @@
 	
 	    // from http://docs.closure-library.googlecode.com/git/closure_goog_date_date.js.source.html
 	    // somewhat more in line with 4.4.3.2 2004 spec, but allows decimal anywhere
-	    var isoRegex = /^(-)?P(?:(?:([0-9,.]*)Y)?(?:([0-9,.]*)M)?(?:([0-9,.]*)D)?(?:T(?:([0-9,.]*)H)?(?:([0-9,.]*)M)?(?:([0-9,.]*)S)?)?|([0-9,.]*)W)$/;
+	    // and further modified to allow for strings containing both week and day
+	    var isoRegex = /^(-)?P(?:([0-9,.]*)Y)?(?:([0-9,.]*)M)?(?:([0-9,.]*)W)?(?:([0-9,.]*)D)?(?:T(?:([0-9,.]*)H)?(?:([0-9,.]*)M)?(?:([0-9,.]*)S)?)?$/;
 	
 	    function create__createDuration (input, key) {
 	        var duration = input,
@@ -35796,11 +35895,11 @@
 	            duration = {
 	                y : parseIso(match[2], sign),
 	                M : parseIso(match[3], sign),
-	                d : parseIso(match[4], sign),
-	                h : parseIso(match[5], sign),
-	                m : parseIso(match[6], sign),
-	                s : parseIso(match[7], sign),
-	                w : parseIso(match[8], sign)
+	                w : parseIso(match[4], sign),
+	                d : parseIso(match[5], sign),
+	                h : parseIso(match[6], sign),
+	                m : parseIso(match[7], sign),
+	                s : parseIso(match[8], sign)
 	            };
 	        } else if (duration == null) {// checks for null or undefined
 	            duration = {};
@@ -35864,6 +35963,14 @@
 	        return res;
 	    }
 	
+	    function absRound (number) {
+	        if (number < 0) {
+	            return Math.round(-1 * number) * -1;
+	        } else {
+	            return Math.round(number);
+	        }
+	    }
+	
 	    // TODO: remove 'name' arg after deprecation is removed
 	    function createAdder(direction, name) {
 	        return function (val, period) {
@@ -35883,8 +35990,8 @@
 	
 	    function add_subtract__addSubtract (mom, duration, isAdding, updateOffset) {
 	        var milliseconds = duration._milliseconds,
-	            days = duration._days,
-	            months = duration._months;
+	            days = absRound(duration._days),
+	            months = absRound(duration._months);
 	
 	        if (!mom.isValid()) {
 	            // No op
@@ -36210,8 +36317,8 @@
 	    }
 	
 	    function toJSON () {
-	        // JSON.stringify(new Date(NaN)) === 'null'
-	        return this.isValid() ? this.toISOString() : 'null';
+	        // new Date(NaN).toJSON() === null
+	        return this.isValid() ? this.toISOString() : null;
 	    }
 	
 	    function moment_valid__isValid () {
@@ -36321,7 +36428,6 @@
 	        var dayOfYearData = dayOfYearFromWeeks(weekYear, week, weekday, dow, doy),
 	            date = createUTCDate(dayOfYearData.year, 0, dayOfYearData.dayOfYear);
 	
-	        // console.log("got", weekYear, week, weekday, "set", date.toISOString());
 	        this.year(date.getUTCFullYear());
 	        this.month(date.getUTCMonth());
 	        this.date(date.getUTCDate());
@@ -37031,21 +37137,6 @@
 	        return isFunction(format) ? format(output) : format.replace(/%s/i, output);
 	    }
 	
-	    function locale_set__set (config) {
-	        var prop, i;
-	        for (i in config) {
-	            prop = config[i];
-	            if (isFunction(prop)) {
-	                this[i] = prop;
-	            } else {
-	                this['_' + i] = prop;
-	            }
-	        }
-	        // Lenient ordinal parsing accepts just a number in addition to
-	        // number + (possibly) stuff coming from _ordinalParseLenient.
-	        this._ordinalParseLenient = new RegExp(this._ordinalParse.source + '|' + (/\d{1,2}/).source);
-	    }
-	
 	    var prototype__proto = Locale.prototype;
 	
 	    prototype__proto._calendar       = defaultCalendar;
@@ -37509,7 +37600,7 @@
 	    // Side effect imports
 	
 	
-	    utils_hooks__hooks.version = '2.11.2';
+	    utils_hooks__hooks.version = '2.12.0';
 	
 	    setHookCallback(local__createLocal);
 	
@@ -37532,6 +37623,8 @@
 	    utils_hooks__hooks.monthsShort           = lists__listMonthsShort;
 	    utils_hooks__hooks.weekdaysMin           = lists__listWeekdaysMin;
 	    utils_hooks__hooks.defineLocale          = defineLocale;
+	    utils_hooks__hooks.updateLocale          = updateLocale;
+	    utils_hooks__hooks.locales               = locale_locales__listLocales;
 	    utils_hooks__hooks.weekdaysShort         = lists__listWeekdaysShort;
 	    utils_hooks__hooks.normalizeUnits        = normalizeUnits;
 	    utils_hooks__hooks.relativeTimeThreshold = duration_humanize__getSetRelativeTimeThreshold;
@@ -37701,62 +37794,64 @@
 		"./nl.js": 339,
 		"./nn": 340,
 		"./nn.js": 340,
-		"./pl": 341,
-		"./pl.js": 341,
-		"./pt": 342,
-		"./pt-br": 343,
-		"./pt-br.js": 343,
-		"./pt.js": 342,
-		"./ro": 344,
-		"./ro.js": 344,
-		"./ru": 345,
-		"./ru.js": 345,
-		"./se": 346,
-		"./se.js": 346,
-		"./si": 347,
-		"./si.js": 347,
-		"./sk": 348,
-		"./sk.js": 348,
-		"./sl": 349,
-		"./sl.js": 349,
-		"./sq": 350,
-		"./sq.js": 350,
-		"./sr": 351,
-		"./sr-cyrl": 352,
-		"./sr-cyrl.js": 352,
-		"./sr.js": 351,
-		"./sv": 353,
-		"./sv.js": 353,
-		"./sw": 354,
-		"./sw.js": 354,
-		"./ta": 355,
-		"./ta.js": 355,
-		"./te": 356,
-		"./te.js": 356,
-		"./th": 357,
-		"./th.js": 357,
-		"./tl-ph": 358,
-		"./tl-ph.js": 358,
-		"./tlh": 359,
-		"./tlh.js": 359,
-		"./tr": 360,
-		"./tr.js": 360,
-		"./tzl": 361,
-		"./tzl.js": 361,
-		"./tzm": 362,
-		"./tzm-latn": 363,
-		"./tzm-latn.js": 363,
-		"./tzm.js": 362,
-		"./uk": 364,
-		"./uk.js": 364,
-		"./uz": 365,
-		"./uz.js": 365,
-		"./vi": 366,
-		"./vi.js": 366,
-		"./zh-cn": 367,
-		"./zh-cn.js": 367,
-		"./zh-tw": 368,
-		"./zh-tw.js": 368
+		"./pa-in": 341,
+		"./pa-in.js": 341,
+		"./pl": 342,
+		"./pl.js": 342,
+		"./pt": 343,
+		"./pt-br": 344,
+		"./pt-br.js": 344,
+		"./pt.js": 343,
+		"./ro": 345,
+		"./ro.js": 345,
+		"./ru": 346,
+		"./ru.js": 346,
+		"./se": 347,
+		"./se.js": 347,
+		"./si": 348,
+		"./si.js": 348,
+		"./sk": 349,
+		"./sk.js": 349,
+		"./sl": 350,
+		"./sl.js": 350,
+		"./sq": 351,
+		"./sq.js": 351,
+		"./sr": 352,
+		"./sr-cyrl": 353,
+		"./sr-cyrl.js": 353,
+		"./sr.js": 352,
+		"./sv": 354,
+		"./sv.js": 354,
+		"./sw": 355,
+		"./sw.js": 355,
+		"./ta": 356,
+		"./ta.js": 356,
+		"./te": 357,
+		"./te.js": 357,
+		"./th": 358,
+		"./th.js": 358,
+		"./tl-ph": 359,
+		"./tl-ph.js": 359,
+		"./tlh": 360,
+		"./tlh.js": 360,
+		"./tr": 361,
+		"./tr.js": 361,
+		"./tzl": 362,
+		"./tzl.js": 362,
+		"./tzm": 363,
+		"./tzm-latn": 364,
+		"./tzm-latn.js": 364,
+		"./tzm.js": 363,
+		"./uk": 365,
+		"./uk.js": 365,
+		"./uz": 366,
+		"./uz.js": 366,
+		"./vi": 367,
+		"./vi.js": 367,
+		"./zh-cn": 368,
+		"./zh-cn.js": 368,
+		"./zh-tw": 369,
+		"./zh-tw.js": 369
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -38648,12 +38743,18 @@
 	            });
 	        },
 	        meridiemParse: /রাত|সকাল|দুপুর|বিকাল|রাত/,
-	        isPM: function (input) {
-	            return /^(দুপুর|বিকাল|রাত)$/.test(input);
+	        meridiemHour : function (hour, meridiem) {
+	            if (hour === 12) {
+	                hour = 0;
+	            }
+	            if ((meridiem === 'রাত' && hour >= 4) ||
+	                    (meridiem === 'দুপুর' && hour < 5) ||
+	                    meridiem === 'বিকাল') {
+	                return hour + 12;
+	            } else {
+	                return hour;
+	            }
 	        },
-	        //Bengali is a vast language its spoken
-	        //in different forms in various parts of the world.
-	        //I have just generalized with most common one used
 	        meridiem : function (hour, minute, isLower) {
 	            if (hour < 4) {
 	                return 'রাত';
@@ -38765,8 +38866,17 @@
 	            });
 	        },
 	        meridiemParse: /མཚན་མོ|ཞོགས་ཀས|ཉིན་གུང|དགོང་དག|མཚན་མོ/,
-	        isPM: function (input) {
-	            return /^(ཉིན་གུང|དགོང་དག|མཚན་མོ)$/.test(input);
+	        meridiemHour : function (hour, meridiem) {
+	            if (hour === 12) {
+	                hour = 0;
+	            }
+	            if ((meridiem === 'མཚན་མོ' && hour >= 4) ||
+	                    (meridiem === 'ཉིན་གུང' && hour < 5) ||
+	                    meridiem === 'དགོང་དག') {
+	                return hour + 12;
+	            } else {
+	                return hour;
+	            }
 	        },
 	        meridiem : function (hour, minute, isLower) {
 	            if (hour < 4) {
@@ -39735,7 +39845,7 @@
 	        },
 	        meridiemParse: /މކ|މފ/,
 	        isPM : function (input) {
-	            return '' === input;
+	            return 'މފ' === input;
 	        },
 	        meridiem : function (hour, minute, isLower) {
 	            if (hour < 12) {
@@ -39980,9 +40090,9 @@
 	            LT : 'h:mm A',
 	            LTS : 'h:mm:ss A',
 	            L : 'YYYY-MM-DD',
-	            LL : 'D MMMM, YYYY',
-	            LLL : 'D MMMM, YYYY h:mm A',
-	            LLLL : 'dddd, D MMMM, YYYY h:mm A'
+	            LL : 'MMMM D, YYYY',
+	            LLL : 'MMMM D, YYYY h:mm A',
+	            LLLL : 'dddd, MMMM D, YYYY h:mm A'
 	        },
 	        calendar : {
 	            sameDay : '[Today at] LT',
@@ -41337,6 +41447,23 @@
 	                }
 	                return number + ' שנים';
 	            }
+	        },
+	        meridiemParse: /אחה"צ|לפנה"צ|אחרי הצהריים|לפני הצהריים|לפנות בוקר|בבוקר|בערב/i,
+	        isPM : function (input) {
+	            return /^(אחה"צ|אחרי הצהריים|בערב)$/.test(input);
+	        },
+	        meridiem : function (hour, minute, isLower) {
+	            if (hour < 5) {
+	                return 'לפנות בוקר';
+	            } else if (hour < 10) {
+	                return 'בבוקר';
+	            } else if (hour < 12) {
+	                return isLower ? 'לפנה"צ' : 'לפני הצהריים';
+	            } else if (hour < 18) {
+	                return isLower ? 'אחה"צ' : 'אחרי הצהריים';
+	            } else {
+	                return 'בערב';
+	            }
 	        }
 	    });
 	
@@ -42008,7 +42135,7 @@
 	        longDateFormat : {
 	            LT : 'H:mm',
 	            LTS : 'H:mm:ss',
-	            L : 'DD/MM/YYYY',
+	            L : 'DD.MM.YYYY',
 	            LL : 'D. MMMM YYYY',
 	            LLL : 'D. MMMM YYYY [kl.] H:mm',
 	            LLLL : 'dddd, D. MMMM YYYY [kl.] H:mm'
@@ -42169,6 +42296,17 @@
 	            lastDay : '[昨日] LT',
 	            lastWeek : '[前週]dddd LT',
 	            sameElse : 'L'
+	        },
+	        ordinalParse : /\d{1,2}日/,
+	        ordinal : function (number, period) {
+	            switch (period) {
+	            case 'd':
+	            case 'D':
+	            case 'DDD':
+	                return number + '日';
+	            default:
+	                return number;
+	            }
 	        },
 	        relativeTime : {
 	            future : '%s後',
@@ -43286,8 +43424,17 @@
 	            yy : '%d വർഷം'
 	        },
 	        meridiemParse: /രാത്രി|രാവിലെ|ഉച്ച കഴിഞ്ഞ്|വൈകുന്നേരം|രാത്രി/i,
-	        isPM : function (input) {
-	            return /^(ഉച്ച കഴിഞ്ഞ്|വൈകുന്നേരം|രാത്രി)$/.test(input);
+	        meridiemHour : function (hour, meridiem) {
+	            if (hour === 12) {
+	                hour = 0;
+	            }
+	            if ((meridiem === 'രാത്രി' && hour >= 4) ||
+	                    meridiem === 'ഉച്ച കഴിഞ്ഞ്' ||
+	                    meridiem === 'വൈകുന്നേരം') {
+	                return hour + 12;
+	            } else {
+	                return hour;
+	            }
 	        },
 	        meridiem : function (hour, minute, isLower) {
 	            if (hour < 4) {
@@ -44073,6 +44220,134 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
+	//! locale : punjabi india (pa-in)
+	//! author : Harpreet Singh : https://github.com/harpreetkhalsagtbit
+	
+	;(function (global, factory) {
+	    true ? factory(__webpack_require__(270)) :
+	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
+	   factory(global.moment)
+	}(this, function (moment) { 'use strict';
+	
+	
+	    var symbolMap = {
+	        '1': '੧',
+	        '2': '੨',
+	        '3': '੩',
+	        '4': '੪',
+	        '5': '੫',
+	        '6': '੬',
+	        '7': '੭',
+	        '8': '੮',
+	        '9': '੯',
+	        '0': '੦'
+	    },
+	    numberMap = {
+	        '੧': '1',
+	        '੨': '2',
+	        '੩': '3',
+	        '੪': '4',
+	        '੫': '5',
+	        '੬': '6',
+	        '੭': '7',
+	        '੮': '8',
+	        '੯': '9',
+	        '੦': '0'
+	    };
+	
+	    var pa_in = moment.defineLocale('pa-in', {
+	        // There are months name as per Nanakshahi Calender but they are not used as rigidly in modern Punjabi.
+	        months : 'ਜਨਵਰੀ_ਫ਼ਰਵਰੀ_ਮਾਰਚ_ਅਪ੍ਰੈਲ_ਮਈ_ਜੂਨ_ਜੁਲਾਈ_ਅਗਸਤ_ਸਤੰਬਰ_ਅਕਤੂਬਰ_ਨਵੰਬਰ_ਦਸੰਬਰ'.split('_'),
+	        monthsShort : 'ਜਨਵਰੀ_ਫ਼ਰਵਰੀ_ਮਾਰਚ_ਅਪ੍ਰੈਲ_ਮਈ_ਜੂਨ_ਜੁਲਾਈ_ਅਗਸਤ_ਸਤੰਬਰ_ਅਕਤੂਬਰ_ਨਵੰਬਰ_ਦਸੰਬਰ'.split('_'),
+	        weekdays : 'ਐਤਵਾਰ_ਸੋਮਵਾਰ_ਮੰਗਲਵਾਰ_ਬੁਧਵਾਰ_ਵੀਰਵਾਰ_ਸ਼ੁੱਕਰਵਾਰ_ਸ਼ਨੀਚਰਵਾਰ'.split('_'),
+	        weekdaysShort : 'ਐਤ_ਸੋਮ_ਮੰਗਲ_ਬੁਧ_ਵੀਰ_ਸ਼ੁਕਰ_ਸ਼ਨੀ'.split('_'),
+	        weekdaysMin : 'ਐਤ_ਸੋਮ_ਮੰਗਲ_ਬੁਧ_ਵੀਰ_ਸ਼ੁਕਰ_ਸ਼ਨੀ'.split('_'),
+	        longDateFormat : {
+	            LT : 'A h:mm ਵਜੇ',
+	            LTS : 'A h:mm:ss ਵਜੇ',
+	            L : 'DD/MM/YYYY',
+	            LL : 'D MMMM YYYY',
+	            LLL : 'D MMMM YYYY, A h:mm ਵਜੇ',
+	            LLLL : 'dddd, D MMMM YYYY, A h:mm ਵਜੇ'
+	        },
+	        calendar : {
+	            sameDay : '[ਅਜ] LT',
+	            nextDay : '[ਕਲ] LT',
+	            nextWeek : 'dddd, LT',
+	            lastDay : '[ਕਲ] LT',
+	            lastWeek : '[ਪਿਛਲੇ] dddd, LT',
+	            sameElse : 'L'
+	        },
+	        relativeTime : {
+	            future : '%s ਵਿੱਚ',
+	            past : '%s ਪਿਛਲੇ',
+	            s : 'ਕੁਝ ਸਕਿੰਟ',
+	            m : 'ਇਕ ਮਿੰਟ',
+	            mm : '%d ਮਿੰਟ',
+	            h : 'ਇੱਕ ਘੰਟਾ',
+	            hh : '%d ਘੰਟੇ',
+	            d : 'ਇੱਕ ਦਿਨ',
+	            dd : '%d ਦਿਨ',
+	            M : 'ਇੱਕ ਮਹੀਨਾ',
+	            MM : '%d ਮਹੀਨੇ',
+	            y : 'ਇੱਕ ਸਾਲ',
+	            yy : '%d ਸਾਲ'
+	        },
+	        preparse: function (string) {
+	            return string.replace(/[੧੨੩੪੫੬੭੮੯੦]/g, function (match) {
+	                return numberMap[match];
+	            });
+	        },
+	        postformat: function (string) {
+	            return string.replace(/\d/g, function (match) {
+	                return symbolMap[match];
+	            });
+	        },
+	        // Punjabi notation for meridiems are quite fuzzy in practice. While there exists
+	        // a rigid notion of a 'Pahar' it is not used as rigidly in modern Punjabi.
+	        meridiemParse: /ਰਾਤ|ਸਵੇਰ|ਦੁਪਹਿਰ|ਸ਼ਾਮ/,
+	        meridiemHour : function (hour, meridiem) {
+	            if (hour === 12) {
+	                hour = 0;
+	            }
+	            if (meridiem === 'ਰਾਤ') {
+	                return hour < 4 ? hour : hour + 12;
+	            } else if (meridiem === 'ਸਵੇਰ') {
+	                return hour;
+	            } else if (meridiem === 'ਦੁਪਹਿਰ') {
+	                return hour >= 10 ? hour : hour + 12;
+	            } else if (meridiem === 'ਸ਼ਾਮ') {
+	                return hour + 12;
+	            }
+	        },
+	        meridiem : function (hour, minute, isLower) {
+	            if (hour < 4) {
+	                return 'ਰਾਤ';
+	            } else if (hour < 10) {
+	                return 'ਸਵੇਰ';
+	            } else if (hour < 17) {
+	                return 'ਦੁਪਹਿਰ';
+	            } else if (hour < 20) {
+	                return 'ਸ਼ਾਮ';
+	            } else {
+	                return 'ਰਾਤ';
+	            }
+	        },
+	        week : {
+	            dow : 0, // Sunday is the first day of the week.
+	            doy : 6  // The week that contains Jan 1st is the first week of the year.
+	        }
+	    });
+	
+	    return pa_in;
+	
+	}));
+
+/***/ },
+/* 342 */
+/***/ function(module, exports, __webpack_require__) {
+
+	//! moment.js locale configuration
 	//! locale : polish (pl)
 	//! author : Rafal Hirsz : https://github.com/evoL
 	
@@ -44178,7 +44453,7 @@
 	}));
 
 /***/ },
-/* 342 */
+/* 343 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44246,7 +44521,7 @@
 	}));
 
 /***/ },
-/* 343 */
+/* 344 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44263,7 +44538,7 @@
 	    var pt_br = moment.defineLocale('pt-br', {
 	        months : 'Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro'.split('_'),
 	        monthsShort : 'Jan_Fev_Mar_Abr_Mai_Jun_Jul_Ago_Set_Out_Nov_Dez'.split('_'),
-	        weekdays : 'Domingo_Segunda-Feira_Terça-Feira_Quarta-Feira_Quinta-Feira_Sexta-Feira_Sábado'.split('_'),
+	        weekdays : 'Domingo_Segunda-feira_Terça-feira_Quarta-feira_Quinta-feira_Sexta-feira_Sábado'.split('_'),
 	        weekdaysShort : 'Dom_Seg_Ter_Qua_Qui_Sex_Sáb'.split('_'),
 	        weekdaysMin : 'Dom_2ª_3ª_4ª_5ª_6ª_Sáb'.split('_'),
 	        longDateFormat : {
@@ -44310,7 +44585,7 @@
 	}));
 
 /***/ },
-/* 344 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44388,13 +44663,14 @@
 	}));
 
 /***/ },
-/* 345 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
 	//! locale : russian (ru)
 	//! author : Viktorminator : https://github.com/Viktorminator
 	//! Author : Menelion Elensúle : https://github.com/Oire
+	//! author : Коренберг Марк : https://github.com/socketpair
 	
 	;(function (global, factory) {
 	    true ? factory(__webpack_require__(270)) :
@@ -44424,22 +44700,23 @@
 	    }
 	    var monthsParse = [/^янв/i, /^фев/i, /^мар/i, /^апр/i, /^ма[й|я]/i, /^июн/i, /^июл/i, /^авг/i, /^сен/i, /^окт/i, /^ноя/i, /^дек/i];
 	
+	    // http://new.gramota.ru/spravka/rules/139-prop : § 103
 	    var ru = moment.defineLocale('ru', {
 	        months : {
-	            format: 'Января_Февраля_Марта_Апреля_Мая_Июня_Июля_Августа_Сентября_Октября_Ноября_Декабря'.split('_'),
-	            standalone: 'Январь_Февраль_Март_Апрель_Май_Июнь_Июль_Август_Сентябрь_Октябрь_Ноябрь_Декабрь'.split('_')
+	            format: 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split('_'),
+	            standalone: 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_')
 	        },
 	        monthsShort : {
 	            format: 'янв_фев_мар_апр_мая_июня_июля_авг_сен_окт_ноя_дек'.split('_'),
 	            standalone: 'янв_фев_март_апр_май_июнь_июль_авг_сен_окт_ноя_дек'.split('_')
 	        },
 	        weekdays : {
-	            standalone: 'Воскресенье_Понедельник_Вторник_Среда_Четверг_Пятница_Суббота'.split('_'),
-	            format: 'Воскресенье_Понедельник_Вторник_Среду_Четверг_Пятницу_Субботу'.split('_'),
+	            standalone: 'воскресенье_понедельник_вторник_среда_четверг_пятница_суббота'.split('_'),
+	            format: 'воскресенье_понедельник_вторник_среду_четверг_пятницу_субботу'.split('_'),
 	            isFormat: /\[ ?[Вв] ?(?:прошлую|следующую|эту)? ?\] ?dddd/
 	        },
-	        weekdaysShort : 'Вс_Пн_Вт_Ср_Чт_Пт_Сб'.split('_'),
-	        weekdaysMin : 'Вс_Пн_Вт_Ср_Чт_Пт_Сб'.split('_'),
+	        weekdaysShort : 'вс_пн_вт_ср_чт_пт_сб'.split('_'),
+	        weekdaysMin : 'вс_пн_вт_ср_чт_пт_сб'.split('_'),
 	        monthsParse : monthsParse,
 	        longMonthsParse : monthsParse,
 	        shortMonthsParse : monthsParse,
@@ -44558,7 +44835,7 @@
 	}));
 
 /***/ },
-/* 346 */
+/* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44623,7 +44900,7 @@
 	}));
 
 /***/ },
-/* 347 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44679,6 +44956,10 @@
 	        ordinal : function (number) {
 	            return number + ' වැනි';
 	        },
+	        meridiemParse : /පෙර වරු|පස් වරු|පෙ.ව|ප.ව./,
+	        isPM : function (input) {
+	            return input === 'ප.ව.' || input === 'පස් වරු';
+	        },
 	        meridiem : function (hours, minutes, isLower) {
 	            if (hours > 11) {
 	                return isLower ? 'ප.ව.' : 'පස් වරු';
@@ -44693,7 +44974,7 @@
 	}));
 
 /***/ },
-/* 348 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44847,7 +45128,7 @@
 	}));
 
 /***/ },
-/* 349 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45011,7 +45292,7 @@
 	}));
 
 /***/ },
-/* 350 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45084,7 +45365,7 @@
 	}));
 
 /***/ },
-/* 351 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45196,7 +45477,7 @@
 	}));
 
 /***/ },
-/* 352 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45308,7 +45589,7 @@
 	}));
 
 /***/ },
-/* 353 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45379,7 +45660,7 @@
 	}));
 
 /***/ },
-/* 354 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45441,7 +45722,7 @@
 	}));
 
 /***/ },
-/* 355 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45574,7 +45855,7 @@
 	}));
 
 /***/ },
-/* 356 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45666,7 +45947,7 @@
 	}));
 
 /***/ },
-/* 357 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45735,7 +46016,7 @@
 	}));
 
 /***/ },
-/* 358 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45801,7 +46082,7 @@
 	}));
 
 /***/ },
-/* 359 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45924,7 +46205,7 @@
 	}));
 
 /***/ },
-/* 360 */
+/* 361 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46018,7 +46299,7 @@
 	}));
 
 /***/ },
-/* 361 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46048,6 +46329,10 @@
 	            LL : 'D. MMMM [dallas] YYYY',
 	            LLL : 'D. MMMM [dallas] YYYY HH.mm',
 	            LLLL : 'dddd, [li] D. MMMM [dallas] YYYY HH.mm'
+	        },
+	        meridiemParse: /d\'o|d\'a/i,
+	        isPM : function (input) {
+	            return 'd\'o' === input.toLowerCase();
 	        },
 	        meridiem : function (hours, minutes, isLower) {
 	            if (hours > 11) {
@@ -46109,7 +46394,7 @@
 	}));
 
 /***/ },
-/* 362 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46171,7 +46456,7 @@
 	}));
 
 /***/ },
-/* 363 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46233,7 +46518,7 @@
 	}));
 
 /***/ },
-/* 364 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46383,7 +46668,7 @@
 	}));
 
 /***/ },
-/* 365 */
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46445,7 +46730,7 @@
 	}));
 
 /***/ },
-/* 366 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46465,6 +46750,17 @@
 	        weekdays : 'chủ nhật_thứ hai_thứ ba_thứ tư_thứ năm_thứ sáu_thứ bảy'.split('_'),
 	        weekdaysShort : 'CN_T2_T3_T4_T5_T6_T7'.split('_'),
 	        weekdaysMin : 'CN_T2_T3_T4_T5_T6_T7'.split('_'),
+	        meridiemParse: /sa|ch/i,
+	        isPM : function (input) {
+	            return /^ch$/i.test(input);
+	        },
+	        meridiem : function (hours, minutes, isLower) {
+	            if (hours < 12) {
+	                return isLower ? 'sa' : 'SA';
+	            } else {
+	                return isLower ? 'ch' : 'CH';
+	            }
+	        },
 	        longDateFormat : {
 	            LT : 'HH:mm',
 	            LTS : 'HH:mm:ss',
@@ -46515,7 +46811,7 @@
 	}));
 
 /***/ },
-/* 367 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46646,7 +46942,7 @@
 	}));
 
 /***/ },
-/* 368 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46751,7 +47047,7 @@
 	}));
 
 /***/ },
-/* 369 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -46886,12 +47182,12 @@
 
 
 /***/ },
-/* 370 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    TypeSearchCheckbox = __webpack_require__(371),
-	    ROOM_PARAMS = __webpack_require__(372);
+	    TypeSearchCheckbox = __webpack_require__(372),
+	    ROOM_PARAMS = __webpack_require__(373);
 	
 	var HomeTypeSearch = React.createClass({
 	  displayName: 'HomeTypeSearch',
@@ -46924,7 +47220,7 @@
 	module.exports = HomeTypeSearch;
 
 /***/ },
-/* 371 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
@@ -46963,7 +47259,7 @@
 	module.exports = TypeSearchCheckbox;
 
 /***/ },
-/* 372 */
+/* 373 */
 /***/ function(module, exports) {
 
 	var ROOM_PARAMS = {
@@ -46974,12 +47270,12 @@
 	module.exports = ROOM_PARAMS;
 
 /***/ },
-/* 373 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    TypeSearchCheckbox = __webpack_require__(374),
-	    ROOM_PARAMS = __webpack_require__(372);
+	    TypeSearchCheckbox = __webpack_require__(372),
+	    ROOM_PARAMS = __webpack_require__(373);
 	
 	var RoomTypeSearch = React.createClass({
 	  displayName: 'RoomTypeSearch',
@@ -47038,50 +47334,12 @@
 	module.exports = RoomTypeSearch;
 
 /***/ },
-/* 374 */
+/* 375 */,
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    FilterActions = __webpack_require__(258);
-	
-	var TypeSearchCheckbox = React.createClass({
-	  displayName: 'TypeSearchCheckbox',
-	
-	  handleClick: function (e) {
-	    FilterActions.sendTypeToFilter({
-	      typeCategory: this.props.category,
-	      typeValue: this.props.value,
-	      checked: e.target.checked
-	    });
-	  },
-	
-	  render: function () {
-	    return React.createElement(
-	      'div',
-	      { className: 'search-type-field  search-item' },
-	      React.createElement(
-	        'label',
-	        { 'for': 'filled-in-box' },
-	        this.props.value
-	      ),
-	      React.createElement('input', { className: 'filled-in',
-	        type: 'checkbox',
-	        id: 'filled-in-box',
-	        value: this.props.value,
-	        onChange: this.handleClick })
-	    );
-	  }
-	
-	});
-	
-	module.exports = TypeSearchCheckbox;
-
-/***/ },
-/* 375 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1),
-	    PriceSlider = __webpack_require__(376);
+	    PriceSlider = __webpack_require__(377);
 	
 	var PriceSearch = React.createClass({
 	  displayName: 'PriceSearch',
@@ -47103,11 +47361,11 @@
 	module.exports = PriceSearch;
 
 /***/ },
-/* 376 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    ReactSlider = __webpack_require__(377),
+	    ReactSlider = __webpack_require__(378),
 	    ApiUtil = __webpack_require__(243),
 	    FilterActions = __webpack_require__(258);
 	
@@ -47166,7 +47424,7 @@
 	module.exports = PriceSlider;
 
 /***/ },
-/* 377 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root, factory) {
@@ -47964,13 +48222,13 @@
 
 
 /***/ },
-/* 378 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
 	    RoomStore = __webpack_require__(242),
-	    IndexItem = __webpack_require__(379),
-	    FilterParamsStore = __webpack_require__(381),
+	    IndexItem = __webpack_require__(380),
+	    FilterParamsStore = __webpack_require__(382),
 	    FilterActions = __webpack_require__(258),
 	    apiUtil = __webpack_require__(243);
 	
@@ -48031,13 +48289,13 @@
 	module.exports = Index;
 
 /***/ },
-/* 379 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
 	    RoomStore = __webpack_require__(242),
 	    apiUtil = __webpack_require__(243),
-	    IMAGE_URLS = __webpack_require__(380);
+	    IMAGE_URLS = __webpack_require__(381);
 	
 	var IndexItem = React.createClass({
 	  displayName: 'IndexItem',
@@ -48152,7 +48410,7 @@
 	module.exports = IndexItem;
 
 /***/ },
-/* 380 */
+/* 381 */
 /***/ function(module, exports) {
 
 	IMAGE_URLS = {
@@ -48162,7 +48420,7 @@
 	module.exports = IMAGE_URLS;
 
 /***/ },
-/* 381 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Store = __webpack_require__(217).Store;
@@ -48233,11 +48491,11 @@
 	module.exports = filterParamsStore;
 
 /***/ },
-/* 382 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    FilterParamsStore = __webpack_require__(381),
+	    FilterParamsStore = __webpack_require__(382),
 	    apiUtil = __webpack_require__(243),
 	    FilterActions = __webpack_require__(258);
 	
@@ -48272,11 +48530,11 @@
 	module.exports = FilterParams;
 
 /***/ },
-/* 383 */
+/* 384 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    AddForm = __webpack_require__(384);
+	    AddForm = __webpack_require__(385);
 	
 	var AddFormPage = React.createClass({
 	  displayName: 'AddFormPage',
@@ -48302,20 +48560,20 @@
 	module.exports = AddFormPage;
 
 /***/ },
-/* 384 */
+/* 385 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    AddFormChoices = __webpack_require__(385),
-	    AddFormInput = __webpack_require__(387),
+	    AddFormChoices = __webpack_require__(386),
+	    AddFormInput = __webpack_require__(388),
 	    DateFields = __webpack_require__(268),
-	    Cloudinary = __webpack_require__(388),
+	    Cloudinary = __webpack_require__(389),
 	    apiUtil = __webpack_require__(243),
 	    ErrorStore = __webpack_require__(249),
 	    ErrorMessage = __webpack_require__(250),
-	    AddressField = __webpack_require__(390),
+	    AddressField = __webpack_require__(391),
 	    AutocompleteSearch = __webpack_require__(245),
-	    ROOM_PARAMS = __webpack_require__(372);
+	    ROOM_PARAMS = __webpack_require__(373);
 	
 	var NavBar = __webpack_require__(239);
 	
@@ -48554,11 +48812,11 @@
 	module.exports = AddForm;
 
 /***/ },
-/* 385 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    AddFormChoice = __webpack_require__(386);
+	    AddFormChoice = __webpack_require__(387);
 	
 	var AddFormChoices = React.createClass({
 	  displayName: 'AddFormChoices',
@@ -48606,7 +48864,7 @@
 	module.exports = AddFormChoices;
 
 /***/ },
-/* 386 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -48642,7 +48900,7 @@
 	module.exports = AddFormChoice;
 
 /***/ },
-/* 387 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -48673,12 +48931,12 @@
 	module.exports = AddFormInput;
 
 /***/ },
-/* 388 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
 	    ReactDOM = __webpack_require__(158),
-	    UploadButton = __webpack_require__(389);
+	    UploadButton = __webpack_require__(390);
 	
 	var Images = React.createClass({
 	  displayName: 'Images',
@@ -48711,7 +48969,7 @@
 	module.exports = Images;
 
 /***/ },
-/* 389 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -48754,7 +49012,7 @@
 	module.exports = UploadButton;
 
 /***/ },
-/* 390 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
@@ -48817,17 +49075,17 @@
 	module.exports = AutoAddressField;
 
 /***/ },
-/* 391 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
 	    apiUtil = __webpack_require__(243),
 	    RoomStore = __webpack_require__(242),
-	    BookingForm = __webpack_require__(392),
-	    PhotoView = __webpack_require__(395),
-	    EditPhotos = __webpack_require__(404);
+	    BookingForm = __webpack_require__(393),
+	    PhotoView = __webpack_require__(396),
+	    EditPhotos = __webpack_require__(405);
 	
-	IMAGE_URLS = __webpack_require__(380);
+	IMAGE_URLS = __webpack_require__(381);
 	
 	var ShowRoom = React.createClass({
 	  displayName: 'ShowRoom',
@@ -48945,12 +49203,12 @@
 	module.exports = ShowRoom;
 
 /***/ },
-/* 392 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    BookingDateFields = __webpack_require__(393),
-	    BookingPrice = __webpack_require__(394),
+	    BookingDateFields = __webpack_require__(394),
+	    BookingPrice = __webpack_require__(395),
 	    LinkedStateMixin = __webpack_require__(251);
 	apiUtil = __webpack_require__(243);
 	
@@ -49100,7 +49358,7 @@
 	module.exports = BookingForm;
 
 /***/ },
-/* 393 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
@@ -49178,7 +49436,7 @@
 	module.exports = BookingDateFields;
 
 /***/ },
-/* 394 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -49209,12 +49467,12 @@
 	module.exports = BookingPrice;
 
 /***/ },
-/* 395 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    PhotoSlider = __webpack_require__(396),
-	    PhotoGrid = __webpack_require__(403);
+	    PhotoSlider = __webpack_require__(397),
+	    PhotoGrid = __webpack_require__(404);
 	
 	var PhotoView = React.createClass({
 	  displayName: 'PhotoView',
@@ -49271,11 +49529,11 @@
 	module.exports = PhotoView;
 
 /***/ },
-/* 396 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var Carousel = __webpack_require__(397);
+	var Carousel = __webpack_require__(398);
 	
 	var DemoCarousel = React.createClass({
 	  displayName: 'DemoCarousel',
@@ -49302,18 +49560,18 @@
 	module.exports = DemoCarousel;
 
 /***/ },
-/* 397 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Carousel = __webpack_require__(398);
+	var Carousel = __webpack_require__(399);
 	
 	module.exports = Carousel;
 
 
 /***/ },
-/* 398 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49334,19 +49592,19 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _reactTweenState = __webpack_require__(399);
+	var _reactTweenState = __webpack_require__(400);
 	
 	var _reactTweenState2 = _interopRequireDefault(_reactTweenState);
 	
-	var _decorators = __webpack_require__(400);
+	var _decorators = __webpack_require__(401);
 	
 	var _decorators2 = _interopRequireDefault(_decorators);
 	
-	var _objectAssign = __webpack_require__(401);
+	var _objectAssign = __webpack_require__(402);
 	
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 	
-	var _exenv = __webpack_require__(402);
+	var _exenv = __webpack_require__(403);
 	
 	var _exenv2 = _interopRequireDefault(_exenv);
 	
@@ -49382,6 +49640,8 @@
 	  mixins: [_reactTweenState2['default'].Mixin],
 	
 	  propTypes: {
+	    afterSlide: _react2['default'].PropTypes.func,
+	    beforeSlide: _react2['default'].PropTypes.func,
 	    cellAlign: _react2['default'].PropTypes.oneOf(['left', 'center', 'right']),
 	    cellSpacing: _react2['default'].PropTypes.number,
 	    data: _react2['default'].PropTypes.func,
@@ -49396,18 +49656,19 @@
 	    framePadding: _react2['default'].PropTypes.string,
 	    initialSlideHeight: _react2['default'].PropTypes.number,
 	    initialSlideWidth: _react2['default'].PropTypes.number,
+	    slideIndex: _react2['default'].PropTypes.number,
 	    slidesToShow: _react2['default'].PropTypes.number,
 	    slidesToScroll: _react2['default'].PropTypes.oneOfType([_react2['default'].PropTypes.number, _react2['default'].PropTypes.oneOf(['auto'])]),
 	    slideWidth: _react2['default'].PropTypes.oneOfType([_react2['default'].PropTypes.string, _react2['default'].PropTypes.number]),
 	    speed: _react2['default'].PropTypes.number,
 	    vertical: _react2['default'].PropTypes.bool,
-	    width: _react2['default'].PropTypes.string,
-	    beforeSlide: _react2['default'].PropTypes.func,
-	    afterSlide: _react2['default'].PropTypes.func
+	    width: _react2['default'].PropTypes.string
 	  },
 	
 	  getDefaultProps: function getDefaultProps() {
 	    return {
+	      afterSlide: function afterSlide() {},
+	      beforeSlide: function beforeSlide() {},
 	      cellAlign: 'left',
 	      cellSpacing: 0,
 	      data: function data() {},
@@ -49416,27 +49677,26 @@
 	      easing: 'easeOutCirc',
 	      edgeEasing: 'easeOutElastic',
 	      framePadding: '0px',
-	      slidesToShow: 1,
+	      slideIndex: 0,
 	      slidesToScroll: 1,
+	      slidesToShow: 1,
 	      slideWidth: 1,
 	      speed: 500,
 	      vertical: false,
-	      width: '100%',
-	      beforeSlide: function beforeSlide() {},
-	      afterSlide: function afterSlide() {}
+	      width: '100%'
 	    };
 	  },
 	
 	  getInitialState: function getInitialState() {
 	    return {
-	      currentSlide: 0,
+	      currentSlide: this.props.slideIndex,
 	      dragging: false,
 	      frameWidth: 0,
 	      left: 0,
-	      top: 0,
 	      slideCount: 0,
+	      slidesToScroll: this.props.slidesToScroll,
 	      slideWidth: 0,
-	      slidesToScroll: this.props.slidesToScroll
+	      top: 0
 	    };
 	  },
 	
@@ -49451,7 +49711,13 @@
 	  },
 	
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    this.setState({
+	      slideCount: nextProps.children.length
+	    });
 	    this.setDimensions();
+	    if (nextProps.slideIndex !== this.state.currentSlide) {
+	      this.goToSlide(nextProps.slideIndex);
+	    }
 	  },
 	
 	  componentWillUnmount: function componentWillUnmount() {
@@ -49532,8 +49798,8 @@
 	        };
 	
 	        self.setState({
-	          left: self.props.vertical ? 0 : (self.state.slideWidth * self.state.currentSlide + self.touchObject.length * self.touchObject.direction) * -1,
-	          top: self.props.vertical ? (self.state.slideWidth * self.state.currentSlide + self.touchObject.length * self.touchObject.direction) * -1 : 0
+	          left: self.props.vertical ? 0 : self.getTargetLeft(self.touchObject.length * self.touchObject.direction),
+	          top: self.props.vertical ? self.getTargetLeft(self.touchObject.length * self.touchObject.direction) : 0
 	        });
 	      },
 	      onTouchEnd: function onTouchEnd(e) {
@@ -49613,7 +49879,10 @@
 	    if (this.clickSafe === true) {
 	      e.preventDefault();
 	      e.stopPropagation();
-	      e.nativeEvent.stopPropagation();
+	
+	      if (e.nativeEvent) {
+	        e.nativeEvent.stopPropagation();
+	      }
 	    }
 	  },
 	
@@ -49626,7 +49895,7 @@
 	
 	    if (this.touchObject.length > this.state.slideWidth / this.props.slidesToShow / 5) {
 	      if (this.touchObject.direction === 1) {
-	        if (this.state.currentSlide >= _react2['default'].Children.count(this.props.children) - this.state.slidesToScroll) {
+	        if (this.state.currentSlide >= _react2['default'].Children.count(this.props.children) - this.props.slidesToShow) {
 	          this.animateSlide(_reactTweenState2['default'].easingTypes[this.props.edgeEasing]);
 	        } else {
 	          this.nextSlide();
@@ -49700,21 +49969,20 @@
 	  },
 	
 	  nextSlide: function nextSlide() {
-	    var self = this;
-	    if (this.state.currentSlide + this.state.slidesToScroll >= _react2['default'].Children.count(this.props.children)) {
+	    var childrenCount = _react2['default'].Children.count(this.props.children);
+	    if (this.state.currentSlide >= childrenCount - this.props.slidesToShow) {
 	      return;
 	    }
 	
-	    this.goToSlide(this.state.currentSlide + this.state.slidesToScroll);
+	    this.goToSlide(Math.min(this.state.currentSlide + this.state.slidesToScroll, childrenCount - this.props.slidesToShow));
 	  },
 	
 	  previousSlide: function previousSlide() {
-	    var self = this;
-	    if (this.state.currentSlide - this.state.slidesToScroll < 0) {
+	    if (this.state.currentSlide <= 0) {
 	      return;
 	    }
 	
-	    this.goToSlide(this.state.currentSlide - this.state.slidesToScroll);
+	    this.goToSlide(Math.max(0, this.state.currentSlide - this.state.slidesToScroll));
 	  },
 	
 	  // Animation
@@ -49828,7 +50096,7 @@
 	        slideHeight;
 	
 	    slidesToScroll = this.props.slidesToScroll;
-	    frame = _reactDom2['default'].findDOMNode(this.refs.frame);
+	    frame = this.refs.frame;
 	    firstSlide = frame.childNodes[0].childNodes[0];
 	    if (firstSlide) {
 	      firstSlide.style.height = 'auto';
@@ -49860,7 +50128,6 @@
 	
 	    this.setState({
 	      frameWidth: frameWidth,
-	      slideCount: _react2['default'].Children.count(this.props.children),
 	      slideWidth: slideWidth,
 	      slidesToScroll: slidesToScroll,
 	      left: this.props.vertical ? 0 : this.getTargetLeft(),
@@ -50070,13 +50337,13 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 399 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
 	!function(e,n){ true?module.exports=n():"function"==typeof define&&define.amd?define([],n):"object"==typeof exports?exports.tweenState=n():e.tweenState=n()}(this,function(){return function(e){function n(r){if(t[r])return t[r].exports;var a=t[r]={exports:{},id:r,loaded:!1};return e[r].call(a.exports,a,a.exports,n),a.loaded=!0,a.exports}var t={};return n.m=e,n.c=t,n.p="",n(0)}({0:function(e,n,t){e.exports=t(90)},1:function(e,n){function t(){c=!1,o.length?s=o.concat(s):f=-1,s.length&&r()}function r(){if(!c){var e=setTimeout(t);c=!0;for(var n=s.length;n;){for(o=s,s=[];++f<n;)o&&o[f].run();f=-1,n=s.length}o=null,c=!1,clearTimeout(e)}}function a(e,n){this.fun=e,this.array=n}function u(){}var o,i=e.exports={},s=[],c=!1,f=-1;i.nextTick=function(e){var n=new Array(arguments.length-1);if(arguments.length>1)for(var t=1;t<arguments.length;t++)n[t-1]=arguments[t];s.push(new a(e,n)),1!==s.length||c||setTimeout(r,0)},a.prototype.run=function(){this.fun.apply(null,this.array)},i.title="browser",i.browser=!0,i.env={},i.argv=[],i.version="",i.versions={},i.on=u,i.addListener=u,i.once=u,i.off=u,i.removeListener=u,i.removeAllListeners=u,i.emit=u,i.binding=function(e){throw new Error("process.binding is not supported")},i.cwd=function(){return"/"},i.chdir=function(e){throw new Error("process.chdir is not supported")},i.umask=function(){return 0}},90:function(e,n,t){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(n,"__esModule",{value:!0});var a=t(165),u=r(a),o=t(91),i=r(o),s="ADDITIVE",c=a.easeInOutQuad,f=300,l=0,h={ADDITIVE:"ADDITIVE",DESTRUCTIVE:"DESTRUCTIVE"},v={_rafID:null,getInitialState:function(){return{tweenQueue:[]}},componentWillUnmount:function(){i["default"].cancel(this._rafID),this._rafID=-1},tweenState:function(e,n){var t=this,r=n.easing,a=n.duration,u=n.delay,o=n.beginValue,v=n.endValue,d=n.onEnd,p=n.stackBehavior;this.setState(function(n){var I=n,w=void 0,g=void 0;if("string"==typeof e)w=e,g=e;else{for(var M=0;M<e.length-1;M++)I=I[e[M]];w=e[e.length-1],g=e.join("|")}var m={easing:r||c,duration:null==a?f:a,delay:null==u?l:u,beginValue:null==o?I[w]:o,endValue:v,onEnd:d,stackBehavior:p||s},x=n.tweenQueue;return m.stackBehavior===h.DESTRUCTIVE&&(x=n.tweenQueue.filter(function(e){return e.pathHash!==g})),x.push({pathHash:g,config:m,initTime:Date.now()+m.delay}),I[w]=m.endValue,1===x.length&&(t._rafID=(0,i["default"])(t._rafCb)),{tweenQueue:x}})},getTweeningValue:function(e){var n=this.state,t=void 0,r=void 0;if("string"==typeof e)t=n[e],r=e;else{t=n;for(var a=0;a<e.length;a++)t=t[e[a]];r=e.join("|")}for(var u=Date.now(),a=0;a<n.tweenQueue.length;a++){var o=n.tweenQueue[a],i=o.pathHash,s=o.initTime,c=o.config;if(i===r){var f=u-s>c.duration?c.duration:Math.max(0,u-s),l=0===c.duration?c.endValue:c.easing(f,c.beginValue,c.endValue,c.duration),h=l-c.endValue;t+=h}}return t},_rafCb:function(){var e=this.state;if(0!==e.tweenQueue.length){for(var n=Date.now(),t=[],r=0;r<e.tweenQueue.length;r++){var a=e.tweenQueue[r],u=a.initTime,o=a.config;n-u<o.duration?t.push(a):o.onEnd&&o.onEnd()}-1!==this._rafID&&(this.setState({tweenQueue:t}),this._rafID=(0,i["default"])(this._rafCb))}}};n["default"]={Mixin:v,easingTypes:u["default"],stackBehavior:h},e.exports=n["default"]},91:function(e,n,t){for(var r=t(92),a="undefined"==typeof window?{}:window,u=["moz","webkit"],o="AnimationFrame",i=a["request"+o],s=a["cancel"+o]||a["cancelRequest"+o],c=0;c<u.length&&!i;c++)i=a[u[c]+"Request"+o],s=a[u[c]+"Cancel"+o]||a[u[c]+"CancelRequest"+o];if(!i||!s){var f=0,l=0,h=[],v=1e3/60;i=function(e){if(0===h.length){var n=r(),t=Math.max(0,v-(n-f));f=t+n,setTimeout(function(){var e=h.slice(0);h.length=0;for(var n=0;n<e.length;n++)if(!e[n].cancelled)try{e[n].callback(f)}catch(t){setTimeout(function(){throw t},0)}},Math.round(t))}return h.push({handle:++l,callback:e,cancelled:!1}),l},s=function(e){for(var n=0;n<h.length;n++)h[n].handle===e&&(h[n].cancelled=!0)}}e.exports=function(e){return i.call(a,e)},e.exports.cancel=function(){s.apply(a,arguments)}},92:function(e,n,t){(function(n){(function(){var t,r,a;"undefined"!=typeof performance&&null!==performance&&performance.now?e.exports=function(){return performance.now()}:"undefined"!=typeof n&&null!==n&&n.hrtime?(e.exports=function(){return(t()-a)/1e6},r=n.hrtime,t=function(){var e;return e=r(),1e9*e[0]+e[1]},a=t()):Date.now?(e.exports=function(){return Date.now()-a},a=Date.now()):(e.exports=function(){return(new Date).getTime()-a},a=(new Date).getTime())}).call(this)}).call(n,t(1))},165:function(e,n){"use strict";var t={linear:function(e,n,t,r){var a=t-n;return a*e/r+n},easeInQuad:function(e,n,t,r){var a=t-n;return a*(e/=r)*e+n},easeOutQuad:function(e,n,t,r){var a=t-n;return-a*(e/=r)*(e-2)+n},easeInOutQuad:function(e,n,t,r){var a=t-n;return(e/=r/2)<1?a/2*e*e+n:-a/2*(--e*(e-2)-1)+n},easeInCubic:function(e,n,t,r){var a=t-n;return a*(e/=r)*e*e+n},easeOutCubic:function(e,n,t,r){var a=t-n;return a*((e=e/r-1)*e*e+1)+n},easeInOutCubic:function(e,n,t,r){var a=t-n;return(e/=r/2)<1?a/2*e*e*e+n:a/2*((e-=2)*e*e+2)+n},easeInQuart:function(e,n,t,r){var a=t-n;return a*(e/=r)*e*e*e+n},easeOutQuart:function(e,n,t,r){var a=t-n;return-a*((e=e/r-1)*e*e*e-1)+n},easeInOutQuart:function(e,n,t,r){var a=t-n;return(e/=r/2)<1?a/2*e*e*e*e+n:-a/2*((e-=2)*e*e*e-2)+n},easeInQuint:function(e,n,t,r){var a=t-n;return a*(e/=r)*e*e*e*e+n},easeOutQuint:function(e,n,t,r){var a=t-n;return a*((e=e/r-1)*e*e*e*e+1)+n},easeInOutQuint:function(e,n,t,r){var a=t-n;return(e/=r/2)<1?a/2*e*e*e*e*e+n:a/2*((e-=2)*e*e*e*e+2)+n},easeInSine:function(e,n,t,r){var a=t-n;return-a*Math.cos(e/r*(Math.PI/2))+a+n},easeOutSine:function(e,n,t,r){var a=t-n;return a*Math.sin(e/r*(Math.PI/2))+n},easeInOutSine:function(e,n,t,r){var a=t-n;return-a/2*(Math.cos(Math.PI*e/r)-1)+n},easeInExpo:function(e,n,t,r){var a=t-n;return 0==e?n:a*Math.pow(2,10*(e/r-1))+n},easeOutExpo:function(e,n,t,r){var a=t-n;return e==r?n+a:a*(-Math.pow(2,-10*e/r)+1)+n},easeInOutExpo:function(e,n,t,r){var a=t-n;return 0===e?n:e===r?n+a:(e/=r/2)<1?a/2*Math.pow(2,10*(e-1))+n:a/2*(-Math.pow(2,-10*--e)+2)+n},easeInCirc:function(e,n,t,r){var a=t-n;return-a*(Math.sqrt(1-(e/=r)*e)-1)+n},easeOutCirc:function(e,n,t,r){var a=t-n;return a*Math.sqrt(1-(e=e/r-1)*e)+n},easeInOutCirc:function(e,n,t,r){var a=t-n;return(e/=r/2)<1?-a/2*(Math.sqrt(1-e*e)-1)+n:a/2*(Math.sqrt(1-(e-=2)*e)+1)+n},easeInElastic:function(e,n,t,r){var a,u,o,i=t-n;return o=1.70158,u=0,a=i,0===e?n:1===(e/=r)?n+i:(u||(u=.3*r),a<Math.abs(i)?(a=i,o=u/4):o=u/(2*Math.PI)*Math.asin(i/a),-(a*Math.pow(2,10*(e-=1))*Math.sin((e*r-o)*(2*Math.PI)/u))+n)},easeOutElastic:function(e,n,t,r){var a,u,o,i=t-n;return o=1.70158,u=0,a=i,0===e?n:1===(e/=r)?n+i:(u||(u=.3*r),a<Math.abs(i)?(a=i,o=u/4):o=u/(2*Math.PI)*Math.asin(i/a),a*Math.pow(2,-10*e)*Math.sin((e*r-o)*(2*Math.PI)/u)+i+n)},easeInOutElastic:function(e,n,t,r){var a,u,o,i=t-n;return o=1.70158,u=0,a=i,0===e?n:2===(e/=r/2)?n+i:(u||(u=r*(.3*1.5)),a<Math.abs(i)?(a=i,o=u/4):o=u/(2*Math.PI)*Math.asin(i/a),1>e?-.5*(a*Math.pow(2,10*(e-=1))*Math.sin((e*r-o)*(2*Math.PI)/u))+n:a*Math.pow(2,-10*(e-=1))*Math.sin((e*r-o)*(2*Math.PI)/u)*.5+i+n)},easeInBack:function(e,n,t,r,a){var u=t-n;return void 0===a&&(a=1.70158),u*(e/=r)*e*((a+1)*e-a)+n},easeOutBack:function(e,n,t,r,a){var u=t-n;return void 0===a&&(a=1.70158),u*((e=e/r-1)*e*((a+1)*e+a)+1)+n},easeInOutBack:function(e,n,t,r,a){var u=t-n;return void 0===a&&(a=1.70158),(e/=r/2)<1?u/2*(e*e*(((a*=1.525)+1)*e-a))+n:u/2*((e-=2)*e*(((a*=1.525)+1)*e+a)+2)+n},easeInBounce:function(e,n,r,a){var u,o=r-n;return u=t.easeOutBounce(a-e,0,o,a),o-u+n},easeOutBounce:function(e,n,t,r){var a=t-n;return(e/=r)<1/2.75?a*(7.5625*e*e)+n:2/2.75>e?a*(7.5625*(e-=1.5/2.75)*e+.75)+n:2.5/2.75>e?a*(7.5625*(e-=2.25/2.75)*e+.9375)+n:a*(7.5625*(e-=2.625/2.75)*e+.984375)+n},easeInOutBounce:function(e,n,r,a){var u,o=r-n;return a/2>e?(u=t.easeInBounce(2*e,0,o,a),.5*u+n):(u=t.easeOutBounce(2*e-a,0,o,a),.5*u+.5*o+n)}};e.exports=t}})});
 
 /***/ },
-/* 400 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50100,9 +50367,13 @@
 	        'button',
 	        {
 	          style: this.getButtonStyles(this.props.currentSlide === 0),
-	          onClick: this.props.previousSlide },
+	          onClick: this.handleClick },
 	        'PREV'
 	      );
+	    },
+	    handleClick: function handleClick(e) {
+	      e.preventDefault();
+	      this.props.previousSlide();
 	    },
 	    getButtonStyles: function getButtonStyles(disabled) {
 	      return {
@@ -50126,9 +50397,13 @@
 	        'button',
 	        {
 	          style: this.getButtonStyles(this.props.currentSlide + this.props.slidesToScroll >= this.props.slideCount),
-	          onClick: this.props.nextSlide },
+	          onClick: this.handleClick },
 	        'NEXT'
 	      );
+	    },
+	    handleClick: function handleClick(e) {
+	      e.preventDefault();
+	      this.props.nextSlide();
 	    },
 	    getButtonStyles: function getButtonStyles(disabled) {
 	      return {
@@ -50209,7 +50484,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 401 */
+/* 402 */
 /***/ function(module, exports) {
 
 	/* eslint-disable no-unused-vars */
@@ -50254,7 +50529,7 @@
 
 
 /***/ },
-/* 402 */
+/* 403 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -50299,7 +50574,7 @@
 
 
 /***/ },
-/* 403 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
@@ -50362,12 +50637,12 @@
 	module.exports = PhotoGrid;
 
 /***/ },
-/* 404 */
+/* 405 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    PhotoGrid = __webpack_require__(403),
-	    Cloudinary = __webpack_require__(388),
+	    PhotoGrid = __webpack_require__(404),
+	    Cloudinary = __webpack_require__(389),
 	    apiUtil = __webpack_require__(243);
 	
 	var EditPhotos = React.createClass({
@@ -50412,19 +50687,19 @@
 	module.exports = EditPhotos;
 
 /***/ },
-/* 405 */
+/* 406 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
 	    LinkedStateMixin = __webpack_require__(251),
 	    apiUtil = __webpack_require__(243),
 	    RoomStore = __webpack_require__(242),
-	    AddressField = __webpack_require__(390),
+	    AddressField = __webpack_require__(391),
 	    DateFields = __webpack_require__(268),
-	    EditDateFields = __webpack_require__(406),
-	    ROOM_PARAMS = __webpack_require__(372),
-	    Cloudinary = __webpack_require__(388),
-	    AddFormInput = __webpack_require__(387);
+	    EditDateFields = __webpack_require__(407),
+	    ROOM_PARAMS = __webpack_require__(373),
+	    Cloudinary = __webpack_require__(389),
+	    AddFormInput = __webpack_require__(388);
 	
 	var EditForm = React.createClass({
 	  displayName: 'EditForm',
@@ -50651,7 +50926,7 @@
 	module.exports = EditForm;
 
 /***/ },
-/* 406 */
+/* 407 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
@@ -50751,7 +51026,7 @@
 	module.exports = EditDateFields;
 
 /***/ },
-/* 407 */
+/* 408 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),

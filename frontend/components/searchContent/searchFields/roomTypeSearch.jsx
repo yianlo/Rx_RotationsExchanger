@@ -1,5 +1,5 @@
 var React = require('react'),
-    TypeSearchCheckbox = require('./TypeSearchCheckbox'),
+    TypeSearchCheckbox = require('./typeSearchCheckbox'),
     ROOM_PARAMS = require('../../../constants/roomParams');
 
 var RoomTypeSearch = React.createClass({
