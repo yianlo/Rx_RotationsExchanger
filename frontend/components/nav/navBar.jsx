@@ -36,9 +36,9 @@ var NavBar = React.createClass({
       return (
         <div>
           <Listings />
-          <NavBarItem text="My Trips"
+          <NavBarItem text="Trips"
             onClickFun={this.redirectToTrips}/>
-          <NavBarItem text="Hosting Requests"
+          <NavBarItem text="Requests"
             onClickFun={this.redirectToHostings}/>
           <NavBarItem text="Log out"
             onClickFun={apiUtil.deleteSession.bind(null, this.context.handleLogOut)}/>
