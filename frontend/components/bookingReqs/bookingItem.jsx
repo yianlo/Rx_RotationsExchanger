@@ -10,7 +10,7 @@ var BookingItem = React.createClass({
   getInitialState: function*(){
     return {
       city: "",
-      isTooltipActive: false,
+      isTooltipActive: false
     }
   },
 
@@ -107,63 +107,69 @@ var BookingItem = React.createClass({
       )
     }
   },
-  //
-  // getGuestMessage: function(){
-  //   if(this.state.showGuestMessage){
-  //     return(
-  //
-  //     )
-  //   }
-  // },
-
-  // getGuestMessage: function(){
-  //   if(this.state.showGuestMessage){
-  //     return(
-  //       <div>
-  //         <p className="message">{this.props.booking.message}</p>
-  //         <i className="fa fa-angle-down" onClick={this.hideGuestMessage}></i>
-  //       </div>
-  //     )
-  //   }
-  // },
 
   displayGuestMessage: function(e){
     e.preventDefault();
     e.stopPropagation();
 
-    this.setState({isTooltipActive: true})
+    this.setState({ isTooltipActive: true })
   },
 
   hideGuestMessage: function(e){
     e.preventDefault();
     e.stopPropagation();
 
-    this.setState({isTooltipActive: false})
+    this.setState({ isTooltipActive: false })
+  },
+
+  getGuestMessage: function(){
+    var style = {
+      style: {
+        width: 350,
+        background: 'rgba(0,0,0,.8)',
+        padding: 20,
+        boxShadow: '4px 4px 3px rgba(0,0,0,.5)'
+      },
+      arrowStyle: {
+        color: 'rgba(0,0,0,.7)',
+        borderColor: false,
+      }
+    };
+
+    return(
+      <ToolTip active={this.state.isTooltipActive}
+          position="top" arrow="left" style={style}
+          parent={"#message" + this.props.booking.id}>
+        <div className="guest-message-container">
+          <p className="message">{this.props.booking.message}</p>
+        </div>
+      </ToolTip>
+    )
   },
 
   getBookingInfo: function(){
+    if (this.state.isTooltipActive){
+      var messageLinkVerb = "Hide";
+      var handleMessageLinkClick = this.hideGuestMessage;
+    } else {
+      var messageLinkVerb = "View";
+      var handleMessageLinkClick = this.displayGuestMessage;
+    }
+
     return(
       <div className="booking-info">
         <hr></hr>
         <p>{"Total $" + this.props.booking.total_price}
           <span className="vert-bar">|</span>
           <span className="view-message link"
-            onClick={this.displayGuestMessage}
-            id={"message" + this.props.booking.id}>View Guest Message
+            onClick={handleMessageLinkClick}
+            id={"message" + this.props.booking.id}>{messageLinkVerb+" Guest Message"}
           </span>
         </p>
-        <ToolTip active={this.state.isTooltipActive} position="right" arrow="left" parent={"#message" + this.props.booking.id}>
-          <div className="guest-message-container">
-            <p className="message">{this.props.booking.message}</p>
-            <i className="fa fa-angle-down" onClick={this.hideGuestMessage}></i>
-          </div>
-        </ToolTip>
 
+        {this.getGuestMessage()}
       </div>
     )
-
-    // <p>{"Guest Contact: " + this.props.booking.booker.email}</p>
-
   },
 
   render: function(){
@@ -188,8 +194,5 @@ var BookingItem = React.createClass({
     )
   }
 })
-
-// <img className="trip-room-img"
-//   src= {this.props.booking.images[0].url}></img>
 
 module.exports = BookingItem;

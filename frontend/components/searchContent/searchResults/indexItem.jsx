@@ -11,8 +11,8 @@ var IndexItem = React.createClass({
   },
 
   getInitialState: function(){
-    var pct = window.innerWidth >= 790 ? 0.37 * window.innerWidth/1000 : 0.45;
-    var imgPct = window.innerWidth >= 790 ? 0.29 * window.innerWidth/1000 : 0.45;
+    var pct = window.innerWidth >= 1000 ? 0.16 * window.innerWidth/800 : 0.42;
+    var imgPct = window.innerWidth >= 1000 ? 0.12 * window.innerWidth/800 : 0.42;
 
     return {
       height: {height: window.innerWidth * pct + "px"},
@@ -34,8 +34,8 @@ var IndexItem = React.createClass({
   },
 
   handleResize: function() {
-    var pct = window.innerWidth >= 790 ? 0.38 * window.innerWidth/1000 : 0.45;
-    var imgPct = window.innerWidth >= 790 ? 0.30 * window.innerWidth/1000 : 0.45;
+    var pct = window.innerWidth >= 1000 ? 0.16 * window.innerWidth/800 : 0.42;
+    var imgPct = window.innerWidth >= 1000 ? 0.12 * window.innerWidth/800 : 0.42;
 
     this.setState({
       height: {height: window.innerWidth * pct + "px"},

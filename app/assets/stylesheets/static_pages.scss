@@ -170,3 +170,30 @@ select {
   bottom: 0;
   right: 0;
 }
+
+@media all and (max-width: 870px){
+  .map-container{
+    width: 28%;
+  }
+
+  .search-results-container{
+    width: 72.6%;
+  }
+
+  .search-container {
+    width: 99.2%;
+  }
+}
+
+@media all and (max-width: 735px){
+  .map-container, #map{
+    visibility: hidden;
+    position: absolute;
+    z-index: -1000;
+    width: 100%;
+  }
+
+  .search-results-container, .search-container{
+    width: 100%;
+  }
+}

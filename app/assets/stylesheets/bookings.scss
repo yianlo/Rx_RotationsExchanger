@@ -8,36 +8,6 @@ $icon-hover: #888;
 $theme-color: #F88379;
 $theme-color-buttons: rgba(248, 131, 121, 0.7);
 
-@mixin animation($str) {
-  -webkit-animation: #{$str};
-  -moz-animation: #{$str};
-  -ms-animation: #{$str};
-  -o-animation: #{$str};
-  animation: #{$str};
-}
-
-@mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-      @content;
-  }
-  @-moz-keyframes #{$animation-name} {
-      @content;
-  }
-  @-ms-keyframes #{$animation-name} {
-      @content;
-  }
-  @-o-keyframes #{$animation-name} {
-      @content;
-  }
-  @keyframes #{$animation-name} {
-      @content;
-  }
-}
-
-@include keyframes(show-message) {
-  0% { height: 0; }
-  100% { height: 100px; }
-}
 
 .trips-page, .hosting-reqs-page{
   flex: none;
@@ -46,6 +16,11 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
   top: $top-push;
   flex-direction: column;
   min-width: 500px;
+
+  .view-message{
+    position: relative;
+    color:$theme-color;
+  }
 
   .link{
     position: relative;
@@ -176,72 +151,6 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
         }
       }
 
-      .guest-message-container{
-        width: 320px;
-        padding: 10px;
-        flex-direction: column;
-
-        z-index: 5px;
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
-
-        background: #F5F5F5;
-        border-radius: 8px;
-
-        .message{
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          background: white;
-          font-size: 13px;
-          padding: 5px;
-
-          height: 100px;
-
-          // @include animation('show-message 0.4s linear');
-          overflow: hidden;
-        }
-
-        .example-enter {
-          opacity: 0.1;
-        }
-
-        .example-enter.example-enter-active {
-          // height: 100px;
-          opacity: 1;
-
-          transition: all 0.4s ease-in;
-        }
-
-        .example-leave {
-          // height: 100px;
-          opacity: 0.1;
-        }
-
-        .example-leave.example-leave-active {
-          // height: 0;
-          opacity: 1;
-          transition: all 0.4s ease-in;
-        }
-
-        .fa-angle-down{
-          color: $icon-color;
-          font-size: 28px;
-          width: 20px;
-          /* height: 45px; */
-          line-height: 20px;
-          text-align: center;
-          align-self: flex-end;
-          position: absolute;
-          bottom: 15px;
-          right: 18px;
-        }
-
-        .fa-angle-down:hover{
-          color: $icon-hover;
-        }
-      }
-
       .buttons-container{
         margin: 35px 0 15px 0;
         justify-content: space-around;
@@ -265,5 +174,23 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
       cursor: pointer;
       box-shadow: $box-shadow;
     }
+  }
+
+  .fa-times{
+    z-index: 500;
+    color: $icon-color;
+    font-size: 35px;
+    width: 20px;
+    /* height: 45px; */
+    line-height: 20px;
+    text-align: center;
+    align-self: flex-end;
+    position: absolute;
+    bottom: 15px;
+    right: 18px;
+  }
+
+  .fa-times:hover{
+    color: $icon-hover;
   }
 }

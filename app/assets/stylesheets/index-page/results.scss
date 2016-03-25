@@ -13,7 +13,6 @@ $top-push: 61px;
   justify-content: flex-start;
   align-content: flex-start;
   flex-wrap: wrap;
-  height: 1300px;
 
   width: 100.5%;
   box-sizing: content-box;
@@ -24,7 +23,7 @@ $top-push: 61px;
 
 .result-item{
   width: 49.5%;
-  max-height: 30%;
+  max-height: 400px;
   height: 30%;
 
   flex-flow: column;
@@ -129,13 +128,9 @@ $top-push: 61px;
   min-height: 15px;
 }
 
-@media all and (max-width: 790px){
+@media all and (max-width: 1000px){
   .result-item{
     width: 100%;
     max-height: 60%;
-  }
-
-  .small-wrapper {
-
   }
 }
