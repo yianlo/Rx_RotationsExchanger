@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "== README",
   "main": "index.js",
+  "engines": {
+    "node": "5.3.0",
+    "npm": "3.3.x"
+  },
   "directories": {
     "test": "test"
   },
