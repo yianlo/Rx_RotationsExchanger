@@ -9,7 +9,7 @@ _currentTrips = {};
 _upcomingTrips = {};
 
 _addRequest = function(newRequest){
-  _allTrips.push(newRequest)
+  _allTrips[newRequest.id] = newRequest;
 };
 
 _resetRequests = function(requests){

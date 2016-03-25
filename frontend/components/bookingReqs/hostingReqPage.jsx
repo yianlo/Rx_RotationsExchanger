@@ -54,7 +54,7 @@ var HostingReqsPage = React.createClass({
 
   renderHostingReqs: function(hostingReqs, group){
     if (hostingReqs.length > 0) {
-      return <BookingsIndex group={group} bookings={hostingReqs}/>
+      return <BookingsIndex group={group} bookings={hostingReqs} page="hostingReqs"/>
     } else if (group === "pending") {
       return <p className="none-message">You have no new guest requests at this time.</p>
     } else {

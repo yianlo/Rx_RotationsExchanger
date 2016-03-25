@@ -23,7 +23,7 @@ var RoomDetails = React.createClass({
       this.context.router.replace('/main/search')
     }.bind(this)
 
-    apiUtil.deleteRoom(this.roomId, redirectCb)
+    apiUtil.deleteRoom(this.context.roomId, redirectCb)
   },
 
   getButtons: function(){

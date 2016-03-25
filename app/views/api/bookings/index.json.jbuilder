@@ -9,6 +9,7 @@ json.array! @bookings do |booking|
   json.booker booking.booker
   json.room booking.room
   json.updated_at booking.updated_at
+  json.total_price booking.total_price
 
   json.images booking.room.images, :url
 end

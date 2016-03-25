@@ -22,7 +22,11 @@ class Booking < ActiveRecord::Base
   belongs_to :booker,
     class_name: "User",
     foreign_key: :booker_id
-
+  #
+  #
+  def total_price
+    price ||= (checkout_date - checkin_date)/3600/24 * room.price
+  end
 
   def approve
     update(status: "approved")

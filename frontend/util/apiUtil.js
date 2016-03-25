@@ -160,7 +160,6 @@ ApiUtil = {
 
   denyBooking: function(bookingId){
     $.post("/api/bookings/deny", {booking: {id: bookingId}}, function(updatedBooking){
-      debugger
       if (Object.getOwnPropertyNames(updatedBooking).length > 0) {
         ApiActions.receiveSingleHostingRequest(updatedBooking);
       }

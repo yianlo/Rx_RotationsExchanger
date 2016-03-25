@@ -1,6 +1,5 @@
 var React = require('react'),
     BookingDateFields = require('./bookingDates'),
-    BookingPrice = require('./bookingPrice'),
     LinkedStateMixin = require('react-addons-linked-state-mixin');
     apiUtil = require('../../util/apiUtil');
 
@@ -18,7 +17,8 @@ var BookingForm = React.createClass({
     return {
       checkout_date: null,
       checkin_date: null,
-      message: ""
+      message: "",
+      price: null
     }
   },
   //
@@ -65,8 +65,14 @@ var BookingForm = React.createClass({
 
   renderPrice: function(){
     if (this.state.checkin_date && this.state.checkout_date) {
-      return (
-        <BookingPrice price={this.props.room.price} nightCount={this.getNightCount()}/>
+      var nightCount = this.getNightCount();
+      this.totalPrice = this.props.room.price * nightCount
+
+      return(
+        <div className="req-form-price">
+          <p>{"$" + this.props.room.price + " x " + nightCount + " nights"}</p>
+          <p>{"Total: $" + this.totalPrice}</p>
+        </div>
       )
     }
   },
@@ -84,6 +90,7 @@ var BookingForm = React.createClass({
     }.bind(this))
 
     request["room_id"] = this.props.room.id;
+    request["price"] = this.totalPrice;
 
     apiUtil.createRequest(request, this.redirectOnSuccess)
   },

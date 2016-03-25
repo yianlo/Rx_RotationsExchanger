@@ -35,10 +35,6 @@ var TripsPage = React.createClass({
     });
   },
 
-  componentWillReceiveProps: function(newProp){
-    debugger
-  },
-
   componentDidMount: function(){
     this.setState({
       pastTrips: RequestStore.getPastTrips(),
@@ -59,11 +55,11 @@ var TripsPage = React.createClass({
 
   renderTrips: function(trips, group){
     if (trips.length > 0) {
-      return <BookingsIndex group={group} bookings={trips}/>
+      return <BookingsIndex group={group} bookings={trips} page="trips"/>
     } else {
       return <p className="none-message">
         No trips scheduled. Start&nbsp;
-        <span className="explore" onClick={this.handleExplore}>exploring</span>&nbsp;now!
+        <span className="explore link" onClick={this.handleExplore}>exploring</span>&nbsp;now!
       </p>
     }
   },

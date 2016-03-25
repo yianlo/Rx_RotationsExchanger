@@ -83,6 +83,11 @@ var AuthPage = React.createClass({
     }
   },
 
+  logInGuest: function(e){
+    e.preventDefault();
+    apiUtil.fetchNewSession({email: "test@gmail.com", password: "password"}, this.props.toggleAuthPage);
+  },
+
   render: function(){
     this.getAdditionalText()
 
@@ -106,6 +111,7 @@ var AuthPage = React.createClass({
             placeholder="Password"/>
 
           <button type="submit" className="auth-button" onClick={this.handleSubmit}>{this.buttonText}</button>
+          <button type="submit" className="auth-button" onClick={this.logInGuest}>Explore as Guest</button>
 
           <hr></hr>
           { this.toggleText }

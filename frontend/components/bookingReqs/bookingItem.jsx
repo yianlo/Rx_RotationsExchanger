@@ -1,4 +1,6 @@
-var React = require('react');
+var React = require('react'),
+    ToolTip = require('react-portal-tooltip'),
+    ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var BookingItem = React.createClass({
   contextTypes: {
@@ -6,7 +8,10 @@ var BookingItem = React.createClass({
   },
 
   getInitialState: function*(){
-    return {city: ""}
+    return {
+      city: "",
+      isTooltipActive: false,
+    }
   },
 
   componentWillMount: function(){
@@ -57,7 +62,7 @@ var BookingItem = React.createClass({
   handleDelete: function(e){
     e.preventDefault();
     e.stopPropagation();
-    debugger
+
     apiUtil.deleteBooking(this.props.booking.id)
   },
 
@@ -92,7 +97,7 @@ var BookingItem = React.createClass({
   },
 
   getStatus: function(){
-    if(this.props.group !== "current" && this.props.group !== "pending"){
+    if(this.props.group !== "current"){
       statusColor = this.getStatusColor()
       return(
         <div className="status"
@@ -100,9 +105,65 @@ var BookingItem = React.createClass({
           {this.props.booking.status}
         </div>
       )
-    } else if (this.props.group === "pending"){
-      return this.getApproveDenyButtons()
     }
+  },
+  //
+  // getGuestMessage: function(){
+  //   if(this.state.showGuestMessage){
+  //     return(
+  //
+  //     )
+  //   }
+  // },
+
+  // getGuestMessage: function(){
+  //   if(this.state.showGuestMessage){
+  //     return(
+  //       <div>
+  //         <p className="message">{this.props.booking.message}</p>
+  //         <i className="fa fa-angle-down" onClick={this.hideGuestMessage}></i>
+  //       </div>
+  //     )
+  //   }
+  // },
+
+  displayGuestMessage: function(e){
+    e.preventDefault();
+    e.stopPropagation();
+
+    this.setState({isTooltipActive: true})
+  },
+
+  hideGuestMessage: function(e){
+    e.preventDefault();
+    e.stopPropagation();
+
+    this.setState({isTooltipActive: false})
+  },
+
+  getBookingInfo: function(){
+    return(
+      <div className="booking-info">
+        <hr></hr>
+        <p>{"Total $" + this.props.booking.total_price}
+          <span className="vert-bar">|</span>
+          <span className="view-message link"
+            onClick={this.displayGuestMessage}
+            id={"message" + this.props.booking.id}>View Guest Message
+          </span>
+        </p>
+        <ToolTip active={this.state.isTooltipActive} position="right" arrow="left" parent={"#message" + this.props.booking.id}>
+          <div className="guest-message-container">
+            <p className="message">{this.props.booking.message}</p>
+            <i className="fa fa-angle-down" onClick={this.hideGuestMessage}></i>
+          </div>
+        </ToolTip>
+
+      </div>
+    )
+
+    // <p>{"Guest Contact: " + this.props.booking.booker.email}</p>
+
   },
 
   render: function(){
@@ -119,7 +180,10 @@ var BookingItem = React.createClass({
         <p>{this.props.booking.room.title}</p>
         <p>{this.displayDate(this.props.booking.checkin_date, this.props.booking.checkout_date)}</p>
 
-        {this.getStatus()}
+        {this.getBookingInfo()}
+
+        {this.props.page === "trips" ? this.getStatus() : null}
+        {this.props.group === "pending" ? this.getApproveDenyButtons() : null}
       </div>
     )
   }

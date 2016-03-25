@@ -13,22 +13,21 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
 }
 
 @mixin keyframes($animation-name) {
-    @-webkit-keyframes #{$animation-name} {
-        @content;
-    }
-    @-moz-keyframes #{$animation-name} {
-        @content;
-    }
-    @-ms-keyframes #{$animation-name} {
-        @content;
-    }
-    @-o-keyframes #{$animation-name} {
-        @content;
-    }
-    @keyframes #{$animation-name} {
-        @content;
-
-    }
+  @-webkit-keyframes #{$animation-name} {
+      @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+      @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+      @content;
+  }
+  @-o-keyframes #{$animation-name} {
+      @content;
+  }
+  @keyframes #{$animation-name} {
+      @content;
+  }
 }
 
 @mixin animation($str) {
@@ -72,8 +71,6 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
   justify-content: flex-start;
   align-content: flex-start;
   align-items: flex-start;
-
-
 }
 
 .submenu-item{

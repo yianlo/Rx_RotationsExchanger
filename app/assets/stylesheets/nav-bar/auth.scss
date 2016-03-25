@@ -12,7 +12,7 @@ $offwhite-bg: #F5F5F5;
   height: 100%;
   width: 100%;
   z-index: 900;
-  font-size: 15px;
+  font-size: 13.5px;
 
   position: fixed;
   top: 0;
@@ -89,6 +89,9 @@ $offwhite-bg: #F5F5F5;
   height: 38px;
   margin: 0 auto;
   margin-top: 11px;
+  font-size: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 
   line-height: 0;
 }
