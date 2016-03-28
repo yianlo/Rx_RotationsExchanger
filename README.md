@@ -1,8 +1,36 @@
 # RotationsExchanger
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Live link][rx-rotations-exchanger.herokuapp.com]
 
-[heroku]: http://www.herokuapp.com
+## Usage
+
+## Features
+
+### Dynamic search filtering and display updates
+![search_filter]
+
+### Single page authentication for ease of use
+![single_page_auth]
+
+### Complete address search with autocomplete integrated with Google Maps API
+![autocomplete_landing] ![autocomplete_nav] ![autocomplete_add_form]
+
+### Instant user feedback for input errors
+![error_sign_up] ![add_form_feedback]
+
+
+[add_form_feedback]: ./screenshots/add_form_feedback.png
+[error_sign_up]: ./screenshots/error_sign_up.png
+[search_filter]: ./screenshots/search_filter.png
+[autocomplete_add_form]: ./screenshots/autocomplete_add_form.png
+[autocomplete_nav]: ./screenshots/autocomplete_nav.png
+[autocomplete_landing]: ./screenshots/autocomplete_landing.png
+[single_page_auth]: ./screenshots/single_page_auth.png
+
+
+## Todos
+
+## Future Features
 
 ## Minimum Viable Product
 
