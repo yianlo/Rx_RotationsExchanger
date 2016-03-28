@@ -17,14 +17,12 @@
 ### All photos and rooms in vivid displays in slider or grid view
 ![show_slider] ![show_grid]
 
-### Single page authentication for ease of use
-![single_page_auth]
-
-### Instant user feedback for input errors
+### Complete single page application with authentication and instant user feedback for input errors for ease of use
 ![error_sign_up] ![add_form_feedback]
 
 ### Easy management of account details
 ####Listings
+![listings]
 ####Requests
 ####Trips
 
