@@ -6,7 +6,7 @@
 
 ## Features
 
-### Address search of any and all locations with autocomplete integrated with Google Maps API
+### Address search of any locations with autocomplete integrated with Google Maps API
 ![autocomplete_landing]
 ![autocomplete_nav]
 ![autocomplete_add_form]
@@ -14,19 +14,17 @@
 ### Dynamic search filtering and display updates
 ![index_filter]
 
-### All photos and rooms in vivid displays in slider or grid view
+### Vivid display of all photos and rooms in vivid displays in both slider and grid views
 ![show_slider] ![show_grid]
 
 ### Complete single page application with authentication and instant user feedback for input errors for ease of use
 ![error_sign_up] ![add_form_feedback]
 
-### Easy management of account details
+### Management made easy for all account details
 ####Listings
 ![listings]
 ####Requests
 ####Trips
-
-
 
 [add_form_feedback]: ./screenshots/add_form_feedback.png
 [error_sign_up]: ./screenshots/error_sign_up.png
