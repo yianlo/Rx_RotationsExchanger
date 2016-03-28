@@ -21,21 +21,10 @@ var BookingForm = React.createClass({
       price: null
     }
   },
-  //
-  // sendRequest: function(){
-  //   this.setState({reqSentMessage:
-  //     "Your booking was successfully sent! " +
-  //     "Check your messages for when the host responds."
-  //   })
-  // },
 
-  // handleSubmit: function(e){
-  //   e.preventDefault();
-  //
-  //   if (this.context.requireAuth()){
-  //     this.sendRequest()
-  //   }
-  // },
+  componentDidMount: function(){
+
+  },
 
   linkValState: function(state, value){
     var stateObj = {};
