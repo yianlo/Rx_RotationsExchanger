@@ -56,10 +56,10 @@
 	    Main = __webpack_require__(261),
 	    Chat = __webpack_require__(262),
 	    SearchContent = __webpack_require__(266),
-	    AddFormPage = __webpack_require__(384),
-	    ShowRoomPage = __webpack_require__(392),
-	    EditForm = __webpack_require__(406),
-	    RoomDetails = __webpack_require__(408);
+	    AddFormPage = __webpack_require__(383),
+	    ShowRoomPage = __webpack_require__(391),
+	    EditForm = __webpack_require__(404),
+	    RoomDetails = __webpack_require__(406);
 	
 	var NavBar = __webpack_require__(239);
 	// <Route path="booking" component={BookingForm}/>
@@ -33707,9 +33707,9 @@
 
 	var React = __webpack_require__(1),
 	    SearchFields = __webpack_require__(267),
-	    Index = __webpack_require__(379),
-	    FilterParams = __webpack_require__(383),
-	    FilterParamsStore = __webpack_require__(382),
+	    Index = __webpack_require__(378),
+	    FilterParams = __webpack_require__(382),
+	    FilterParamsStore = __webpack_require__(381),
 	    RoomStore = __webpack_require__(242),
 	    NavBar = __webpack_require__(239);
 	
@@ -33784,7 +33784,7 @@
 	    DateSearch = __webpack_require__(268),
 	    HomeTypeSearch = __webpack_require__(371),
 	    RoomTypeSearch = __webpack_require__(374),
-	    PriceSearch = __webpack_require__(376);
+	    PriceSearch = __webpack_require__(375);
 	
 	var SearchFields = React.createClass({
 	  displayName: 'SearchFields',
@@ -47334,12 +47334,11 @@
 	module.exports = RoomTypeSearch;
 
 /***/ },
-/* 375 */,
-/* 376 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    PriceSlider = __webpack_require__(377);
+	    PriceSlider = __webpack_require__(376);
 	
 	var PriceSearch = React.createClass({
 	  displayName: 'PriceSearch',
@@ -47361,11 +47360,11 @@
 	module.exports = PriceSearch;
 
 /***/ },
-/* 377 */
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    ReactSlider = __webpack_require__(378),
+	    ReactSlider = __webpack_require__(377),
 	    ApiUtil = __webpack_require__(243),
 	    FilterActions = __webpack_require__(258);
 	
@@ -47424,7 +47423,7 @@
 	module.exports = PriceSlider;
 
 /***/ },
-/* 378 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root, factory) {
@@ -48222,13 +48221,13 @@
 
 
 /***/ },
-/* 379 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
 	    RoomStore = __webpack_require__(242),
-	    IndexItem = __webpack_require__(380),
-	    FilterParamsStore = __webpack_require__(382),
+	    IndexItem = __webpack_require__(379),
+	    FilterParamsStore = __webpack_require__(381),
 	    FilterActions = __webpack_require__(258),
 	    apiUtil = __webpack_require__(243);
 	
@@ -48289,13 +48288,13 @@
 	module.exports = Index;
 
 /***/ },
-/* 380 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
 	    RoomStore = __webpack_require__(242),
 	    apiUtil = __webpack_require__(243),
-	    IMAGE_URLS = __webpack_require__(381);
+	    IMAGE_URLS = __webpack_require__(380);
 	
 	var IndexItem = React.createClass({
 	  displayName: 'IndexItem',
@@ -48410,7 +48409,7 @@
 	module.exports = IndexItem;
 
 /***/ },
-/* 381 */
+/* 380 */
 /***/ function(module, exports) {
 
 	IMAGE_URLS = {
@@ -48420,7 +48419,7 @@
 	module.exports = IMAGE_URLS;
 
 /***/ },
-/* 382 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Store = __webpack_require__(217).Store;
@@ -48491,11 +48490,11 @@
 	module.exports = filterParamsStore;
 
 /***/ },
-/* 383 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    FilterParamsStore = __webpack_require__(382),
+	    FilterParamsStore = __webpack_require__(381),
 	    apiUtil = __webpack_require__(243),
 	    FilterActions = __webpack_require__(258);
 	
@@ -48530,11 +48529,11 @@
 	module.exports = FilterParams;
 
 /***/ },
-/* 384 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    AddForm = __webpack_require__(385);
+	    AddForm = __webpack_require__(384);
 	
 	var AddFormPage = React.createClass({
 	  displayName: 'AddFormPage',
@@ -48560,18 +48559,18 @@
 	module.exports = AddFormPage;
 
 /***/ },
-/* 385 */
+/* 384 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    AddFormChoices = __webpack_require__(386),
-	    AddFormInput = __webpack_require__(388),
+	    AddFormChoices = __webpack_require__(385),
+	    AddFormInput = __webpack_require__(387),
 	    DateFields = __webpack_require__(268),
-	    Cloudinary = __webpack_require__(389),
+	    Cloudinary = __webpack_require__(388),
 	    apiUtil = __webpack_require__(243),
 	    ErrorStore = __webpack_require__(249),
 	    ErrorMessage = __webpack_require__(250),
-	    AddressField = __webpack_require__(391),
+	    AddressField = __webpack_require__(390),
 	    AutocompleteSearch = __webpack_require__(245),
 	    ROOM_PARAMS = __webpack_require__(373);
 	
@@ -48812,11 +48811,11 @@
 	module.exports = AddForm;
 
 /***/ },
-/* 386 */
+/* 385 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    AddFormChoice = __webpack_require__(387);
+	    AddFormChoice = __webpack_require__(386);
 	
 	var AddFormChoices = React.createClass({
 	  displayName: 'AddFormChoices',
@@ -48864,7 +48863,7 @@
 	module.exports = AddFormChoices;
 
 /***/ },
-/* 387 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -48900,7 +48899,7 @@
 	module.exports = AddFormChoice;
 
 /***/ },
-/* 388 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -48931,12 +48930,12 @@
 	module.exports = AddFormInput;
 
 /***/ },
-/* 389 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
 	    ReactDOM = __webpack_require__(158),
-	    UploadButton = __webpack_require__(390);
+	    UploadButton = __webpack_require__(389);
 	
 	var Images = React.createClass({
 	  displayName: 'Images',
@@ -48969,7 +48968,7 @@
 	module.exports = Images;
 
 /***/ },
-/* 390 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -49012,7 +49011,7 @@
 	module.exports = UploadButton;
 
 /***/ },
-/* 391 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
@@ -49075,17 +49074,17 @@
 	module.exports = AutoAddressField;
 
 /***/ },
-/* 392 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
 	    apiUtil = __webpack_require__(243),
 	    RoomStore = __webpack_require__(242),
-	    BookingForm = __webpack_require__(393),
-	    PhotoView = __webpack_require__(396),
-	    EditPhotos = __webpack_require__(405);
+	    BookingForm = __webpack_require__(392),
+	    PhotoView = __webpack_require__(394),
+	    EditPhotos = __webpack_require__(403);
 	
-	IMAGE_URLS = __webpack_require__(381);
+	IMAGE_URLS = __webpack_require__(380);
 	
 	var ShowRoom = React.createClass({
 	  displayName: 'ShowRoom',
@@ -49203,12 +49202,12 @@
 	module.exports = ShowRoom;
 
 /***/ },
-/* 393 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    BookingDateFields = __webpack_require__(394),
-	    BookingPrice = __webpack_require__(395),
+	    BookingDateFields = __webpack_require__(393),
+	    BookingPrice = __webpack_require__(422),
 	    LinkedStateMixin = __webpack_require__(251);
 	apiUtil = __webpack_require__(243);
 	
@@ -49358,7 +49357,7 @@
 	module.exports = BookingForm;
 
 /***/ },
-/* 394 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
@@ -49436,43 +49435,12 @@
 	module.exports = BookingDateFields;
 
 /***/ },
-/* 395 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var BookingPrice = React.createClass({
-	  displayName: "BookingPrice",
-	
-	  getNightsCount: function () {},
-	
-	  render: function () {
-	    return React.createElement(
-	      "div",
-	      { className: "req-form-price" },
-	      React.createElement(
-	        "p",
-	        null,
-	        "$" + this.props.price + " x " + this.props.nightCount + " nights"
-	      ),
-	      React.createElement(
-	        "p",
-	        null,
-	        "Total: $" + this.props.price * this.props.nightCount
-	      )
-	    );
-	  }
-	});
-	
-	module.exports = BookingPrice;
-
-/***/ },
-/* 396 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    PhotoSlider = __webpack_require__(397),
-	    PhotoGrid = __webpack_require__(404);
+	    PhotoSlider = __webpack_require__(395),
+	    PhotoGrid = __webpack_require__(402);
 	
 	var PhotoView = React.createClass({
 	  displayName: 'PhotoView',
@@ -49529,11 +49497,11 @@
 	module.exports = PhotoView;
 
 /***/ },
-/* 397 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var Carousel = __webpack_require__(398);
+	var Carousel = __webpack_require__(396);
 	
 	var DemoCarousel = React.createClass({
 	  displayName: 'DemoCarousel',
@@ -49560,18 +49528,18 @@
 	module.exports = DemoCarousel;
 
 /***/ },
-/* 398 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Carousel = __webpack_require__(399);
+	var Carousel = __webpack_require__(397);
 	
 	module.exports = Carousel;
 
 
 /***/ },
-/* 399 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49592,19 +49560,19 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _reactTweenState = __webpack_require__(400);
+	var _reactTweenState = __webpack_require__(398);
 	
 	var _reactTweenState2 = _interopRequireDefault(_reactTweenState);
 	
-	var _decorators = __webpack_require__(401);
+	var _decorators = __webpack_require__(399);
 	
 	var _decorators2 = _interopRequireDefault(_decorators);
 	
-	var _objectAssign = __webpack_require__(402);
+	var _objectAssign = __webpack_require__(400);
 	
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 	
-	var _exenv = __webpack_require__(403);
+	var _exenv = __webpack_require__(401);
 	
 	var _exenv2 = _interopRequireDefault(_exenv);
 	
@@ -50337,13 +50305,13 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 400 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 	!function(e,n){ true?module.exports=n():"function"==typeof define&&define.amd?define([],n):"object"==typeof exports?exports.tweenState=n():e.tweenState=n()}(this,function(){return function(e){function n(r){if(t[r])return t[r].exports;var a=t[r]={exports:{},id:r,loaded:!1};return e[r].call(a.exports,a,a.exports,n),a.loaded=!0,a.exports}var t={};return n.m=e,n.c=t,n.p="",n(0)}({0:function(e,n,t){e.exports=t(90)},1:function(e,n){function t(){c=!1,o.length?s=o.concat(s):f=-1,s.length&&r()}function r(){if(!c){var e=setTimeout(t);c=!0;for(var n=s.length;n;){for(o=s,s=[];++f<n;)o&&o[f].run();f=-1,n=s.length}o=null,c=!1,clearTimeout(e)}}function a(e,n){this.fun=e,this.array=n}function u(){}var o,i=e.exports={},s=[],c=!1,f=-1;i.nextTick=function(e){var n=new Array(arguments.length-1);if(arguments.length>1)for(var t=1;t<arguments.length;t++)n[t-1]=arguments[t];s.push(new a(e,n)),1!==s.length||c||setTimeout(r,0)},a.prototype.run=function(){this.fun.apply(null,this.array)},i.title="browser",i.browser=!0,i.env={},i.argv=[],i.version="",i.versions={},i.on=u,i.addListener=u,i.once=u,i.off=u,i.removeListener=u,i.removeAllListeners=u,i.emit=u,i.binding=function(e){throw new Error("process.binding is not supported")},i.cwd=function(){return"/"},i.chdir=function(e){throw new Error("process.chdir is not supported")},i.umask=function(){return 0}},90:function(e,n,t){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(n,"__esModule",{value:!0});var a=t(165),u=r(a),o=t(91),i=r(o),s="ADDITIVE",c=a.easeInOutQuad,f=300,l=0,h={ADDITIVE:"ADDITIVE",DESTRUCTIVE:"DESTRUCTIVE"},v={_rafID:null,getInitialState:function(){return{tweenQueue:[]}},componentWillUnmount:function(){i["default"].cancel(this._rafID),this._rafID=-1},tweenState:function(e,n){var t=this,r=n.easing,a=n.duration,u=n.delay,o=n.beginValue,v=n.endValue,d=n.onEnd,p=n.stackBehavior;this.setState(function(n){var I=n,w=void 0,g=void 0;if("string"==typeof e)w=e,g=e;else{for(var M=0;M<e.length-1;M++)I=I[e[M]];w=e[e.length-1],g=e.join("|")}var m={easing:r||c,duration:null==a?f:a,delay:null==u?l:u,beginValue:null==o?I[w]:o,endValue:v,onEnd:d,stackBehavior:p||s},x=n.tweenQueue;return m.stackBehavior===h.DESTRUCTIVE&&(x=n.tweenQueue.filter(function(e){return e.pathHash!==g})),x.push({pathHash:g,config:m,initTime:Date.now()+m.delay}),I[w]=m.endValue,1===x.length&&(t._rafID=(0,i["default"])(t._rafCb)),{tweenQueue:x}})},getTweeningValue:function(e){var n=this.state,t=void 0,r=void 0;if("string"==typeof e)t=n[e],r=e;else{t=n;for(var a=0;a<e.length;a++)t=t[e[a]];r=e.join("|")}for(var u=Date.now(),a=0;a<n.tweenQueue.length;a++){var o=n.tweenQueue[a],i=o.pathHash,s=o.initTime,c=o.config;if(i===r){var f=u-s>c.duration?c.duration:Math.max(0,u-s),l=0===c.duration?c.endValue:c.easing(f,c.beginValue,c.endValue,c.duration),h=l-c.endValue;t+=h}}return t},_rafCb:function(){var e=this.state;if(0!==e.tweenQueue.length){for(var n=Date.now(),t=[],r=0;r<e.tweenQueue.length;r++){var a=e.tweenQueue[r],u=a.initTime,o=a.config;n-u<o.duration?t.push(a):o.onEnd&&o.onEnd()}-1!==this._rafID&&(this.setState({tweenQueue:t}),this._rafID=(0,i["default"])(this._rafCb))}}};n["default"]={Mixin:v,easingTypes:u["default"],stackBehavior:h},e.exports=n["default"]},91:function(e,n,t){for(var r=t(92),a="undefined"==typeof window?{}:window,u=["moz","webkit"],o="AnimationFrame",i=a["request"+o],s=a["cancel"+o]||a["cancelRequest"+o],c=0;c<u.length&&!i;c++)i=a[u[c]+"Request"+o],s=a[u[c]+"Cancel"+o]||a[u[c]+"CancelRequest"+o];if(!i||!s){var f=0,l=0,h=[],v=1e3/60;i=function(e){if(0===h.length){var n=r(),t=Math.max(0,v-(n-f));f=t+n,setTimeout(function(){var e=h.slice(0);h.length=0;for(var n=0;n<e.length;n++)if(!e[n].cancelled)try{e[n].callback(f)}catch(t){setTimeout(function(){throw t},0)}},Math.round(t))}return h.push({handle:++l,callback:e,cancelled:!1}),l},s=function(e){for(var n=0;n<h.length;n++)h[n].handle===e&&(h[n].cancelled=!0)}}e.exports=function(e){return i.call(a,e)},e.exports.cancel=function(){s.apply(a,arguments)}},92:function(e,n,t){(function(n){(function(){var t,r,a;"undefined"!=typeof performance&&null!==performance&&performance.now?e.exports=function(){return performance.now()}:"undefined"!=typeof n&&null!==n&&n.hrtime?(e.exports=function(){return(t()-a)/1e6},r=n.hrtime,t=function(){var e;return e=r(),1e9*e[0]+e[1]},a=t()):Date.now?(e.exports=function(){return Date.now()-a},a=Date.now()):(e.exports=function(){return(new Date).getTime()-a},a=(new Date).getTime())}).call(this)}).call(n,t(1))},165:function(e,n){"use strict";var t={linear:function(e,n,t,r){var a=t-n;return a*e/r+n},easeInQuad:function(e,n,t,r){var a=t-n;return a*(e/=r)*e+n},easeOutQuad:function(e,n,t,r){var a=t-n;return-a*(e/=r)*(e-2)+n},easeInOutQuad:function(e,n,t,r){var a=t-n;return(e/=r/2)<1?a/2*e*e+n:-a/2*(--e*(e-2)-1)+n},easeInCubic:function(e,n,t,r){var a=t-n;return a*(e/=r)*e*e+n},easeOutCubic:function(e,n,t,r){var a=t-n;return a*((e=e/r-1)*e*e+1)+n},easeInOutCubic:function(e,n,t,r){var a=t-n;return(e/=r/2)<1?a/2*e*e*e+n:a/2*((e-=2)*e*e+2)+n},easeInQuart:function(e,n,t,r){var a=t-n;return a*(e/=r)*e*e*e+n},easeOutQuart:function(e,n,t,r){var a=t-n;return-a*((e=e/r-1)*e*e*e-1)+n},easeInOutQuart:function(e,n,t,r){var a=t-n;return(e/=r/2)<1?a/2*e*e*e*e+n:-a/2*((e-=2)*e*e*e-2)+n},easeInQuint:function(e,n,t,r){var a=t-n;return a*(e/=r)*e*e*e*e+n},easeOutQuint:function(e,n,t,r){var a=t-n;return a*((e=e/r-1)*e*e*e*e+1)+n},easeInOutQuint:function(e,n,t,r){var a=t-n;return(e/=r/2)<1?a/2*e*e*e*e*e+n:a/2*((e-=2)*e*e*e*e+2)+n},easeInSine:function(e,n,t,r){var a=t-n;return-a*Math.cos(e/r*(Math.PI/2))+a+n},easeOutSine:function(e,n,t,r){var a=t-n;return a*Math.sin(e/r*(Math.PI/2))+n},easeInOutSine:function(e,n,t,r){var a=t-n;return-a/2*(Math.cos(Math.PI*e/r)-1)+n},easeInExpo:function(e,n,t,r){var a=t-n;return 0==e?n:a*Math.pow(2,10*(e/r-1))+n},easeOutExpo:function(e,n,t,r){var a=t-n;return e==r?n+a:a*(-Math.pow(2,-10*e/r)+1)+n},easeInOutExpo:function(e,n,t,r){var a=t-n;return 0===e?n:e===r?n+a:(e/=r/2)<1?a/2*Math.pow(2,10*(e-1))+n:a/2*(-Math.pow(2,-10*--e)+2)+n},easeInCirc:function(e,n,t,r){var a=t-n;return-a*(Math.sqrt(1-(e/=r)*e)-1)+n},easeOutCirc:function(e,n,t,r){var a=t-n;return a*Math.sqrt(1-(e=e/r-1)*e)+n},easeInOutCirc:function(e,n,t,r){var a=t-n;return(e/=r/2)<1?-a/2*(Math.sqrt(1-e*e)-1)+n:a/2*(Math.sqrt(1-(e-=2)*e)+1)+n},easeInElastic:function(e,n,t,r){var a,u,o,i=t-n;return o=1.70158,u=0,a=i,0===e?n:1===(e/=r)?n+i:(u||(u=.3*r),a<Math.abs(i)?(a=i,o=u/4):o=u/(2*Math.PI)*Math.asin(i/a),-(a*Math.pow(2,10*(e-=1))*Math.sin((e*r-o)*(2*Math.PI)/u))+n)},easeOutElastic:function(e,n,t,r){var a,u,o,i=t-n;return o=1.70158,u=0,a=i,0===e?n:1===(e/=r)?n+i:(u||(u=.3*r),a<Math.abs(i)?(a=i,o=u/4):o=u/(2*Math.PI)*Math.asin(i/a),a*Math.pow(2,-10*e)*Math.sin((e*r-o)*(2*Math.PI)/u)+i+n)},easeInOutElastic:function(e,n,t,r){var a,u,o,i=t-n;return o=1.70158,u=0,a=i,0===e?n:2===(e/=r/2)?n+i:(u||(u=r*(.3*1.5)),a<Math.abs(i)?(a=i,o=u/4):o=u/(2*Math.PI)*Math.asin(i/a),1>e?-.5*(a*Math.pow(2,10*(e-=1))*Math.sin((e*r-o)*(2*Math.PI)/u))+n:a*Math.pow(2,-10*(e-=1))*Math.sin((e*r-o)*(2*Math.PI)/u)*.5+i+n)},easeInBack:function(e,n,t,r,a){var u=t-n;return void 0===a&&(a=1.70158),u*(e/=r)*e*((a+1)*e-a)+n},easeOutBack:function(e,n,t,r,a){var u=t-n;return void 0===a&&(a=1.70158),u*((e=e/r-1)*e*((a+1)*e+a)+1)+n},easeInOutBack:function(e,n,t,r,a){var u=t-n;return void 0===a&&(a=1.70158),(e/=r/2)<1?u/2*(e*e*(((a*=1.525)+1)*e-a))+n:u/2*((e-=2)*e*(((a*=1.525)+1)*e+a)+2)+n},easeInBounce:function(e,n,r,a){var u,o=r-n;return u=t.easeOutBounce(a-e,0,o,a),o-u+n},easeOutBounce:function(e,n,t,r){var a=t-n;return(e/=r)<1/2.75?a*(7.5625*e*e)+n:2/2.75>e?a*(7.5625*(e-=1.5/2.75)*e+.75)+n:2.5/2.75>e?a*(7.5625*(e-=2.25/2.75)*e+.9375)+n:a*(7.5625*(e-=2.625/2.75)*e+.984375)+n},easeInOutBounce:function(e,n,r,a){var u,o=r-n;return a/2>e?(u=t.easeInBounce(2*e,0,o,a),.5*u+n):(u=t.easeOutBounce(2*e-a,0,o,a),.5*u+.5*o+n)}};e.exports=t}})});
 
 /***/ },
-/* 401 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50484,7 +50452,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 402 */
+/* 400 */
 /***/ function(module, exports) {
 
 	/* eslint-disable no-unused-vars */
@@ -50529,7 +50497,7 @@
 
 
 /***/ },
-/* 403 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -50574,7 +50542,7 @@
 
 
 /***/ },
-/* 404 */
+/* 402 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
@@ -50637,12 +50605,12 @@
 	module.exports = PhotoGrid;
 
 /***/ },
-/* 405 */
+/* 403 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    PhotoGrid = __webpack_require__(404),
-	    Cloudinary = __webpack_require__(389),
+	    PhotoGrid = __webpack_require__(402),
+	    Cloudinary = __webpack_require__(388),
 	    apiUtil = __webpack_require__(243);
 	
 	var EditPhotos = React.createClass({
@@ -50687,19 +50655,19 @@
 	module.exports = EditPhotos;
 
 /***/ },
-/* 406 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
 	    LinkedStateMixin = __webpack_require__(251),
 	    apiUtil = __webpack_require__(243),
 	    RoomStore = __webpack_require__(242),
-	    AddressField = __webpack_require__(391),
+	    AddressField = __webpack_require__(390),
 	    DateFields = __webpack_require__(268),
-	    EditDateFields = __webpack_require__(407),
+	    EditDateFields = __webpack_require__(405),
 	    ROOM_PARAMS = __webpack_require__(373),
-	    Cloudinary = __webpack_require__(389),
-	    AddFormInput = __webpack_require__(388);
+	    Cloudinary = __webpack_require__(388),
+	    AddFormInput = __webpack_require__(387);
 	
 	var EditForm = React.createClass({
 	  displayName: 'EditForm',
@@ -50926,7 +50894,7 @@
 	module.exports = EditForm;
 
 /***/ },
-/* 407 */
+/* 405 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
@@ -51026,7 +50994,7 @@
 	module.exports = EditDateFields;
 
 /***/ },
-/* 408 */
+/* 406 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
@@ -51149,6 +51117,52 @@
 	});
 	
 	module.exports = RoomDetails;
+
+/***/ },
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var BookingPrice = React.createClass({
+	  displayName: "BookingPrice",
+	
+	  getNightsCount: function () {},
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "req-form-price" },
+	      React.createElement(
+	        "p",
+	        null,
+	        "$" + this.props.price + " x " + this.props.nightCount + " nights"
+	      ),
+	      React.createElement(
+	        "p",
+	        null,
+	        "Total: $" + this.props.price * this.props.nightCount
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = BookingPrice;
 
 /***/ }
 /******/ ]);
