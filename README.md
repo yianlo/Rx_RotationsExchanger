@@ -24,7 +24,9 @@
 ####Listings
 ![listings]
 ####Requests
+![requests_pending] ![requests_approved_denied]
 ####Trips
+![trips]
 
 [add_form_feedback]: ./screenshots/add_form_feedback.png
 [error_sign_up]: ./screenshots/error_sign_up.png
@@ -36,6 +38,9 @@
 [single_page_auth]: ./screenshots/single_page_auth.png
 [show_grid]: ./screenshots/show_grid.png
 [show_slider]: ./screenshots/show_slider.png
+[trips]: ./screenshots/trips.png
+[requests_approved_denied]: ./screenshots/requests_approved_denied.png
+[requests_pending]: ./screenshots/requests_pending.png
 
 
 ## Todos
