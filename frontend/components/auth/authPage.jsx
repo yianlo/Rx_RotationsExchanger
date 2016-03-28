@@ -5,17 +5,6 @@ var React = require('react'),
     LinkedStateMixin = require('react-addons-linked-state-mixin'),
     AuthInput = require('./authInput');
 
-// var rewire = require("rewire-webpack");
-// var cloudinary = rewire('cloudinary');
-// //
-// cloudinary.config({
-//   cloud_name: 'dcnac6iuq',
-//   api_key: '362931458836922',
-//   api_secret: 'zOqo-vtYTj8Ai0ioETs9cyQ-mnI'
-// });
-
-
-// var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var AuthPage = React.createClass({
   mixins: [LinkedStateMixin],
 

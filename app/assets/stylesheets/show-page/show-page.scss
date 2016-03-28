@@ -1,17 +1,17 @@
-$min-width-show-page: #32959F;
+$min-width-show-page: 1000px;
 $top-push: 61px;
 $bg-color: #EEEEEE;
 
 .show-page-container{
-  position: relative;
+  position: absolute;
   top: $top-push;
   min-width: $min-width-show-page;
   flex-direction: column;
 
   width: 100%;
-  height: 100%;
 
   flex:none;
+  margin-bottom: 50px;
 
   .images-container{
     position: relative;
@@ -36,9 +36,9 @@ $bg-color: #EEEEEE;
   }
 
   .show-page{
-    flex-direction: column;
     width: 100%;
     height: 100%;
+    justify-content: center;
 
     .text-content{
       width: 928px;
@@ -114,6 +114,21 @@ $bg-color: #EEEEEE;
 
         padding: 50px;
         justify-content: space-around;
+      }
+    }
+
+    .text-content.host{
+      flex: none;
+      min-height: 450px;
+    }
+
+    .text-content.guest{
+      width: 600px;
+      min-width: 600px;
+      margin: 0 20px;
+
+      p.address{
+        font-size: 16px;
       }
     }
   }

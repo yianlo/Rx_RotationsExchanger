@@ -8,16 +8,24 @@ var DemoCarousel = React.createClass({
     imgUrls: React.PropTypes.array,
   },
 
+  renderCarousel: function(){
+    if(this.context.imgUrls){
+      return(
+        <Carousel
+          framePadding={"30px 25px"}
+          width="58%"
+          dragging={true}
+          speed={800}>
+          {this.context.imgUrls}
+        </Carousel>
+      )
+    } else {
+      return <div></div>
+    }
+  },
+
   render: function() {
-    return (
-      <Carousel
-        framePadding={"30px 25px"}
-        width="58%"
-        dragging={true}
-        speed={800}>
-        {this.context.imgUrls}
-      </Carousel>
-    )
+    return this.renderCarousel();
   }
 });
 

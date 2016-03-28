@@ -28,13 +28,14 @@ var ShowRoom = React.createClass({
       imageUrls: this.getImageUrls(),
       roomId: this.roomId,
       hostId: this.getHostId(),
-      room: this.state.room
+      room: this.state.room,
     };
   },
 
   getInitialState: function(){
     return ({
-      room: RoomStore.find(this.roomId)
+      room: RoomStore.find(this.roomId),
+      bookingRequested: false
     })
   },
 
@@ -81,15 +82,10 @@ var ShowRoom = React.createClass({
       }
     }
   },
-  //
-  // getCurrentView: function(){
-  //   var regex = /\/main\/\d+\/(\S+)/;
-  //   return this.props.location.pathname.match(regex)[1]
-  // },
-  //
 
   getBookingForm: function(){
-    if(this.context.currentUser && this.context.currentUser.id !== this.getHostId()){
+    if(this.context.currentUser &&
+      this.context.currentUser.id !== this.getHostId()){
       return <BookingForm room={this.state.room} />
     }
   },

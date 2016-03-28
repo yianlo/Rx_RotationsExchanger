@@ -3,10 +3,7 @@ var React = require('react'),
     PhotoGrid = require('./photoGrid');
 
 var PhotoView = React.createClass({
-  // contextTypes: {
-  //   router: React.PropTypes.object.isRequired,
-  // },
-  //
+
   getInitialState: function(){
     return ({
       view: "slider"

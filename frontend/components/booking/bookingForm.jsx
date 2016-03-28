@@ -17,13 +17,17 @@ var BookingForm = React.createClass({
     return {
       checkout_date: null,
       checkin_date: null,
-      message: "",
       price: null
     }
   },
 
   componentDidMount: function(){
-
+    // var $reqForm = $('.price-display'),
+    // elTop = $reqForm.offset().top;
+    //
+    // $(window).scroll(function() {
+    //   $('.req-form-container').toggleClass('sticky', $(this).scrollTop() > (elTop + 50));
+    // });
   },
 
   linkValState: function(state, value){
@@ -31,16 +35,6 @@ var BookingForm = React.createClass({
 
     stateObj[state] = value;
     this.setState( stateObj );
-  },
-
-  renderReqMessage: function(){
-    if (this.state.reqSentMessage) {
-      return(
-        <div className="req-sent-message-container">
-          <p>{this.state.reqSentMessage}</p>
-        </div>
-      )
-    }
   },
 
   getNightCount: function(){
@@ -87,7 +81,6 @@ var BookingForm = React.createClass({
   render: function(){
     return(
       <div className="req-form-container">
-        {this.renderReqMessage()}
         <div className="price-display">
           <p className="room-price">{"$" + this.props.room.price}</p>
           <p>Per Night</p>
@@ -109,34 +102,12 @@ var BookingForm = React.createClass({
             placeholder="Tell the host a bit about yourself"
             valueLink={this.linkState('message')}>
           </textarea>
-          <button onClick={this.handleRequest}>Request to Book</button>
+          <button onClick={this.handleRequest}>Confirm Booking</button>
         </form>
       </div>
     )
   }
 });
-
-// <div className="req-form-container">
-//   {this.renderReqMessage()}
-//
-//   <form className="add-form">
-//
-//     <div className="add-form-items-container">
-//
-//     </div>
-//
-//     <div className="add-form-item-container">
-//       <label className="add-form-label"></label>
-//       <textarea rows="6" cols="96.5"
-//         className="add-form-textarea"
-//         placeholder="Tell the host a bit about yourself"></textarea>
-//     </div>
-//
-//     <div className="add-form-item-container add-form-button-container">
-//       <button>Request to Book</button>
-//     </div>
-//   </form>
-// </div>
 
 
 module.exports = BookingForm;

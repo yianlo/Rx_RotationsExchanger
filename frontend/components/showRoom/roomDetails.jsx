@@ -78,28 +78,59 @@ var RoomDetails = React.createClass({
     return fromDateStr + " - " + toDateStr
   },
 
+  renderDetailForHost: function(){
+    return(
+      <section className="text-content host">
+        <section className="header">
+          <h2>{this.context.room.title}</h2>
+          <span className="vert-bar">|</span>
+          <p>{this.context.room.room_type + " in " + this.context.room.home_type}  </p>
+        </section>
+        <section className="description">
+          <h3>About this listing</h3>
+          <div className="address-dates-details">
+            <p className="address">{this.state.address}</p>
+            <span className="vert-bar">|</span>
+            <p>{"Available: " + this.displayDate(this.context.room.from_date, this.context.room.to_date)}</p>
+          </div>
+
+          <p>{this.context.room.description}</p>
+        </section>
+        {this.getButtons()}
+      </section>
+    )
+  },
+
+  renderDetailForGuest: function(){
+    return(
+      <section className="text-content guest">
+        <section className="header">
+          <h2>{this.context.room.title}</h2>
+        </section>
+        <section className="description">
+          <h3>About this listing</h3>
+          <div className="address-dates-details">
+            <p>{this.context.room.room_type + " in " + this.context.room.home_type}</p>
+            <span className="vert-bar">|</span>
+            <p>{"Available: " + this.displayDate(this.context.room.from_date, this.context.room.to_date)}</p>
+          </div>
+
+          <p className="address">{this.state.address}</p>
+          <p>{this.context.room.description}</p>
+        </section>
+        {this.getButtons()}
+      </section>
+    )
+  },
+
   render: function(){
     if (this.context.room) {
-      return(
-        <section className="text-content">
-          <section className="header">
-            <h2>{this.context.room.title}</h2>
-            <span className="vert-bar">|</span>
-            <p>{this.context.room.room_type + " in " + this.context.room.home_type}  </p>
-          </section>
-          <section className="description">
-            <h3>About this listing</h3>
-            <div className="address-dates-details">
-              <p className="address">{this.state.address}</p>
-              <span className="vert-bar">|</span>
-              <p>{"Available: " + this.displayDate(this.context.room.from_date, this.context.room.to_date)}</p>
-            </div>
-
-            <p>{this.context.room.description}</p>
-          </section>
-          {this.getButtons()}
-        </section>
-      )
+      var currentUser = SessionStore.getUser();
+      if (currentUser && currentUser.id === this.context.room.host_id){
+        return this.renderDetailForHost()
+      } else {
+        return this.renderDetailForGuest()
+      }
     } else {
       return <div></div>
     }

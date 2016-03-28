@@ -1,13 +1,22 @@
+$top-push: 61px;
+$price-display-height: 45px;
+
 .req-form-container{
-  flex: none;
+  position: relative;
+  // top: -$price-display-height;
+  top: 20px;
+
   flex-direction: column;
-  margin: 200px;
   width: 360px;
-  justify-content: center;
+
   border-radius: 2px;
+  margin: 0 20px;
+
+  height: auto;
+  z-index: 5;
 
   .price-display{
-    height: 45px;
+    height: $price-display-height;
     background-color: #444;
     color: white;
     justify-content: space-between;
@@ -15,9 +24,11 @@
     align-content: center;
     align-items: center;
     font-size: 16px;
+    flex: none;
 
     .room-price{
       font-size: 27px;
+      flex: none;
     }
   }
 
@@ -26,7 +37,8 @@
     flex-direction: column;
     width: 100%;
     border: 1px solid #ccc;
-
+    flex: none;
+    background: #fffffd;
 
     button{
       width: 101%;
@@ -74,6 +86,10 @@
       }
     }
   }
+}
 
-
+.req-form-container.sticky{
+  position: fixed;
+  display: flex;
+  top: $top-push;
 }
