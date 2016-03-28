@@ -7,7 +7,7 @@
 ## Features
 
 ### Dynamic search filtering and display updates
-![search_filter]
+![index_filter]
 
 ### Single page authentication for ease of use
 ![single_page_auth]
@@ -18,14 +18,26 @@
 ### Instant user feedback for input errors
 ![error_sign_up] ![add_form_feedback]
 
+### All photos and rooms in vivid displays in slider or grid view
+![show_slider] ![show_grid]
+
+### Easy management of account details
+####Listings
+####Requests
+####Trips
+
+
 
 [add_form_feedback]: ./screenshots/add_form_feedback.png
 [error_sign_up]: ./screenshots/error_sign_up.png
 [search_filter]: ./screenshots/search_filter.png
+[index_filter]: ./screenshots/index_filter.png
 [autocomplete_add_form]: ./screenshots/autocomplete_add_form.png
 [autocomplete_nav]: ./screenshots/autocomplete_nav.png
 [autocomplete_landing]: ./screenshots/autocomplete_landing.png
 [single_page_auth]: ./screenshots/single_page_auth.png
+[show_grid]: ./screenshots/show_grid.png
+[show_slider]: ./screenshots/show_slider.png
 
 
 ## Todos
