@@ -56,6 +56,7 @@ Request approve or denial complete with instant status and page updates
 [filtered_search]: ./screenshots/filtered_search.png
 [maps]: ./screenshots/maps.png
 [edit_page]: ./screenshots/edit_page.png
+[booking]: ./screenshots/booking.png
 
 ## Technical Features
 
