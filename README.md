@@ -14,7 +14,7 @@ RotationsExchanger is a web application designed for medical students to easily 
 
 #### Vivid display of all photos, rooms and locations map in multiple selectable views catering to your various preferences
 ![show_slider] ![show_grid]
-![simple_map_crop] ![trad_map_crop]
+![maps]
 
 #### Complete single page application with authentication and instant error handling to improve your user experience
 ![error_sign_up] ![add_form_feedback]
@@ -47,8 +47,7 @@ Easily approve or deny requests with instant status and page updates
 [requests_pending]: ./screenshots/requests_pending.png
 [listings]: ./screenshots/listings.png
 [filtered_search]: ./screenshots/filtered_search.png
-[simple_map_crop]: ./screenshots/simple_map_crop.png
-[trad_map_crop]: ./screenshots/trad_map_crop.png
+[maps]: ./screenshots/maps.png
 
 ## Technical Features
 
