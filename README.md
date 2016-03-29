@@ -40,11 +40,10 @@ All forms are custom designed to ensure intuitive use when adding, editing and d
 
 #####Requests easily approved or denied with instant status and page updates
 
-<section>
-    <img width="320" padding-right="20" src="./screenshots/pending_request.png">
-    <img width="20"/>
+<p align="center">
+    <img width="347" padding-right="20" src="./screenshots/pending_request.png">
     <img width="490" src="./screenshots/approved_request.png"/>
-</section>
+</p>  
 
 #####Trips organized by status
 ![trips]
