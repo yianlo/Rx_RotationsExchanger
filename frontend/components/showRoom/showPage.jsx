@@ -84,9 +84,10 @@ var ShowRoom = React.createClass({
   },
 
   getBookingForm: function(){
-    if(this.context.currentUser &&
-      this.context.currentUser.id !== this.getHostId()){
-      return <BookingForm room={this.state.room} />
+    if(this.context.currentUser){
+      if(this.context.currentUser.id !== this.getHostId()){
+        return <BookingForm room={this.state.room} />
+      }
     } else {
       return <BookingForm room={this.state.room} />
     }

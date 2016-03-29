@@ -8,7 +8,15 @@ _pending = {};
 _approved = {};
 _denied = {};
 
-_resetHostings = function(hostings){
+_resetHostings = function(){
+  _allHostings = {};
+  _pending = {};
+  _approved = {};
+  _denied = {};
+};
+
+_addNewHostings = function(hostings){
+  _resetHostings();
 
   for (var i = 0; i < hostings.length; i++) {
     hostings[i].checkin_date = new Date(hostings[i].checkin_date);
@@ -63,7 +71,7 @@ HostingsStore.getPending = function(){
 HostingsStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case "USER_HOSTINGS_RECEIVED":
-      _resetHostings(payload.hostings);
+      _addNewHostings(payload.hostings);
       HostingsStore.__emitChange();
       break;
     case "SINGLE_HOSTING_REQ_RECEIVED":

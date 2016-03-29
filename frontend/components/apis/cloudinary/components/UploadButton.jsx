@@ -12,7 +12,6 @@ var UploadButton = React.createClass({
     e.preventDefault();
     e.stopPropagation();
 
-    debugger
     cloudinary.openUploadWidget(window.CLOUDINARY_OPTIONS, function(error, results){
       if(!error){
         this.setState({classname: "clicked-button upload-image-button", text: "Photos Added!"})
