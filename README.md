@@ -5,35 +5,31 @@ RotationsExchanger is a web application designed for medical students to easily 
 
 ## Application Features
 
-#### Location search of any address
-Provided with autocompletion of users' inputs and full integration with Google Maps API
+#### Location search of any address provided with autocompletion of your inputs in full integration with the Google Maps API
 ![autocomplete_landing]
 ![autocomplete_nav]
-![autocomplete_add_form]
 
-#### Dynamic filtering
-With compounded search parameters and display updates
-![index_filter]
+#### Dynamic filtering allowing you to mix and match compounded search parameters, receive instant updates and the find the perfect room with ease
+![filtered_search]
 
-#### Vivid display of all photos, rooms and locations map
-In multiple selectable views catering to various user preferences
+#### Vivid display of all photos, rooms and locations map in multiple selectable views catering to your various preferences
 ![show_slider] ![show_grid]
+![simple_map_crop] ![trad_map_crop]
 
-#### Complete single page application
-With authentication and instant user feedback for error handling and improved ease of use
+#### Complete single page application with authentication and instant error handling to improve your user experience
 ![error_sign_up] ![add_form_feedback]
 
-#### Management made easy for all account details
-#####Listings
+#### Management made easy for all your account details
+#####Listings that will dynamically update from the nav bar
 ![listings]
 #####Requests
-View all requests dynamically organized by status.
+View all requests organized by status
 ![requests_approved_denied]
 
-Easily view guest messages and approve or deny requests.
+Easily approve or deny requests with instant status and page updates
 ![requests_pending]
 
-#####Trips
+#####Trips organized by dates to help you always be ready
 ![trips]
 
 [add_form_feedback]: ./screenshots/add_form_feedback.png
@@ -50,6 +46,9 @@ Easily view guest messages and approve or deny requests.
 [requests_approved_denied]: ./screenshots/requests_approved_denied.png
 [requests_pending]: ./screenshots/requests_pending.png
 [listings]: ./screenshots/listings.png
+[filtered_search]: ./screenshots/filtered_search.png
+[simple_map_crop]: ./screenshots/simple_map_crop.png
+[trad_map_crop]: ./screenshots/trad_map_crop.png
 
 ## Technical Features
 
@@ -82,9 +81,11 @@ Integrated with React, the flux architecture provides real time reflection of al
 * display trips and requests in carousel to improve UI
 
 ## Future Features
+* **Google Calendar Integration:** save trips and requests to user calendar
 * **Messaging model:** complete message history between guest and host for improved ease in trips/ request management
 * **Availability model:** multiple date ranges for each listing's available dates, allowing user to list with more flexibility
 * **Favorites model:** save listings for future trips
+
 
 
 [views]: ./docs/views.md
