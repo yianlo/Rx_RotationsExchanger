@@ -75,7 +75,7 @@ var ShowRoom = React.createClass({
     if (this.state.room) {
       if (this.state.room.images){
         return this.state.room.images.map( function(img, i){
-          return <img src={img.url}/>
+          return <img key={"image" + i} src={img.url}/>
         })
       } else {
         return [<img src={IMAGE_URLS.NO_IMG}/>]

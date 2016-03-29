@@ -1,7 +1,7 @@
 var React = require('react');
 var Carousel = require('nuka-carousel');
 
-var DemoCarousel = React.createClass({
+var PhotoSlider = React.createClass({
   mixins: [Carousel.ControllerMixin],
 
   contextTypes: {
@@ -30,4 +30,4 @@ var DemoCarousel = React.createClass({
 });
 
 
-module.exports = DemoCarousel;
+module.exports = PhotoSlider;

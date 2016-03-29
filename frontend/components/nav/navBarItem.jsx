@@ -39,7 +39,8 @@ var NavBarItem = React.createClass({
     // var content = this.generateContent();
     this.generateSubmenu()
     return (
-      <div className={this.props.newClass||"nav-items"}
+      <div key={this.props.key}
+        className={this.props.newClass||"nav-items"}
         onClick={this.props.onClickFun}
         onMouseOver={this.toggleSubmenuDisplay}
         onMouseOut={this.toggleSubmenuDisplay}>

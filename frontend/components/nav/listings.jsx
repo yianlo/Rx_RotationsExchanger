@@ -42,8 +42,8 @@ var Listings = React.createClass({
 
   renderListings: function(){
     if (this.context.currentUser && this.state.rooms) {
-      return this.state.rooms.map( function(room){
-        return <NavBarItem className="submenu-items" text={room.title}
+      return this.state.rooms.map( function(room, i){
+        return <NavBarItem key={"room" + i} className="submenu-items" text={room.title}
           onClickFun={this.context.router.replace.bind(null, 'main/' + room.id)}/>
       }.bind(this))
     } else {

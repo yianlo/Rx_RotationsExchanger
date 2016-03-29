@@ -64,14 +64,14 @@ var EditForm = React.createClass({
   },
 
   getHomeTypes: function(){
-    return ROOM_PARAMS.HOME_TYPES.map(function(type){
-      return <option>{type}</option>
+    return ROOM_PARAMS.HOME_TYPES.map(function(type, i){
+      return <option key={type + "Option" + i}>{type}</option>
     })
   },
 
   getRoomTypes: function(){
-    return ROOM_PARAMS.ROOM_TYPES.map(function(type){
-      return <option>{type}</option>
+    return ROOM_PARAMS.ROOM_TYPES.map(function(type, i){
+      return <option key={type + "Option" + i}>{type}</option>
     })
   },
 

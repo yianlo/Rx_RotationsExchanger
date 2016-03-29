@@ -30,9 +30,9 @@ var PhotoGrid = React.createClass({
 
   getGrids: function(){
     if (this.props.imageUrls) {
-      return this.props.imageUrls.map( function(img){
+      return this.props.imageUrls.map( function(img, i){
         return (
-          <div className="img-grid"
+          <div key={"img" + i} className="img-grid"
             style={{backgroundImage: 'url('+img.url+')'}}>
             {this.getDeleteButton(img.id)}
           </div>
