@@ -13,10 +13,10 @@ RotationsExchanger is a web application designed for medical students to easily 
 ### Dynamic search filtering with compounded parameters and display updates
 ![index_filter]
 
-### Vivid display of all photos and rooms in vivid displays in both slider and grid views
+### Vivid display of all photos and rooms in both slider and grid views
 ![show_slider] ![show_grid]
 
-### Complete single page application with authentication and instant user feedback for input errors for ease of use
+### Complete single page application with authentication and instant user feedback for input errors and improved ease of use
 ![error_sign_up] ![add_form_feedback]
 
 ### Management made easy for all account details
@@ -24,10 +24,11 @@ RotationsExchanger is a web application designed for medical students to easily 
 ![listings]
 ####Requests
 View all requests dynamicall organized by status.
-![requests_pending]
+![requests_approved_denied]
 
 Easily view guest messages and approve or deny requests.
-![requests_approved_denied]
+![requests_pending]
+
 ####Trips
 ![trips]
 
@@ -65,7 +66,7 @@ Easily view guest messages and approve or deny requests.
 * Pusher Websocket API
 
 ###Modularized Components
-Most React components are abstracted and grouped by logical similarity. This makes adding features much easier, and at the same time, make sure the code base is maintainable as it grows.
+React components are abstracted and grouped by logical similarity. This enables improved code maintainability and allows easy iterative design and development.
 
 ###Data Integrity
 Integrated with React, the flux architecture provides real time reflection of all needed data from the database, allowing dynamic updates and minimal server requests.
