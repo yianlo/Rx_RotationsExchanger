@@ -39,7 +39,11 @@ All forms are custom designed to ensure intuitive use when adding, editing and d
 ![edit_page]
 
 #####Requests easily approved or denied with instant status and page updates
-| ![pending_request] | ![approved_request] |
+
+<div style="display:flex;justify-content:space-around">
+    ![pending_request]
+    ![approved_request]
+</div>
 
 #####Trips organized by status
 ![trips]
