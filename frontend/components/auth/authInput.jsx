@@ -1,6 +1,5 @@
 var React = require('react');
 
-
 var AuthInput = React.createClass({
   render: function(){
     return(

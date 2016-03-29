@@ -3,19 +3,10 @@ var React = require('react'),
 
 
 var BookingsIndex = React.createClass({
-  // sortByUpdatedTime: function(){
-  //   var sortedBookings = [];
-  //
-  //   this.props.bookings.each(function(booking){
-  //
-  //   }.bind(this))
-  //
-  //   return sortedBookings
-  // },
-
   renderItems: function(){
-    return this.props.bookings.map(function(booking){
+    return this.props.bookings.map(function(booking, i){
       return <BookingItem booking={booking}
+        key={booking + i}
         group={this.props.group}
         page={this.props.page}/>
     }.bind(this))

@@ -12,7 +12,16 @@ _addRequest = function(newRequest){
   _allTrips[newRequest.id] = newRequest;
 };
 
-_resetRequests = function(requests){
+_resetRequests = function(){
+  _allTrips = {};
+  _pastTrips = {};
+  _currentTrips = {};
+  _upcomingTrips = {};
+};
+
+_addNewRequests = function(requests){
+  _resetRequests();
+
   today = new Date;
 
   for (var i = 0; i < requests.length; i++) {
@@ -70,7 +79,7 @@ RequestStore.__onDispatch = function (payload) {
       RequestStore.__emitChange();
       break;
     case "USER_REQUESTS_RECEIVED":
-      _resetRequests(payload.requests);
+      _addNewRequests(payload.requests);
       RequestStore.__emitChange();
       break;
     case "USER_PAST_TRIPS_RECEIVED":

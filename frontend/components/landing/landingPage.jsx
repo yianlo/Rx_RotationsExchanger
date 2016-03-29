@@ -4,10 +4,6 @@ var React = require('react'),
 
 
 var LandingPage = React.createClass({
-
-  // <source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm"/>
-  // <source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4"/>
-// "search-bar-container"
   render: function() {
 
     return (

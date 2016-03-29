@@ -74,6 +74,7 @@ var dateFields = React.createClass({
       <div className={this.props.containerClass}>
         <label className={this.props.labelClass}>{this.props.label}</label>
         <div className={this.props.inputClass}>
+          <label></label>
           <DatePicker
             name={this.props.names[0]}
             selected={this.state.startDate}
@@ -81,6 +82,7 @@ var dateFields = React.createClass({
             minDate={moment()}
             onChange={this.handleCheckIn}
             placeholderText={this.props.names[0]} />
+          <label></label>
           <DatePicker
             name={this.props.names[1]}
             selected={this.state.endDate}
