@@ -105,35 +105,3 @@ var AutoSearchBox = React.createClass({
 })
 
 module.exports = AutoSearchBox;
-
-  // search: function(){
-  //   var search = {
-  //     bounds: bounds,
-  //     types: ['university']
-  //   };
-  //
-  //   var places = new google.maps.places.PlacesService(map);
-  //
-  //     places.nearbySearch(search, function(results, status) {
-  //     if (status === google.maps.places.PlacesServiceStatus.OK) {
-  //       clearResults();
-  //       clearMarkers();
-  //
-  //       for (var i = 0; i < results.length; i++) {
-  //         var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
-  //         var markerIcon = MARKER_PATH + markerLetter + '.png';
-  //         // Use marker animation to drop the icons incrementally on the map.
-  //         markers[i] = new google.maps.Marker({
-  //           position: results[i].geometry.location,
-  //           animation: google.maps.Animation.DROP,
-  //           icon: markerIcon
-  //         });
-  //
-  //         markers[i].placeResult = results[i];
-  //         google.maps.event.addListener(markers[i], 'click', showInfoWindow);
-  //         setTimeout(dropMarker(i), i * 100);
-  //         addResult(results[i], i);
-  //       }
-  //     }
-  //   });
-  // },

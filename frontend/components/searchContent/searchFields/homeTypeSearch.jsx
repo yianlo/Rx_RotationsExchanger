@@ -4,8 +4,8 @@ var React = require('react'),
 
 var HomeTypeSearch = React.createClass({
   makeCheckboxes: function(){
-    return ROOM_PARAMS.HOME_TYPES.map( function(type){
-      return <TypeSearchCheckbox value={type} category="home_types"/>
+    return ROOM_PARAMS.HOME_TYPES.map( function(type, i){
+      return <TypeSearchCheckbox key={type + i} value={type} category="home_types"/>
     })
   },
 

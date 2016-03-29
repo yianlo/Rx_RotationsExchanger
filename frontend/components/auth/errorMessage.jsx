@@ -3,8 +3,8 @@ var React = require('react');
 
 var ErrorMessage = React.createClass({
   makeErrorsList: function(){
-    return this.props.errors.map( function(error){
-      return <li className="error-message">{error}</li>
+    return this.props.errors.map( function(error, i){
+      return <li key={"error" + i} className="error-message">{error}</li>
     } )
   },
 

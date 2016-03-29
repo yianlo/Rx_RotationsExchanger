@@ -1,7 +1,6 @@
 var React = require('react'),
     NavBar = require('./nav/navBar');
 
-
 var Submenu = React.createClass({
   render: function(){
     return(

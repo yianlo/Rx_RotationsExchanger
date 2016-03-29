@@ -3,22 +3,9 @@ var React = require('react'),
     ROOM_PARAMS = require('../../../constants/roomParams');
 
 var RoomTypeSearch = React.createClass({
-  makeRoommateNumOptions: function(){
-    var roommateNumOptions = [<option value={i}>{"1 Roommate"}</option>];
-    var i = 2;
-
-    while (i < 5) {
-      roommateNumOptions.push(<option key={i} value={i}>{i + " Roommates"}</option>)
-      i++;
-    }
-
-    roommateNumOptions.push(<option value={i}>{"5+ Roommates"}</option>)
-    return roommateNumOptions;
-  },
-
   makeCheckboxes: function(){
-    return ROOM_PARAMS.ROOM_TYPES.map(function(type){
-      return <TypeSearchCheckbox value={type} category="room_types"/>
+    return ROOM_PARAMS.ROOM_TYPES.map(function(type, i){
+      return <TypeSearchCheckbox key={type + i} value={type} category="room_types"/>
     })
   },
 

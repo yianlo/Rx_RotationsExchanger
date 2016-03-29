@@ -5,6 +5,7 @@ var React = require('react'),
     Router = ReactRouter.Router,
     Route = ReactRouter.Route,
     IndexRoute = ReactRouter.IndexRoute,
+    hashHistory = require('react-router').hashHistory,
 
     SessionStore = require('./stores/session'),
 
@@ -12,6 +13,7 @@ var React = require('react'),
 
     LandingPage = require('./components/landing/landingPage'),
     Main = require('./components/main'),
+    NavBar = require('./components/nav/navBar'),
     Chat = require('./components/chat/chat'),
 
     SearchContent = require('./components/searchContent/searchContent'),
@@ -23,8 +25,6 @@ var React = require('react'),
 
     HostingReqsPage = require('./components/bookingReqs/hostingReqPage'),
     TripsPage = require('./components/bookingReqs/tripsPage');
-
-var NavBar = require('./components/nav/navBar');
 // <Route path="booking" component={BookingForm}/>
 
 var routes = (

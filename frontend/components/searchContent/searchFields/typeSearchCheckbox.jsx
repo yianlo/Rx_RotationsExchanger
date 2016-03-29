@@ -13,7 +13,7 @@ var TypeSearchCheckbox = React.createClass({
   render: function() {
     return(
       <div className="search-type-field  search-item">
-        <label for="filled-in-box">{this.props.value}</label>
+        <label htmlFor="filled-in-box">{this.props.value}</label>
         <input className="filled-in"
           type="checkbox"
           id="filled-in-box"

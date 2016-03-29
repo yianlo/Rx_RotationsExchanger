@@ -19,10 +19,6 @@ var NavBar = React.createClass({
     currentUser: React.PropTypes.object,
   },
 
-  generateItem: function(item){
-    return <NavBarItem text={item.text} url={item.url} submenu={item.submenu} />
-  },
-
   redirectToTrips: function(){
     this.context.router.replace('/main/' + this.context.currentUser.id + '/trips');
   },
