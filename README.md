@@ -27,7 +27,8 @@ RotationsExchanger is a web application designed for medical students to easily 
 Dynamic display and update of all listings from the nav bar
 ![listings]
 
-Edit form designed to ensure intuitive use when adding, editing and deleting photos and/or room details
+All forms are custom designed to ensure intuitive use when adding, editing and deleting rooms and/or photos
+![add_page]
 ![edit_page]
 #####Requests
 Requests organized in single view by status
