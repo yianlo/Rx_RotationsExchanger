@@ -20,7 +20,7 @@ RotationsExchanger is a web application designed for medical students to easily 
 ![booking]
 
 #### Complete single page application with authentication and instant error handling to provide a smooth user experience
-![error_sign_up] ![add_form_feedback]
+![auth_feedback] ![add_form_feedback]
 
 #### Management made easy for all account details
 #####Listings
@@ -40,7 +40,7 @@ Request approve or denial complete with instant status and page updates
 ![trips]
 
 [add_form_feedback]: ./screenshots/add_form_feedback.png
-[error_sign_up]: ./screenshots/error_sign_up.png
+[auth_feedback]: ./screenshots/auth_feedback.png
 [search_filter]: ./screenshots/search_filter.png
 [index_filter]: ./screenshots/index_filter.png
 [autocomplete_add_form]: ./screenshots/autocomplete_add_form.png
