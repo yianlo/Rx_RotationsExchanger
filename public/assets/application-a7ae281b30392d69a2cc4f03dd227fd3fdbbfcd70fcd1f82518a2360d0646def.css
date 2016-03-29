@@ -1,0 +1,2544 @@
+/* line 13, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-page {
+  min-height: 895px;
+  position: relative;
+  top: 61px;
+  flex-direction: column;
+  width: 100%;
+}
+/* line 21, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-page .add-form-item-container {
+  align-items: center;
+  padding: 30px 0 10px 0;
+}
+
+/* line 27, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-header {
+  width: 100%;
+  height: 150px;
+  justify-content: center;
+  align-content: center;
+  min-width: 1052px;
+}
+
+/* line 36, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-header h1 {
+  font-size: 30px;
+  align-self: center;
+}
+
+/* line 41, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-container {
+  flex-direction: column;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  min-width: 1052px;
+  background: #F5F5F5;
+}
+
+/* line 52, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form {
+  flex-direction: column;
+  align-content: center;
+  min-height: 750px;
+  padding: 30px 100px;
+}
+
+/* line 60, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-items-container {
+  width: 800px;
+  justify-content: space-between;
+}
+
+/* line 65, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-label {
+  width: 90px;
+  font-weight: bold;
+  font-color: #222;
+  line-height: 52px;
+}
+
+/* line 73, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-choices {
+  display: inline-flex;
+  border-left: 1px solid #ccc;
+}
+/* line 77, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-choices button {
+  border-radius: 0;
+}
+
+/* line 82, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-choice, .add-form-input, .upload-image-button, .add-form-button {
+  align-items: center;
+  color: #676b6d;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+  justify-content: center;
+  line-height: 52px;
+  box-sizing: border-box;
+}
+
+/* line 95, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-textarea {
+  padding: 24px;
+  line-height: 20px;
+}
+
+/* line 100, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.upload-image-button {
+  border: 1px solid #ccc;
+  background: #eee;
+  color: #676b6d;
+  margin-right: 0;
+}
+
+/* line 107, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.unclicked-button:hover {
+  background: #F88379;
+  color: white;
+}
+
+/* line 112, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-choice, .add-form-input, .add-form-date {
+  background: white;
+}
+
+/* line 117, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-choice {
+  margin: 0;
+  border-left: 0px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+/* line 124, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.unselected-choice:hover {
+  background: #CCE4E7;
+  cursor: pointer;
+}
+
+/* line 132, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.selected-choice {
+  background: #32959F;
+  color: white;
+}
+
+/* line 137, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.selected-choice:hover {
+  background: #32959F;
+  color: white;
+}
+
+/* line 142, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-input {
+  width: 500px;
+  overflow: hidden;
+}
+
+/* line 147, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.short-input {
+  width: 150px;
+}
+
+/* line 151, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.price-label {
+  justify-content: space-between;
+}
+
+/* line 155, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.dollar-sign {
+  margin: 0;
+  background: #black;
+}
+
+/* line 160, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.long-input {
+  width: 711px;
+  flex-wrap: wrap;
+}
+
+/* line 165, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.box-input {
+  width: 650px;
+  height: 100px;
+}
+
+/* line 170, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-date {
+  height: 52px;
+  width: 471px;
+  justify-content: flex-start;
+  background: none;
+  position: relative;
+  left: -7px;
+}
+
+/* line 180, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-button-container {
+  width: 100%;
+  justify-content: center;
+}
+
+/* line 185, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-button {
+  color: white;
+}
+
+/* line 189, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.clicked-button {
+  background: #32959F;
+  color: white;
+}
+
+/* line 194, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.add-form-errors-container {
+  flex: none;
+  width: 800px;
+  padding: 30px 30px;
+  align-items: center;
+  background: #FFD1C4;
+  border-radius: 2px;
+  margin-top: 45px;
+}
+
+/* line 206, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/add-form.scss */
+.errors-title {
+  font-weight: bold;
+  font-size: 14.5px;
+}
+/* line 4, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container {
+  position: relative;
+  top: 20px;
+  flex-direction: column;
+  width: 360px;
+  border-radius: 2px;
+  margin: 0 20px;
+  height: auto;
+  z-index: 5;
+}
+/* line 18, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container .price-display {
+  height: 45px;
+  background-color: #444;
+  color: white;
+  justify-content: space-between;
+  padding: 5px 15px;
+  align-content: center;
+  align-items: center;
+  font-size: 16px;
+  flex: none;
+}
+/* line 29, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container .price-display .room-price {
+  font-size: 27px;
+  flex: none;
+}
+/* line 35, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container .req-form {
+  padding: 25px;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #ccc;
+  flex: none;
+  background: #fffffd;
+}
+/* line 43, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container .req-form button {
+  width: 101%;
+  position: relative;
+  left: 10px;
+  height: 50px;
+}
+/* line 50, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container .req-form hr {
+  width: 100%;
+  background: #ddd;
+}
+/* line 55, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container .req-form textarea {
+  padding: 10px;
+  margin: 20px 0;
+  height: 80px;
+}
+/* line 62, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container .req-form-price {
+  padding: 0 5px;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 15px;
+}
+/* line 69, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container .edit-calendar-container {
+  width: 325px;
+  position: relative;
+  left: -14px;
+}
+/* line 74, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container .edit-calendar-container .edit-calendar {
+  width: 100%;
+  justify-content: space-between;
+}
+/* line 78, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container .edit-calendar-container .edit-calendar .datepicker__input-container {
+  width: 140px;
+  margin: 0;
+}
+/* line 82, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container .edit-calendar-container .edit-calendar .datepicker__input-container .datepicker__input {
+  width: 100%;
+  height: 50px;
+}
+
+/* line 91, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/booking-form.scss */
+.req-form-container.sticky {
+  position: fixed;
+  display: flex;
+  top: 61px;
+}
+/* line 12, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page, .hosting-reqs-page {
+  flex: none;
+  position: relative;
+  top: 61px;
+  flex-direction: column;
+  min-width: 500px;
+}
+/* line 20, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .view-message, .hosting-reqs-page .view-message {
+  position: relative;
+  color: #F88379;
+}
+/* line 25, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .link, .hosting-reqs-page .link {
+  position: relative;
+  color: #F88379;
+}
+/* line 30, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .link:hover, .hosting-reqs-page .link:hover {
+  cursor: pointer;
+}
+/* line 34, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .link:before, .hosting-reqs-page .link:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.8px;
+  bottom: -6px;
+  left: 0;
+  background-color: #F88379;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+/* line 49, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .link:hover:before, .hosting-reqs-page .link:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+/* line 55, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page h1, .hosting-reqs-page h1 {
+  font-size: 28px;
+  padding: 60px 0 25px 50px;
+}
+/* line 60, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .none-message, .hosting-reqs-page .none-message {
+  font-size: 20px;
+  padding: 30px 50px;
+  background: #F5F5F5;
+  align-items: center;
+}
+/* line 67, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index, .hosting-reqs-page .bookings-index {
+  padding: 30px 20px;
+  background: #F5F5F5;
+  min-height: 500px;
+}
+/* line 73, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item, .hosting-reqs-page .bookings-index .booking-item {
+  background: white;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px 20px;
+  min-width: 320px;
+  min-height: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+/* line 85, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item .delete-button, .hosting-reqs-page .bookings-index .booking-item .delete-button {
+  position: absolute;
+  top: 10px;
+  right: 1px;
+  margin: 7px;
+  padding: 0;
+  z-index: 1000;
+  color: #ccc;
+  font-size: 28px;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+}
+/* line 102, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item .delete-button:hover, .hosting-reqs-page .bookings-index .booking-item .delete-button:hover {
+  color: #888;
+}
+/* line 106, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item .image-wrapper, .hosting-reqs-page .bookings-index .booking-item .image-wrapper {
+  width: 280px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+/* line 113, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item .image-wrapper img, .hosting-reqs-page .bookings-index .booking-item .image-wrapper img {
+  height: 100%;
+  width: 100%;
+}
+/* line 119, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item h2, .hosting-reqs-page .bookings-index .booking-item h2 {
+  padding: 8px 0 25px 0;
+  font-size: 22px;
+  font-weight: 300;
+}
+/* line 125, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item p, .hosting-reqs-page .bookings-index .booking-item p {
+  font-size: 17px;
+  padding: 7px;
+}
+/* line 130, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item .status, .hosting-reqs-page .bookings-index .booking-item .status {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 18px 0;
+  width: 100%;
+  padding: 17px;
+  margin-bottom: 8px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+/* line 143, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item .booking-info, .hosting-reqs-page .bookings-index .booking-item .booking-info {
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  position: relative;
+}
+/* line 149, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item .booking-info .vert-bar, .hosting-reqs-page .bookings-index .booking-item .booking-info .vert-bar {
+  padding: 0 10px;
+}
+/* line 154, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item .buttons-container, .hosting-reqs-page .bookings-index .booking-item .buttons-container {
+  margin: 35px 0 15px 0;
+  justify-content: space-around;
+  width: 100%;
+}
+/* line 159, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item .buttons-container button, .hosting-reqs-page .bookings-index .booking-item .buttons-container button {
+  width: 80px;
+  margin-right: 0;
+}
+/* line 164, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item .buttons-container hr, .hosting-reqs-page .bookings-index .booking-item .buttons-container hr {
+  width: 200px;
+  height: 1px;
+}
+/* line 171, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .bookings-index .booking-item:hover, .hosting-reqs-page .bookings-index .booking-item:hover {
+  cursor: pointer;
+  cursor: pointer;
+  box-shadow: 0 0 10px #999;
+}
+/* line 179, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .fa-times, .hosting-reqs-page .fa-times {
+  z-index: 500;
+  color: #ccc;
+  font-size: 35px;
+  width: 20px;
+  /* height: 45px; */
+  line-height: 20px;
+  text-align: center;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 15px;
+  right: 18px;
+}
+/* line 193, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/bookings.scss */
+.trips-page .fa-times:hover, .hosting-reqs-page .fa-times:hover {
+  color: #888;
+}
+/* line 1, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/chat.scss */
+.chat {
+  flex-direction: column;
+  padding: 50px;
+}
+/* line 5, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/chat.scss */
+.chat .main-view {
+  flex-direction: column;
+}
+/* line 8, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/chat.scss */
+.chat .main-view input {
+  margin-left: 35px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  height: 30px;
+  border-radius: 5px;
+  width: 50%;
+}
+/* line 1, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/image-delete.scss */
+.outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 8, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/image-delete.scss */
+.inner {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 13, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/image-delete.scss */
+.inner a {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* Appearance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* line 20, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/image-delete.scss */
+.inner a {
+  text-decoration: none;
+  -webkit-transition: background .1s linear;
+  -moz-transition: background .1s linear;
+  -ms-transition: background .1s linear;
+  -o-transition: background .1s linear;
+  transition: background .1s linear;
+}
+
+/* line 28, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/image-delete.scss */
+.inner a:hover,
+.inner a:focus {
+  background: #3b3d36 \9;
+  /* IE8 */
+  background: rgba(231, 229, 212, 0.5);
+}
+
+/* line 33, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/image-delete.scss */
+.inner a span {
+  color: #e7e5d4;
+  border: 3px solid;
+  text-transform: uppercase;
+  padding: 15px 25px;
+}
+
+/* line 39, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/image-delete.scss */
+.inner a:hover span,
+.inner a:focus span {
+  color: #e7e5d4\9;
+  /* IE8 */
+  color: #3b3d36;
+}
+/* line 17, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__tether-element-attached-top .datepicker__triangle, .datepicker__tether-element-attached-bottom .datepicker__triangle, .datepicker__year-read-view--down-arrow {
+  margin-left: -8px;
+  position: absolute;
+}
+/* line 21, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__tether-element-attached-top .datepicker__triangle, .datepicker__tether-element-attached-bottom .datepicker__triangle, .datepicker__year-read-view--down-arrow, .datepicker__tether-element-attached-top .datepicker__triangle::before, .datepicker__tether-element-attached-bottom .datepicker__triangle::before, .datepicker__year-read-view--down-arrow::before {
+  box-sizing: content-box;
+  position: absolute;
+  border: 8px solid transparent;
+  height: 0;
+  width: 1px;
+}
+/* line 31, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__tether-element-attached-top .datepicker__triangle::before, .datepicker__tether-element-attached-bottom .datepicker__triangle::before, .datepicker__year-read-view--down-arrow::before {
+  content: "";
+  z-index: -1;
+  border-width: 8px;
+  left: -8px;
+  border-bottom-color: #ccc;
+}
+
+/* line 41, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__tether-element-attached-top .datepicker__triangle {
+  top: 0;
+  margin-top: -8px;
+}
+/* line 47, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__tether-element-attached-top .datepicker__triangle, .datepicker__tether-element-attached-top .datepicker__triangle::before {
+  border-top: none;
+  border-bottom-color: #f0f0f0;
+}
+/* line 53, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__tether-element-attached-top .datepicker__triangle::before {
+  top: -1px;
+  border-bottom-color: #ccc;
+}
+
+/* line 59, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__tether-element-attached-bottom .datepicker__triangle, .datepicker__year-read-view--down-arrow {
+  bottom: 0;
+  margin-bottom: -8px;
+}
+/* line 65, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__tether-element-attached-bottom .datepicker__triangle, .datepicker__year-read-view--down-arrow, .datepicker__tether-element-attached-bottom .datepicker__triangle::before, .datepicker__year-read-view--down-arrow::before {
+  border-bottom: none;
+  border-top-color: #fff;
+}
+/* line 71, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__tether-element-attached-bottom .datepicker__triangle::before, .datepicker__year-read-view--down-arrow::before {
+  bottom: -1px;
+  border-top-color: #ccc;
+}
+
+/* line 77, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+}
+
+/* line 88, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__triangle {
+  position: absolute;
+  left: 50px;
+}
+
+/* line 101, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__tether-element-attached-bottom.datepicker__tether-element {
+  margin-top: -20px;
+}
+
+/* line 105, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__header {
+  text-align: center;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  padding-top: 8px;
+  position: relative;
+}
+
+/* line 115, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__current-month {
+  margin-top: 0;
+  color: #000;
+  font-weight: bold;
+  font-size: 13px;
+}
+/* line 121, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__current-month--hasYearDropdown {
+  margin-bottom: 16px;
+}
+
+/* line 126, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__navigation {
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  width: 0;
+  border: 6px solid transparent;
+}
+/* line 135, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__navigation--previous {
+  left: 10px;
+  border-right-color: #ccc;
+}
+/* line 139, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__navigation--previous:hover {
+  border-right-color: #b3b3b3;
+}
+/* line 144, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__navigation--next {
+  right: 10px;
+  border-left-color: #ccc;
+}
+/* line 148, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__navigation--next:hover {
+  border-left-color: #b3b3b3;
+}
+/* line 153, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__navigation--years {
+  position: relative;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 160, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__navigation--years-previous {
+  top: 4px;
+  border-top-color: #ccc;
+}
+/* line 164, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__navigation--years-previous:hover {
+  border-top-color: #b3b3b3;
+}
+/* line 169, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__navigation--years-upcoming {
+  top: -4px;
+  border-bottom-color: #ccc;
+}
+/* line 173, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__navigation--years-upcoming:hover {
+  border-bottom-color: #b3b3b3;
+}
+
+/* line 180, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__week-day {
+  color: #ccc;
+  display: inline-block;
+  width: 28px;
+  line-height: 24px;
+}
+
+/* line 187, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__month {
+  margin: 5px;
+  text-align: center;
+}
+
+/* line 192, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__day {
+  color: #000;
+  display: inline-block;
+  width: 24px;
+  line-height: 24px;
+  text-align: center;
+  margin: 2px;
+  cursor: pointer;
+}
+/* line 201, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__day:hover {
+  border-radius: 2px;
+  background-color: #f0f0f0;
+}
+/* line 206, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__day--today {
+  font-weight: bold;
+}
+/* line 210, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__day--selected, .datepicker__day--in-range {
+  border-radius: 2px;
+  background-color: #F88379;
+  color: #fff;
+}
+/* line 216, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__day--selected:hover, .datepicker__day--in-range:hover {
+  background-color: #f76d61;
+}
+/* line 221, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__day--disabled {
+  cursor: default;
+  color: #ccc;
+}
+/* line 225, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__day--disabled:hover {
+  background-color: transparent;
+}
+
+/* line 231, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__input-container {
+  position: relative;
+  margin: 0 6.250px;
+  width: 29%;
+}
+
+/* line 237, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__input {
+  width: 100%;
+  position: relative;
+  font-size: 13px;
+  border-radius: 2px;
+  box-shadow: inset 0 2px 2px #e9e9e9;
+  border: 1px solid #ccc;
+  line-height: 16px;
+  padding: 6px 10px 5px;
+  min-height: 38px;
+}
+/* line 248, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__input:focus {
+  outline: none;
+  border-color: #ccc;
+  box-shadow: inset 0 2px 2px #e9e9e9, 0 0 10px 0 rgba(73, 107, 125, 0.3);
+}
+/* line 254, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__input:not(:valid) ~ .close-icon {
+  display: none;
+}
+
+/* line 259, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-read-view {
+  width: 50%;
+  left: 25%;
+  position: absolute;
+  bottom: 25px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+/* line 267, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-read-view:hover {
+  cursor: pointer;
+}
+/* line 270, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-read-view:hover .datepicker__year-read-view--down-arrow {
+  border-top-color: #b3b3b3;
+}
+/* line 275, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-read-view--down-arrow {
+  border-top-color: #ccc;
+  margin-bottom: 3px;
+  left: 5px;
+  top: 9px;
+  position: relative;
+  border-width: 6px;
+}
+/* line 285, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-read-view--selected-year {
+  right: 6px;
+  position: relative;
+}
+
+/* line 291, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-dropdown {
+  background-color: #f0f0f0;
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  top: 30px;
+  text-align: center;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+}
+/* line 301, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-dropdown:hover {
+  cursor: pointer;
+}
+
+/* line 306, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-option {
+  line-height: 20px;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 313, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-option:first-of-type {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+/* line 318, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-option:last-of-type {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+/* line 327, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-option:hover {
+  background-color: #ccc;
+}
+/* line 330, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-option:hover .datepicker__navigation--years-upcoming {
+  border-bottom-color: #b3b3b3;
+}
+/* line 334, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-option:hover .datepicker__navigation--years-previous {
+  border-top-color: #b3b3b3;
+}
+/* line 339, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__year-option--selected {
+  position: absolute;
+  left: 30px;
+}
+
+/* line 345, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.close-icon {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  height: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+/* line 355, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.close-icon::after {
+  background-color: #F88379;
+  border-radius: 50%;
+  bottom: 0;
+  box-sizing: border-box;
+  color: #fff;
+  content: "\00d7";
+  cursor: pointer;
+  font-size: 12px;
+  height: 16px;
+  width: 16px;
+  line-height: 1;
+  margin: -8px auto 0;
+  padding: 2px;
+  position: absolute;
+  right: 7px;
+  text-align: center;
+  top: 50%;
+}
+
+/* line 376, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/date-picker.scss */
+.datepicker__today-button {
+  background: #f0f0f0;
+  border-top: 1px solid #ccc;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 0;
+}
+/* line 7, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/price-slider.scss */
+.price-search-field {
+  width: 98%;
+  display: flex;
+}
+
+/* line 12, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container {
+  width: 73%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  position: relative;
+  top: 12px;
+  box-shadow: none;
+}
+/* line 22, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .slider {
+  width: 100%;
+  height: 10px;
+  position: relative;
+}
+/* line 28, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .price-display {
+  font-size: 15px;
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+/* line 38, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .handle-0 {
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 1px;
+}
+/* line 45, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .handle-1 {
+  position: absolute;
+  z-index: 2;
+  left: 96%;
+  top: 1px;
+}
+/* line 52, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .my-handle {
+  position: absolute;
+  top: -11px;
+  left: -11px;
+  background: white;
+  height: 23.5px;
+  width: 23.5px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  box-shadow: 0 3px 5px rgba(230, 230, 230, 0.3);
+}
+/* line 67, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .my-handle:hover {
+  cursor: pointer;
+}
+/* line 71, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .my-handle.active {
+  background-color: gray;
+}
+/* line 75, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .bar {
+  height: 2px;
+  position: relative;
+  background: #ddd;
+}
+/* line 81, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/price-slider.scss */
+.price-slider-container .bar.bar-1 {
+  height: 4.5px;
+  background: #F88379;
+}
+
+@media all and (min-width: 1090px) {
+  /* line 90, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/price-slider.scss */
+  .price-slider-container {
+    position: relative;
+    right: 6%;
+  }
+}
+/* line 4, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+.search-results-container {
+  position: relative;
+  top: 61px;
+  width: 70.6%;
+}
+
+/* line 11, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+.search-results {
+  display: absolute;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  width: 100.5%;
+  box-sizing: content-box;
+  background: #eee;
+  flex: none;
+}
+
+/* line 24, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+.result-item {
+  width: 49.5%;
+  max-height: 400px;
+  height: 30%;
+  flex-flow: column;
+  padding: 12.5px 12.5px 0 12.5px;
+  margin: 0 1px;
+  margin-bottom: 3px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+
+/* line 38, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+.result-item:hover {
+  cursor: pointer;
+  /*border: 1px solid #f76565;*/
+  box-shadow: 0 0 10px #999;
+}
+
+/* line 44, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+.img-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 3px;
+  background: #ddd;
+  width: 100%;
+  max-height: 82%;
+  overflow: hidden;
+}
+
+/* line 61, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+.wrapper {
+  overflow: hidden;
+  background-image: url(http://res.cloudinary.com/dcnac6iuq/image/fetch/https://kellieanne.files.wordpress.com/2011/06/hgtv-emily-teal-couch.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 72, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+.room-img {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 78, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+.dollar-sign {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-stretch: expanded;
+  padding-top: 2.3px;
+}
+
+/* line 85, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+.price {
+  z-index: 50px;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  color: #fff;
+  font-size: 23.5px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 7px 13px;
+  padding-right: 18px;
+  background-color: rgba(45, 49, 51, 0.75);
+  border-radius: 1px;
+}
+
+/* line 103, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+.room-detail {
+  flex-flow: column;
+  padding: 10px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* line 113, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+.room-detail h5 {
+  font-size: 16px;
+  font-weight: 400;
+  min-height: 25px;
+  white-space: nowrap;
+}
+
+/* line 121, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+.room-detail h6 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #888;
+  font-weight: 300;
+  white-space: nowrap;
+  min-height: 15px;
+}
+
+@media all and (max-width: 1000px) {
+  /* line 132, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/results.scss */
+  .result-item {
+    width: 100%;
+    max-height: 60%;
+  }
+}
+/* line 3, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+.search-container {
+  flex-direction: column;
+  width: 84.9%;
+  padding: 0 3px;
+}
+
+/* line 9, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+.search-fields-container {
+  flex-direction: column;
+  position: relative;
+  top: 5px;
+  min-height: 328px;
+  flex: none;
+}
+
+/* line 18, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+.filled-in {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+/* line 23, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+.search-field-container {
+  padding: 18px 30px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* line 29, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+.search-field {
+  width: 80%;
+}
+
+/* line 33, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+.search-field-label {
+  line-height: 34px;
+  font-size: 13px;
+}
+
+/* line 38, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+.search-item {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-shadow: inset 0 2px 2px #e9e9e9;
+  margin: 0 6.250px;
+  padding: 10px 15px;
+  width: 29%;
+  height: 38px;
+  box-sizing: border-box;
+  font-size: 13px;
+  color: inherit;
+  font-weight: 350px;
+}
+
+/* line 55, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+.search-item label {
+  overflow: hidden;
+}
+
+/* line 59, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+select.search-item {
+  background: #ddd;
+}
+
+/* line 63, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+.search-type-field {
+  background: #EDEFED;
+  justify-content: space-between;
+}
+
+/* line 68, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+input[type=checkbox] {
+  align-self: center;
+  position: relative;
+  transform: scale(1.4);
+  -webkit-transform: scale(1.4);
+  border-style: none;
+  top: 0.5px;
+}
+
+/* line 77, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+#priceSlider {
+  background: #BABABA;
+}
+
+/* line 81, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+.search-hr {
+  width: 93%;
+  height: 1px;
+  background: #eee;
+  border: none;
+  margin: 0;
+}
+
+@media all and (max-width: 1090px) {
+  /* line 90, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+  .search-field-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* line 95, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+  .search-field {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* line 100, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+  .search-date-field {
+    width: 31%;
+  }
+
+  /* line 105, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+  .search-field-container {
+    min-width: 535px;
+  }
+
+  /* line 108, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+  .search-fields-container hr {
+    display: none;
+  }
+
+  /* line 112, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/index-page/search.scss */
+  .datepicker__input-container {
+    left: -7.5px;
+  }
+}
+@keyframes hide-bg {
+  0% {
+    background: "/assets/start.png";
+    background: cover;
+    opacity: 0;
+  }
+  99% {
+    background: "/assets/start.png";
+    background: cover;
+    opacity: 1;
+  }
+  100% {
+    background: none;
+  }
+}
+@keyframes emerge {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 30, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.landing-container {
+  overflow: hidden;
+  animation: hide-bg 1s ease;
+  -webkit-animation: hide-bg 1s ease;
+}
+
+/* line 36, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.nav-on-landing {
+  z-index: 800;
+  background: none;
+  height: 61px;
+  width: 100%;
+  color: white;
+  justify-content: space-between;
+}
+/* line 44, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.nav-on-landing .search-bar-container {
+  display: none;
+}
+/* line 48, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.nav-on-landing .nav-items, .nav-on-landing .host-room-button {
+  transition: .3s background;
+}
+/* line 52, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.nav-on-landing .nav-items:hover, .nav-on-landing .host-room-button:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 56, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.nav-on-landing .logo {
+  border: none;
+}
+
+/* line 61, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.polina {
+  flex-direction: column;
+  font-weight: 100;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 3rem;
+  margin: 2rem;
+  font-size: 1.2rem;
+  position: relative;
+  border-radius: 3px;
+  min-width: 530px;
+  width: 38%;
+  max-height: 230px;
+  justify-content: space-between;
+}
+
+/* line 79, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.landing-content-container {
+  min-width: 580px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* line 88, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.landing-content-container {
+  width: 100%;
+  display: flex;
+  /* align-content: center; */
+  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  transform: translateX(-5%);
+}
+
+/* line 103, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.landing-buttons-container {
+  margin-top: 30px;
+}
+
+/* line 108, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+#more-link {
+  font-size: 14px;
+  font-stretch: condensed;
+}
+
+/* line 113, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.more-link-container {
+  flex-direction: column;
+  width: auto;
+  padding-bottom: 2px;
+  border-bottom: 0.5px solid white;
+}
+
+/* line 120, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.more-link-container:hover {
+  border-bottom: 0.5px solid #F88379;
+}
+
+/* line 124, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.search-on-landing {
+  display: block;
+  width: 100%;
+  padding: 1.2rem;
+  border: none;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  background: rgba(5, 5, 5, 0.7);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s background;
+  color: white;
+  box-shadow: 0 0 5px #F88379;
+}
+
+/* line 140, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/landing-page.scss */
+.search-on-landing:hover {
+  background: rgba(0, 0, 0, 0.5);
+  cursor: text;
+}
+/* line 1, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/video.scss */
+video {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 120%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 1s opacity;
+}
+
+/* line 14, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/video.scss */
+.stopfade {
+  opacity: .5;
+}
+
+/* line 18, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/video.scss */
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+
+/* line 24, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/video.scss */
+.polina button {
+  display: block;
+  width: 200px;
+  padding: .6rem;
+  border: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.23);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s background;
+}
+
+/* line 36, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/video.scss */
+.polina button:hover {
+  background: rgba(248, 131, 121, 0.5);
+}
+
+@media screen and (max-width: 500px) {
+  /* line 41, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/video.scss */
+  div {
+    width: 70%;
+  }
+}
+@media screen and (max-device-width: 800px) {
+  /* line 44, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/video.scss */
+  html {
+    background: url(//demosthenes.info/assets/images/polina.jpg) #000 no-repeat center center fixed;
+  }
+
+  /* line 45, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/landing-page/video.scss */
+  #bgvid {
+    display: none;
+  }
+}
+@keyframes auth-emerge {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* line 11, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.auth-container {
+  height: 100%;
+  width: 100%;
+  z-index: 900;
+  font-size: 13.5px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  animation: auth-emerge 0.55s;
+  -webkit-animation: auth-emerge 0.55s;
+}
+
+/* line 30, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(80, 80, 80, 0.6);
+}
+
+/* line 40, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.auth-form, .auth-errors-container {
+  width: 285px;
+  z-index: 950;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px #222;
+}
+
+/* line 50, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.auth-img {
+  padding-bottom: 10px;
+  width: 74px;
+  height: 74px;
+  opacity: 0.6;
+}
+
+/* line 57, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.auth-form {
+  background: #F5F5F5;
+  padding: 15px;
+  padding-bottom: 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 285px;
+  min-height: 321px;
+}
+/* line 67, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.auth-form .search-item {
+  width: 97%;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  height: 46px;
+}
+
+/* line 75, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.auth-input {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0;
+}
+
+/* line 82, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.auth-input .search-item {
+  width: 100%;
+  height: 40px;
+}
+
+/* line 87, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.auth-button {
+  width: 98%;
+  height: 38px;
+  margin: 0 auto;
+  margin-top: 11px;
+  font-size: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  line-height: 0;
+}
+
+/* line 99, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.auth-additional {
+  font-size: 14px;
+}
+
+/* line 103, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.auth-container hr {
+  width: 100%;
+  height: 1px;
+  background: #eee;
+  border: none;
+  margin: 18px;
+}
+
+@keyframes errors-emerge {
+  0% {
+    top: 10px;
+  }
+  100% {
+    top: 0;
+  }
+}
+/* line 116, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.auth-errors-container {
+  position: relative;
+  align-items: center;
+  background: #FFD1C4;
+  padding: 15px 15px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: 0;
+  animation: errors-emerge 0.4s linear;
+  -webkit-animation: errors-emerge 0.4s linear;
+}
+
+@keyframes move-auth {
+  0% {
+    top: -6px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+/* line 136, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.moving-auth-form {
+  position: relative;
+  animation: move-auth 0.4s linear;
+  -webkit-animation: move-auth 0.4s linear;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* line 144, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.error-messages {
+  flex-direction: column;
+}
+
+/* line 148, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.error-message {
+  color: #565a5c;
+  flex-wrap: wrap;
+  padding: 3px 10px;
+}
+
+/* line 154, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.alert-symbol {
+  color: #E4A593;
+  font-size: 35px;
+  padding: 0 10px;
+}
+
+/* line 160, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.toggle-link {
+  color: #F88379;
+}
+
+/* line 164, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/auth.scss */
+.toggle-link:hover {
+  text-decoration: underline;
+}
+/* line 1, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/autocomplete.scss */
+.pac-container {
+  flex-direction: column;
+}
+@-webkit-keyframes show-submenu {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 60px;
+  }
+}
+@-moz-keyframes show-submenu {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 60px;
+  }
+}
+@-ms-keyframes show-submenu {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 60px;
+  }
+}
+@-o-keyframes show-submenu {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 60px;
+  }
+}
+@keyframes show-submenu {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 60px;
+  }
+}
+/* line 47, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: white;
+  z-index: 500;
+  display: flex;
+  justify-content: space-between;
+  height: 61px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+/* line 63, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.submenu-top {
+  position: absolute;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+/* line 68, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.nav-items {
+  flex-direction: column;
+  z-index: 1020;
+  text-align: center;
+  border-left: 1px solid #ddd;
+  flex: none;
+  align-items: center;
+}
+
+/* line 78, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.submenu-item {
+  flex-direction: column;
+  display: flex;
+  position: absolute;
+  flex: 0 0 auto;
+  transform: translateX(-21px);
+  border: 1px solid #ccc;
+  border-left: none;
+  min-width: 250px;
+  overflow: hidden;
+}
+/* line 93, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.submenu-item .nav-items {
+  align-items: flex-start;
+  min-width: 150px;
+  overflow: hidden;
+  -webkit-animation: show-submenu 0.6s ease;
+  -moz-animation: show-submenu 0.6s ease;
+  -ms-animation: show-submenu 0.6s ease;
+  -o-animation: show-submenu 0.6s ease;
+  animation: show-submenu 0.6s ease;
+}
+/* line 100, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.submenu-item .nav-items:hover {
+  background-color: rgba(248, 131, 121, 0.7);
+  color: white;
+}
+
+/* line 108, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.nav-bar .submenu-item {
+  background: white;
+}
+
+/* line 113, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.logo-search-container {
+  width: 63%;
+  min-width: 610px;
+}
+
+/* line 118, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.logo {
+  border-right: 1px solid #ddd;
+  display: flex;
+  line-height: 60px;
+  color: #F88379;
+}
+
+/* line 126, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.logo:hover {
+  cursor: pointer;
+}
+
+/* line 130, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.logo-design {
+  height: 50px;
+  width: 48px;
+  opacity: 0.45;
+}
+
+/* line 136, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.logo-container {
+  height: 40px;
+  width: 60px;
+  overflow: hidden;
+  position: relative;
+  top: 8px;
+}
+
+/* line 144, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.logo-design {
+  margin: 0;
+  font-size: 35px;
+  font-weight: lighter;
+  font-family: 'Crafty Girls', cursive;
+  padding-left: 20px;
+}
+
+/* line 152, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.logo-text {
+  font-size: 20px;
+  font-family: 'Poiret One', cursive;
+  font-weight: 800;
+  padding: 0 17px 0 10px;
+}
+
+/* line 160, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.search-bar-container {
+  width: 100%;
+}
+
+/* line 164, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.search-symbol {
+  height: auto;
+  width: auto;
+  max-width: 20.5px;
+  max-height: 20.5px;
+  opacity: 0.2;
+  align-self: center;
+  padding-left: 17px;
+}
+
+/* line 176, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.search-bar {
+  padding-left: 17px;
+  font-size: 13.5px;
+  font-weight: 300;
+  width: 95%;
+}
+
+/* line 183, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.host-room-button {
+  margin-right: 20px;
+  padding: 10px 10px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  align-self: center;
+  text-align: center;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+/* line 194, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.host-room-button:hover {
+  background-color: rgba(248, 131, 121, 0.7);
+  color: white;
+  cursor: pointer;
+}
+
+/* line 200, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.host-room-button a {
+  min-width: 86px;
+  overflow: hidden;
+}
+
+/* line 205, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.nav-items {
+  min-width: 90px;
+  text-align: center;
+  border-left: 1px solid #ddd;
+  flex: none;
+}
+
+/* line 213, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.nav-items, .search {
+  line-height: 60px;
+  padding: 0 20px;
+}
+
+/* line 218, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.nav-items:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+/* line 223, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.nav-items a {
+  overflow: hidden;
+}
+
+/* line 227, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/nav-bar/nav.scss */
+.submenu-title {
+  min-width: 95px;
+  position: relative;
+}
+/* line 4, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/profile.scss */
+.hosting-reqs-page {
+  position: relative;
+  top: 61px;
+  flex-direction: column;
+  flex: none;
+}
+/* line 10, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/profile.scss */
+.hosting-reqs-page .hostings-index {
+  flex-direction: column;
+}
+/* line 14, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/profile.scss */
+.hosting-reqs-page .hostings-index .hosting-item {
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  border: 1px solid gray;
+}
+/* line 3, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/requests.scss */
+.nav-items a {
+  justify-content: space-between;
+}
+/* line 6, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/requests.scss */
+.nav-items a .requests {
+  margin-left: 20px;
+}
+/* line 10, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/requests.scss */
+.nav-items a .pending {
+  color: #EEB422;
+}
+/* line 14, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/requests.scss */
+.nav-items a .approved {
+  color: #9ACD32;
+}
+/* line 18, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/requests.scss */
+.nav-items a .denied {
+  color: #8A3324;
+}
+/* line 12, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container {
+  min-width: 930px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+/* line 17, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .edit-details {
+  width: 800px;
+}
+/* line 21, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .header {
+  width: 810px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+/* line 26, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .header .edit-title {
+  border: 1px solid #ccc;
+  padding: 9px;
+  border-radius: 1.5px;
+  font-size: 30px;
+  height: auto;
+  width: 650px;
+  white-space: nowrap;
+  padding: 10px;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+/* line 41, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .header .room-type {
+  width: 195px;
+}
+/* line 45, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .header .home-type {
+  width: 130px;
+}
+/* line 49, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .header .select-style:first-of-type {
+  margin-left: 10px;
+}
+/* line 53, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .header .select-style {
+  position: relative;
+  height: 57.5px;
+  top: -0.5px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 1.5px;
+  overflow: hidden;
+  background-color: #fff;
+  background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%;
+}
+/* line 66, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .header .select-style .edit-type {
+  font-weight: 300;
+  font-size: 13.5px;
+  text-transform: uppercase;
+  padding-left: 17px;
+}
+/* line 74, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .header .select-style select {
+  padding: 5px 8px;
+  padding-right: 0;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+/* line 87, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .header .select-style select:focus {
+  outline: none;
+}
+/* line 92, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .header span {
+  font-size: 15px;
+  margin: 0 8px;
+}
+/* line 98, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .edit-details {
+  flex-direction: column;
+  position: relative;
+  left: 9px;
+}
+/* line 103, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .edit-details .items-container {
+  padding-top: 15px;
+  width: 100%;
+  justify-content: space-between;
+}
+/* line 109, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .edit-details .edit-calendar {
+  width: 470px;
+  position: relative;
+  left: -5px;
+}
+/* line 115, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/edit-form.scss */
+.edit-form-container .edit-details .description-box {
+  width: 709px;
+  padding: 15px;
+}
+/* line 17, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-grid.scss */
+.photo-grids-container {
+  width: 85%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2px;
+  justify-content: center;
+  margin: 1em auto;
+}
+/* line 28, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-grid.scss */
+.photo-grids-container .img-grid {
+  flex-grow: 1;
+  border-left: none;
+  box-sizing: border-box;
+  width: 30%;
+  max-width: 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 250px;
+  overflow: hidden;
+  justify-content: flex-end;
+  margin: 2px;
+}
+/* line 44, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-grid.scss */
+.photo-grids-container .img-grid .delete-button {
+  opacity: 0;
+  -webkit-transition: all 0.18s ease;
+  -moz-transition: all 0.18s ease;
+  -ms-transition: all 0.18s ease;
+  -o-transition: all 0.18s ease;
+  transition: all 0.18s ease;
+  margin: 7px;
+  padding: 0;
+  z-index: 1000;
+  border-radius: 45px;
+  color: #eee;
+  background: rgba(150, 150, 150, 0.8);
+  font-size: 28px;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+}
+/* line 65, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-grid.scss */
+.photo-grids-container .img-grid:hover .delete-button {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+/* line 70, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-grid.scss */
+.photo-grids-container .img-grid:hover .delete-button:hover {
+  cursor: pointer;
+  border-radius: 30%;
+  background: #f88379;
+}
+/* line 16, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider {
+  top: 0 !important;
+  align-self: center;
+  padding-bottom: 40px;
+}
+/* line 21, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider img {
+  display: flex !important;
+  margin: 0 auto;
+}
+/* line 26, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-slide {
+  margin: 0 auto;
+  width: 80%;
+}
+/* line 30, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-slide img {
+  position: relative;
+  width: 99%;
+  max-height: 585px !important;
+  max-width: 910px !important;
+}
+/* line 40, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-decorator-0 button, .show-page-container .slider .slider-decorator-1 button {
+  font-weight: lighter;
+  opacity: 0.7 !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0 !important;
+  text-align: center;
+  position: relative !important;
+}
+/* line 53, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-decorator-0 button:hover, .show-page-container .slider .slider-decorator-1 button:hover {
+  border-radius: 30%;
+  opacity: 1 !important;
+  background: rgba(248, 131, 121, 0.7) !important;
+  box-shadow: 0 0 4px #999 !important;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+/* line 62, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-decorator-0 {
+  left: 25px !important;
+}
+/* line 66, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-decorator-1 {
+  right: 5px !important;
+}
+/* line 70, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-decorator-2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+/* line 77, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-decorator-2[style] button {
+  font-size: 28px !important;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+/* line 82, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider .slider-decorator-2[style] button:hover {
+  font-size: 45px !important;
+}
+/* line 88, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/photo-slider.scss */
+.show-page-container .slider:hover {
+  cursor: grab !important;
+  cursor: -webkit-grab !important;
+}
+/* line 5, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container {
+  position: absolute;
+  top: 61px;
+  min-width: 1000px;
+  flex-direction: column;
+  width: 100%;
+  flex: none;
+  margin-bottom: 50px;
+}
+/* line 16, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .images-container {
+  position: relative;
+  min-height: 380px;
+  flex: none;
+  width: 100%;
+  justify-content: center;
+  background: #EEEEEE;
+  padding: 30px 80px;
+  box-sizing: border-box;
+}
+/* line 26, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .images-container .change-view-button {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+/* line 33, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .edit-images {
+  flex-direction: column;
+  align-items: center;
+}
+/* line 38, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+/* line 43, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content {
+  width: 928px;
+  min-width: 1000px;
+  padding: 20px 10px;
+  margin: 0 auto;
+  flex: none;
+  flex-direction: column;
+}
+/* line 52, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .header {
+  padding-bottom: 20px;
+  position: relative;
+  align-items: center;
+}
+/* line 58, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .header h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+/* line 64, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .header .vert-bar {
+  font-size: 25px;
+  font-weight: lighter;
+  padding: 0 20px;
+  align-items: center;
+}
+/* line 72, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .header p {
+  text-transform: uppercase;
+  font-size: 15px;
+  margin: 0 10px;
+  align-self: flex-end;
+  position: relative;
+  bottom: 5px;
+}
+/* line 82, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .header p:first-of-type {
+  margin-left: 0;
+}
+/* line 87, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .description {
+  flex-direction: column;
+}
+/* line 90, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .description h3 {
+  font-size: 17px;
+}
+/* line 95, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .description .address-dates-details p {
+  font-size: 16px;
+  padding: 0;
+}
+/* line 100, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .description .address-dates-details span {
+  padding: 0 17px;
+}
+/* line 105, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .description p {
+  padding: 20px 0;
+  font-size: 20px;
+}
+/* line 111, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content .show-buttons-container {
+  width: 50%;
+  align-self: center;
+  padding: 50px;
+  justify-content: space-around;
+}
+/* line 120, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content.host {
+  flex: none;
+  min-height: 450px;
+}
+/* line 125, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content.guest {
+  width: 600px;
+  min-width: 600px;
+  margin: 0 20px;
+}
+/* line 130, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+.show-page-container .show-page .text-content.guest p.address {
+  font-size: 16px;
+}
+
+@media all and (max-width: 1015px) {
+  /* line 138, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+  .show-page-container .show-page .text-content {
+    width: 79%;
+    align-items: flex-start;
+  }
+  /* line 142, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+  .show-page-container .show-page .text-content .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  /* line 146, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+  .show-page-container .show-page .text-content .header p {
+    align-self: flex-start;
+    padding-top: 16px;
+  }
+  /* line 151, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/show-page/show-page.scss */
+  .show-page-container .show-page .text-content .header .vert-bar {
+    display: none;
+  }
+}
+@-webkit-keyframes show-page-emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes show-page-emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-ms-keyframes show-page-emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes show-page-emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes show-page-emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 55, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+html, body, p, form, input, h1, h2, h5, h6, section, div, button, textarea {
+  margin: 0;
+  padding: 0;
+  display: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+/* line 68, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+html, body, .app-container, #content, #main, .landing-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* line 74, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+.search-results-container, .add-form-page, .show-page-container, .images-container {
+  -webkit-animation: show-page-emerge 0.34s linear;
+  -moz-animation: show-page-emerge 0.34s linear;
+  -ms-animation: show-page-emerge 0.34s linear;
+  -o-animation: show-page-emerge 0.34s linear;
+  animation: show-page-emerge 0.34s linear;
+}
+
+/* line 78, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+body {
+  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 200;
+  color: #676b6d;
+  letter-spacing: 0.4px;
+  display: flex;
+}
+
+/* line 88, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+button {
+  border: none;
+  background: none;
+  border-radius: 3.5px;
+  justify-content: center;
+  background: #f88379;
+  color: white;
+  margin-right: 20px;
+  padding: 10px 10px;
+  align-items: center;
+  text-align: center;
+  align-self: center;
+  -webkit-transition: all 0.18s ease;
+  -moz-transition: all 0.18s ease;
+  -ms-transition: all 0.18s ease;
+  -o-transition: all 0.18s ease;
+  transition: all 0.18s ease;
+}
+
+/* line 107, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+textarea {
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+/* line 112, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+button:hover {
+  background: #e16e64;
+}
+
+/* line 116, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+ul, li {
+  list-style-type: none;
+}
+
+/* line 120, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 125, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+a:hover, button:hover {
+  cursor: pointer;
+}
+
+/* line 129, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+input {
+  border: none;
+}
+
+/* line 133, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+*:focus {
+  outline: none;
+}
+
+/* line 137, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+input[type=date]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
+
+/* line 142, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+select {
+  -webkit-appearance: none;
+  border-radius: 0px;
+  background: white;
+}
+
+/* line 148, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+.app-container {
+  flex-direction: column;
+}
+
+/* line 152, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+#main {
+  position: relative;
+  flex-direction: column;
+}
+
+/* line 157, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+.map-container {
+  z-index: 10;
+  width: 40%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 166, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+#map {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media all and (max-width: 870px) {
+  /* line 176, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+  .map-container {
+    width: 28%;
+  }
+
+  /* line 180, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+  .search-results-container {
+    width: 72.6%;
+  }
+
+  /* line 184, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+  .search-container {
+    width: 99.2%;
+  }
+}
+@media all and (max-width: 735px) {
+  /* line 190, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+  .map-container, #map {
+    visibility: hidden;
+    position: absolute;
+    z-index: -1000;
+    width: 100%;
+  }
+
+  /* line 197, /Users/Yian/Downloads/Rx_RotationsExchanger-static-listings/app/assets/stylesheets/static_pages.scss */
+  .search-results-container, .search-container {
+    width: 100%;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
