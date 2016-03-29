@@ -75,6 +75,7 @@ Integrated with React, the flux architecture provides real time reflection of al
 * refactor DateTime to single method in app context to improve code maintainability
 * refactor index view for booking to use show partial
 * set up browsing history in localStorage
+* display trips and requests in carousel to improve UI
 
 ## Future Features
 * **Messaging model:** complete message history between guest and host for improved ease in trips/ request management
