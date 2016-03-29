@@ -42,15 +42,11 @@ All forms are custom designed to ensure intuitive use when adding, editing and d
 [add_form_feedback]: ./screenshots/add_form_feedback.png
 [auth_feedback]: ./screenshots/auth_feedback.png
 [search_filter]: ./screenshots/search_filter.png
-[index_filter]: ./screenshots/index_filter.png
-[autocomplete_add_form]: ./screenshots/autocomplete_add_form.png
 [autocomplete_nav]: ./screenshots/autocomplete_nav.png
 [autocomplete_landing]: ./screenshots/autocomplete_landing.png
-[single_page_auth]: ./screenshots/single_page_auth.png
 [grid_view]: ./screenshots/grid_view.png
 [slider_view]: ./screenshots/slider_view.png
 [trips]: ./screenshots/trips.png
-[requests_approved_denied]: ./screenshots/requests_approved_denied.png
 [requests_pending]: ./screenshots/requests_pending.png
 [listings]: ./screenshots/listings.png
 [filtered_search]: ./screenshots/filtered_search.png
