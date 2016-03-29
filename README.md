@@ -1,6 +1,6 @@
 # RotationsExchanger
 
-##[Live link](https://rx-rotations-exchanger.herokuapp.com)
+###[Live link](https://rx-rotations-exchanger.herokuapp.com)
 
 RotationsExchanger is a web application designed for medical students to easily list and search for homes while on away clinical rotations. This full stack application is completed with Ruby on Rails and React.js. Inspiration for the application comes from [AirBnB](airbnb.com) and [RotatingRoom](RotatingRoom.com).
 
