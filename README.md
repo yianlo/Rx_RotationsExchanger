@@ -5,31 +5,35 @@ RotationsExchanger is a web application designed for medical students to easily 
 
 ## Application Features
 
-#### Location search of any address provided with autocompletion of your inputs in full integration with the Google Maps API
+#### Location search of any address provided with autocompletion of user inputs in full integration with the Google Maps API
 ![autocomplete_landing]
 ![autocomplete_nav]
 
-#### Dynamic filtering allowing you to mix and match compounded search parameters, receive instant updates and the find the perfect room with ease
+#### Dynamic filtering allowing user to mix and match compounded search parameters and receive instant updates
 ![filtered_search]
 
-#### Vivid display of all photos, rooms and locations map in multiple selectable views catering to your various preferences
+#### Vivid display of all photos, rooms and locations map in multiple selectable views catering to various user preferences
 ![show_slider] ![show_grid]
 ![maps]
 
-#### Complete single page application with authentication and instant error handling to improve your user experience
+#### Complete single page application with authentication and instant error handling to provide a smooth user experience
 ![error_sign_up] ![add_form_feedback]
 
-#### Management made easy for all your account details
-#####Listings that will dynamically update from the nav bar
+#### Management made easy for all account details
+#####Listings
+Dynamic display and update of all listings from the nav bar
 ![listings]
+
+Edit form designed to ensure intuitive use when adding, editing and deleting photos and/or room details
+![edit_page]
 #####Requests
-View all requests organized by status
+Requests organized in single view by status
 ![requests_approved_denied]
 
-Easily approve or deny requests with instant status and page updates
+Request approve or denial complete with instant status and page updates
 ![requests_pending]
 
-#####Trips organized by dates to help you always be ready
+#####Trips
 ![trips]
 
 [add_form_feedback]: ./screenshots/add_form_feedback.png
@@ -48,6 +52,7 @@ Easily approve or deny requests with instant status and page updates
 [listings]: ./screenshots/listings.png
 [filtered_search]: ./screenshots/filtered_search.png
 [maps]: ./screenshots/maps.png
+[edit_page]: ./screenshots/edit_page.png
 
 ## Technical Features
 
