@@ -40,10 +40,10 @@ All forms are custom designed to ensure intuitive use when adding, editing and d
 
 #####Requests easily approved or denied with instant status and page updates
 
-<div style="display:flex;justify-content:space-around">
-    ![pending_request]
-    ![approved_request]
-</div>
+<section style="display:flex;justify-content:space-around">
+    <img width="200" src="./screenshots/pending_request.png">
+    <img width="400" src="./screenshots/approved_request.png"/>
+</section>
 
 #####Trips organized by status
 ![trips]
