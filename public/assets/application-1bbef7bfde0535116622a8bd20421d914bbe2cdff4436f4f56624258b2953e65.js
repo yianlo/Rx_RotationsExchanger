@@ -43498,7 +43498,7 @@ return jQuery;
 	
 	  getSearchSymbol: function () {
 	    return React.createElement('img', { className: 'search-symbol',
-	      src: 'http://res.cloudinary.com/dcnac6iuq/image/fetch/http://www2.psd100.com/ppp/2013/11/2701/search-1127191700.png' });
+	      src: 'https://res.cloudinary.com/dcnac6iuq/image/fetch/http://www2.psd100.com/ppp/2013/11/2701/search-1127191700.png' });
 	  },
 	
 	  renderAutocompleteSearch: function () {
@@ -44323,7 +44323,7 @@ return jQuery;
 	      React.createElement(
 	        'div',
 	        { className: 'logo-container' },
-	        React.createElement('img', { className: 'logo-design', src: 'http://res.cloudinary.com/dcnac6iuq/image/fetch/http://image.shutterstock.com/z/stock-photo-rx-pharmacy-symbol-made-out-of-red-pills-over-white-3947191.jpg' })
+	        React.createElement('img', { className: 'logo-design', src: 'https://res.cloudinary.com/dcnac6iuq/image/fetch/http://image.shutterstock.com/z/stock-photo-rx-pharmacy-symbol-made-out-of-red-pills-over-white-3947191.jpg' })
 	      ),
 	      React.createElement(
 	        'h2',
@@ -44443,7 +44443,7 @@ return jQuery;
 	        'form',
 	        { className: "auth-form " + (this.className || "") },
 	        React.createElement('img', { className: 'auth-img',
-	          src: 'http://res.cloudinary.com/dcnac6iuq/image/fetch/http://cdn.photoaffections.com/images/icon-profile.png' }),
+	          src: 'https://res.cloudinary.com/dcnac6iuq/image/fetch/http://cdn.photoaffections.com/images/icon-profile.png' }),
 	        React.createElement('input', { className: 'search-item',
 	          valueLink: this.linkState('email'),
 	          type: 'text',
@@ -45157,8 +45157,8 @@ return jQuery;
 	      React.createElement(
 	        'video',
 	        { autoPlay: true, id: 'bgvid', loop: true,
-	          poster: 'http://res.cloudinary.com/dcnac6iuq/image/upload/v1456600166/Screen_Shot_2016-02-25_at_10.39.06_PM_xhfpyq.png' },
-	        React.createElement('source', { src: 'http://res.cloudinary.com/dcnac6iuq/video/upload/ac_none/v1456472406/homevid_gu3pd7.mp4', type: 'video/mp4' })
+	          poster: 'https://res.cloudinary.com/dcnac6iuq/image/upload/v1456600166/Screen_Shot_2016-02-25_at_10.39.06_PM_xhfpyq.png' },
+	        React.createElement('source', { src: 'https://res.cloudinary.com/dcnac6iuq/video/upload/ac_none/v1456472406/homevid_gu3pd7.mp4', type: 'video/mp4' })
 	      ),
 	      React.createElement(
 	        'div',
@@ -60114,7 +60114,7 @@ return jQuery;
 /***/ function(module, exports) {
 
 	IMAGE_URLS = {
-	  NO_IMG: "http://res.cloudinary.com/dcnac6iuq/image/fetch/http://www.poplegs.com/media/uploads/no-img.jpg"
+	  NO_IMG: "https://res.cloudinary.com/dcnac6iuq/image/fetch/http://www.poplegs.com/media/uploads/no-img.jpg"
 	};
 	
 	module.exports = IMAGE_URLS;

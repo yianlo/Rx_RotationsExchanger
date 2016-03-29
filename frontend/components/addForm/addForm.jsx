@@ -183,7 +183,7 @@ var AddForm = React.createClass({
 
           <div className="add-form-item-container">
             <label className="add-form-label">Description</label>
-            <textarea rows="6" cols="96.5"
+            <textarea rows="6" cols="108"
               className="add-form-textarea"
               onChange={this.handleDescriptionChange}
               placeholder={detailsPlaceholder}></textarea>

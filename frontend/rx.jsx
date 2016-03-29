@@ -45,5 +45,9 @@ var routes = (
 )
 
 document.addEventListener('DOMContentLoaded', function(){
-  ReactDOM.render( <Router>{routes}</Router>, content);
+  ReactDOM.render(
+    <Router history={hashHistory}>
+      {routes}
+    </Router>,
+    content);
 })

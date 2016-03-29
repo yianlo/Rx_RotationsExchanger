@@ -21,7 +21,7 @@ var Logo = React.createClass({
     return (
       <div className="logo" onClick={this.backToIndex}>
           <div className="logo-container">
-            <img className="logo-design" src="http://res.cloudinary.com/dcnac6iuq/image/fetch/http://image.shutterstock.com/z/stock-photo-rx-pharmacy-symbol-made-out-of-red-pills-over-white-3947191.jpg"/>
+            <img className="logo-design" src="https://res.cloudinary.com/dcnac6iuq/image/fetch/http://image.shutterstock.com/z/stock-photo-rx-pharmacy-symbol-made-out-of-red-pills-over-white-3947191.jpg"/>
           </div>
 
           <h2 className="logo-text">rotationsXchanger</h2>

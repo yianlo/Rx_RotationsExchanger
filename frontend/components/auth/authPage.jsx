@@ -87,7 +87,7 @@ var AuthPage = React.createClass({
 
         <form className={"auth-form " + (this.className || "")} >
           <img className="auth-img"
-            src="http://res.cloudinary.com/dcnac6iuq/image/fetch/http://cdn.photoaffections.com/images/icon-profile.png"></img>
+            src="https://res.cloudinary.com/dcnac6iuq/image/fetch/http://cdn.photoaffections.com/images/icon-profile.png"></img>
 
           <input className="search-item"
             valueLink={this.linkState('email')}

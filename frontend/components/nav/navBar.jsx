@@ -58,7 +58,7 @@ var NavBar = React.createClass({
 
   getSearchSymbol: function(){
     return <img className="search-symbol"
-      src="http://res.cloudinary.com/dcnac6iuq/image/fetch/http://www2.psd100.com/ppp/2013/11/2701/search-1127191700.png">
+      src="https://res.cloudinary.com/dcnac6iuq/image/fetch/http://www2.psd100.com/ppp/2013/11/2701/search-1127191700.png">
     </img>
   },
 

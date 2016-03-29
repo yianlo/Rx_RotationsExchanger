@@ -6,10 +6,10 @@ var NavBarItem = React.createClass({
   getInitialState: function(){
     return { submenuDisplay: {display: "none"} }
   },
-  
+
   generateSubmenu: function(){
     return (
-      <div className="submenu-item" style={this.state.submenuDisplay}>
+      <div key="submenu" className="submenu-item" style={this.state.submenuDisplay}>
         {this.props.submenu}
       </div>
     )
@@ -17,10 +17,10 @@ var NavBarItem = React.createClass({
 
   generateContent: function(){
     if(this.props.submenu){
-      var content = [ <a>{this.props.text}</a> ];
+      var content = [ <a key="submenu-text">{this.props.text}</a> ];
       content.push(this.generateSubmenu());
     } else {
-      var content = [ <a>{this.props.text}</a> ];
+      var content = [ <a key="submenu-text">{this.props.text}</a> ];
     }
     return content;
   },
