@@ -5,7 +5,7 @@ RotationsExchanger is a web application designed for medical students to easily 
 
 ## Application Features
 
-#### Location search and autocompletion of any address in full integration with the Google Maps API
+#### Location search and autocompletion of any address in full integration with Google Maps API
 ![autocomplete_landing]
 ![autocomplete_nav]
 
