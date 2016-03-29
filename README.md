@@ -1,7 +1,7 @@
 # RotationsExchanger
 [Live link](rx-rotations-exchanger.herokuapp.com)
 
-RotationsExchanger is a web application designed for medical students to easily list and search for homes while on away medical rotations. This full stack application is completed with Ruby on Rails and React.js. Inspiration for the application comes from AirBnB and RotatingRoom.com.
+RotationsExchanger is a web application designed for medical students to easily list and search for homes while on away clinical rotations. This full stack application is completed with Ruby on Rails and React.js. Inspiration for the application comes from [AirBnB](airbnb.com) and [RotatingRoom](RotatingRoom.com).
 
 ## Application Features
 
@@ -23,7 +23,11 @@ RotationsExchanger is a web application designed for medical students to easily 
 ####Listings
 ![listings]
 ####Requests
-![requests_pending] ![requests_approved_denied]
+View all requests dynamicall organized by status.
+![requests_pending]
+
+Easily view guest messages and approve or deny requests.
+![requests_approved_denied]
 ####Trips
 ![trips]
 
@@ -40,6 +44,7 @@ RotationsExchanger is a web application designed for medical students to easily 
 [trips]: ./screenshots/trips.png
 [requests_approved_denied]: ./screenshots/requests_approved_denied.png
 [requests_pending]: ./screenshots/requests_pending.png
+[listings]: ./screenshots/listings.png
 
 ## Technical Features
 
@@ -47,6 +52,12 @@ RotationsExchanger is a web application designed for medical students to easily 
 * Ruby on Rails
 * React.js
 * Postgresql
+
+###Models Schema
+* Users
+* Rooms
+* Images
+* Bookings
 
 ###APIs
 * Google Maps API
@@ -60,14 +71,14 @@ Most React components are abstracted and grouped by logical similarity. This mak
 Integrated with React, the flux architecture provides real time reflection of all needed data from the database, allowing dynamic updates and minimal server requests.
 
 ## Todos
-* refactor DateTime to single method in app context improve code maintainability
+* refactor DateTime to single method in app context to improve code maintainability
 * refactor index view for booking to use show partial
 * set up browsing history in localStorage
 
 ## Future Features
-* **Messaging Model:** complete message history between guest and host for improved ease in trips/ request management
-* **Availability mode:** multiple date ranges for each listing's available dates, allowing user to list with more flexibility
-* **Favorites mode:** save listings for future trips
+* **Messaging model:** complete message history between guest and host for improved ease in trips/ request management
+* **Availability model:** multiple date ranges for each listing's available dates, allowing user to list with more flexibility
+* **Favorites model:** save listings for future trips
 
 
 [views]: ./docs/views.md
