@@ -9,17 +9,17 @@ RotationsExchanger is a web application designed for medical students to easily 
 ![autocomplete_landing]
 ![autocomplete_nav]
 
-#### Dynamic filtering allowing user to mix and match compounded search parameters and receive instant updates
+#### Dynamic filtering allowing users to mix and match compounded search parameters and receive instant updates
 ![filtered_search]
 
 #### Vivid display of all photos, rooms and locations map in multiple selectable views catering to various user preferences
 ![slider_view] ![grid_view]
 ![maps]
 
-#### Booking made ease with automatic calculated displays of night count and total price
+#### Booking made ease with automatic calculated display of nights booked and total price
 ![booking]
 
-#### Complete single page application with authentication and instant error handling to provide a smooth user experience
+#### Complete single page application with authentication and instant error handling across application to provide a smooth user experience
 ![auth_feedback] ![add_form_feedback]
 
 #### Management made easy for all account details
@@ -30,14 +30,11 @@ Dynamic display and update of all listings from the nav bar
 All forms are custom designed to ensure intuitive use when adding, editing and deleting rooms and/or photos
 ![add_page]
 ![edit_page]
-#####Requests
-Requests organized in single view by status
-![requests_approved_denied]
 
-Request approve or denial complete with instant status and page updates
+#####Requests easily approved or denied with instant status and page updates
 ![requests_pending]
 
-#####Trips
+#####Trips organized by status
 ![trips]
 
 [add_form_feedback]: ./screenshots/add_form_feedback.png
@@ -58,6 +55,7 @@ Request approve or denial complete with instant status and page updates
 [maps]: ./screenshots/maps.png
 [edit_page]: ./screenshots/edit_page.png
 [booking]: ./screenshots/booking.png
+[add_page]: ./screenshots/add_page.png
 
 ## Technical Features
 
