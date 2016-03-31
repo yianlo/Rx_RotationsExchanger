@@ -8,6 +8,13 @@ ApiActions = {
     });
   },
 
+  receiveFirstRooms: function(rooms){
+    AppDispatcher.dispatch({
+      actionType: "FIRST_ROOMS_RECEIVED",
+      rooms: rooms
+    });
+  },
+
   receiveUserRooms: function(rooms){
     AppDispatcher.dispatch({
       actionType: "USER_ROOMS_RECEIVED",

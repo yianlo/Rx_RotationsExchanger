@@ -19,9 +19,7 @@ var Index = React.createClass({
   },
 
   _onRoomChange: function(){
-    this.setState({
-      rooms: RoomStore.all()
-    });
+    this.setState({ rooms: RoomStore.all() });
   },
 
   componentWillMount: function(){

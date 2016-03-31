@@ -1,6 +1,13 @@
 class Api::RoomsController < ApplicationController
+
+  def first_three
+    @rooms = Room.all.includes(:images).take(3)
+    render :index
+  end
+
   def filter
     @rooms = Room.filter_by_params(params[:filter])
+    # @rooms = Room.filter_by_params(params[:filter]).inclues(:images)
     render :index
   end
 
@@ -40,7 +47,7 @@ class Api::RoomsController < ApplicationController
     render :show
   end
 
-  # private
+  private
 
   def room_params
     params.require(:room).permit(

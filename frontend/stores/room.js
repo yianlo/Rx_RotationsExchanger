@@ -10,17 +10,12 @@ RoomStore.all = function () {
   return Object.keys(_rooms).map(function(roomId){
     return _rooms[roomId]
   })
-  // return _rooms.slice();
 };
 
 var _resetRooms = function(rooms){
   _rooms = {};
 
-  if (rooms instanceof Array){
-    rooms.forEach( function(room){
-      _rooms[room.id] = room;
-    });
-  }
+  _addRooms(rooms);
 };
 
 var _resetUserRooms = function(rooms){
@@ -30,6 +25,14 @@ var _resetUserRooms = function(rooms){
     });
   } else if (!rooms){
     _userRooms = {};
+  }
+};
+
+var _addRooms = function(rooms){
+  if (rooms instanceof Array){
+    rooms.forEach( function(room){
+      _rooms[room.id] = room;
+    });
   }
 };
 
@@ -65,6 +68,7 @@ RoomStore.getUserRooms = function(){
   })
 };
 
+
 RoomStore.findByHostId = function(hostId){
   _userRooms = [];
 
@@ -81,6 +85,10 @@ RoomStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case "ROOMS_RECEIVED":
       _resetRooms(payload.rooms);
+      RoomStore.__emitChange();
+      break;
+    case "FIRST_ROOMS_RECEIVED":
+      _addRooms(payload.rooms);
       RoomStore.__emitChange();
       break;
     case "USER_ROOMS_RECEIVED":

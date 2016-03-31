@@ -1,8 +1,13 @@
 var ApiActions = require('../actions/apiActions');
 
 ApiUtil = {
-  fetchRoomsWithinParams: function(params){
+  fetchFirstRooms: function(){
+    $.get("/api/rooms/first_three", function(fetchedRooms){
+      ApiActions.receiveFirstRooms(fetchedRooms);
+    })
+  },
 
+  fetchRoomsWithinParams: function(params){
     $.get("/api/rooms/filter", {filter: params}, function(fetchedRooms){
       ApiActions.receiveAll(fetchedRooms);
     })
