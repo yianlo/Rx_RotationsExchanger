@@ -71,7 +71,7 @@ var LandingIndex = React.createClass({
               <a href="https://www.linkedin.com/in/yianlo" target="_blank">LinkedIn</a>
             </div>
             <div className="my-link">
-              <a href="https://indd.adobe.com/view/c32bde0c-4b69-4e63-b848-8343ebccc457" target="_blank">Resume</a>
+              <a href="https://indd.adobe.com/view/d34b0e4f-1c7c-49ba-a5e0-c523a19a9947" target="_blank">Resume</a>
             </div>
           </div>
 
