@@ -64,14 +64,14 @@ var LandingIndex = React.createClass({
 
           <hr></hr>
           <div className="my-info">
-            <div className="github-logo my-link">
-              <p>GitHub</p>
+            <div className="my-link">
+              <a href="https://github.com/yianlo" target="_blank">GitHub</a>
             </div>
             <div className="my-link">
-              <p>LinkedIn</p>
+              <a href="https://www.linkedin.com/in/yianlo" target="_blank">LinkedIn</a>
             </div>
             <div className="my-link">
-              <p>Resume</p>
+              <a href="https://indd.adobe.com/view/c32bde0c-4b69-4e63-b848-8343ebccc457" target="_blank">Resume</a>
             </div>
           </div>
 
