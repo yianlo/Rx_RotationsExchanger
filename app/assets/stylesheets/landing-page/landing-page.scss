@@ -144,7 +144,7 @@ $top-push: 61px;
     background: black;
     position: absolute;
     width: 100%;
-    height: 820px;
+    height: 810px;
     box-shadow: 0 0 10px black;
 
     opacity: 0.76;
@@ -218,6 +218,8 @@ $top-push: 61px;
 
     .my-link{
       padding: 25px;
+      position: relative;
+      top: -5px;
     }
   }
 
