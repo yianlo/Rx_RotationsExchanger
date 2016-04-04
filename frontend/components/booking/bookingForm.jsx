@@ -3,8 +3,6 @@ var React = require('react'),
     LinkedStateMixin = require('react-addons-linked-state-mixin');
     apiUtil = require('../../util/apiUtil');
 
-    // BookingDates = require('./dateRangeFields'),
-
 var BookingForm = React.createClass({
   mixins: [LinkedStateMixin],
 
@@ -66,16 +64,21 @@ var BookingForm = React.createClass({
 
   handleRequest: function(e){
     e.preventDefault();
-    var request = {};
 
-    Object.keys(this.state).forEach(function(key){
-      request[key] = this.state[key];
-    }.bind(this))
+    if (this.context.requireAuth()){
+      var request = {};
 
-    request["room_id"] = this.props.room.id;
-    request["price"] = this.totalPrice;
+      Object.keys(this.state).forEach(function(key){
+        request[key] = this.state[key];
+      }.bind(this))
 
-    apiUtil.createRequest(request, this.redirectOnSuccess)
+      request["room_id"] = this.props.room.id;
+      request["price"] = this.totalPrice;
+
+      apiUtil.createRequest(request, this.redirectOnSuccess)
+    }
+
+    document.body.scrollTop = document.documentElement.scrollTop = 60;
   },
 
   render: function(){

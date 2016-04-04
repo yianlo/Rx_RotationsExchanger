@@ -199,19 +199,6 @@ var AddForm = React.createClass({
       </div>
     )
   }
-})
-
-// <AutocompleteSearch
-//   id={"autocomplete-add"}
-//   placeholder="Enter your address"
-//   classname="add-form-input long-input"
-//   handleChange={
-//     function(e){
-//       this.linkValState("address", e.target.value)
-//     }.bind(this)
-//   }
-//   container="add-form-item-container"
-//   label={this.getSearchLabel()}
-// />
+});
 
 module.exports = AddForm;
