@@ -89,7 +89,7 @@ var App = React.createClass({
 
     var mapOptions = {
         zoom: 12,
-        // center: new google.maps.LatLng(37.7833, -122.4167),
+        center: new google.maps.LatLng(37.7833, -122.4167),
         mapTypeControlOptions: {
           mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
         }
