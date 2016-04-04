@@ -30,7 +30,7 @@ IMG_URLS = [
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/http://s3.favim.com/orig/46/bed-bedroom-interior-light-photography-Favim.com-412357.jpg",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/http://jeffrobertsimaging.com/wp-content/uploads/2013/03/Maine-Kitchen-Photography-Jeff-Roberts-Imaging.jpg",
   "http://mazungo.com/wp-content/uploads/2015/11/pinterest-girl-bedroom-ideas-uratech-design-in-bedroom-decorating-ideas-on-pinterest.jpg",
-  "http://www.dimun.co/images/bedroom-ideas-tumblr-tumblr-girl-bedroom-ideas-500-x-333.jpg",
+  "https://38.media.tumblr.com/ca653731194b2b6a4c53f2db385a2885/tumblr_inline_nl4uyeOImI1tq27qp.png",
   "http://www3.pictures.lonny.com/mp/DwqA1QSCnmGx.jpg",
   "https://33.media.tumblr.com/tumblr_m16nnb4VMr1qkkadg.jpg",
   "http://www.houseandgarden.pw/wp-content/uploads/2016/03/best-design-vintage-white-bedroom-tumblr-white-christmas-bedroom-beach-decor.jpg",
