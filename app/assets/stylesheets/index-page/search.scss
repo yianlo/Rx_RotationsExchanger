@@ -107,7 +107,8 @@ input[type="checkbox"]:not(:checked) + .custom-checkbox:after,
 input[type="checkbox"]:checked + .custom-checkbox:after {
   content: '✔';
   position: absolute;
-  top: 1px; left: 4px;
+  top: 1px;
+  right: -1.5px;
   font-size: 18px;
   line-height: 0.8;
   color: #32959F;
