@@ -219,7 +219,12 @@ $top-push: 61px;
     .my-link{
       padding: 25px 16px;
       position: relative;
-      top: -5px;
+      top: -8px;
+
+      a:hover{
+        font-weight: 600;
+        transition-duration: 0.3s;
+      }
     }
   }
 
