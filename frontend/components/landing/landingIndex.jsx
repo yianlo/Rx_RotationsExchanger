@@ -65,6 +65,12 @@ var LandingIndex = React.createClass({
           <hr></hr>
           <div className="my-info">
             <div className="my-link">
+              <p>Created by Yian Lo</p>
+            </div>
+            <div className="my-link">
+              <p>|</p>
+            </div>
+            <div className="my-link">
               <a href="https://github.com/yianlo" target="_blank">GitHub</a>
             </div>
             <div className="my-link">

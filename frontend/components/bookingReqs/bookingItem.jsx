@@ -147,7 +147,7 @@ var BookingItem = React.createClass({
     )
   },
 
-  getBookingInfo: function(){
+  getHostingReqInfo: function(){
     if (this.state.isTooltipActive){
       var messageLinkVerb = "Hide";
       var handleMessageLinkClick = this.hideGuestMessage;
@@ -172,6 +172,15 @@ var BookingItem = React.createClass({
     )
   },
 
+  getTripsInfo: function(){
+    return(
+      <div className="booking-info">
+        <hr></hr>
+        <p>{"Total $" + this.props.booking.total_price}</p>
+      </div>
+    )
+  },
+
   render: function(){
     return(
       <div onClick={this.handleClick} className="booking-item">
@@ -186,8 +195,7 @@ var BookingItem = React.createClass({
         <p>{this.props.booking.room.title}</p>
         <p>{this.displayDate(this.props.booking.checkin_date, this.props.booking.checkout_date)}</p>
 
-        {this.getBookingInfo()}
-
+        {this.props.page === "hostingReqs" ? this.getHostingReqInfo() : this.getTripsInfo()}
         {this.props.page === "trips" ? this.getStatus() : null}
         {this.props.group === "pending" ? this.getApproveDenyButtons() : null}
       </div>

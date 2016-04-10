@@ -94,7 +94,7 @@ input[type="checkbox"]:not(:checked) + .custom-checkbox:before,
 input[type="checkbox"]:checked + .custom-checkbox:before {
   content: '';
   position: absolute;
-  left:0;
+  right:0;
   top: 0;
   width: 15px; height: 15px;
   border: 1px solid #aaa;
