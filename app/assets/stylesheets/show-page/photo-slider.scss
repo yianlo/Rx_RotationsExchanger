@@ -23,16 +23,18 @@ $theme-color-buttons: rgba(248, 131, 121, 0.7);
       margin: 0 auto;
     }
 
+    .slider-list{
+      img{
+        position: relative;
+        width: 99%;
+        max-height: 580px !important;
+        max-width: 910px !important;
+      }
+    }
+
     .slider-slide {
       margin: 0 auto;
       width: 80%;
-
-      img {
-        position: relative;
-        width: 99%;
-        max-height: 585px !important;
-        max-width: 910px !important;
-      }
     }
 
 

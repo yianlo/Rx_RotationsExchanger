@@ -24,7 +24,7 @@ TITLES = [
 ]
 
 IMG_URLS = [
-  "https://a2.muscache.com/im/pictures/75948120/4c55ea5e_original.jpg?aki_policy=x_medium",
+  "https://metrouk2.files.wordpress.com/2016/02/room-3.jpg?quality=80&strip=all",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://kellieanne.files.wordpress.com/2011/06/hgtv-emily-teal-couch.jpg",
   "https://a2.muscache.com/im/pictures/56652807/d4e1a77a_original.jpg?aki_policy=x_large",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://eatdrinkgivego.files.wordpress.com/2015/04/airbnb-room.jpg",
@@ -39,20 +39,20 @@ IMG_URLS = [
 ];
 
 MORE_IMGS = [
+  "https://a2.muscache.com/im/pictures/75948120/4c55ea5e_original.jpg?aki_policy=x_medium",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://www.asid.org/sites/default/files/kitchen%20design_0.jpg",
-  "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://smdphotography.co.uk/wp-content/uploads/2013/04/plug_kitchen_swith_lane_lores-0012.jpg",
+  "https://a2.muscache.com/im/pictures/4939557/4f95a6d3_original.jpg?aki_policy=x_large",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://cdn.decoist.com/wp-content/uploads/2015/04/Track-lighting-adds-beauty-to-the-cozy-window-seat.jpg",
-  "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://wallpaperspics.com/thumbs/26/e/warm-living-room-couch-white-264670.jpg",
+  "https://a2.muscache.com/im/pictures/50510726/01d089b8_original.jpg?aki_policy=x_large",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://cdn.home-designing.com/wp-content/uploads/2010/04/gorgeous-living-room.jpg",
-  "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://st.hzcdn.com/simgs/83f1a2b5018bbd8d_4-9046/contemporary-living-room.jpg",
-  "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://static1.squarespace.com/static/52e12a98e4b0bd0cf79bddf1/t/53dfc1a5e4b09cae351e8593/1407173074802/beautiful-white-bathroom-interior-bathtub-and-shower-with-backsplash-.jpg",
-  "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://www.completelylondon.co.uk/wp-content/uploads/2012/04/Completely-London-11497.jpg",
-  "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://st.hzcdn.com/simgs/8ec1eb170d24fb60_4-3066/eclectic-bathroom.jpg",
-  "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://www.newbornphotography.com/i/admin/CW1A5399-1.jpg",
-  "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://st.hzcdn.com/simgs/96a10d8f00b6ae68_4-2875/eclectic-home-office.jpg",
-  "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://static1.squarespace.com/static/5537dd3ce4b0a7660df34746/55f41054e4b01ca71c0e1d86/55f4145be4b0a2423b5bce18/1442059356304/Home-staging-photography-2.jpg",
-  "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://static1.squarespace.com/static/54656fd2e4b00540a6d8067f/5465708ee4b072133bf2823d/5500fd15e4b03037fd13d168/1426128153873/2416Hawthrn-111.jpg?format=750w",
-  "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://www.nataliechampajennings.com/wp-content/uploads/2016/01/15-16916-post/001-Eden-Prairie-Minnesota-family-photography-at-home-1024x683(pp_w900_h600).jpg",
+  "https://st.hzcdn.com/simgs/83f1a2b5018bbd8d_4-9046/contemporary-living-room.jpg",
+  "https://static1.squarespace.com/static/52e12a98e4b0bd0cf79bddf1/t/53dfc1a5e4b09cae351e8593/1407173074802/beautiful-white-bathroom-interior-bathtub-and-shower-with-backsplash-.jpg",
+  "https://st.hzcdn.com/simgs/8ec1eb170d24fb60_4-3066/eclectic-bathroom.jpg",
+  "https://static.trip101.com/paragraph_media/pictures/000/022/769/large/Comfortable_and_Cozy_Room.png?1457416215",
+  "https://st.hzcdn.com/simgs/96a10d8f00b6ae68_4-2875/eclectic-home-office.jpg",
+  "https://static.trip101.com/paragraph_media/pictures/000/011/898/large/Sky_Room.jpg?1448855856",
+  "https://s-media-cache-ak0.pinimg.com/736x/ce/10/b4/ce10b441b9bdea108bf951680066995a.jpg",
+  "https://s-media-cache-ak0.pinimg.com/736x/bd/ce/56/bdce5696e0c8370be524c680ed07dc44.jpg",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://static.tumblr.com/44e9b1cfcbb5e74b0c870f242ddee196/ugalfcd/1qxmpyow2/tumblr_static_cute.jpg",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://s-media-cache-ak0.pinimg.com/736x/14/ce/2b/14ce2bbf888f301e68203d21899fa3ca.jpg",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://i.ebayimg.com/00/s/NDI3WDgwMA==/z/rswAAOSwcu5UPklE/$_32.JPG",
@@ -62,7 +62,7 @@ MORE_IMGS = [
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://41.media.tumblr.com/e77d8c67c517910ee0dbbb145f2bd6b5/tumblr_nrag1zsseJ1rz4wo0o1_500.jpg",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://41.media.tumblr.com/a0e16c97e711289344128148988cf09b/tumblr_nncwwv9vr91u6dkido1_500.jpg",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://secure.static.tumblr.com/508f0bb43b41a11bb1df349e5de77378/qojzghb/CVynzrj79/tumblr_static_tumblr_static_cwei2surijso0ococ44sk8g4s_640.jpg",
-  "https://res.cloudinary.com/dcnac6iuq/image/fetch/https://s1.favim.com/610/150324/lights-purple-room-tumblr-room-Favim.com-2591010.jpg"
+  "https://a2.muscache.com/im/pictures/9e685b08-222f-46d1-96b4-643a8e9fd318.jpg?aki_policy=x_large"
 ];
 
 HOME_TYPE = ["House", "Apt/ Condo", "Studio"]
