@@ -41,7 +41,7 @@ $cbox-bg-color: #EDEFED;
   box-shadow: inset 0 2px 2px #e9e9e9;
 
   margin: 0 6.250px;
-  padding: 10px 15px;
+  padding: 8px 15px;
 
   width: 29%;
   height: 38px;
@@ -54,6 +54,8 @@ $cbox-bg-color: #EDEFED;
 
 .search-item label{
   overflow: hidden;
+  position: relative;
+  top: 2px;
 }
 
 select.search-item{
@@ -65,13 +67,71 @@ select.search-item{
   justify-content: space-between;
 }
 
-input[type=checkbox]{
-  align-self: center;
-    position: relative;
-    transform: scale(1.4);
-    -webkit-transform: scale(1.4);
-    border-style: none;
-    top: 0.5px;
+// input[type=checkbox]{
+//   align-self: center;
+//     position: relative;
+//     transform: scale(1.4);
+//     -webkit-transform: scale(1.4);
+//     border-style: none;
+//     top: 0.5px;
+// }
+
+/* Base for label styling */
+input[type="checkbox"]:not(:checked),
+input[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+input[type="checkbox"]:not(:checked) + .custom-checkbox,
+input[type="checkbox"]:checked + .custom-checkbox {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+input[type="checkbox"]:not(:checked) + .custom-checkbox:before,
+input[type="checkbox"]:checked + .custom-checkbox:before {
+  content: '';
+  position: absolute;
+  left:0;
+  top: 0;
+  width: 15px; height: 15px;
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+}
+/* checked mark aspect */
+input[type="checkbox"]:not(:checked) + .custom-checkbox:after,
+input[type="checkbox"]:checked + .custom-checkbox:after {
+  content: '✔';
+  position: absolute;
+  top: 1px; left: 4px;
+  font-size: 18px;
+  line-height: 0.8;
+  color: #32959F;
+  transition: all .1s;
+}
+/* checked mark aspect changes */
+input[type="checkbox"]:not(:checked) + .custom-checkbox:after {
+  opacity: 0;
+  transform: scale(0);
+}
+input[type="checkbox"]:checked + .custom-checkbox:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* accessibility */
+input[type="checkbox"]:checked:focus + .custom-checkbox:before,
+input[type="checkbox"]:not(:checked):focus + .custom-checkbox:before {
+  border: 1px dotted blue;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 1px solid #4778d9!important;
 }
 
 #priceSlider {

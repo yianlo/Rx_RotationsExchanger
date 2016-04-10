@@ -13,12 +13,13 @@ var TypeSearchCheckbox = React.createClass({
   render: function() {
     return(
       <div className="search-type-field  search-item">
-        <label htmlFor="filled-in-box">{this.props.value}</label>
+        <label>{this.props.value}</label>
         <input className="filled-in"
           type="checkbox"
-          id="filled-in-box"
+          id={this.props.value}
           value={this.props.value}
           onChange={this.handleClick}/>
+        <label htmlFor={this.props.value} className="custom-checkbox"></label>
       </div>
     )
   }

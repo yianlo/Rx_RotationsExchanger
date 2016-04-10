@@ -29,7 +29,7 @@ IMG_URLS = [
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/http://www.wallcoo.net/photography/home_space_01/images/Interior_Photography_GK032.jpg",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/http://s3.favim.com/orig/46/bed-bedroom-interior-light-photography-Favim.com-412357.jpg",
   "https://res.cloudinary.com/dcnac6iuq/image/fetch/http://jeffrobertsimaging.com/wp-content/uploads/2013/03/Maine-Kitchen-Photography-Jeff-Roberts-Imaging.jpg",
-  "http://mazungo.com/wp-content/uploads/2015/11/pinterest-girl-bedroom-ideas-uratech-design-in-bedroom-decorating-ideas-on-pinterest.jpg",
+  "http://www.hegeinfrance.com/wp-content/uploads/2015/06/airbnb-copenhagen-apartment-living-room.jpg",
   "https://38.media.tumblr.com/ca653731194b2b6a4c53f2db385a2885/tumblr_inline_nl4uyeOImI1tq27qp.png",
   "http://www3.pictures.lonny.com/mp/DwqA1QSCnmGx.jpg",
   "https://33.media.tumblr.com/tumblr_m16nnb4VMr1qkkadg.jpg",
@@ -68,6 +68,21 @@ MORE_IMGS = [
 HOME_TYPE = ["House", "Apt/ Condo", "Studio"]
 ROOM_TYPE = ["Private room", "Public room"]
 
+DESCRIPTIONS = [
+  "Gorgeous private Master BR, BA in sunlight-soaked modern apartment (blackout curtains included). At the meeting point of Hayes Valley, The Mission, Lower Haight, Castro, and SoMa, you're in the middle of the best SF has to offer!",
+  "Beautiful street with historic SF Victorians. I live upstairs in the main house and rent the 1bd/1ba in-law unit downstairs. Unit has separate entrance and full kitchen. Awesome yard with trees, deck, and gas fireplace.",
+  "Your lovely room is fitted with a Comfy Memory Foam Murphy Bed that folds up; transforming the room into a spacious living room with a leather couch and views of the city street below.",
+  "Spectacular room in beautiful large apt—includes your very own private bathroom and large private deck with great views. Hood is quiet with hip bars and notable restaurants.",
+  "Large 1 bedroom with LOTs of light right on 18th St off Mission St - phenomenal location. Lots of records and books in our artsy apartment.",
+  "Charming guest suite with a private entrance on a leafy and quiet block in the Inner Richmond District. Located 2 between Golden Gate Park and The Presidio, this is a perfect lodging for singles or couples. Convenient to many bus routes.",
+  "This one bedroom with private bath at the rear of a 1925 two-story home has a separate keyed entrance right off the deck. Welcome beer or glass of wine, if you'd like. Nicer continental breakfast :). Beach, park, buses very close.",
+  "The building is brand new and in the perfect location! At the intersection of the Mission, Hayes Valley, and Lower Haight. Right in the heart of authentic SF :)",
+  "Gorgeous and sunny condo in Noe Valley. Beautiful views of the city. Gourmet kitchen, terrace w barbecue grill.",
+  "I have a spare bedroom in my beach cottage with it's own half bath (shower only). The room is cozy and private with access to the living room, kitchen and front porch.",
+  "Located in the highly desirable Noe Valley neighborhood, this cozy room is private with a separate entry & a small en suite full bathroom. Walking distance to restaurants, markets, bars, cafes, South Bay shuttle stops, and public transportation.",
+  "A great view in a friendly household. A new desk, bed, and a giant walk in closet. The paint job and furniture are brand new. Hardwood floor + a new rug. Netflix, commercial free Hulu, and Amazon prime for your TV + chromecast."
+]
+
 User.create(email: "test1@gmail.com", password: "password1")
 User.create(email: "test@gmail.com", password: "password")
 User.create(email: "test2@gmail.com", password: "password2")
@@ -76,7 +91,7 @@ User.create(email: "test3@gmail.com", password: "password3")
 (0...TITLES.length).to_a.each do |i|
   Room.create(
     title: TITLES[i],
-    description: Faker::Hipster.paragraph,
+    description: DESCRIPTIONS[i],
     lat: LATLNG[0] + Faker::Number.between(-0.05, 0.03),
     lng: LATLNG[1] + Faker::Number.between(-0.05, 0.03),
     price: Faker::Number.between(10, 150),
@@ -96,7 +111,7 @@ User.create(email: "test3@gmail.com", password: "password3")
     booker_id: i % 3 + 2,
     checkin_date: checkin,
     checkout_date: checkin + Faker::Number.between(2, 10),
-    message: Faker::Hipster.paragraph,
+    message: "Hello! I would love to stay at your place at these dates during my rotation :)",
     status: %w(pending approved denied).sample
   )
 end
