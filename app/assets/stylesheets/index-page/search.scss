@@ -160,6 +160,7 @@ label:hover:before {
 
   .search-date-field {
     width: 31%;
+    z-index: 500;
   }
 
 
@@ -172,6 +173,11 @@ label:hover:before {
 
   .datepicker__input-container {
     left: -7.5px;
+  }
+
+  .datepicker__tether-element{
+    z-index: 2 !important;
+    transition-duration: .1s !important;
   }
 
 }

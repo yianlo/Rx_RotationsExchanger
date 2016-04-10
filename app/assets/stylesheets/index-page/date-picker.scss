@@ -381,3 +381,7 @@ $min-field-height: 38px;
   font-weight: bold;
   padding: 5px 0;
 }
+
+.datepicker__tether-element {
+  z-index: 2 !important;
+}
