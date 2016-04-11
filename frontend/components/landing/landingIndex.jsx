@@ -9,9 +9,6 @@ var LandingIndex = React.createClass({
     router: React.PropTypes.object.isRequired
   },
 
-  componentDidMount: function(){
-  },
-
   getInitialState: function(){
     return {rooms: RoomStore.all()};
   },
@@ -71,7 +68,7 @@ var LandingIndex = React.createClass({
               <p>|</p>
             </div>
             <div className="my-link">
-              <a href="https://github.com/yianlo" target="_blank">GitHub</a>
+              <a href="https://github.com/yianlo/Rx_RotationsExchanger" target="_blank">GitHub</a>
             </div>
             <div className="my-link">
               <a href="https://www.linkedin.com/in/yianlo" target="_blank">LinkedIn</a>
